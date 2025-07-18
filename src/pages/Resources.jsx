@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FileText, Clock, ArrowRight, BookOpen, Shield, DollarSign, Smartphone, Settings } from 'lucide-react'
+import { FileText, Clock, ArrowRight, BookOpen, Shield, DollarSign, Smartphone, Settings, Layers } from 'lucide-react'
 
 const Resources = () => {
   const resources = [
@@ -52,6 +52,42 @@ const Resources = () => {
       color: 'red',
       gradient: 'from-red-600 to-red-800',
       link: '/resources/papercut-security-practices'
+    },
+    {
+      id: 'uniflow-platform-overview',
+      title: 'Uniflow: Integrated Print, Scan & Device Management Platform',
+      description: 'Discover how Uniflow\'s single integrated platform revolutionizes document workflows for Iowa organizations. Comprehensive print management, intelligent scanning, and centralized device control.',
+      category: 'Implementation',
+      tags: ['Uniflow'],
+      readTime: '11 min read',
+      icon: Layers,
+      color: 'indigo',
+      gradient: 'from-indigo-600 to-indigo-800',
+      link: '/resources/uniflow-platform-overview'
+    },
+    {
+      id: 'uniflow-secure-print-release',
+      title: 'Uniflow Secure Print Release for Iowa Organizations',
+      description: 'Protect sensitive documents and ensure compliance with Uniflow\'s comprehensive secure print release solution. Advanced authentication, complete monitoring, and seamless integration.',
+      category: 'Security',
+      tags: ['Uniflow'],
+      readTime: '10 min read',
+      icon: Shield,
+      color: 'emerald',
+      gradient: 'from-emerald-600 to-emerald-800',
+      link: '/resources/uniflow-secure-print-release'
+    },
+    {
+      id: 'uniflow-cost-tracking',
+      title: 'Uniflow Cost Tracking & Management for Iowa Organizations',
+      description: 'Gain complete visibility and control over your print costs with Uniflow\'s comprehensive cost tracking solution. Advanced analytics, budget management, and automated reporting.',
+      category: 'Cost Savings',
+      tags: ['Uniflow'],
+      readTime: '13 min read',
+      icon: DollarSign,
+      color: 'amber',
+      gradient: 'from-amber-600 to-amber-800',
+      link: '/resources/uniflow-cost-tracking'
     }
   ]
 
