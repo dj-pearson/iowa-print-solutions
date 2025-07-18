@@ -160,6 +160,42 @@ const Resources = () => {
       color: 'violet',
       gradient: 'from-violet-600 to-violet-800',
       link: '/resources/uniflow-flexible-access-control'
+    },
+    {
+      id: 'printerlogic-serverless-printing',
+      title: 'PrinterLogic Serverless Printing for Iowa Organizations',
+      description: 'Eliminate print servers and revolutionize your Iowa organization\'s printing infrastructure with PrinterLogic\'s cloud-based serverless printing solution. Reduce costs and improve reliability.',
+      category: 'Implementation',
+      tags: ['PrinterLogic'],
+      readTime: '15 min read',
+      icon: Cloud,
+      color: 'purple',
+      gradient: 'from-purple-600 to-purple-800',
+      link: '/resources/printerlogic-serverless-printing'
+    },
+    {
+      id: 'printerlogic-self-service-installation',
+      title: 'PrinterLogic Self Service Printer Installation for Iowa',
+      description: 'Empower your Iowa organization\'s users to install printers themselves with PrinterLogic\'s intuitive self-service solution. Reduce IT workload while improving user productivity.',
+      category: 'Implementation',
+      tags: ['PrinterLogic'],
+      readTime: '13 min read',
+      icon: Users,
+      color: 'blue',
+      gradient: 'from-blue-600 to-blue-800',
+      link: '/resources/printerlogic-self-service-installation'
+    },
+    {
+      id: 'printerlogic-secure-release-printing',
+      title: 'PrinterLogic Secure Release Printing for Iowa Organizations',
+      description: 'Protect sensitive documents and ensure compliance with PrinterLogic\'s advanced secure release printing solution. Prevent unauthorized access while reducing waste and costs.',
+      category: 'Security',
+      tags: ['PrinterLogic'],
+      readTime: '14 min read',
+      icon: Shield,
+      color: 'red',
+      gradient: 'from-red-600 to-red-800',
+      link: '/resources/printerlogic-secure-release-printing'
     }
   ]
 

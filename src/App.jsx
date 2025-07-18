@@ -23,6 +23,9 @@ import UniflowFlexibleAccessControl from './pages/resources/UniflowFlexibleAcces
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import PaperCutService from './pages/services/PaperCutService'
 import UniflowService from './pages/services/UniflowService'
+import PrinterLogicServerlessPrinting from './pages/resources/PrinterLogicServerlessPrinting'
+import PrinterLogicSelfServiceInstallation from './pages/resources/PrinterLogicSelfServiceInstallation'
+import PrinterLogicSecureReleasePrinting from './pages/resources/PrinterLogicSecureReleasePrinting'
 
 const App = () => {
   return (
@@ -49,6 +52,9 @@ const App = () => {
             <Route path="/resources/uniflow-print-from-anywhere" element={<UniflowPrintFromAnywhere />} />
             <Route path="/resources/uniflow-mobile-cloud-printing" element={<UniflowMobileCloudPrinting />} />
             <Route path="/resources/uniflow-flexible-access-control" element={<UniflowFlexibleAccessControl />} />
+            <Route path="/resources/printerlogic-serverless-printing" element={<PrinterLogicServerlessPrinting />} />
+            <Route path="/resources/printerlogic-self-service-installation" element={<PrinterLogicSelfServiceInstallation />} />
+            <Route path="/resources/printerlogic-secure-release-printing" element={<PrinterLogicSecureReleasePrinting />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/services/papercut" element={<PaperCutService />} />
             <Route path="/services/uniflow" element={<UniflowService />} />
