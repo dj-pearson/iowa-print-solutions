@@ -32,14 +32,14 @@ const Home = () => {
       name: 'Sarah Johnson',
       company: 'Iowa Healthcare Organization',
       location: 'Des Moines, IA',
-      testimonial: 'Iowa Print Solutions transformed our printing infrastructure. We reduced costs by 35% and improved efficiency dramatically.',
+      testimonial: 'Working with Infomax Office Systems transformed our printing infrastructure. We reduced costs by 35% and improved efficiency dramatically.',
       rating: 5
     },
     {
       name: 'Mike Chen',
       company: 'Central Iowa School District',
       location: 'Cedar Rapids, IA',
-      testimonial: 'The PaperCut implementation was seamless. Their Iowa-based support team is incredibly responsive and knowledgeable.',
+      testimonial: 'The PaperCut implementation through Infomax was seamless. Their Iowa-based support team is incredibly responsive and knowledgeable.',
       rating: 5
     },
     {
@@ -52,8 +52,8 @@ const Home = () => {
   ]
 
   const stats = [
-    { icon: Users, number: 'Hundreds', label: 'Iowa Clients Served' },
-    { icon: Award, number: '15+', label: 'Years Serving Iowa' },
+    { icon: Users, number: 'Hundreds', label: 'Iowa Clients via Infomax' },
+    { icon: Award, number: '15+', label: 'Years Infomax Experience' },
     { icon: BarChart3, number: '30%', label: 'Average Cost Savings' },
     { icon: Shield, number: '99.9%', label: 'Uptime Guarantee' }
   ]
@@ -70,10 +70,10 @@ const Home = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Comprehensive Print Solutions for Iowa
+              Iowa Print Solutions Information Hub
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From PaperCut to PrinterLogic, we provide complete print management solutions tailored for Iowa businesses.
+              Comprehensive resources about PaperCut, Uniflow, and PrinterLogic solutions. Connect with Infomax Office Systems for professional implementation services.
             </p>
           </motion.div>
 
@@ -97,10 +97,10 @@ const Home = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Trusted by Iowa Businesses
+              Iowa Organizations Trust Infomax
             </h2>
             <p className="text-xl text-gray-600">
-              See what our clients across Iowa are saying about our print solutions.
+              See what Iowa clients are saying about Infomax Office Systems print management services.
             </p>
           </motion.div>
 

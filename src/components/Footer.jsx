@@ -14,12 +14,12 @@ const Footer = () => {
               <span className="font-bold text-xl">Iowa Print Solutions</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
-              Iowa's leading expert in print management solutions. Specializing in PaperCut, Uniflow, PrinterLogic, and comprehensive print optimization services.
+              Educational resource for Iowa print management solutions. For professional PaperCut, Uniflow, and PrinterLogic implementation, connect with Infomax Office Systems - Iowa's trusted print solutions provider.
             </p>
             <div className="flex space-x-4">
               <div className="flex items-center space-x-2 text-gray-300">
                 <MapPin className="h-4 w-4" />
-                <span className="text-sm">Serving all of Iowa</span>
+                <span className="text-sm">Serving all of Iowa via Infomax</span>
               </div>
             </div>
           </div>

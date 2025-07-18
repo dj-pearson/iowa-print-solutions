@@ -62,47 +62,38 @@ const About = () => {
     <div className="min-h-screen bg-gray-50">
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              About Iowa Print Solutions
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Iowa's trusted partner for comprehensive print management solutions, serving businesses across the state for over 15 years.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Our Story
-              </h2>
-              <p className="text-gray-700 mb-6">
-                Founded in 2008, Iowa Print Solutions emerged from a simple observation: Iowa businesses needed specialized expertise in print management that understood their unique challenges and requirements.
+              <h1 className="text-4xl font-bold text-gray-900 mb-6">
+                About Iowa Print Solutions Resources
+              </h1>
+              <p className="text-xl text-gray-600 mb-6">
+                This resource hub provides comprehensive information about print management solutions for Iowa organizations. 
+                When you're ready to implement PaperCut, Uniflow, or PrinterLogic, connect directly with certified specialists at Infomax Office Systems.
               </p>
-              <p className="text-gray-700 mb-6">
-                Over the years, we've evolved from a small consulting firm to Iowa's leading print solutions provider, specializing in PaperCut, Uniflow, and PrinterLogic implementations. Our team combines deep technical expertise with genuine care for our clients' success.
+              <p className="text-lg text-gray-600 mb-8">
+                Infomax Office Systems has been serving Iowa businesses since 2009, providing expert print management solutions 
+                and ongoing support. Our team holds certifications in all major print management platforms and understands the 
+                unique needs of Iowa organizations.
               </p>
-              <p className="text-gray-700 mb-8">
-                Today, we're proud to serve over 500 Iowa organizations, from small businesses to large enterprises, helping them reduce costs, improve security, and streamline their print operations.
-              </p>
-              <Link
-                to="/contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition-colors"
-              >
-                Work With Us
-              </Link>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
+                  <span className="text-gray-700">Educational print management resources</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
+                  <span className="text-gray-700">Direct connection to Infomax Office Systems</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
+                  <span className="text-gray-700">Iowa-focused implementation support</span>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -119,7 +110,7 @@ const About = () => {
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-gray-900">Hundreds</div>
-                    <div className="text-sm text-gray-600">Iowa Clients Served</div>
+                    <div className="text-sm text-gray-600">Iowa Clients via Infomax</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -128,7 +119,7 @@ const About = () => {
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-gray-900">15+</div>
-                    <div className="text-sm text-gray-600">Years Serving Iowa</div>
+                    <div className="text-sm text-gray-600">Years Infomax Experience</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -290,25 +281,27 @@ const About = () => {
             className="text-white"
           >
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Work Together?
+              Ready to Implement Print Solutions?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Let's discuss how we can optimize your Iowa organization's print infrastructure.
+              Connect with Infomax Office Systems to discuss your Iowa organization's print management needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
+              <a
+                href="https://www.infomaxoffice.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Get Free Consultation
-              </Link>
+                Visit Infomax Office Systems
+              </a>
               <a
                 href="https://calendly.com/pearsondan/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Schedule a Call
+                Schedule Consultation
               </a>
             </div>
           </motion.div>

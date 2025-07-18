@@ -14,35 +14,37 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-5xl font-bold mb-6">
-              Iowa's Premier Print Solutions Expert
+              Iowa Print Solutions Resources
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              Specializing in PaperCut, Uniflow, and PrinterLogic implementations. Reduce costs, enhance security, and optimize your print infrastructure with Iowa's trusted print management professionals.
+              Comprehensive information about PaperCut, Uniflow, and PrinterLogic solutions for Iowa organizations. Connect with certified specialists at Infomax Office Systems for professional implementation and support.
             </p>
             
             <div className="space-y-4 mb-8">
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-green-400" />
-                <span>Certified PaperCut & Uniflow Specialists</span>
+                <span>Expert Print Management Information</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-green-400" />
-                <span>15+ Years Serving Iowa Organizations</span>
+                <span>Connect with Infomax Office Systems Specialists</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-green-400" />
-                <span>Average 30% Cost Reduction</span>
+                <span>Serving Iowa Organizations Since 2009</span>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/contact"
+              <a
+                href="https://calendly.com/pearsondan/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors inline-flex items-center space-x-2"
               >
-                <span>Get Free Assessment</span>
+                <span>Book Consultation with Infomax</span>
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
               <a
                 href="tel:5152372352"
                 className="border border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-md font-medium transition-colors"
