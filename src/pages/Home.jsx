@@ -307,19 +307,7 @@ const Home = () => {
             </motion.div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="text-center mt-12"
-          >
-            <p className="text-gray-600 mb-6">
-              Want to stay updated with the latest print management insights?
-            </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition-colors">
-              Subscribe to Our Newsletter
-            </button>
-          </motion.div>
+
         </div>
       </section>
     </div>
