@@ -70,18 +70,20 @@ const UniflowService = () => {
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              Uniflow Document Solutions
+              Uniflow Document Solution Information
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Streamline your Iowa organization's document workflows with advanced Uniflow solutions. Automate processes, enhance security, and integrate seamlessly with your existing systems.
+              Learn about advanced Uniflow solutions for Iowa organizations. For professional implementation through Infomax Office Systems, streamline your document workflows, automate processes, and enhance security.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
+              <a
+                href="https://calendly.com/pearsondan/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Get Workflow Assessment
-              </Link>
+                Book Infomax Consultation
+              </a>
               <a
                 href="tel:5152372352"
                 className="border border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-md font-medium transition-colors"

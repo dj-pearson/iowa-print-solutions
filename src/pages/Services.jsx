@@ -8,7 +8,8 @@ const Services = () => {
     {
       icon: Printer,
       title: 'PaperCut MF Implementation',
-      description: 'Complete PaperCut Mobility & Fleet solutions for Iowa organizations.',
+      description: 'Complete PaperCut Mobility & Fleet solutions for Iowa organizations via Infomax Office Systems.',
+      link: '/services/papercut',
       features: [
         'Full installation and configuration',
         'User authentication setup',
@@ -21,7 +22,8 @@ const Services = () => {
     {
       icon: Settings,
       title: 'Uniflow Solutions',
-      description: 'Advanced document workflow automation and security solutions.',
+      description: 'Advanced document workflow automation and security solutions through Infomax Office Systems.',
+      link: '/services/uniflow',
       features: [
         'Secure pull printing',
         'Document workflow automation',
@@ -34,7 +36,8 @@ const Services = () => {
     {
       icon: BarChart3,
       title: 'PrinterLogic Setup',
-      description: 'Eliminate print servers with cloud-based print management.',
+      description: 'Eliminate print servers with cloud-based print management via Infomax Office Systems.',
+      link: 'https://www.infomaxoffice.com/',
       features: [
         'Serverless printing architecture',
         'Automated driver management',
@@ -47,7 +50,8 @@ const Services = () => {
     {
       icon: Shield,
       title: 'Print Security Solutions',
-      description: 'Comprehensive print security and compliance management.',
+      description: 'Comprehensive print security and compliance management through Infomax Office Systems.',
+      link: 'https://www.infomaxoffice.com/',
       features: [
         'Document encryption',
         'User authentication',
@@ -60,7 +64,8 @@ const Services = () => {
     {
       icon: Wrench,
       title: 'Print Optimization',
-      description: 'Analyze and optimize your entire print infrastructure.',
+      description: 'Analyze and optimize your entire print infrastructure with Infomax Office Systems expertise.',
+      link: 'https://www.infomaxoffice.com/',
       features: [
         'Print environment assessment',
         'Cost analysis and reduction',
@@ -73,7 +78,8 @@ const Services = () => {
     {
       icon: HeadphonesIcon,
       title: 'Ongoing Support',
-      description: 'Dedicated Iowa-based support for all your print solutions.',
+      description: 'Dedicated Iowa-based support through Infomax Office Systems for all your print solutions.',
+      link: 'https://www.infomaxoffice.com/',
       features: [
         '24/7 technical support',
         'Remote troubleshooting',
@@ -95,10 +101,10 @@ const Services = () => {
             className="text-center mb-12"
           >
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Complete Print Solutions for Iowa
+              Iowa Print Solutions Service Information
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From implementation to ongoing support, we provide comprehensive print management solutions tailored specifically for Iowa businesses and organizations.
+              Comprehensive information about print management services available through Infomax Office Systems. From implementation to ongoing support, discover solutions tailored specifically for Iowa organizations.
             </p>
           </motion.div>
         </div>
@@ -126,18 +132,28 @@ const Services = () => {
             className="text-white"
           >
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Transform Your Print Infrastructure?
+              Ready to Implement Print Solutions?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Contact Iowa's print solutions experts for a free consultation and discover how we can optimize your printing environment.
+              Contact Infomax Office Systems for professional print management implementation and discover how we can optimize your Iowa organization's printing environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors">
+              <a
+                href="https://calendly.com/pearsondan/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
+              >
                 Schedule Consultation
-              </button>
-              <button className="border border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-md font-medium transition-colors">
-                Request Quote
-              </button>
+              </a>
+              <a
+                href="https://www.infomaxoffice.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-md font-medium transition-colors"
+              >
+                Visit Infomax Office Systems
+              </a>
             </div>
           </motion.div>
         </div>

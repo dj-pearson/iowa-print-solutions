@@ -79,18 +79,20 @@ const PaperCutService = () => {
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              PaperCut MF Implementation
+              PaperCut MF Implementation Services
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Transform your Iowa organization's printing infrastructure with comprehensive PaperCut Mobility & Fleet solutions. Reduce costs, enhance security, and gain complete visibility into your print environment.
+              Learn about PaperCut Mobility & Fleet solutions for Iowa organizations. For professional implementation, connect with Infomax Office Systems to reduce costs, enhance security, and gain complete visibility into your print environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
+              <a
+                href="https://calendly.com/pearsondan/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Get Free Assessment
-              </Link>
+                Book Infomax Consultation
+              </a>
               <a
                 href="tel:5152372352"
                 className="border border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-md font-medium transition-colors"
@@ -110,10 +112,10 @@ const PaperCutService = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Complete PaperCut MF Solutions
+              PaperCut MF Solution Components
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our Iowa-based team provides end-to-end PaperCut implementation, from initial assessment to ongoing optimization.
+              Infomax Office Systems provides end-to-end PaperCut implementation for Iowa organizations, from initial assessment to ongoing optimization.
             </p>
           </motion.div>
 
