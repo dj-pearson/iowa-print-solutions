@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Users, Award, MapPin, Phone, Mail, CheckCircle, Target, Heart, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const About = () => {
   const values = [
@@ -58,256 +59,296 @@ const About = () => {
     }
   ]
 
+  const seoSchema = {
+    '@type': 'AboutPage',
+    'about': {
+      '@type': 'Organization',
+      'name': 'Infomax Office Systems',
+      'foundingDate': '1958',
+      'description': 'Leading provider of print management solutions in Iowa since 1958. Serving Des Moines, Cedar Rapids, Iowa City and statewide with PaperCut, Uniflow, and PrinterLogic implementations.',
+      'areaServed': {
+        '@type': 'State',
+        'name': 'Iowa'
+      },
+      'serviceArea': [{
+        '@type': 'City',
+        'name': 'Des Moines'
+      }, {
+        '@type': 'City', 
+        'name': 'Cedar Rapids'
+      }, {
+        '@type': 'City',
+        'name': 'Iowa City'
+      }],
+      'hasCredential': [
+        'PaperCut Certified Partner',
+        'Uniflow Authorized Reseller', 
+        'PrinterLogic Implementation Specialist'
+      ]
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h1 className="text-4xl font-bold text-gray-900 mb-6">
-                About Iowa Print Solutions Resources
-              </h1>
-              <p className="text-xl text-gray-600 mb-6">
-                This resource hub provides comprehensive information about print management solutions for Iowa organizations. 
-                When you're ready to implement PaperCut, Uniflow, or PrinterLogic, connect directly with certified specialists at Infomax Office Systems.
-              </p>
-              <p className="text-lg text-gray-600 mb-8">
-                Infomax Office Systems has been serving Iowa businesses since 1958, providing expert office solutions including 
-                print management, copiers, and ongoing support. Our team holds certifications in all major print management 
-                platforms and understands the unique needs of Iowa organizations.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-gray-700">Educational print management resources</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-gray-700">Direct connection to Infomax Office Systems</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-gray-700">Iowa-focused implementation support</span>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white rounded-lg shadow-lg p-8"
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">By the Numbers</h3>
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-lg">
-                    <Users className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">Hundreds</div>
-                    <div className="text-sm text-gray-600">Iowa Clients via Infomax</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <Award className="h-6 w-6 text-green-600" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">15+</div>
-                    <div className="text-sm text-gray-600">Years Infomax Experience</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="bg-purple-100 p-3 rounded-lg">
-                    <MapPin className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">99</div>
-                    <div className="text-sm text-gray-600">Iowa Counties Served</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Values
-            </h2>
-            <p className="text-xl text-gray-600">
-              The principles that guide everything we do for Iowa businesses.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
+    <>
+      <SEO 
+        title="About Iowa Print Solutions & Infomax Office Systems - Serving Iowa Since 1958"
+        description="Learn about Iowa Print Solutions and Infomax Office Systems. Serving Iowa businesses since 1958 with expert print management, PaperCut, Uniflow, and PrinterLogic solutions. 1000+ clients served statewide."
+        keywords="Infomax Office Systems Iowa, Iowa print management company, PaperCut certified partner Iowa, Uniflow authorized reseller Iowa, PrinterLogic specialist Iowa, Des Moines print solutions, Cedar Rapids office systems, Iowa print services history, managed print services Iowa since 1958"
+        canonicalUrl="https://iowa-print-solutions.pages.dev/about"
+        schemaType="AboutPage"
+        additionalSchema={seoSchema}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
+        <section className="bg-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
               >
-                <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <value.icon className="h-8 w-8 text-blue-600" />
+                <h1 className="text-4xl font-bold text-gray-900 mb-6">
+                  About Iowa Print Solutions Resources
+                </h1>
+                <p className="text-xl text-gray-600 mb-6">
+                  This resource hub provides comprehensive information about print management solutions for Iowa organizations. 
+                  When you're ready to implement PaperCut, Uniflow, or PrinterLogic, connect directly with certified specialists at Infomax Office Systems.
+                </p>
+                <p className="text-lg text-gray-600 mb-8">
+                  Infomax Office Systems has been serving Iowa businesses since 1958, providing expert office solutions including 
+                  print management, copiers, and ongoing support. Our team holds certifications in all major print management 
+                  platforms and understands the unique needs of Iowa organizations.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                    <span className="text-gray-700">Educational print management resources</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                    <span className="text-gray-700">Direct connection to Infomax Office Systems</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                    <span className="text-gray-700">Iowa-focused implementation support</span>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
               </motion.div>
-            ))}
+
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-white rounded-lg shadow-lg p-8"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">By the Numbers</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-blue-100 p-3 rounded-lg">
+                      <Users className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-gray-900">Hundreds</div>
+                      <div className="text-sm text-gray-600">Iowa Clients via Infomax</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-green-100 p-3 rounded-lg">
+                      <Award className="h-6 w-6 text-green-600" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-gray-900">15+</div>
+                      <div className="text-sm text-gray-600">Years Infomax Experience</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-purple-100 p-3 rounded-lg">
+                      <MapPin className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-gray-900">99</div>
+                      <div className="text-sm text-gray-600">Iowa Counties Served</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Journey
-            </h2>
-            <p className="text-xl text-gray-600">
-              Key milestones in our mission to serve Iowa businesses.
-            </p>
-          </motion.div>
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Our Values
+              </h2>
+              <p className="text-xl text-gray-600">
+                The principles that guide everything we do for Iowa businesses.
+              </p>
+            </motion.div>
 
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 hidden lg:block"></div>
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {values.map((value, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                  className="text-center"
                 >
-                  <div className="flex-1 lg:pr-8">
-                    <div className={`bg-white rounded-lg shadow-lg p-6 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                      <div className="text-blue-600 font-bold text-lg mb-1">{item.year}</div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
-                    </div>
+                  <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <value.icon className="h-8 w-8 text-blue-600" />
                   </div>
-                  <div className="flex-shrink-0 mx-4">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-                      {index + 1}
-                    </div>
-                  </div>
-                  <div className="flex-1 lg:pl-8">
-                    <div className="hidden lg:block"></div>
-                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
+                  <p className="text-gray-600">{value.description}</p>
                 </motion.div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Certifications & Partnerships
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Our Journey
               </h2>
-              <p className="text-gray-700 mb-6">
-                Our team maintains the highest level of certifications and partnerships to ensure we deliver the best solutions to our Iowa clients.
+              <p className="text-xl text-gray-600">
+                Key milestones in our mission to serve Iowa businesses.
               </p>
-              <div className="space-y-3">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-gray-700">{cert}</span>
-                  </div>
-                ))}
-              </div>
             </motion.div>
 
+            <div className="relative">
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 hidden lg:block"></div>
+              <div className="space-y-12">
+                {timeline.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                  >
+                    <div className="flex-1 lg:pr-8">
+                      <div className={`bg-white rounded-lg shadow-lg p-6 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                        <div className="text-blue-600 font-bold text-lg mb-1">{item.year}</div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                        <p className="text-gray-600">{item.description}</p>
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0 mx-4">
+                      <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                        {index + 1}
+                      </div>
+                    </div>
+                    <div className="flex-1 lg:pl-8">
+                      <div className="hidden lg:block"></div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  Certifications & Partnerships
+                </h2>
+                <p className="text-gray-700 mb-6">
+                  Our team maintains the highest level of certifications and partnerships to ensure we deliver the best solutions to our Iowa clients.
+                </p>
+                <div className="space-y-3">
+                  {certifications.map((cert, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span className="text-gray-700">{cert}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+                className="bg-blue-50 rounded-lg p-8"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Meet Dan Pearson
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  As the founder and lead consultant of Iowa Print Solutions, Dan brings over 15 years of experience in print management and document workflow optimization.
+                </p>
+                <p className="text-gray-700 mb-6">
+                  Dan's expertise spans across all major print management platforms, with particular specialization in PaperCut, Uniflow, and PrinterLogic implementations for Iowa businesses.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <Phone className="h-4 w-4 text-blue-600" />
+                    <span className="text-gray-700">(515) 237-2352</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Mail className="h-4 w-4 text-blue-600" />
+                    <span className="text-gray-700">DPearson@InfomaxOffice.com</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-blue-600 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="bg-blue-50 rounded-lg p-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-white"
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Meet Dan Pearson
-              </h3>
-              <p className="text-gray-700 mb-4">
-                As the founder and lead consultant of Iowa Print Solutions, Dan brings over 15 years of experience in print management and document workflow optimization.
+              <h2 className="text-3xl font-bold mb-4">
+                Ready to Implement Print Solutions?
+              </h2>
+              <p className="text-xl mb-8 opacity-90">
+                Connect with Infomax Office Systems to discuss your Iowa organization's print management needs.
               </p>
-              <p className="text-gray-700 mb-6">
-                Dan's expertise spans across all major print management platforms, with particular specialization in PaperCut, Uniflow, and PrinterLogic implementations for Iowa businesses.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-4 w-4 text-blue-600" />
-                  <span className="text-gray-700">(515) 237-2352</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-4 w-4 text-blue-600" />
-                  <span className="text-gray-700">DPearson@InfomaxOffice.com</span>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://www.infomaxoffice.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
+                >
+                  Visit Infomax Office Systems
+                </a>
+                <a
+                  href="https://calendly.com/pearsondan/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-md font-medium transition-colors"
+                >
+                  Schedule Consultation
+                </a>
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-blue-600 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-white"
-          >
-            <h2 className="text-3xl font-bold mb-4">
-              Ready to Implement Print Solutions?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Connect with Infomax Office Systems to discuss your Iowa organization's print management needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://www.infomaxoffice.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
-              >
-                Visit Infomax Office Systems
-              </a>
-              <a
-                href="https://calendly.com/pearsondan/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-md font-medium transition-colors"
-              >
-                Schedule Consultation
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   )
 }
 

@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://iowa-print-solutions.pages.dev/sitemap.xml
+
+# Disallow crawling of build files
+Disallow: /assets/
+Disallow: /*.js
+Disallow: /*.css
+Disallow: /*.map
+
+# Encourage crawling of main content
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /resources
+Allow: /contact
+Allow: /services/*
+Allow: /resources/*
+
+# Crawl-delay to be respectful
+Crawl-delay: 1 
