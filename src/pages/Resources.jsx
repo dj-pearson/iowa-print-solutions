@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FileText, Clock, ArrowRight, BookOpen, Shield, DollarSign, Smartphone, Settings, Layers, MapPin, Cloud, UserCheck } from 'lucide-react'
+import { FileText, Clock, ArrowRight, BookOpen, Shield, DollarSign, Smartphone, Settings, Layers, MapPin, Cloud, UserCheck, Lock, Users } from 'lucide-react'
 
 const Resources = () => {
   const resources = [
@@ -52,6 +52,42 @@ const Resources = () => {
       color: 'red',
       gradient: 'from-red-600 to-red-800',
       link: '/resources/papercut-security-practices'
+    },
+    {
+      id: 'papercut-secure-print-release',
+      title: 'PaperCut Secure Print Release for Iowa Organizations',
+      description: 'Protect sensitive documents and eliminate print waste with PaperCut\'s comprehensive secure print release solution. Advanced authentication options and complete audit trails.',
+      category: 'Security',
+      tags: ['PaperCut'],
+      readTime: '11 min read',
+      icon: Lock,
+      color: 'orange',
+      gradient: 'from-orange-600 to-orange-800',
+      link: '/resources/papercut-secure-print-release'
+    },
+    {
+      id: 'papercut-follow-me-print',
+      title: 'PaperCut Follow Me Print for Iowa Organizations',
+      description: 'Enable true printing mobility with PaperCut Follow Me Print. Users can print from anywhere and release jobs at any compatible printer throughout your organization.',
+      category: 'Remote Printing',
+      tags: ['PaperCut'],
+      readTime: '10 min read',
+      icon: Users,
+      color: 'blue',
+      gradient: 'from-blue-600 to-blue-800',
+      link: '/resources/papercut-follow-me-print'
+    },
+    {
+      id: 'papercut-mobility-print',
+      title: 'PaperCut Mobility Print for Iowa Organizations',
+      description: 'Enable seamless mobile printing with PaperCut Mobility Print. Zero-configuration setup, native mobile apps, and comprehensive BYOD support for modern workplaces.',
+      category: 'Mobile Solutions',
+      tags: ['PaperCut'],
+      readTime: '12 min read',
+      icon: Smartphone,
+      color: 'green',
+      gradient: 'from-green-600 to-green-800',
+      link: '/resources/papercut-mobility-print'
     },
     {
       id: 'uniflow-platform-overview',

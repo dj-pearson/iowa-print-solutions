@@ -11,6 +11,9 @@ import PaperCutImplementationGuide from './pages/resources/PaperCutImplementatio
 import PaperCutCostReduction from './pages/resources/PaperCutCostReduction'
 import PaperCutMobilePrinting from './pages/resources/PaperCutMobilePrinting'
 import PaperCutSecurityPractices from './pages/resources/PaperCutSecurityPractices'
+import PaperCutSecurePrintRelease from './pages/resources/PaperCutSecurePrintRelease'
+import PaperCutFollowMePrint from './pages/resources/PaperCutFollowMePrint'
+import PaperCutMobilityPrint from './pages/resources/PaperCutMobilityPrint'
 import UniflowPlatformOverview from './pages/resources/UniflowPlatformOverview'
 import UniflowSecurePrintRelease from './pages/resources/UniflowSecurePrintRelease'
 import UniflowCostTracking from './pages/resources/UniflowCostTracking'
@@ -34,6 +37,9 @@ const App = () => {
             <Route path="/resources/papercut-cost-reduction" element={<PaperCutCostReduction />} />
             <Route path="/resources/papercut-mobile-printing" element={<PaperCutMobilePrinting />} />
             <Route path="/resources/papercut-security-practices" element={<PaperCutSecurityPractices />} />
+            <Route path="/resources/papercut-secure-print-release" element={<PaperCutSecurePrintRelease />} />
+            <Route path="/resources/papercut-follow-me-print" element={<PaperCutFollowMePrint />} />
+            <Route path="/resources/papercut-mobility-print" element={<PaperCutMobilityPrint />} />
             <Route path="/resources/uniflow-platform-overview" element={<UniflowPlatformOverview />} />
             <Route path="/resources/uniflow-secure-print-release" element={<UniflowSecurePrintRelease />} />
             <Route path="/resources/uniflow-cost-tracking" element={<UniflowCostTracking />} />
