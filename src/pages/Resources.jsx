@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FileText, Clock, ArrowRight, BookOpen, Shield, DollarSign, Smartphone, Settings, Layers } from 'lucide-react'
+import { FileText, Clock, ArrowRight, BookOpen, Shield, DollarSign, Smartphone, Settings, Layers, MapPin, Cloud, UserCheck } from 'lucide-react'
 
 const Resources = () => {
   const resources = [
@@ -88,10 +88,46 @@ const Resources = () => {
       color: 'amber',
       gradient: 'from-amber-600 to-amber-800',
       link: '/resources/uniflow-cost-tracking'
+    },
+    {
+      id: 'uniflow-print-from-anywhere',
+      title: 'Uniflow Print from Anywhere Solutions for Iowa Organizations',
+      description: 'Enable location-independent printing with Uniflow\'s comprehensive remote printing solutions. Secure, flexible, and seamless printing for distributed workforces and multiple locations.',
+      category: 'Remote Printing',
+      tags: ['Uniflow'],
+      readTime: '12 min read',
+      icon: MapPin,
+      color: 'teal',
+      gradient: 'from-teal-600 to-teal-800',
+      link: '/resources/uniflow-print-from-anywhere'
+    },
+    {
+      id: 'uniflow-mobile-cloud-printing',
+      title: 'Uniflow Mobile & Cloud Printing for Iowa Organizations',
+      description: 'Transform your printing infrastructure with Uniflow\'s comprehensive mobile and cloud printing solutions. Seamless integration with popular cloud platforms and native mobile apps.',
+      category: 'Mobile Solutions',
+      tags: ['Uniflow'],
+      readTime: '11 min read',
+      icon: Cloud,
+      color: 'cyan',
+      gradient: 'from-cyan-600 to-cyan-800',
+      link: '/resources/uniflow-mobile-cloud-printing'
+    },
+    {
+      id: 'uniflow-flexible-access-control',
+      title: 'Uniflow Flexible Access Control for Iowa Organizations',
+      description: 'Implement sophisticated access control and user management with Uniflow\'s flexible security framework. Role-based permissions, multi-factor authentication, and comprehensive compliance.',
+      category: 'Security',
+      tags: ['Uniflow'],
+      readTime: '14 min read',
+      icon: UserCheck,
+      color: 'violet',
+      gradient: 'from-violet-600 to-violet-800',
+      link: '/resources/uniflow-flexible-access-control'
     }
   ]
 
-  const categories = ['All', 'Implementation', 'Cost Savings', 'Mobile Solutions', 'Security']
+  const categories = ['All', 'Implementation', 'Cost Savings', 'Mobile Solutions', 'Security', 'Remote Printing']
   const products = ['All Products', 'PaperCut', 'Uniflow', 'PrinterLogic']
   
   const [selectedCategory, setSelectedCategory] = React.useState('All')

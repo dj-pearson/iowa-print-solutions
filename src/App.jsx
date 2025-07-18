@@ -14,6 +14,9 @@ import PaperCutSecurityPractices from './pages/resources/PaperCutSecurityPractic
 import UniflowPlatformOverview from './pages/resources/UniflowPlatformOverview'
 import UniflowSecurePrintRelease from './pages/resources/UniflowSecurePrintRelease'
 import UniflowCostTracking from './pages/resources/UniflowCostTracking'
+import UniflowPrintFromAnywhere from './pages/resources/UniflowPrintFromAnywhere'
+import UniflowMobileCloudPrinting from './pages/resources/UniflowMobileCloudPrinting'
+import UniflowFlexibleAccessControl from './pages/resources/UniflowFlexibleAccessControl'
 
 const App = () => {
   return (
@@ -34,6 +37,9 @@ const App = () => {
             <Route path="/resources/uniflow-platform-overview" element={<UniflowPlatformOverview />} />
             <Route path="/resources/uniflow-secure-print-release" element={<UniflowSecurePrintRelease />} />
             <Route path="/resources/uniflow-cost-tracking" element={<UniflowCostTracking />} />
+            <Route path="/resources/uniflow-print-from-anywhere" element={<UniflowPrintFromAnywhere />} />
+            <Route path="/resources/uniflow-mobile-cloud-printing" element={<UniflowMobileCloudPrinting />} />
+            <Route path="/resources/uniflow-flexible-access-control" element={<UniflowFlexibleAccessControl />} />
           </Routes>
         </main>
         <Footer />
