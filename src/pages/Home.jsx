@@ -30,21 +30,21 @@ const Home = () => {
   const testimonials = [
     {
       name: 'Sarah Johnson',
-      company: 'Des Moines Medical Center',
+      company: 'Iowa Healthcare Organization',
       location: 'Des Moines, IA',
       testimonial: 'Iowa Print Solutions transformed our printing infrastructure. We reduced costs by 35% and improved efficiency dramatically.',
       rating: 5
     },
     {
       name: 'Mike Chen',
-      company: 'Cedar Rapids School District',
+      company: 'Central Iowa School District',
       location: 'Cedar Rapids, IA',
       testimonial: 'The PaperCut implementation was seamless. Their Iowa-based support team is incredibly responsive and knowledgeable.',
       rating: 5
     },
     {
       name: 'Lisa Martinez',
-      company: 'Iowa City Law Firm',
+      company: 'Iowa Professional Services Firm',
       location: 'Iowa City, IA',
       testimonial: 'Professional service from start to finish. Our document security and printing costs have never been better managed.',
       rating: 5
@@ -52,8 +52,8 @@ const Home = () => {
   ]
 
   const stats = [
-    { icon: Users, number: '500+', label: 'Iowa Clients Served' },
-    { icon: Award, number: '15+', label: 'Years of Expertise' },
+    { icon: Users, number: 'Hundreds', label: 'Iowa Clients Served' },
+    { icon: Award, number: '15+', label: 'Years Serving Iowa' },
     { icon: BarChart3, number: '30%', label: 'Average Cost Savings' },
     { icon: Shield, number: '99.9%', label: 'Uptime Guarantee' }
   ]

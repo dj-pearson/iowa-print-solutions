@@ -27,7 +27,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-green-400" />
-                <span>15+ Years Serving Iowa Businesses</span>
+                <span>15+ Years Serving Iowa Organizations</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-green-400" />

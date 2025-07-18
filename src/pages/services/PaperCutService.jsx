@@ -265,7 +265,7 @@ const PaperCutService = () => {
               Ready to Implement PaperCut MF?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Join hundreds of Iowa organizations that have transformed their print infrastructure with our expert PaperCut implementation services.
+              Join the many Iowa organizations that have transformed their print infrastructure with our expert PaperCut implementation services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -20,6 +20,7 @@ import UniflowCostTracking from './pages/resources/UniflowCostTracking'
 import UniflowPrintFromAnywhere from './pages/resources/UniflowPrintFromAnywhere'
 import UniflowMobileCloudPrinting from './pages/resources/UniflowMobileCloudPrinting'
 import UniflowFlexibleAccessControl from './pages/resources/UniflowFlexibleAccessControl'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
             <Route path="/resources/uniflow-print-from-anywhere" element={<UniflowPrintFromAnywhere />} />
             <Route path="/resources/uniflow-mobile-cloud-printing" element={<UniflowMobileCloudPrinting />} />
             <Route path="/resources/uniflow-flexible-access-control" element={<UniflowFlexibleAccessControl />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
         <Footer />

@@ -25,13 +25,33 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4">Services</h3>
+            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>PaperCut Implementation</li>
-              <li>Uniflow Solutions</li>
-              <li>PrinterLogic Setup</li>
-              <li>Print Optimization</li>
-              <li>Cost Reduction</li>
+              <li>
+                <Link to="/services" className="hover:text-white transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/resources" className="hover:text-white transition-colors">
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-white transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <a href="/privacy-policy" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -118,7 +118,7 @@ const About = () => {
                     <Users className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">500+</div>
+                    <div className="text-2xl font-bold text-gray-900">Hundreds</div>
                     <div className="text-sm text-gray-600">Iowa Clients Served</div>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const About = () => {
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-gray-900">15+</div>
-                    <div className="text-sm text-gray-600">Years of Experience</div>
+                    <div className="text-sm text-gray-600">Years Serving Iowa</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
