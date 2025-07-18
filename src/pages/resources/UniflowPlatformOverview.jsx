@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Layers, Printer, Scanner, Settings, CheckCircle, ArrowRight, Zap, Shield, BarChart3 } from 'lucide-react'
+import { Layers, Printer, QrCode, Settings, CheckCircle, ArrowRight, Zap, Shield, BarChart3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const UniflowPlatformOverview = () => {
@@ -17,7 +17,7 @@ const UniflowPlatformOverview = () => {
       ]
     },
     {
-      icon: Scanner,
+      icon: QrCode,
       title: 'Intelligent Scan Workflows',
       description: 'Automated document capture with smart routing, OCR, and integration capabilities.',
       benefits: [
