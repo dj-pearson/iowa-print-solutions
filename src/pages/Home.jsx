@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import ServiceCard from '../components/ServiceCard'
 import TestimonialCard from '../components/TestimonialCard'
 import { Printer, Settings, BarChart3, Shield, Users, Award, ArrowRight, Wrench } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   const services = [
@@ -166,13 +167,13 @@ const Home = () => {
                 <p className="text-gray-600 mb-4">
                   Complete guide to implementing PaperCut MF in your Iowa organization, including best practices and cost optimization strategies.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/resources/papercut-implementation-guide"
                   className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
                 >
                   Read Article
                   <ArrowRight className="h-4 w-4 ml-1" />
-                </a>
+                </Link>
               </div>
             </motion.div>
 
@@ -192,13 +193,13 @@ const Home = () => {
                 <p className="text-gray-600 mb-4">
                   Learn how to maximize your Uniflow investment with advanced workflow automation and security features for Iowa businesses.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/resources/uniflow-platform-overview"
                   className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
                 >
                   Read Article
                   <ArrowRight className="h-4 w-4 ml-1" />
-                </a>
+                </Link>
               </div>
             </motion.div>
 
@@ -218,13 +219,13 @@ const Home = () => {
                 <p className="text-gray-600 mb-4">
                   Discover proven methods to reduce printing costs by up to 30% while improving efficiency in your Iowa organization.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/resources/papercut-cost-reduction"
                   className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
                 >
                   Read Article
                   <ArrowRight className="h-4 w-4 ml-1" />
-                </a>
+                </Link>
               </div>
             </motion.div>
 
@@ -244,13 +245,13 @@ const Home = () => {
                 <p className="text-gray-600 mb-4">
                   Essential security measures for protecting sensitive documents and ensuring compliance in Iowa organizations.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/resources/papercut-security-practices"
                   className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
                 >
                   Read Article
                   <ArrowRight className="h-4 w-4 ml-1" />
-                </a>
+                </Link>
               </div>
             </motion.div>
 
@@ -271,10 +272,12 @@ const Home = () => {
                   Step-by-step guide to migrating from traditional print servers to PrinterLogic's serverless architecture.
                 </p>
                 <a
-                  href="#"
+                  href="https://www.infomaxoffice.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
                 >
-                  Read Article
+                  Learn More at Infomax
                   <ArrowRight className="h-4 w-4 ml-1" />
                 </a>
               </div>
@@ -296,13 +299,13 @@ const Home = () => {
                 <p className="text-gray-600 mb-4">
                   Real-world success stories from Iowa businesses that transformed their print infrastructure with our solutions.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/resources"
                   className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
                 >
-                  Read Article
+                  Browse Case Studies
                   <ArrowRight className="h-4 w-4 ml-1" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>

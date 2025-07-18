@@ -338,12 +338,14 @@ const Resources = () => {
               Our Iowa-based print management experts are ready to help you implement these solutions in your organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
+              <a
+                href="https://www.infomaxoffice.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Get Expert Consultation
-              </Link>
+                Visit Infomax Office Systems
+              </a>
               <a
                 href="https://calendly.com/pearsondan/30min"
                 target="_blank"

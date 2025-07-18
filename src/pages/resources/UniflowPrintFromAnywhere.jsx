@@ -420,12 +420,14 @@ const UniflowPrintFromAnywhere = () => {
               Transform your printing infrastructure to support modern work patterns with Uniflow's comprehensive remote printing solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
+              <a
+                href="https://calendly.com/pearsondan/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Get Print from Anywhere Quote
-              </Link>
+                Book Print Solutions Consultation
+              </a>
               <a
                 href="tel:5152372352"
                 className="border border-white text-white hover:bg-white hover:text-teal-600 px-8 py-3 rounded-md font-medium transition-colors"

@@ -158,13 +158,15 @@ const PaperCutService = () => {
                 ))}
               </div>
               <div className="mt-8">
-                <Link
-                  to="/contact"
+                <a
+                  href="https://calendly.com/pearsondan/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition-colors inline-flex items-center space-x-2"
                 >
-                  <span>Start Your Implementation</span>
+                  <span>Book Infomax Consultation</span>
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </div>
             </motion.div>
 

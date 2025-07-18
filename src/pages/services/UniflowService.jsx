@@ -149,13 +149,15 @@ const UniflowService = () => {
                 ))}
               </div>
               <div className="mt-8">
-                <Link
-                  to="/contact"
+                <a
+                  href="https://calendly.com/pearsondan/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium transition-colors inline-flex items-center space-x-2"
                 >
-                  <span>Start Your Workflow Transformation</span>
+                  <span>Book Infomax Consultation</span>
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </div>
             </motion.div>
 
@@ -257,12 +259,14 @@ const UniflowService = () => {
               Transform your Iowa organization's document processes with our expert Uniflow implementation and optimization services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
+              <a
+                href="https://www.infomaxoffice.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Get Workflow Analysis
-              </Link>
+                Visit Infomax Office Systems
+              </a>
               <a
                 href="https://calendly.com/pearsondan/30min"
                 target="_blank"

@@ -421,12 +421,14 @@ const PaperCutSecurityPractices = () => {
               Don't leave your sensitive documents vulnerable. Implement comprehensive PaperCut security with our Iowa-based experts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
+              <a
+                href="https://calendly.com/pearsondan/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-red-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Get Security Assessment
-              </Link>
+                Book Security Assessment
+              </a>
               <a
                 href="tel:5152372352"
                 className="border border-white text-white hover:bg-white hover:text-red-600 px-8 py-3 rounded-md font-medium transition-colors"
