@@ -32,29 +32,29 @@ const About = () => {
 
   const timeline = [
     {
-      year: '2008',
+      year: '1958',
       title: 'Company Founded',
-      description: 'Started with a mission to help Iowa businesses optimize their print infrastructure.'
+      description: 'Infomax Office Systems started with a mission to help Iowa businesses with their office equipment needs.'
     },
     {
-      year: '2012',
+      year: '2010',
+      title: 'Canon Partnership',
+      description: 'Established Canon partnership, expanding our copier and print solutions capabilities.'
+    },
+    {
+      year: '2015',
       title: 'PaperCut Partnership',
-      description: 'Became certified PaperCut partner, expanding our print management capabilities.'
+      description: 'Became certified PaperCut partner, adding advanced print management solutions.'
     },
     {
-      year: '2016',
-      title: 'Uniflow Specialization',
-      description: 'Added Uniflow solutions to provide comprehensive document workflow automation.'
-    },
-    {
-      year: '2020',
+      year: '2018',
       title: 'PrinterLogic Integration',
       description: 'Integrated PrinterLogic solutions to offer serverless printing alternatives.'
     },
     {
       year: '2024',
-      title: '500+ Clients Served',
-      description: 'Reached milestone of serving over 500 Iowa organizations with print solutions.'
+      title: '1000+ Clients Served',
+      description: 'Reached milestone of serving over 1000 Iowa businesses with office solutions.'
     }
   ]
 
@@ -76,9 +76,9 @@ const About = () => {
                 When you're ready to implement PaperCut, Uniflow, or PrinterLogic, connect directly with certified specialists at Infomax Office Systems.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Infomax Office Systems has been serving Iowa businesses since 2009, providing expert print management solutions 
-                and ongoing support. Our team holds certifications in all major print management platforms and understands the 
-                unique needs of Iowa organizations.
+                Infomax Office Systems has been serving Iowa businesses since 1958, providing expert office solutions including 
+                print management, copiers, and ongoing support. Our team holds certifications in all major print management 
+                platforms and understands the unique needs of Iowa organizations.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
