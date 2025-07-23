@@ -47,6 +47,7 @@ const Blog = () => {
       id: 'papercut-healthcare-iowa',
       title: 'PaperCut Healthcare Solutions for Iowa Medical Facilities',
       excerpt: 'HIPAA-compliant printing solutions for Iowa healthcare. Patient information security, audit trails, and compliance management.',
+      author: 'Dan Pearson',
       date: '2024-01-10',
       readTime: '12 min read',
       category: 'Healthcare',
@@ -57,6 +58,7 @@ const Blog = () => {
       id: 'hipaa-printing-iowa',
       title: 'HIPAA Compliant Printing for Iowa Healthcare Organizations',
       excerpt: 'Ensure HIPAA compliance with secure printing solutions. Document protection, access controls, and audit requirements.',
+      author: 'Dan Pearson',
       date: '2024-01-12',
       readTime: '10 min read',
       category: 'Healthcare',
@@ -67,6 +69,7 @@ const Blog = () => {
       id: 'uniflow-medical-iowa',
       title: 'Uniflow Medical Print Security for Iowa Healthcare',
       excerpt: 'Advanced medical document security with Uniflow. Patient data protection, secure workflows, and compliance automation.',
+      author: 'Dan Pearson',
       date: '2024-01-14',
       readTime: '11 min read',
       category: 'Healthcare',
@@ -77,6 +80,7 @@ const Blog = () => {
       id: 'papercut-education-iowa',
       title: 'PaperCut Education Solutions for Iowa Schools & Universities',
       excerpt: 'Student print management, FERPA compliance, and campus-wide cost control for Iowa educational institutions.',
+      author: 'Dan Pearson',
       date: '2024-01-16',
       readTime: '13 min read',
       category: 'Education',
@@ -87,71 +91,89 @@ const Blog = () => {
       id: 'school-district-iowa',
       title: 'Print Management for Iowa School Districts',
       excerpt: 'Comprehensive print management solutions for Iowa K-12 school districts. Student account management, teacher workflows, and administrative cost control.',
+      author: 'Dan Pearson',
       date: '2024-01-15',
       readTime: '8 min read',
       category: 'Education',
       image: '/api/placeholder/400/250',
-      slug: '/blog/school-district-iowa'
+      slug: 'school-district-iowa'
+    },
+    {
+      id: 'uniflow-university-iowa',
+      title: 'Uniflow University Solutions for Iowa Higher Education',
+      excerpt: 'Transform your Iowa university with Uniflow\'s advanced academic document workflows. FERPA compliance and administrative automation.',
+      author: 'Dan Pearson',
+      date: '2024-01-17',
+      readTime: '14 min read',
+      category: 'Education',
+      image: '/api/placeholder/400/250',
+      slug: 'uniflow-university-iowa'
     },
     {
       id: 'reduce-printing-costs-iowa',
       title: 'Reduce Printing Costs for Iowa Businesses',
       excerpt: 'Proven strategies to reduce printing costs by 30-50% for Iowa organizations. Cost tracking, policy enforcement, and optimization techniques.',
+      author: 'Dan Pearson',
       date: '2024-01-20',
       readTime: '12 min read',
       category: 'Cost Management',
       image: '/api/placeholder/400/250',
-      slug: '/blog/reduce-printing-costs-iowa'
+      slug: 'reduce-printing-costs-iowa'
     },
     {
       id: 'eliminate-print-servers-iowa',
       title: 'Eliminate Print Servers for Iowa Organizations',
       excerpt: 'Transform your printing infrastructure with PrinterLogic serverless solutions. Reduce IT costs by 60-80% and improve reliability.',
+      author: 'Dan Pearson',
       date: '2024-01-22',
       readTime: '10 min read',
       category: 'Technology',
       image: '/api/placeholder/400/250',
-      slug: '/blog/eliminate-print-servers-iowa'
+      slug: 'eliminate-print-servers-iowa'
     },
     {
       id: 'secure-print-release-iowa',
       title: 'Secure Print Release Solutions for Iowa',
       excerpt: 'Protect sensitive documents with secure print release. Authentication methods, compliance benefits, and industry applications.',
+      author: 'Dan Pearson',
       date: '2024-01-25',
       readTime: '11 min read',
       category: 'Security',
       image: '/api/placeholder/400/250',
-      slug: '/blog/secure-print-release-iowa'
+      slug: 'secure-print-release-iowa'
     },
     {
       id: 'papercut-cost-reduction-iowa',
       title: 'PaperCut Cost Reduction for Iowa Organizations',
       excerpt: 'Reduce printing expenses by 40-60% with PaperCut cost management features. Track usage, enforce policies, and optimize print budgets.',
+      author: 'Dan Pearson',
       date: '2024-01-18',
       readTime: '9 min read',
       category: 'Cost Management',
       image: '/api/placeholder/400/250',
-      slug: '/blog/papercut-cost-reduction-iowa'
+      slug: 'papercut-cost-reduction-iowa'
     },
     {
       id: 'print-security-software-des-moines',
       title: 'Print Security Software Solutions in Des Moines',
       excerpt: 'Comprehensive print security software for Des Moines businesses. Document protection, access control, and compliance management.',
+      author: 'Dan Pearson',
       date: '2024-01-20',
       readTime: '10 min read',
       category: 'Security',
       image: '/api/placeholder/400/250',
-      slug: '/blog/print-security-software-des-moines'
+      slug: 'print-security-software-des-moines'
     },
     {
       id: 'document-security-printing-cedar-rapids',
       title: 'Document Security Printing Solutions for Cedar Rapids',
       excerpt: 'Secure document printing for Cedar Rapids organizations. Protect confidential information with advanced security features.',
+      author: 'Dan Pearson',
       date: '2024-01-22',
       readTime: '8 min read',
       category: 'Security',
       image: '/api/placeholder/400/250',
-      slug: '/blog/document-security-printing-cedar-rapids'
+      slug: 'document-security-printing-cedar-rapids'
     }
   ]
 
