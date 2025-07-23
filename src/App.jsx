@@ -7,6 +7,7 @@ import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Resources from './pages/Resources'
+import Tools from './pages/Tools'
 import PaperCutImplementationGuide from './pages/resources/PaperCutImplementationGuide'
 import PaperCutCostReduction from './pages/resources/PaperCutCostReduction'
 import PaperCutMobilePrinting from './pages/resources/PaperCutMobilePrinting'
@@ -36,9 +37,11 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/tools" element={<Tools />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/resources" element={<Resources />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/resources/papercut-implementation-guide" element={<PaperCutImplementationGuide />} />
             <Route path="/resources/papercut-cost-reduction" element={<PaperCutCostReduction />} />
             <Route path="/resources/papercut-mobile-printing" element={<PaperCutMobilePrinting />} />
@@ -55,7 +58,6 @@ const App = () => {
             <Route path="/resources/printerlogic-serverless-printing" element={<PrinterLogicServerlessPrinting />} />
             <Route path="/resources/printerlogic-self-service-installation" element={<PrinterLogicSelfServiceInstallation />} />
             <Route path="/resources/printerlogic-secure-release-printing" element={<PrinterLogicSecureReleasePrinting />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/services/papercut" element={<PaperCutService />} />
             <Route path="/services/uniflow" element={<UniflowService />} />
           </Routes>
