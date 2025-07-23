@@ -82,6 +82,36 @@ const Blog = () => {
       category: 'Security',
       image: '/api/placeholder/400/250',
       slug: '/blog/secure-print-release-iowa'
+    },
+    {
+      id: 'papercut-cost-reduction-iowa',
+      title: 'PaperCut Cost Reduction for Iowa Organizations',
+      excerpt: 'Reduce printing expenses by 40-60% with PaperCut cost management features. Track usage, enforce policies, and optimize print budgets.',
+      date: '2024-01-18',
+      readTime: '9 min read',
+      category: 'Cost Management',
+      image: '/api/placeholder/400/250',
+      slug: '/blog/papercut-cost-reduction-iowa'
+    },
+    {
+      id: 'print-security-software-des-moines',
+      title: 'Print Security Software Solutions in Des Moines',
+      excerpt: 'Comprehensive print security software for Des Moines businesses. Document protection, access control, and compliance management.',
+      date: '2024-01-20',
+      readTime: '10 min read',
+      category: 'Security',
+      image: '/api/placeholder/400/250',
+      slug: '/blog/print-security-software-des-moines'
+    },
+    {
+      id: 'document-security-printing-cedar-rapids',
+      title: 'Document Security Printing Solutions for Cedar Rapids',
+      excerpt: 'Secure document printing for Cedar Rapids organizations. Protect confidential information with advanced security features.',
+      date: '2024-01-22',
+      readTime: '8 min read',
+      category: 'Security',
+      image: '/api/placeholder/400/250',
+      slug: '/blog/document-security-printing-cedar-rapids'
     }
   ]
 

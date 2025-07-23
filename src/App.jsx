@@ -33,6 +33,9 @@ import SchoolDistrictIowa from './pages/blog/SchoolDistrictIowa'
 import ReducePrintingCostsIowa from './pages/blog/ReducePrintingCostsIowa'
 import EliminatePrintServersIowa from './pages/blog/EliminatePrintServersIowa'
 import SecurePrintReleaseIowa from './pages/blog/SecurePrintReleaseIowa'
+import PaperCutCostReductionIowa from './pages/blog/PaperCutCostReductionIowa'
+import PrintSecuritySoftwareDesMoines from './pages/blog/PrintSecuritySoftwareDesMoines'
+import DocumentSecurityPrintingCedarRapids from './pages/blog/DocumentSecurityPrintingCedarRapids'
 
 const App = () => {
   return (
@@ -72,6 +75,9 @@ const App = () => {
             <Route path="/blog/reduce-printing-costs-iowa" element={<ReducePrintingCostsIowa />} />
             <Route path="/blog/eliminate-print-servers-iowa" element={<EliminatePrintServersIowa />} />
             <Route path="/blog/secure-print-release-iowa" element={<SecurePrintReleaseIowa />} />
+          <Route path="/blog/papercut-cost-reduction-iowa" element={<PaperCutCostReductionIowa />} />
+          <Route path="/blog/print-security-software-des-moines" element={<PrintSecuritySoftwareDesMoines />} />
+          <Route path="/blog/document-security-printing-cedar-rapids" element={<DocumentSecurityPrintingCedarRapids />} />
           </Routes>
         </main>
         <Footer />

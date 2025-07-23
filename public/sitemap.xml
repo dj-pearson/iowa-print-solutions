@@ -114,6 +114,27 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-cost-reduction-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/print-security-software-des-moines</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/document-security-printing-cedar-rapids</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Service Pages -->
   <url>
