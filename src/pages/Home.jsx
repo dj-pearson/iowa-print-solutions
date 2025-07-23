@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   const stats = [
     { icon: Users, number: 'Hundreds', label: 'Iowa Clients via Infomax' },
-    { icon: Award, number: '15+', label: 'Years Infomax Experience' },
+    { icon: Award, number: '15+', label: 'Years Infomax Software Solutions' },
     { icon: Settings, number: '3', label: 'Major Platforms' },
     { icon: Shield, number: '100%', label: 'Security Focused' }
   ]

@@ -159,7 +159,7 @@ const About = () => {
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-gray-900">15+</div>
-                      <div className="text-sm text-gray-600">Years Infomax Experience</div>
+                      <div className="text-sm text-gray-600">Years Infomax Software Solutions</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
