@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, User, Clock, ArrowRight, Search, Tag } from 'lucide-react'
@@ -43,6 +42,46 @@ const Blog = () => {
       readTime: '6 min read',
       image: '/blog/printerlogic-isu-case-study.jpg',
       slug: 'printerlogic-cloud-migration-iowa-state-university'
+    },
+    {
+      id: 'school-district-iowa',
+      title: 'Print Management for Iowa School Districts',
+      excerpt: 'Comprehensive print management solutions for Iowa K-12 school districts. Student account management, teacher workflows, and administrative cost control.',
+      date: '2024-01-15',
+      readTime: '8 min read',
+      category: 'Education',
+      image: '/api/placeholder/400/250',
+      slug: '/blog/school-district-iowa'
+    },
+    {
+      id: 'reduce-printing-costs-iowa',
+      title: 'Reduce Printing Costs for Iowa Businesses',
+      excerpt: 'Proven strategies to reduce printing costs by 30-50% for Iowa organizations. Cost tracking, policy enforcement, and optimization techniques.',
+      date: '2024-01-20',
+      readTime: '12 min read',
+      category: 'Cost Management',
+      image: '/api/placeholder/400/250',
+      slug: '/blog/reduce-printing-costs-iowa'
+    },
+    {
+      id: 'eliminate-print-servers-iowa',
+      title: 'Eliminate Print Servers for Iowa Organizations',
+      excerpt: 'Transform your printing infrastructure with PrinterLogic serverless solutions. Reduce IT costs by 60-80% and improve reliability.',
+      date: '2024-01-22',
+      readTime: '10 min read',
+      category: 'Technology',
+      image: '/api/placeholder/400/250',
+      slug: '/blog/eliminate-print-servers-iowa'
+    },
+    {
+      id: 'secure-print-release-iowa',
+      title: 'Secure Print Release Solutions for Iowa',
+      excerpt: 'Protect sensitive documents with secure print release. Authentication methods, compliance benefits, and industry applications.',
+      date: '2024-01-25',
+      readTime: '11 min read',
+      category: 'Security',
+      image: '/api/placeholder/400/250',
+      slug: '/blog/secure-print-release-iowa'
     }
   ]
 

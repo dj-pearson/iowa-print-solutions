@@ -51,6 +51,70 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-healthcare-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/hipaa-printing-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/uniflow-medical-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-education-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/uniflow-university-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/school-district-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/reduce-printing-costs-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/eliminate-print-servers-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/secure-print-release-iowa</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Service Pages -->
   <url>
     <loc>https://iowaprintsolutions.com/services/papercut</loc>

@@ -28,6 +28,11 @@ import PrinterLogicServerlessPrinting from './pages/resources/PrinterLogicServer
 import PrinterLogicSelfServiceInstallation from './pages/resources/PrinterLogicSelfServiceInstallation'
 import PrinterLogicSecureReleasePrinting from './pages/resources/PrinterLogicSecureReleasePrinting'
 import Blog from './pages/Blog'
+import UniflowUniversityIowa from './pages/blog/UniflowUniversityIowa'
+import SchoolDistrictIowa from './pages/blog/SchoolDistrictIowa'
+import ReducePrintingCostsIowa from './pages/blog/ReducePrintingCostsIowa'
+import EliminatePrintServersIowa from './pages/blog/EliminatePrintServersIowa'
+import SecurePrintReleaseIowa from './pages/blog/SecurePrintReleaseIowa'
 
 const App = () => {
   return (
@@ -62,6 +67,11 @@ const App = () => {
             <Route path="/resources/printerlogic-secure-release-printing" element={<PrinterLogicSecureReleasePrinting />} />
             <Route path="/services/papercut" element={<PaperCutService />} />
             <Route path="/services/uniflow" element={<UniflowService />} />
+            <Route path="/blog/uniflow-university-iowa" element={<UniflowUniversityIowa />} />
+            <Route path="/blog/school-district-iowa" element={<SchoolDistrictIowa />} />
+            <Route path="/blog/reduce-printing-costs-iowa" element={<ReducePrintingCostsIowa />} />
+            <Route path="/blog/eliminate-print-servers-iowa" element={<EliminatePrintServersIowa />} />
+            <Route path="/blog/secure-print-release-iowa" element={<SecurePrintReleaseIowa />} />
           </Routes>
         </main>
         <Footer />
