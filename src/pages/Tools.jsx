@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Calculator, DollarSign, Clock, BarChart3, Printer, Settings, Target, TrendingDown, HelpCircle, CheckCircle, ArrowRight } from 'lucide-react'
 import SEO from '../components/SEO'
+import Breadcrumbs from '../components/Breadcrumbs'
+import ContentRating from '../components/ContentRating'
+import FAQSchema from '../components/FAQSchema'
 
 const Tools = () => {
   const [activeCalculator, setActiveCalculator] = useState('cost')
@@ -235,6 +238,9 @@ const Tools = () => {
           ]
         }}
       />
+
+      <Breadcrumbs />
+      <FAQSchema faqs={faqs} />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
@@ -825,6 +831,8 @@ const Tools = () => {
           </div>
         </div>
       </section>
+
+      <ContentRating contentId="tools-page" title="Print Management Calculators" />
 
       {/* CTA Section */}
       <section className="bg-blue-50 py-16">
