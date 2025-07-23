@@ -28,6 +28,10 @@ import PrinterLogicServerlessPrinting from './pages/resources/PrinterLogicServer
 import PrinterLogicSelfServiceInstallation from './pages/resources/PrinterLogicSelfServiceInstallation'
 import PrinterLogicSecureReleasePrinting from './pages/resources/PrinterLogicSecureReleasePrinting'
 import Blog from './pages/Blog'
+import PaperCutHealthcareIowa from './pages/blog/PaperCutHealthcareIowa'
+import HIPAAPrintingIowa from './pages/blog/HIPAAPrintingIowa'
+import UniflowMedicalIowa from './pages/blog/UniflowMedicalIowa'
+import PaperCutEducationIowa from './pages/blog/PaperCutEducationIowa'
 import UniflowUniversityIowa from './pages/blog/UniflowUniversityIowa'
 import SchoolDistrictIowa from './pages/blog/SchoolDistrictIowa'
 import ReducePrintingCostsIowa from './pages/blog/ReducePrintingCostsIowa'
@@ -70,14 +74,18 @@ const App = () => {
             <Route path="/resources/printerlogic-secure-release-printing" element={<PrinterLogicSecureReleasePrinting />} />
             <Route path="/services/papercut" element={<PaperCutService />} />
             <Route path="/services/uniflow" element={<UniflowService />} />
+            <Route path="/blog/papercut-healthcare-iowa" element={<PaperCutHealthcareIowa />} />
+            <Route path="/blog/hipaa-printing-iowa" element={<HIPAAPrintingIowa />} />
+            <Route path="/blog/uniflow-medical-iowa" element={<UniflowMedicalIowa />} />
+            <Route path="/blog/papercut-education-iowa" element={<PaperCutEducationIowa />} />
             <Route path="/blog/uniflow-university-iowa" element={<UniflowUniversityIowa />} />
             <Route path="/blog/school-district-iowa" element={<SchoolDistrictIowa />} />
             <Route path="/blog/reduce-printing-costs-iowa" element={<ReducePrintingCostsIowa />} />
             <Route path="/blog/eliminate-print-servers-iowa" element={<EliminatePrintServersIowa />} />
             <Route path="/blog/secure-print-release-iowa" element={<SecurePrintReleaseIowa />} />
-          <Route path="/blog/papercut-cost-reduction-iowa" element={<PaperCutCostReductionIowa />} />
-          <Route path="/blog/print-security-software-des-moines" element={<PrintSecuritySoftwareDesMoines />} />
-          <Route path="/blog/document-security-printing-cedar-rapids" element={<DocumentSecurityPrintingCedarRapids />} />
+            <Route path="/blog/papercut-cost-reduction-iowa" element={<PaperCutCostReductionIowa />} />
+            <Route path="/blog/print-security-software-des-moines" element={<PrintSecuritySoftwareDesMoines />} />
+            <Route path="/blog/document-security-printing-cedar-rapids" element={<DocumentSecurityPrintingCedarRapids />} />
           </Routes>
         </main>
         <Footer />

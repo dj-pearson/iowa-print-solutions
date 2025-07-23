@@ -44,6 +44,46 @@ const Blog = () => {
       slug: 'printerlogic-cloud-migration-iowa-state-university'
     },
     {
+      id: 'papercut-healthcare-iowa',
+      title: 'PaperCut Healthcare Solutions for Iowa Medical Facilities',
+      excerpt: 'HIPAA-compliant printing solutions for Iowa healthcare. Patient information security, audit trails, and compliance management.',
+      date: '2024-01-10',
+      readTime: '12 min read',
+      category: 'Healthcare',
+      image: '/api/placeholder/400/250',
+      slug: 'papercut-healthcare-iowa'
+    },
+    {
+      id: 'hipaa-printing-iowa',
+      title: 'HIPAA Compliant Printing for Iowa Healthcare Organizations',
+      excerpt: 'Ensure HIPAA compliance with secure printing solutions. Document protection, access controls, and audit requirements.',
+      date: '2024-01-12',
+      readTime: '10 min read',
+      category: 'Healthcare',
+      image: '/api/placeholder/400/250',
+      slug: 'hipaa-printing-iowa'
+    },
+    {
+      id: 'uniflow-medical-iowa',
+      title: 'Uniflow Medical Print Security for Iowa Healthcare',
+      excerpt: 'Advanced medical document security with Uniflow. Patient data protection, secure workflows, and compliance automation.',
+      date: '2024-01-14',
+      readTime: '11 min read',
+      category: 'Healthcare',
+      image: '/api/placeholder/400/250',
+      slug: 'uniflow-medical-iowa'
+    },
+    {
+      id: 'papercut-education-iowa',
+      title: 'PaperCut Education Solutions for Iowa Schools & Universities',
+      excerpt: 'Student print management, FERPA compliance, and campus-wide cost control for Iowa educational institutions.',
+      date: '2024-01-16',
+      readTime: '13 min read',
+      category: 'Education',
+      image: '/api/placeholder/400/250',
+      slug: 'papercut-education-iowa'
+    },
+    {
       id: 'school-district-iowa',
       title: 'Print Management for Iowa School Districts',
       excerpt: 'Comprehensive print management solutions for Iowa K-12 school districts. Student account management, teacher workflows, and administrative cost control.',
@@ -115,7 +155,7 @@ const Blog = () => {
     }
   ]
 
-  const categories = ['all', 'PaperCut', 'Uniflow', 'PrinterLogic', 'Security', 'Implementation']
+  const categories = ['all', 'PaperCut', 'Uniflow', 'PrinterLogic', 'Security', 'Healthcare', 'Education', 'Cost Management', 'Technology']
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -234,7 +274,7 @@ const Blog = () => {
                     </span>
                   </div>
                   <Link
-                    to={`/blog/${post.slug}`}
+                    to={post.slug.startsWith('/') ? post.slug : `/blog/${post.slug}`}
                     className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
                   >
                     Read More
