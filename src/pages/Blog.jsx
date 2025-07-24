@@ -174,6 +174,61 @@ const Blog = () => {
       category: 'Security',
       image: '/api/placeholder/400/250',
       slug: 'document-security-printing-cedar-rapids'
+    },
+    {
+      id: 'managed-print-services-iowa',
+      title: 'Managed Print Services for Iowa Organizations',
+      excerpt: 'Comprehensive managed print services for Iowa businesses. Device management, cost control, security enhancement, and analytics for optimal print operations.',
+      author: 'Dan Pearson',
+      date: '2024-01-28',
+      readTime: '15 min read',
+      category: 'Managed Services',
+      image: '/api/placeholder/400/250',
+      slug: 'managed-print-services-iowa'
+    },
+    {
+      id: 'document-management-iowa',
+      title: 'Document Management Solutions for Iowa Organizations',
+      excerpt: 'Transform your Iowa organization with digital document management solutions. Eliminate paper chaos, improve security, and streamline workflows.',
+      author: 'Dan Pearson',
+      date: '2024-01-30',
+      readTime: '14 min read',
+      category: 'Document Management',
+      image: '/api/placeholder/400/250',
+      slug: 'document-management-iowa'
+    },
+    {
+      id: 'print-management-des-moines',
+      title: 'Professional Print Management for Des Moines',
+      excerpt: 'Expert print management services for Des Moines businesses. PaperCut, Uniflow & PrinterLogic implementation serving Iowa\'s capital city since 1958.',
+      author: 'Dan Pearson',
+      date: '2024-02-01',
+      readTime: '13 min read',
+      category: 'Local Services',
+      image: '/api/placeholder/400/250',
+      slug: 'print-management-des-moines'
+    },
+    {
+      id: 'papercut-vs-alternatives-iowa',
+      title: 'PaperCut vs Alternatives: Iowa Print Management Comparison',
+      excerpt: 'Comprehensive comparison of PaperCut versus other leading print management solutions. Features, costs, and implementation guidance for Iowa organizations.',
+      author: 'Dan Pearson',
+      date: '2024-02-03',
+      readTime: '16 min read',
+      category: 'Comparison',
+      image: '/api/placeholder/400/250',
+      slug: 'papercut-vs-alternatives-iowa'
+    },
+    {
+      id: 'print-management-software-comparison-iowa',
+      title: 'Print Management Software Comparison for Iowa',
+      excerpt: 'Complete evaluation of leading print management software solutions. Expert guidance to help Iowa organizations make informed technology decisions.',
+      author: 'Dan Pearson',
+      date: '2024-02-05',
+      readTime: '18 min read',
+      category: 'Software Comparison',
+      image: '/api/placeholder/400/250',
+      slug: 'print-management-software-comparison-iowa'
     }
   ]
 

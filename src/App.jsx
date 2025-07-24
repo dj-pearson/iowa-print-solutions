@@ -40,6 +40,11 @@ import SecurePrintReleaseIowa from './pages/blog/SecurePrintReleaseIowa'
 import PaperCutCostReductionIowa from './pages/blog/PaperCutCostReductionIowa'
 import PrintSecuritySoftwareDesMoines from './pages/blog/PrintSecuritySoftwareDesMoines'
 import DocumentSecurityPrintingCedarRapids from './pages/blog/DocumentSecurityPrintingCedarRapids'
+import ManagedPrintServicesIowa from './pages/blog/ManagedPrintServicesIowa'
+import DocumentManagementIowa from './pages/blog/DocumentManagementIowa'
+import PrintManagementDesMoines from './pages/blog/PrintManagementDesMoines'
+import PaperCutVsAlternativesIowa from './pages/blog/PaperCutVsAlternativesIowa'
+import PrintManagementSoftwareComparisonIowa from './pages/blog/PrintManagementSoftwareComparisonIowa'
 
 const App = () => {
   return (
@@ -86,6 +91,11 @@ const App = () => {
             <Route path="/blog/papercut-cost-reduction-iowa" element={<PaperCutCostReductionIowa />} />
             <Route path="/blog/print-security-software-des-moines" element={<PrintSecuritySoftwareDesMoines />} />
             <Route path="/blog/document-security-printing-cedar-rapids" element={<DocumentSecurityPrintingCedarRapids />} />
+            <Route path="/blog/managed-print-services-iowa" element={<ManagedPrintServicesIowa />} />
+            <Route path="/blog/document-management-iowa" element={<DocumentManagementIowa />} />
+            <Route path="/blog/print-management-des-moines" element={<PrintManagementDesMoines />} />
+            <Route path="/blog/papercut-vs-alternatives-iowa" element={<PaperCutVsAlternativesIowa />} />
+            <Route path="/blog/print-management-software-comparison-iowa" element={<PrintManagementSoftwareComparisonIowa />} />
           </Routes>
         </main>
         <Footer />
