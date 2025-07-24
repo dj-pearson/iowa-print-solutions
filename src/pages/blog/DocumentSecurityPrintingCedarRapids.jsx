@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FileShield, Lock, Eye, CheckCircle, Building, Users, Shield, AlertTriangle } from 'lucide-react'
+import { FileText, Lock, Eye, CheckCircle, Building, Users, Shield, AlertTriangle } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 
@@ -36,7 +36,7 @@ const DocumentSecurityPrintingCedarRapids = () => {
       ]
     },
     {
-      icon: FileShield,
+      icon: FileText,
       title: 'Content Protection',
       description: 'Advanced encryption and watermarking protect document integrity.',
       features: [
@@ -126,7 +126,7 @@ const DocumentSecurityPrintingCedarRapids = () => {
             >
               <div className="flex justify-center mb-6">
                 <div className="bg-white/20 p-4 rounded-full">
-                  <FileShield className="h-12 w-12" />
+                  <FileText className="h-12 w-12" />
                 </div>
               </div>
               <h1 className="text-5xl font-bold mb-6">
