@@ -91,14 +91,13 @@ const About = () => {
   return (
     <>
       <SEO 
-        title="About Iowa Print Solutions & Infomax Office Systems - Serving Iowa Since 1958"
-        description="Learn about Iowa Print Solutions and Infomax Office Systems. Serving Iowa businesses since 1958 with expert print management, PaperCut, Uniflow, and PrinterLogic solutions. 1000+ clients served statewide."
-        keywords="Infomax Office Systems Iowa, Iowa print management company, PaperCut certified partner Iowa, Uniflow authorized reseller Iowa, PrinterLogic specialist Iowa, Des Moines print solutions, Cedar Rapids office systems, Iowa print services history, managed print services Iowa since 1958"
-        canonicalUrl="https://iowa-print-solutions.pages.dev/about"
+        title="About Iowa Print Solutions | Infomax Office Systems - 65+ Years Serving Iowa"
+        description="Since 1958, Infomax Office Systems has been Iowa's trusted print management partner. Learn about our 65+ year history serving Des Moines, Cedar Rapids, Iowa City, and all of Iowa with PaperCut, Uniflow, and PrinterLogic solutions."
+        keywords="About Infomax Office Systems, Iowa print management history, Iowa office technology since 1958, Des Moines print solutions, Cedar Rapids document management, Iowa business services history"
+        canonicalUrl="https://iowaprintsolutions.com/about"
         schemaType="AboutPage"
-        additionalSchema={seoSchema}
       />
-      
+
       <div className="min-h-screen bg-gray-50">
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

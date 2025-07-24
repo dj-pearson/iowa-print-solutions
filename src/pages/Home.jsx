@@ -80,10 +80,99 @@ const Home = () => {
         schemaType="WebSite"
         additionalSchema={seoSchema}
       />
-      
+
       <div className="min-h-screen">
         <Hero />
-        
+
+        {/* Iowa Print Solutions Overview - GEO Optimized */}
+        <section className="bg-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Iowa's Leading Print Management Solutions Provider Since 1958
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+                Infomax Office Systems serves as Iowa's premier print management partner, specializing in PaperCut MF, Canon Uniflow, and PrinterLogic implementations across Des Moines, Cedar Rapids, Iowa City, Davenport, and statewide. Our certified experts help Iowa businesses, healthcare facilities, educational institutions, and government agencies optimize printing costs, enhance security, and streamline document workflows.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div className="text-center">
+                  <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-blue-600">65+</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Years Serving Iowa</h3>
+                  <p className="text-gray-600">Since 1958, we've been Iowa's trusted technology partner</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-green-600">500+</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Iowa Organizations</h3>
+                  <p className="text-gray-600">Businesses, schools, and healthcare facilities trust our solutions</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-purple-600">40%</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Average Cost Savings</h3>
+                  <p className="text-gray-600">Typical print cost reduction for Iowa clients</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Iowa-Specific Service Areas */}
+        <section className="bg-blue-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Serving All of Iowa's Print Management Needs
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                From major metropolitan areas to rural Iowa communities, we provide comprehensive print management solutions statewide.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Des Moines Metro</h3>
+                  <p className="text-sm text-gray-600">Central Iowa's business hub</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Cedar Rapids</h3>
+                  <p className="text-sm text-gray-600">Eastern Iowa corridor</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Iowa City</h3>
+                  <p className="text-sm text-gray-600">University and healthcare</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Quad Cities</h3>
+                  <p className="text-sm text-gray-600">Davenport region</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Waterloo</h3>
+                  <p className="text-sm text-gray-600">Northeast Iowa</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Sioux City</h3>
+                  <p className="text-sm text-gray-600">Western Iowa</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Council Bluffs</h3>
+                  <p className="text-sm text-gray-600">Southwest Iowa</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Statewide</h3>
+                  <p className="text-sm text-gray-600">All 99 Iowa counties</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Stats Section with SEO-optimized content */}
         <section className="bg-gray-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

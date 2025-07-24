@@ -9,17 +9,71 @@ const LocalBusinessSchema = () => {
     'name': 'Infomax Office Systems',
     'image': 'https://iowa-print-solutions.pages.dev/og-image.jpg',
     'description': 'Iowa\'s leading print management solutions provider specializing in PaperCut, Uniflow, and PrinterLogic implementations since 1958.',
-    'address': {
-      '@type': 'PostalAddress',
-      'addressLocality': 'Des Moines',
-      'addressRegion': 'IA',
-      'addressCountry': 'US'
-    },
+    'address': [
+      {
+        '@type': 'PostalAddress',
+        'streetAddress': '5619 NE 14th St',
+        'addressLocality': 'Des Moines',
+        'addressRegion': 'IA',
+        'postalCode': '50313',
+        'addressCountry': 'US'
+      },
+      {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Cedar Rapids',
+        'addressRegion': 'IA',
+        'addressCountry': 'US'
+      },
+      {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Iowa City',
+        'addressRegion': 'IA',
+        'addressCountry': 'US'
+      }
+    ],
     'geo': {
       '@type': 'GeoCoordinates',
       'latitude': 41.5868,
       'longitude': -93.6250
     },
+    'areaServed': [
+      {
+        '@type': 'State',
+        'name': 'Iowa'
+      },
+      {
+        '@type': 'City',
+        'name': 'Des Moines',
+        'containedInPlace': {
+          '@type': 'State',
+          'name': 'Iowa'
+        }
+      },
+      {
+        '@type': 'City',
+        'name': 'Cedar Rapids',
+        'containedInPlace': {
+          '@type': 'State',
+          'name': 'Iowa'
+        }
+      },
+      {
+        '@type': 'City',
+        'name': 'Iowa City',
+        'containedInPlace': {
+          '@type': 'State',
+          'name': 'Iowa'
+        }
+      },
+      {
+        '@type': 'City',
+        'name': 'Davenport',
+        'containedInPlace': {
+          '@type': 'State',
+          'name': 'Iowa'
+        }
+      }
+    ],
     'url': 'https://iowa-print-solutions.pages.dev',
     'telephone': '+15152372352',
     'priceRange': '$$',
