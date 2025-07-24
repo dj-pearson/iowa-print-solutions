@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Printer } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const Navbar = () => {
@@ -22,7 +22,11 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <Printer className="h-8 w-8 text-blue-600" />
+              <img 
+                src="/IPSLogo.png" 
+                alt="Iowa Print Solutions Logo" 
+                className="h-8 w-8 object-contain"
+              />
               <span className="font-bold text-xl text-gray-900">Iowa Print Solutions</span>
             </Link>
           </div>

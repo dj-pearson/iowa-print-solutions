@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle, Printer } from 'lucide-react'
+import { ArrowRight, CheckCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
@@ -13,9 +13,18 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-5xl font-bold mb-6">
-              Iowa Print Solutions Resources
-            </h1>
+            <div className="flex items-center mb-6">
+              <img 
+                src="/IPSLogo.png" 
+                alt="Iowa Print Solutions Logo" 
+                className="h-16 w-16 mr-4 object-contain"
+              />
+              <div>
+                <h1 className="text-5xl font-bold mb-2">
+                  Iowa Print Solutions Resources
+                </h1>
+              </div>
+            </div>
             <p className="text-xl mb-8 opacity-90">
               Comprehensive information about PaperCut, Uniflow, and PrinterLogic solutions for Iowa organizations. Connect with certified specialists at Infomax Office Systems for professional implementation and support.
             </p>
@@ -62,8 +71,12 @@ const Hero = () => {
           >
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
               <div className="flex items-center justify-center mb-6">
-                <div className="bg-white/20 p-4 rounded-full">
-                  <Printer className="h-16 w-16" />
+                <div className="bg-white/20 p-6 rounded-full">
+                  <img 
+                    src="/IPSLogo.png" 
+                    alt="Iowa Print Solutions Logo" 
+                    className="h-20 w-20 object-contain"
+                  />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-center mb-4">
