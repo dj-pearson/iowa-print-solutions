@@ -11,39 +11,6 @@ const Blog = () => {
 
   const blogPosts = [
     {
-      id: 1,
-      title: 'PaperCut NG 22.1 New Features for Iowa Healthcare Organizations',
-      excerpt: 'Discover the latest PaperCut NG features that enhance security and compliance for Iowa healthcare facilities.',
-      author: 'Dan Pearson',
-      date: '2025-01-15',
-      category: 'PaperCut',
-      readTime: '5 min read',
-      image: '/blog/papercut-ng-features.jpg',
-      slug: 'papercut-ng-22-1-features-iowa-healthcare'
-    },
-    {
-      id: 2,
-      title: 'Uniflow 2024 Updates: Enhanced Security for Iowa Financial Institutions',
-      excerpt: 'Learn about new Uniflow security features that help Iowa banks and credit unions maintain compliance.',
-      author: 'Dan Pearson',
-      date: '2025-01-10',
-      category: 'Uniflow',
-      readTime: '4 min read',
-      image: '/blog/uniflow-security-updates.jpg',
-      slug: 'uniflow-2024-security-updates-iowa-financial'
-    },
-    {
-      id: 3,
-      title: 'PrinterLogic Cloud Migration Success Story: Iowa State University',
-      excerpt: 'How Iowa State University successfully migrated to PrinterLogic cloud printing infrastructure.',
-      author: 'Dan Pearson',
-      date: '2025-01-05',
-      category: 'PrinterLogic',
-      readTime: '6 min read',
-      image: '/blog/printerlogic-isu-case-study.jpg',
-      slug: 'printerlogic-cloud-migration-iowa-state-university'
-    },
-    {
       id: 'papercut-healthcare-iowa',
       title: 'PaperCut Healthcare Solutions for Iowa Medical Facilities',
       excerpt: 'HIPAA-compliant printing solutions for Iowa healthcare. Patient information security, audit trails, and compliance management.',
@@ -232,7 +199,7 @@ const Blog = () => {
     }
   ]
 
-  const categories = ['all', 'PaperCut', 'Uniflow', 'PrinterLogic', 'Security', 'Healthcare', 'Education', 'Cost Management', 'Technology']
+  const categories = ['all', 'Healthcare', 'Education', 'Cost Management', 'Technology', 'Security', 'Managed Services', 'Document Management', 'Local Services', 'Comparison', 'Software Comparison']
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
