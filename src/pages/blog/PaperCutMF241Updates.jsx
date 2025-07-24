@@ -1,3 +1,4 @@
+import React from 'react'
 import { motion } from 'framer-motion'
 import { AlertCircle, Shield, Server, CheckCircle, ArrowRight, DollarSign, Users, Globe } from 'lucide-react'
 import { Link } from 'react-router-dom'
