@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +11,8 @@ const Contact = () => {
     service: '',
     message: ''
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // idle, submitting, success, error
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleChange = (e) => {
     setFormData({
@@ -20,10 +21,48 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    setStatus('submitting')
+
+    try {
+      const response = await fetch('https://formspree.io/f/mwpqlzdw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message
+        })
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          message: ''
+        })
+        // Reset success message after 5 seconds
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Failed to send message')
+      }
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(error.message || 'Failed to send message. Please try again.')
+      // Reset error message after 5 seconds
+      setTimeout(() => setStatus('idle'), 5000)
+    }
   }
 
   const services = [
@@ -94,6 +133,56 @@ const Contact = () => {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot field for spam protection - hidden from users */}
+                <input
+                  type="text"
+                  name="_gotcha"
+                  style={{ display: 'none' }}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+
+                {/* Success Message */}
+                {status === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-green-50 border border-green-200 rounded-md p-4 mb-6"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <div>
+                        <h3 className="text-sm font-medium text-green-800">
+                          Message sent successfully!
+                        </h3>
+                        <p className="text-sm text-green-700 mt-1">
+                          Thank you for contacting us. We'll get back to you within 24 hours.
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Error Message */}
+                {status === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-red-50 border border-red-200 rounded-md p-4 mb-6"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <AlertCircle className="h-5 w-5 text-red-500" />
+                      <div>
+                        <h3 className="text-sm font-medium text-red-800">
+                          Failed to send message
+                        </h3>
+                        <p className="text-sm text-red-700 mt-1">
+                          {errorMessage || 'Please try again or contact us directly.'}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -194,10 +283,21 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  disabled={submitted}
-                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-green-600 text-white py-3 px-6 rounded-md font-medium transition-colors flex items-center justify-center space-x-2"
+                  disabled={status === 'submitting'}
+                  className={`w-full py-3 px-6 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 ${
+                    status === 'submitting'
+                      ? 'bg-blue-400 cursor-not-allowed'
+                      : status === 'success'
+                      ? 'bg-green-600 hover:bg-green-700'
+                      : 'bg-blue-600 hover:bg-blue-700'
+                  } text-white`}
                 >
-                  {submitted ? (
+                  {status === 'submitting' ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : status === 'success' ? (
                     <>
                       <CheckCircle className="h-5 w-5" />
                       <span>Message Sent!</span>
