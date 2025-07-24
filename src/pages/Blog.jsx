@@ -11,6 +11,17 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      id: 'uniflow-2025-updates',
+      title: 'uniFLOW 2025 Updates: Enhanced Security and Modern Print Architecture',
+      excerpt: 'Canon uniFLOW 2025 brings Microsoft Modern Printing support, enhanced security, Sharp device integration, and zero trust environment capabilities for Iowa businesses.',
+      author: 'Dan Pearson',
+      date: '2025-07-24',
+      readTime: '14 min read',
+      category: 'Product Updates',
+      image: '/api/placeholder/400/250',
+      slug: 'uniflow-2025-updates'
+    },
+    {
       id: 'papercut-mf-24-1-updates',
       title: 'PaperCut MF 24.1: What\'s New and What It Means for Your Business',
       excerpt: 'Major updates to PaperCut MF 24.1 introduce self-hosted document processing, new licensing models, and enhanced data residency options. Critical information for Iowa businesses planning upgrades.',

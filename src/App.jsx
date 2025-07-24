@@ -46,6 +46,7 @@ import PrintManagementDesMoines from './pages/blog/PrintManagementDesMoines'
 import PaperCutVsAlternativesIowa from './pages/blog/PaperCutVsAlternativesIowa'
 import PrintManagementSoftwareComparisonIowa from './pages/blog/PrintManagementSoftwareComparisonIowa'
 import PaperCutMF241Updates from './pages/blog/PaperCutMF241Updates'
+import Uniflow2025Updates from './pages/blog/Uniflow2025Updates'
 
 const App = () => {
   return (
@@ -98,6 +99,7 @@ const App = () => {
             <Route path="/blog/papercut-vs-alternatives-iowa" element={<PaperCutVsAlternativesIowa />} />
             <Route path="/blog/print-management-software-comparison-iowa" element={<PrintManagementSoftwareComparisonIowa />} />
             <Route path="/blog/papercut-mf-24-1-updates" element={<PaperCutMF241Updates />} />
+            <Route path="/blog/uniflow-2025-updates" element={<Uniflow2025Updates />} />
           </Routes>
         </main>
         <Footer />
