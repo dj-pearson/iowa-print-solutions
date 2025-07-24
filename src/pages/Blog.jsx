@@ -11,6 +11,17 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      id: 'papercut-mf-24-1-updates',
+      title: 'PaperCut MF 24.1: What\'s New and What It Means for Your Business',
+      excerpt: 'Major updates to PaperCut MF 24.1 introduce self-hosted document processing, new licensing models, and enhanced data residency options. Critical information for Iowa businesses planning upgrades.',
+      author: 'Dan Pearson',
+      date: '2025-07-24',
+      readTime: '15 min read',
+      category: 'Product Updates',
+      image: '/api/placeholder/400/250',
+      slug: 'papercut-mf-24-1-updates'
+    },
+    {
       id: 'papercut-healthcare-iowa',
       title: 'PaperCut Healthcare Solutions for Iowa Medical Facilities',
       excerpt: 'HIPAA-compliant printing solutions for Iowa healthcare. Patient information security, audit trails, and compliance management.',
@@ -199,7 +210,7 @@ const Blog = () => {
     }
   ]
 
-  const categories = ['all', 'Healthcare', 'Education', 'Cost Management', 'Technology', 'Security', 'Managed Services', 'Document Management', 'Local Services', 'Comparison', 'Software Comparison']
+  const categories = ['all', 'Product Updates', 'Healthcare', 'Education', 'Cost Management', 'Technology', 'Security', 'Managed Services', 'Document Management', 'Local Services', 'Comparison', 'Software Comparison']
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
