@@ -15,11 +15,11 @@ class ErrorBoundary extends React.Component {
     // Log error details for debugging
     console.error('ErrorBoundary caught an error:', error, errorInfo);
     console.error('Error stack:', error.stack);
-    console.error('Component stack:', errorInfo.componentStack);
+    console.error('Component stack:', errorInfo?.componentStack || 'No component stack available');
     
     this.setState({
       error: error,
-      errorInfo: errorInfo
+      errorInfo: errorInfo || { componentStack: 'No stack trace available' }
     });
 
     // You can also log the error to an error reporting service here
@@ -46,7 +46,7 @@ class ErrorBoundary extends React.Component {
                 <br />
                 <strong>Stack:</strong> {this.state.error && this.state.error.stack}
                 <br />
-                <strong>Component Stack:</strong> {this.state.errorInfo.componentStack}
+                <strong>Component Stack:</strong> {this.state.errorInfo?.componentStack || 'No stack available'}
               </div>
             </details>
             <button
