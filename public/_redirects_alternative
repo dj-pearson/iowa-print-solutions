@@ -1,0 +1,19 @@
+# Alternative _redirects file if Functions don't work
+# This version is more explicit about asset handling
+
+# Serve static assets directly - do not redirect
+/assets/index-*.css  /assets/index-*.css  200
+/assets/index-*.js   /assets/index-*.js   200
+/assets/vendor-*.js  /assets/vendor-*.js  200
+/assets/router-*.js  /assets/router-*.js  200
+/assets/*            /assets/*            200
+
+# Serve root files directly
+/robots.txt          /robots.txt          200
+/sitemap.xml         /sitemap.xml         200
+/favicon.ico         /favicon.ico         200
+/*.ico               /*.ico               200
+/*.png               /*.png               200
+
+# SPA fallback for all other routes
+/*                   /index.html          200

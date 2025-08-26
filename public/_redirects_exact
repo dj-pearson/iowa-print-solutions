@@ -1,0 +1,22 @@
+# Ultra-specific redirects for exact build assets
+# Based on current build output: index-Bb3hCfPB.js, index-Bv3NC5aP.css, etc.
+
+# Exact asset files from current build
+/assets/index-Bb3hCfPB.js     200
+/assets/index-Bv3NC5aP.css    200  
+/assets/vendor-CHq7GKcA.js    200
+/assets/router-GxgEne-k.js    200
+
+# Static files
+/IPSLogo-Icon.ico             200
+/IPSLogo.png                  200
+/robots.txt                   200
+/sitemap.xml                  200
+
+# Generic patterns for any other assets
+/assets/*                     200
+/*.ico                        200
+/*.png                        200
+
+# SPA fallback for all other routes
+/*                            /index.html   200
