@@ -13,7 +13,16 @@ const Navbar = () => {
     { name: 'Resources', path: '/resources' },
     { name: 'Tools', path: '/tools' },
     { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact', path: '/contact' },
+    { 
+      name: 'Iowa Locations', 
+      path: '/locations',
+      submenu: [
+        { name: 'Des Moines', path: '/locations/des-moines' },
+        { name: 'Cedar Rapids', path: '/locations/cedar-rapids' },
+        { name: 'Iowa City', path: '/locations/iowa-city' }
+      ]
+    }
   ]
 
   return (

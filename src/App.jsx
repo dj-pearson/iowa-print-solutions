@@ -52,6 +52,7 @@ import PaperCutMF250Iowa from './pages/blog/PaperCutMF250Iowa'
 import DesMoinesPrintSolutions from './pages/locations/DesMoinesPrintSolutions'
 import CedarRapidsPrintSolutions from './pages/locations/CedarRapidsPrintSolutions'
 import IowaCityPrintSolutions from './pages/locations/IowaCityPrintSolutions'
+import DavenportPrintSolutions from './pages/locations/DavenportPrintSolutions'
 
 const App = () => {
   return (
@@ -110,6 +111,7 @@ const App = () => {
             <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
             <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintSolutions />} />
             <Route path="/locations/iowa-city" element={<IowaCityPrintSolutions />} />
+            <Route path="/locations/davenport" element={<DavenportPrintSolutions />} />
           </Routes>
         </main>
         <Footer />

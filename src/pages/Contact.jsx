@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -101,8 +102,42 @@ const Contact = () => {
     }
   ]
 
+  const seoSchema = {
+    '@type': 'ContactPage',
+    'mainEntity': {
+      '@type': 'Organization',
+      'name': 'Infomax Office Systems',
+      'telephone': '+15152372352',
+      'email': 'DPearson@InfomaxOffice.com',
+      'areaServed': {
+        '@type': 'State',
+        'name': 'Iowa'
+      },
+      'serviceArea': [{
+        '@type': 'City',
+        'name': 'Des Moines'
+      }, {
+        '@type': 'City',
+        'name': 'Cedar Rapids' 
+      }, {
+        '@type': 'City',
+        'name': 'Iowa City'
+      }]
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="Contact Iowa Print Solutions | Infomax Office Systems - (515) 237-2352"
+        description="Contact Iowa's leading print management experts. Get your free consultation for PaperCut, Uniflow, and PrinterLogic implementation. Serving Des Moines, Cedar Rapids, Iowa City and statewide. Call (515) 237-2352."
+        keywords="contact Iowa print solutions, Infomax Office Systems contact, Iowa print management consultation, PaperCut Iowa contact, print solutions Des Moines phone, Cedar Rapids print services contact, Iowa document management consultation"
+        canonicalUrl="https://iowaprintsolutions.com/contact"
+        schemaType="ContactPage"
+        additionalSchema={seoSchema}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -413,7 +448,8 @@ const Contact = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

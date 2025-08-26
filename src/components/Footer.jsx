@@ -7,19 +7,22 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Printer className="h-8 w-8 text-blue-400" />
               <span className="font-bold text-xl">Iowa Print Solutions</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
-              Educational resource for Iowa print management solutions. For professional PaperCut, Uniflow, and PrinterLogic implementation, connect with Infomax Office Systems - Iowa's trusted print solutions provider.
+              Iowa's #1 resource for print management solutions since 1958. Professional PaperCut MF, Canon Uniflow, and PrinterLogic implementation through Infomax Office Systems - serving Des Moines, Cedar Rapids, Iowa City, Davenport, and all 99 Iowa counties.
             </p>
-            <div className="flex space-x-4">
+            <div className="space-y-2">
               <div className="flex items-center space-x-2 text-gray-300">
                 <MapPin className="h-4 w-4" />
-                <span className="text-sm">Serving all of Iowa via Infomax</span>
+                <span className="text-sm">Infomax Office Systems - Statewide Iowa Service</span>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-300">
+                <span className="text-sm">Primary Markets: Des Moines • Cedar Rapids • Iowa City • Davenport • Sioux City • Waterloo</span>
               </div>
             </div>
           </div>
@@ -51,6 +54,32 @@ const Footer = () => {
                 <a href="/privacy-policy" className="hover:text-white transition-colors">
                   Privacy Policy
                 </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Iowa Locations</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                <Link to="/locations/des-moines" className="hover:text-white transition-colors">
+                  Des Moines Print Solutions
+                </Link>
+              </li>
+              <li>
+                <Link to="/locations/cedar-rapids" className="hover:text-white transition-colors">
+                  Cedar Rapids Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/locations/iowa-city" className="hover:text-white transition-colors">
+                  Iowa City Solutions
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-white transition-colors">
+                  Iowa Print Management Blog
+                </Link>
               </li>
             </ul>
           </div>

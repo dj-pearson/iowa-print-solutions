@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import ServiceCard from '../components/ServiceCard'
 import TestimonialCard from '../components/TestimonialCard'
 import SEO from '../components/SEO'
+import IowaBusinessFAQSchema from '../components/IowaBusinessFAQSchema'
 import { Printer, Settings, BarChart3, Shield, Users, Award, ArrowRight, Wrench } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -80,6 +81,7 @@ const Home = () => {
         schemaType="WebSite"
         additionalSchema={seoSchema}
       />
+      <IowaBusinessFAQSchema />
 
       <div className="min-h-screen">
         <Hero />
@@ -96,7 +98,7 @@ const Home = () => {
                 Iowa's Leading Print Management Solutions Provider Since 1958
               </h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-                Infomax Office Systems serves as Iowa's premier print management partner, specializing in PaperCut MF, Canon Uniflow, and PrinterLogic implementations across Des Moines, Cedar Rapids, Iowa City, Davenport, and statewide. Our certified experts help Iowa businesses, healthcare facilities, educational institutions, and government agencies optimize printing costs, enhance security, and streamline document workflows.
+                Infomax Office Systems serves as Iowa's premier print management partner, specializing in PaperCut MF, Canon Uniflow, and PrinterLogic implementations across Des Moines, Cedar Rapids, Iowa City, Davenport, and statewide. Our certified experts help Iowa businesses including healthcare systems like UnityPoint Health and Mercy Medical, educational institutions such as Iowa State University and University of Iowa, major corporations like Principal Financial and HyVee, and government agencies optimize printing costs, enhance security, and streamline document workflows.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
@@ -135,7 +137,7 @@ const Home = () => {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 From major metropolitan areas to rural Iowa communities, we provide comprehensive print management solutions statewide.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
                 <div className="bg-white p-4 rounded-lg shadow-sm">
                   <h3 className="font-semibold text-gray-900">Des Moines Metro</h3>
                   <p className="text-sm text-gray-600">Central Iowa's business hub</p>
@@ -149,20 +151,30 @@ const Home = () => {
                   <p className="text-sm text-gray-600">University and healthcare</p>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h3 className="font-semibold text-gray-900">Quad Cities</h3>
-                  <p className="text-sm text-gray-600">Davenport region</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h3 className="font-semibold text-gray-900">Waterloo</h3>
-                  <p className="text-sm text-gray-600">Northeast Iowa</p>
+                  <h3 className="font-semibold text-gray-900">Davenport</h3>
+                  <p className="text-sm text-gray-600">Quad Cities region</p>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm">
                   <h3 className="font-semibold text-gray-900">Sioux City</h3>
-                  <p className="text-sm text-gray-600">Western Iowa</p>
+                  <p className="text-sm text-gray-600">Northwest Iowa</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center mt-6">
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Waterloo</h3>
+                  <p className="text-sm text-gray-600">Cedar Valley region</p>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm">
                   <h3 className="font-semibold text-gray-900">Council Bluffs</h3>
                   <p className="text-sm text-gray-600">Southwest Iowa</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Dubuque</h3>
+                  <p className="text-sm text-gray-600">Mississippi River region</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h3 className="font-semibold text-gray-900">Ames</h3>
+                  <p className="text-sm text-gray-600">Iowa State University</p>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm">
                   <h3 className="font-semibold text-gray-900">Statewide</h3>

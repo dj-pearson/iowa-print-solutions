@@ -297,19 +297,25 @@
   <!-- Location Pages -->
   <url>
     <loc>https://iowaprintsolutions.com/locations/des-moines</loc>
-    <lastmod>2025-08-26</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/locations/cedar-rapids</loc>
-    <lastmod>2025-08-26</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/locations/iowa-city</loc>
-    <lastmod>2025-08-26</lastmod>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/locations/davenport</loc>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
