@@ -70,9 +70,57 @@ const PrintManagementDesMoines = () => {
     <>
       <SEO 
         title="Print Management Des Moines | Professional Print Solutions Iowa Capital"
-        description="Expert print management services for Des Moines businesses. PaperCut, Uniflow & PrinterLogic implementation. Serving downtown, West Des Moines, Ankeny & surrounding areas since 1958."
-        keywords="print management Des Moines, Des Moines print solutions, managed print services Des Moines, PaperCut Des Moines, Uniflow Des Moines, PrinterLogic Des Moines, West Des Moines print management, Ankeny print services, Urbandale print solutions"
+        description="Expert print management services for Des Moines businesses including Principal Financial, Wells Fargo, Allied Insurance, and Polk County. PaperCut, Uniflow & PrinterLogic implementation serving downtown, West Des Moines, Ankeny, Urbandale & surrounding central Iowa areas since 1958."
+        keywords="print management Des Moines, Des Moines print solutions, managed print services Des Moines Iowa, PaperCut Des Moines implementation, Uniflow Des Moines, PrinterLogic Des Moines, West Des Moines print management, Ankeny print services, Urbandale print solutions, downtown Des Moines printing, Polk County print management, central Iowa printing solutions"
         canonicalUrl="https://iowaprintsolutions.com/blog/print-management-des-moines"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Professional Print Management for Des Moines',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-02-01',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Local Business Solutions',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Print Management',
+              'sameAs': 'https://en.wikipedia.org/wiki/Print_management'
+            },
+            {
+              '@type': 'Place',
+              'name': 'Des Moines, Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 41.5868,
+                'longitude': -93.6250
+              }
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Organization',
+              'name': 'Principal Financial Group',
+              'sameAs': 'https://en.wikipedia.org/wiki/Principal_Financial_Group'
+            },
+            {
+              '@type': 'Organization',
+              'name': 'Wells Fargo'
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">
@@ -93,8 +141,7 @@ const PrintManagementDesMoines = () => {
                 Professional Print Management for Des Moines
               </h1>
               <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-                Des Moines businesses trust our expert print management solutions to reduce costs, enhance security, 
-                and streamline operations. Serving Iowa's capital city since 1958.
+                Des Moines businesses including Principal Financial Group, Wells Fargo, Allied Insurance, Nationwide, and hundreds of local companies trust Infomax Office Systems' expert print management solutions to reduce costs, enhance security, and streamline operations. Proudly serving Iowa's capital city and the greater central Iowa region including West Des Moines, Ankeny, Urbandale, Johnston, Altoona, and Pleasant Hill since 1958.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

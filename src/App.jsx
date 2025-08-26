@@ -8,6 +8,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Resources from './pages/Resources'
 import Tools from './pages/Tools'
+import Locations from './pages/Locations'
 import PaperCutImplementationGuide from './pages/resources/PaperCutImplementationGuide'
 import PaperCutCostReduction from './pages/resources/PaperCutCostReduction'
 import PaperCutMobilePrinting from './pages/resources/PaperCutMobilePrinting'
@@ -47,6 +48,10 @@ import PaperCutVsAlternativesIowa from './pages/blog/PaperCutVsAlternativesIowa'
 import PrintManagementSoftwareComparisonIowa from './pages/blog/PrintManagementSoftwareComparisonIowa'
 import PaperCutMF241Updates from './pages/blog/PaperCutMF241Updates'
 import Uniflow2025Updates from './pages/blog/Uniflow2025Updates'
+import PaperCutMF250Iowa from './pages/blog/PaperCutMF250Iowa'
+import DesMoinesPrintSolutions from './pages/locations/DesMoinesPrintSolutions'
+import CedarRapidsPrintSolutions from './pages/locations/CedarRapidsPrintSolutions'
+import IowaCityPrintSolutions from './pages/locations/IowaCityPrintSolutions'
 
 const App = () => {
   return (
@@ -62,6 +67,7 @@ const App = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/locations" element={<Locations />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/resources/papercut-implementation-guide" element={<PaperCutImplementationGuide />} />
             <Route path="/resources/papercut-cost-reduction" element={<PaperCutCostReduction />} />
@@ -100,6 +106,10 @@ const App = () => {
             <Route path="/blog/print-management-software-comparison-iowa" element={<PrintManagementSoftwareComparisonIowa />} />
             <Route path="/blog/papercut-mf-24-1-updates" element={<PaperCutMF241Updates />} />
             <Route path="/blog/uniflow-2025-updates" element={<Uniflow2025Updates />} />
+            <Route path="/blog/papercut-mf-25-iowa-benefits" element={<PaperCutMF250Iowa />} />
+            <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
+            <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintSolutions />} />
+            <Route path="/locations/iowa-city" element={<IowaCityPrintSolutions />} />
           </Routes>
         </main>
         <Footer />

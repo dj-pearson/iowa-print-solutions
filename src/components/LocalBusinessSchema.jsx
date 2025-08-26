@@ -7,7 +7,7 @@ const LocalBusinessSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'Infomax Office Systems',
-    'image': 'https://iowa-print-solutions.pages.dev/og-image.jpg',
+    'image': 'https://iowaprintsolutions.com/og-image.jpg',
     'description': 'Iowa\'s leading print management solutions provider specializing in PaperCut, Uniflow, and PrinterLogic implementations since 1958.',
     'address': [
       {
@@ -74,7 +74,7 @@ const LocalBusinessSchema = () => {
         }
       }
     ],
-    'url': 'https://iowa-print-solutions.pages.dev',
+    'url': 'https://iowaprintsolutions.com',
     'telephone': '+15152372352',
     'priceRange': '$$',
     'openingHoursSpecification': [

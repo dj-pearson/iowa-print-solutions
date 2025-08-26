@@ -69,9 +69,35 @@ const ManagedPrintServicesIowa = () => {
     <>
       <SEO 
         title="Managed Print Services Iowa | Professional Print Management Solutions"
-        description="Comprehensive managed print services for Iowa businesses. Device management, cost control, security enhancement, and analytics. Serving Des Moines, Cedar Rapids, Iowa City & statewide."
-        keywords="managed print services Iowa, print management Iowa, MPS Iowa, print fleet management, Iowa print solutions, document management services, print cost reduction Iowa, Des Moines managed print, Cedar Rapids print services"
+        description="Comprehensive managed print services for Iowa businesses including Principal Financial, University of Iowa, UnityPoint Health, and 500+ Iowa organizations. Device management, cost control, security enhancement, and analytics serving Des Moines, Cedar Rapids, Iowa City & all 99 Iowa counties since 1958."
+        keywords="managed print services Iowa, print management Iowa, MPS Iowa, print fleet management Iowa, Iowa print solutions statewide, document management services Iowa, print cost reduction Iowa, Des Moines managed print services, Cedar Rapids print services, Iowa City MPS, Davenport print management, University of Iowa printing, Principal Financial printing"
         canonicalUrl="https://iowaprintsolutions.com/blog/managed-print-services-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Managed Print Services for Iowa Organizations',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-01-20',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Managed Services',
+          'serviceType': 'Managed Print Services',
+          'areaServed': {
+            '@type': 'State',
+            'name': 'Iowa'
+          }
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">

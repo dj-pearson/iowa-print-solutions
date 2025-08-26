@@ -133,9 +133,52 @@ const PaperCutHealthcareIowa = () => {
     <>
       <SEO 
         title="PaperCut Healthcare Solutions for Iowa Medical Facilities | HIPAA Compliant Printing"
-        description="Discover how Iowa healthcare facilities use PaperCut for HIPAA-compliant printing, patient information security, and cost control. Secure print management for hospitals, clinics, and medical practices."
-        keywords="PaperCut healthcare Iowa, HIPAA compliant printing, medical print security, Iowa hospitals, patient information protection, healthcare print management"
+        description="Discover how Iowa healthcare facilities in Des Moines, Cedar Rapids, Iowa City, and Davenport use PaperCut for HIPAA-compliant printing, patient information security, and cost control. Serving UI Hospitals, Mercy Medical, and Iowa medical practices statewide."
+        keywords="PaperCut healthcare Iowa, HIPAA compliant printing Iowa, medical print security Des Moines, Iowa hospitals printing, UI Hospitals printing, Mercy Medical Cedar Rapids, patient information protection Iowa, healthcare print management Iowa City, medical printing Davenport"
         canonicalUrl="https://iowaprintsolutions.com/blog/papercut-healthcare-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'PaperCut Healthcare Solutions for Iowa Medical Facilities',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-01-10',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Healthcare Technology',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'HIPAA Compliance',
+              'sameAs': 'https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Healthcare Print Management'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">
@@ -156,22 +199,22 @@ const PaperCutHealthcareIowa = () => {
                 PaperCut Healthcare Solutions for Iowa Medical Facilities
               </h1>
               <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-                Discover how Iowa healthcare facilities leverage PaperCut for HIPAA-compliant printing, enhanced patient privacy protection, and comprehensive cost control. From Des Moines hospitals to rural clinics, secure your patient information with proven print management.
+                Discover how Iowa healthcare facilities including UI Hospitals & Clinics in Iowa City, UnityPoint Health in Des Moines, Mercy Medical Center in Cedar Rapids, and Genesis Health System in Davenport leverage PaperCut for HIPAA-compliant printing, enhanced patient privacy protection, and comprehensive cost control. From major medical centers to rural clinics across all 99 Iowa counties, secure your patient information with proven print management solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
                   className="bg-white text-blue-700 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
                 >
-                  Get Healthcare Print Assessment
+                  Get Free Iowa Healthcare Print Assessment
                 </Link>
                 <a
-                  href="https://calendly.com/pearsondan/30min"
+                  href="https://www.infomaxoffice.com/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border border-white text-white hover:bg-white hover:text-blue-700 px-8 py-3 rounded-md font-medium transition-colors"
                 >
-                  Schedule HIPAA Consultation
+                  Schedule HIPAA Consultation with Iowa Experts
                 </a>
               </div>
             </motion.div>

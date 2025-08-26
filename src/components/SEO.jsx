@@ -11,7 +11,7 @@ const SEO = ({
   additionalSchema = null,
   noindex = false
 }) => {
-  const siteUrl = 'https://iowa-print-solutions.pages.dev'
+  const siteUrl = 'https://iowaprintsolutions.com'
   const siteName = 'Iowa Print Solutions'
   const fullTitle = title ? `${title} | ${siteName}` : `${siteName} - Leading Print Management Solutions in Iowa`
   
@@ -98,6 +98,9 @@ const SEO = ({
       <meta name="geo.placename" content="Iowa" />
       <meta name="geo.position" content="42.0046;-93.214" />
       <meta name="ICBM" content="42.0046, -93.214" />
+      
+      {/* Google Search Console Verification - Add your verification code */}
+      <meta name="google-site-verification" content="your-verification-code-here" />
       
       {/* Local Business */}
       <meta name="business:contact_data:locality" content="Iowa" />

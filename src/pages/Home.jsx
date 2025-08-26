@@ -43,7 +43,7 @@ const Home = () => {
     '@type': 'WebSite',
     'potentialAction': {
       '@type': 'SearchAction',
-      'target': 'https://iowa-print-solutions.pages.dev/resources?search={search_term_string}',
+      'target': 'https://iowaprintsolutions.com/resources?search={search_term_string}',
       'query-input': 'required name=search_term_string'
     },
     'about': [
@@ -76,7 +76,7 @@ const Home = () => {
         title="Iowa Print Solutions - Leading Print Management Provider | Infomax Office Systems"
         description="Iowa's #1 resource for print management solutions. Expert PaperCut, Uniflow & PrinterLogic implementation through Infomax Office Systems. Serving Iowa since 1958. Get your free consultation today."
         keywords="Iowa print management, print solutions Iowa, PaperCut Iowa implementation, Uniflow Iowa, PrinterLogic Iowa, managed print services Iowa, document management Iowa, print security Iowa, Infomax Office Systems, Des Moines print solutions, Cedar Rapids print management, Iowa City print services"
-        canonicalUrl="https://iowa-print-solutions.pages.dev"
+        canonicalUrl="https://iowaprintsolutions.com"
         schemaType="WebSite"
         additionalSchema={seoSchema}
       />

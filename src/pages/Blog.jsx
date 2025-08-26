@@ -11,6 +11,18 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      id: 'papercut-mf-25-iowa-benefits',
+      title: 'PaperCut MF 25.0 Released: Revolutionary Features for Iowa Businesses',
+      excerpt: 'Discover how PaperCut MF 25.0\'s Advanced Scanning, enhanced security, and improved performance benefit Iowa healthcare, education, and professional organizations.',
+      author: 'Iowa Print Solutions Team',
+      date: '2025-08-26',
+      readTime: '8 min read',
+      category: 'Product Updates',
+      image: '/api/placeholder/400/250',
+      slug: 'papercut-mf-25-iowa-benefits',
+      featured: true
+    },
+    {
       id: 'uniflow-2025-updates',
       title: 'uniFLOW 2025 Updates: Enhanced Security and Modern Print Architecture',
       excerpt: 'Canon uniFLOW 2025 brings Microsoft Modern Printing support, enhanced security, Sharp device integration, and zero trust environment capabilities for Iowa businesses.',
@@ -236,7 +248,7 @@ const Blog = () => {
         title="Iowa Print Management Blog - Latest News & Updates"
         description="Stay updated with the latest print management news, PaperCut updates, Uniflow features, and PrinterLogic developments for Iowa organizations."
         keywords="Iowa print management blog, PaperCut news, Uniflow updates, PrinterLogic articles, print security news Iowa, document management blog"
-        canonicalUrl="https://iowa-print-solutions.pages.dev/blog"
+        canonicalUrl="https://iowaprintsolutions.com/blog"
         schemaType="Blog"
       />
 

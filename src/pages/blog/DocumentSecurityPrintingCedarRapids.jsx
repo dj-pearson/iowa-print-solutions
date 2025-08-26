@@ -110,9 +110,48 @@ const DocumentSecurityPrintingCedarRapids = () => {
     <>
       <SEO 
         title="Document Security Printing Solutions for Cedar Rapids | Secure Document Management"
-        description="Comprehensive document security printing for Cedar Rapids organizations. Protect confidential information with secure print release, authentication, and audit trails."
-        keywords="document security printing Cedar Rapids, secure document management, Cedar Rapids print security, confidential document protection, Iowa document security"
+        description="Comprehensive document security printing for Cedar Rapids, Marion, and Hiawatha organizations including Rockwell Collins, General Mills, Mercy Medical, and Kirkwood Community College. Protect confidential information with secure print release, authentication, and audit trails."
+        keywords="document security printing Cedar Rapids, secure document management Cedar Rapids, Cedar Rapids print security, confidential document protection Marion Iowa, Hiawatha secure printing, Eastern Iowa document security, Rockwell Collins printing security, Mercy Medical Cedar Rapids security"
         canonicalUrl="https://iowaprintsolutions.com/blog/document-security-printing-cedar-rapids"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Document Security Printing Solutions for Cedar Rapids',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-02-15',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Security Solutions',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Document Security',
+              'description': 'Methods and technologies for protecting confidential documents'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Cedar Rapids, Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 41.9778,
+                'longitude': -91.6656
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">
@@ -133,7 +172,7 @@ const DocumentSecurityPrintingCedarRapids = () => {
                 Document Security Printing Solutions for Cedar Rapids
               </h1>
               <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-                Protect your organization's confidential information with advanced document security printing solutions. Secure print release, authentication, and comprehensive audit trails for Cedar Rapids businesses.
+                Protect your Cedar Rapids, Marion, and Hiawatha organization's confidential information with advanced document security printing solutions. Major Eastern Iowa companies including Rockwell Collins (now Collins Aerospace), General Mills, Mercy Medical Center, and Kirkwood Community College rely on secure print release, multi-factor authentication, and comprehensive audit trails for complete document protection.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button
