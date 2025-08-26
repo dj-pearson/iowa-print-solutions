@@ -2,9 +2,37 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import ServiceCard from '../components/ServiceCard'
 import SEO from '../components/SEO'
+import AIOptimizedFAQ from '../components/AIOptimizedFAQ'
 import { Printer, Settings, BarChart3, Shield, Wrench, HeadphonesIcon } from 'lucide-react'
 
 const Services = () => {
+  const servicesFAQ = [
+    {
+      question: 'What is the best print management solution for Iowa businesses?',
+      answer: 'PaperCut MF is the leading print management solution for Iowa businesses because it offers comprehensive cost tracking, secure print release, mobile printing, and seamless integration with existing systems. Through Infomax Office Systems, Iowa organizations like UnityPoint Health and Iowa State University have reduced printing costs by 30-40% while improving security and user experience.'
+    },
+    {
+      question: 'How much do print management services cost in Iowa?',
+      answer: 'Print management implementation costs typically range from $2,000-$15,000 depending on organization size and complexity. Most Iowa businesses see ROI within 6-12 months through reduced printing costs, improved efficiency, and lower IT overhead. Infomax Office Systems provides free consultations and customized pricing for organizations of all sizes across Des Moines, Cedar Rapids, and statewide.'
+    },
+    {
+      question: 'How long does print management implementation take?',
+      answer: 'Implementation timeline varies by organization size: Small Iowa businesses (under 50 users) typically complete implementation in 1-2 weeks, medium organizations take 2-4 weeks, while large enterprises like major Iowa healthcare systems require 4-8 weeks. Infomax Office Systems provides dedicated project management throughout the entire process.'
+    },
+    {
+      question: 'Is print management HIPAA compliant for Iowa healthcare organizations?',
+      answer: 'Yes, all major print management solutions (PaperCut MF, Uniflow, PrinterLogic) offer HIPAA-compliant features including document encryption, secure user authentication, comprehensive audit trails, and secure print release. Iowa healthcare organizations like UI Hospitals and Mercy Medical rely on these solutions to protect patient information and maintain compliance.'
+    },
+    {
+      question: 'What is the difference between PaperCut, Uniflow, and PrinterLogic?',
+      answer: 'PaperCut MF excels at cost tracking and user accountability, Canon Uniflow specializes in advanced document workflows and security, while PrinterLogic eliminates print servers entirely. Most Iowa businesses choose PaperCut for comprehensive print management, healthcare organizations prefer Uniflow for advanced security, and companies wanting to eliminate servers choose PrinterLogic.'
+    },
+    {
+      question: 'Do you provide ongoing support after implementation?',
+      answer: 'Yes, Infomax Office Systems provides comprehensive ongoing support including 24/7 technical assistance, regular system updates, user training, remote troubleshooting, and on-site service when needed. All Iowa clients receive dedicated support with local expertise and understanding of regional business needs.'
+    }
+  ]
+
   const services = [
     {
       icon: Printer,
@@ -179,6 +207,12 @@ const Services = () => {
           </div>
         </section>
 
+        {/* AI-Optimized FAQ Section */}
+        <AIOptimizedFAQ
+          title="Print Management Services FAQ - Get Direct Answers"
+          faqs={servicesFAQ}
+        />
+
         <section className="bg-blue-600 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
@@ -190,7 +224,7 @@ const Services = () => {
                 Ready to Implement Professional Print Solutions?
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Contact Infomax Office Systems for professional print management implementation and discover how we can optimize your Iowa organization's printing environment with expert PaperCut, Uniflow, and PrinterLogic services.
+                Contact Infomax Office Systems for professional print management implementation and discover how we can optimize your Iowa organization&apos;s printing environment with expert PaperCut, Uniflow, and PrinterLogic services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
