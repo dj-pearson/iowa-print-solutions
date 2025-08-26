@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset MIME Type Debug Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .warning { background: #fff3cd; color: #856404; }
+        .code {
+            background: #f8f9fa;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #0056b3; }
+        .asset-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .asset-test {
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Asset MIME Type Debug Tool</h1>
+    <p>This tool helps diagnose MIME type issues with Cloudflare Pages deployment.</p>
+    
+    <div class="test-section">
+        <h2>Quick Tests</h2>
+        <button onclick="testAllAssets()">Test All Assets</button>
+        <button onclick="clearResults()">Clear Results</button>
+        <button onclick="location.reload()">Refresh Page</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Asset Discovery</h2>
+        <div id="assetList" class="asset-list">
+            <div class="asset-test">Scanning for assets...</div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Results</h2>
+        <div id="results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Environment Info</h2>
+        <div class="code" id="envInfo">Loading environment info...</div>
+    </div>
+
+    <script>
+        // Common asset paths from Vite builds
+        const commonAssetPaths = [
+            '/assets/index.js',
+            '/assets/index.css',
+            '/assets/App.js',
+            '/assets/App.css',
+            '/assets/main.js',
+            '/assets/main.css'
+        ];
+
+        function log(message, type = 'info') {
+            console.log(`[DEBUG] ${message}`);
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${message}`;
+            results.appendChild(div);
+            results.scrollTop = results.scrollHeight;
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+
+        async function testAsset(assetPath) {
+            log(`Testing asset: ${assetPath}`);
+            
+            try {
+                const response = await fetch(assetPath, { 
+                    method: 'HEAD',
+                    cache: 'no-cache'
+                });
+                
+                const contentType = response.headers.get('content-type') || 'unknown';
+                const status = response.status;
+                
+                log(`${assetPath} - Status: ${status}, Content-Type: ${contentType}`, 
+                    status === 200 ? 'success' : 'warning');
+                
+                // Check for MIME type problems
+                if (contentType.includes('text/html') && (assetPath.endsWith('.js') || assetPath.endsWith('.css'))) {
+                    log(`🚨 MIME TYPE ERROR: ${assetPath} returned HTML instead of asset!`, 'error');
+                }
+                
+                // Log all response headers for debugging
+                const headers = {};
+                response.headers.forEach((value, key) => {
+                    headers[key] = value;
+                });
+                log(`Headers for ${assetPath}: ${JSON.stringify(headers, null, 2)}`, 'info');
+                
+                return { path: assetPath, status, contentType, headers };
+                
+            } catch (error) {
+                log(`❌ Error testing ${assetPath}: ${error.message}`, 'error');
+                return { path: assetPath, error: error.message };
+            }
+        }
+
+        async function discoverAssets() {
+            log('🔍 Discovering assets...');
+            const assetList = document.getElementById('assetList');
+            assetList.innerHTML = '';
+            
+            // Look for script and link tags in current page
+            const scripts = Array.from(document.querySelectorAll('script[src]'));
+            const links = Array.from(document.querySelectorAll('link[href]'));
+            
+            const discoveredAssets = [
+                ...scripts.map(s => s.src.replace(window.location.origin, '')),
+                ...links.map(l => l.href.replace(window.location.origin, ''))
+            ].filter(path => path.startsWith('/assets/'));
+            
+            const allAssets = [...new Set([...commonAssetPaths, ...discoveredAssets])];
+            
+            allAssets.forEach(asset => {
+                const div = document.createElement('div');
+                div.className = 'asset-test';
+                div.innerHTML = `<code>${asset}</code>`;
+                assetList.appendChild(div);
+            });
+            
+            log(`Found ${allAssets.length} potential assets to test`);
+            return allAssets;
+        }
+
+        async function testAllAssets() {
+            clearResults();
+            log('🚀 Starting comprehensive asset test...');
+            
+            const assets = await discoverAssets();
+            const results = [];
+            
+            for (const asset of assets) {
+                const result = await testAsset(asset);
+                results.push(result);
+                
+                // Add a small delay to avoid overwhelming the server
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+            
+            log(`✅ Testing complete. Tested ${results.length} assets.`);
+            
+            // Summary
+            const successful = results.filter(r => r.status === 200 && !r.error);
+            const failed = results.filter(r => r.status !== 200 || r.error);
+            const mimeErrors = results.filter(r => 
+                r.contentType && r.contentType.includes('text/html') && 
+                (r.path.endsWith('.js') || r.path.endsWith('.css'))
+            );
+            
+            log(`📊 Summary: ${successful.length} successful, ${failed.length} failed, ${mimeErrors.length} MIME type errors`);
+        }
+
+        // Show environment info
+        function showEnvironmentInfo() {
+            const info = {
+                userAgent: navigator.userAgent,
+                location: window.location.href,
+                timestamp: new Date().toISOString(),
+                referrer: document.referrer || 'direct',
+                cookiesEnabled: navigator.cookieEnabled,
+                onLine: navigator.onLine
+            };
+            
+            document.getElementById('envInfo').textContent = JSON.stringify(info, null, 2);
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            log('🔧 Debug tool loaded');
+            showEnvironmentInfo();
+            discoverAssets();
+        });
+
+        // Also test on page errors
+        window.addEventListener('error', (e) => {
+            log(`⚠️ Page Error: ${e.message} at ${e.filename}:${e.lineno}`, 'error');
+        });
+    </script>
+</body>
+</html>

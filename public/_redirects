@@ -1,24 +1,5 @@
-# AGGRESSIVE MIME Type Fix - Explicit Asset Handling
-# This configuration explicitly prevents assets from being redirected
+# Fixed Cloudflare Pages Redirects - Remove Invalid 200! Syntax
+# Static assets should be served normally by Cloudflare
 
-# CRITICAL: Assets must be served directly - NO redirects
-/assets/index-*.css     /assets/index-*.css     200!
-/assets/index-*.js      /assets/index-*.js      200!
-/assets/vendor-*.css    /assets/vendor-*.css    200!
-/assets/vendor-*.js     /assets/vendor-*.js     200!
-/assets/router-*.css    /assets/router-*.css    200!
-/assets/router-*.js     /assets/router-*.js     200!
-/assets/*               /assets/*               200!
-
-# Static files - serve directly
-/robots.txt             /robots.txt             200!
-/sitemap.xml            /sitemap.xml            200!
-/IPSLogo-Icon.ico       /IPSLogo-Icon.ico       200!
-/IPSLogo.png            /IPSLogo.png            200!
-/*.ico                  /*.ico                  200!
-/*.png                  /*.png                  200!
-/*.jpg                  /*.jpg                  200!
-/*.svg                  /*.svg                  200!
-
-# Only redirect actual HTML routes to index.html (HashRouter will handle the rest)
-/*                      /index.html             200
+# Simple catch-all for SPA routing
+/*    /index.html   200
