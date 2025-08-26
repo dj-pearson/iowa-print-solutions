@@ -55,3 +55,4 @@ project.zip
 # Logs
 logs
 *.log
+scripts/purge-cloudflare.ps1

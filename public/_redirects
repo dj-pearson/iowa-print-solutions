@@ -9,7 +9,7 @@
 /test-deploy.txt /test-deploy.txt 200
 
 # TEMPORARY: route root to index-v2.html to bypass cached index.html
-/  /index-v2.html 200
+# TEMPORARY: route root to index-v2.html to bypass cached index.html
 
 # SPA fallback for everything else
 /* /index.html 200
