@@ -55,8 +55,38 @@ const SEO = ({
     }
   }
 
+  // Create schema based on type
+  let finalSchema = { ...structuredData }
+  
   if (additionalSchema) {
-    Object.assign(structuredData, additionalSchema)
+    try {
+      // For Article schema, merge more carefully
+      if (schemaType === 'Article' && additionalSchema['@type'] === 'Article') {
+        finalSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          'headline': additionalSchema.headline || title,
+          'description': metaDescription,
+          'url': canonicalUrl || siteUrl,
+          'datePublished': additionalSchema.datePublished,
+          'dateModified': additionalSchema.dateModified,
+          'author': additionalSchema.author || {
+            '@type': 'Person',
+            'name': 'Dan Pearson'
+          },
+          'publisher': additionalSchema.publisher || {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions'
+          },
+          'inLanguage': 'en-US'
+        }
+      } else {
+        Object.assign(finalSchema, additionalSchema)
+      }
+    } catch (error) {
+      console.warn('Error merging additional schema:', error)
+      finalSchema = structuredData
+    }
   }
 
   return (
@@ -120,7 +150,7 @@ const SEO = ({
       
       {/* Structured Data */}
       <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
+        {JSON.stringify(finalSchema)}
       </script>
     </Helmet>
   )

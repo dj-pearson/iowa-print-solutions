@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Test</title>
+</head>
+<body>
+    <h1>Schema Test - Open Developer Console</h1>
+    <p>Visit any blog page and check the developer console to see schema markup being generated.</p>
+    <p>Also check the page source for JSON-LD structured data in the head section.</p>
+    
+    <h2>Test Pages:</h2>
+    <ul>
+        <li><a href="http://localhost:5173/blog/papercut-cost-reduction-iowa" target="_blank">PaperCut Cost Reduction Iowa</a></li>
+        <li><a href="http://localhost:5173/blog/managed-print-services-iowa" target="_blank">Managed Print Services Iowa</a></li>
+        <li><a href="http://localhost:5173/blog/document-management-iowa" target="_blank">Document Management Iowa</a></li>
+    </ul>
+
+    <h2>What to Look For:</h2>
+    <ul>
+        <li><strong>JSON-LD Schema:</strong> In page source, look for &lt;script type="application/ld+json"&gt; tags</li>
+        <li><strong>Article Schema:</strong> Should include @type: "Article", headline, author, publisher, etc.</li>
+        <li><strong>No Console Errors:</strong> Check browser console for any JavaScript errors</li>
+        <li><strong>SEO Meta Tags:</strong> Proper title, description, og tags</li>
+    </ul>
+
+    <script>
+        console.log('Schema test page loaded successfully');
+        console.log('Visit blog pages to test Article schema generation');
+    </script>
+</body>
+</html>

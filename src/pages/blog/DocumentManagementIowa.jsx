@@ -98,44 +98,12 @@ const DocumentManagementIowa = () => {
         additionalSchema={{
           '@type': 'Article',
           'headline': 'Document Management Solutions for Iowa Organizations',
-          'author': {
-            '@type': 'Organization',
-            'name': 'Infomax Office Systems',
-            'url': 'https://www.infomaxoffice.com'
-          },
-          'publisher': {
-            '@type': 'Organization',
-            'name': 'Iowa Print Solutions',
-            'logo': {
-              '@type': 'ImageObject',
-              'url': 'https://iowaprintsolutions.com/logo.png'
-            }
-          },
           'datePublished': '2024-02-15',
           'dateModified': '2025-08-26',
-          'articleSection': 'Document Management',
-          'about': [
-            {
-              '@type': 'Thing',
-              'name': 'Document Management Systems',
-              'sameAs': 'https://en.wikipedia.org/wiki/Document_management_system'
-            },
-            {
-              '@type': 'Thing',
-              'name': 'Digital Transformation'
-            }
-          ],
-          'mentions': [
-            {
-              '@type': 'Place',
-              'name': 'Iowa',
-              'geo': {
-                '@type': 'GeoCoordinates',
-                'latitude': 42.0046,
-                'longitude': -93.214
-              }
-            }
-          ]
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems'
+          }
         }}
       />
       
