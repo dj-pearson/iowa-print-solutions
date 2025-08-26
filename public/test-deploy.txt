@@ -1,0 +1,4 @@
+DEPLOYMENT TEST - August 26, 2025 - 16:50
+This file tests if Cloudflare Pages is actually deploying new builds.
+If you can see this content at https://iowaprintsolutions.com/test-deploy.txt, 
+then deployments are working and the issue is elsewhere.
