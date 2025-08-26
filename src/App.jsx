@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ErrorBoundary from './components/ErrorBoundary'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -58,10 +59,11 @@ import DavenportPrintSolutions from './pages/locations/DavenportPrintSolutions'
 
 const App = () => {
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <main>
+    <ErrorBoundary>
+      <Router>
+        <div className="min-h-screen bg-gray-50">
+          <Navbar />
+          <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
@@ -121,6 +123,7 @@ const App = () => {
         <Footer />
       </div>
     </Router>
+    </ErrorBoundary>
   )
 }
 
