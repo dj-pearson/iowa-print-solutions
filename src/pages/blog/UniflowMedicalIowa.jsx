@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Shield, Layers, Lock, FileText, CheckCircle, ArrowRight, Heart, Settings } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -161,6 +160,49 @@ const UniflowMedicalIowa = () => {
         description="Discover Uniflow's advanced medical print security solutions for Iowa healthcare facilities. HIPAA-compliant workflows, PHI protection, and medical device integration."
         keywords="Uniflow medical print security Iowa, healthcare document workflows, HIPAA compliance, PHI protection, medical imaging Iowa, healthcare automation"
         canonicalUrl="https://iowaprintsolutions.com/blog/uniflow-medical-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Uniflow Medical Print Security for Iowa Healthcare - Advanced Document Workflows',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-05-12',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Healthcare Technology',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'HIPAA Compliance',
+              'sameAs': 'https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Medical Imaging'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">

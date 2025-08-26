@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Scale, CheckCircle, X, DollarSign, Shield, Users, Phone, Mail } from 'lucide-react'
 import SEO from '../../components/SEO'
@@ -118,6 +117,49 @@ const PaperCutVsAlternativesIowa = () => {
         description="Comprehensive comparison of PaperCut vs other print management solutions for Iowa organizations. Features, costs, and implementation guidance for informed decision-making."
         keywords="PaperCut vs alternatives Iowa, print management comparison, PaperCut vs Uniflow, PaperCut vs SafeCom, Iowa print software comparison, print management solutions comparison"
         canonicalUrl="https://iowaprintsolutions.com/blog/papercut-vs-alternatives-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'PaperCut vs Alternatives Iowa - Print Management Software Comparison',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-03-10',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Software Comparison',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Print Management Software',
+              'sameAs': 'https://en.wikipedia.org/wiki/Print_management'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'PaperCut'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">

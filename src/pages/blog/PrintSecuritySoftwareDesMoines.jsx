@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Shield, Lock, Eye, CheckCircle, Building2, FileText, Users, AlertTriangle } from 'lucide-react'
 import SEO from '../../components/SEO'
@@ -133,6 +132,49 @@ const PrintSecuritySoftwareDesMoines = () => {
         description="Comprehensive print security software for Des Moines businesses. Secure print release, audit trails, access control, and document protection solutions."
         keywords="print security software Des Moines, secure printing Iowa, document security, print access control, Des Moines IT security, business print protection"
         canonicalUrl="https://iowaprintsolutions.com/blog/print-security-software-des-moines"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Print Security Software Solutions in Des Moines - Document Protection',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-05-25',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Security Software',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Computer Security',
+              'sameAs': 'https://en.wikipedia.org/wiki/Computer_security'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Document Management'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Des Moines',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 41.5868,
+                'longitude': -93.6250
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">

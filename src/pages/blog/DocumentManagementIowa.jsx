@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
 import { FileText, Search, Shield, Clock, Users, CheckCircle, Phone, Mail } from 'lucide-react'
 import SEO from '../../components/SEO'
@@ -94,6 +93,49 @@ const DocumentManagementIowa = () => {
         description="Professional document management solutions for Iowa businesses. Secure digital document storage, workflow automation, and compliance management. Serving Des Moines, Cedar Rapids & statewide."
         keywords="document management Iowa, digital document solutions, Iowa document workflow, electronic document management, paperless office Iowa, document automation Iowa, Des Moines document management, Cedar Rapids document solutions"
         canonicalUrl="https://iowaprintsolutions.com/blog/document-management-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Document Management Solutions for Iowa Organizations',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-02-15',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Document Management',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Document Management Systems',
+              'sameAs': 'https://en.wikipedia.org/wiki/Document_management_system'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Digital Transformation'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">
@@ -408,7 +450,7 @@ const DocumentManagementIowa = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold mb-6">
-                Ready to Transform Your Iowa Organization's Document Management?
+                Ready to Transform Your Iowa Organization&apos;s Document Management?
               </h2>
               <p className="text-xl mb-8 opacity-90">
                 Schedule a free consultation and discover how document management solutions can revolutionize your operations.

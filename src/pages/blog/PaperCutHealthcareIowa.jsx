@@ -5,6 +5,7 @@ import { Heart, Shield, Users, FileText, CheckCircle, ArrowRight, Lock, BarChart
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
+import ArticleSchema from '../../components/ArticleSchema'
 
 const PaperCutHealthcareIowa = () => {
   const healthcareFeatures = [

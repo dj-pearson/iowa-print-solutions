@@ -1,7 +1,6 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Lock, FileText, Eye, CheckCircle, ArrowRight, AlertTriangle, Users } from 'lucide-react'
+import { Shield, Lock, FileText, Eye, CheckCircle, AlertTriangle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -184,6 +183,49 @@ const HIPAAPrintingIowa = () => {
         description="Achieve HIPAA compliance for printing in your Iowa healthcare facility. Secure print release, audit trails, and PHI protection with proven print management solutions."
         keywords="HIPAA compliant printing Iowa, healthcare print security, PHI protection, secure print release, Iowa medical facilities, healthcare compliance"
         canonicalUrl="https://iowaprintsolutions.com/blog/hipaa-printing-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'HIPAA Compliant Printing Solutions for Iowa Healthcare',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-01-20',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Healthcare Compliance',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'HIPAA Compliance',
+              'sameAs': 'https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Healthcare Print Security'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">
@@ -447,7 +489,7 @@ const HIPAAPrintingIowa = () => {
                 Achieve HIPAA Compliance for Your Iowa Healthcare Facility
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Don't risk HIPAA violations from unsecured printing. Protect your patients' PHI and your organization's reputation with proven compliance solutions.
+                Don&apos;t risk HIPAA violations from unsecured printing. Protect your patients&apos; PHI and your organization&apos;s reputation with proven compliance solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

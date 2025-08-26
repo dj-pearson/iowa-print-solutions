@@ -71,6 +71,49 @@ const PaperCutMF241Updates = () => {
         keywords="PaperCut MF 24.1, document processing, print management updates, Iowa print solutions, licensing changes, self-hosted processing, data residency, compliance"
         canonicalUrl="https://iowaprintsolutions.com/blog/papercut-mf-24-1-updates"
         ogImage="https://iowaprintsolutions.com/images/papercut-24-1-updates.jpg"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'PaperCut MF 24.1 Updates: New Features & Licensing Changes for Iowa Businesses',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-07-30',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Software Updates',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Software Update',
+              'sameAs': 'https://en.wikipedia.org/wiki/Software_versioning'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Document Processing'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">

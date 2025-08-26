@@ -1,7 +1,6 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Server, Cloud, Zap, Shield, CheckCircle, ArrowRight, Wrench, TrendingUp } from 'lucide-react'
+import { Server, Cloud, Zap, Shield, CheckCircle, TrendingUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -262,6 +261,49 @@ const EliminatePrintServersIowa = () => {
         description="Eliminate print servers and reduce IT costs with PrinterLogic serverless printing for Iowa businesses. No more server maintenance, automatic updates, and 60-80% cost savings."
         keywords="eliminate print servers Iowa, serverless printing, PrinterLogic Iowa, print server elimination, Iowa print management, reduce IT costs printing"
         canonicalUrl="https://iowaprintsolutions.com/blog/eliminate-print-servers-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Eliminate Print Servers Iowa - PrinterLogic Serverless Printing Solutions',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-02-28',
+          'dateModified': '2025-08-26',
+          'articleSection': 'IT Infrastructure',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Print Server',
+              'sameAs': 'https://en.wikipedia.org/wiki/Print_server'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Serverless Computing'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">

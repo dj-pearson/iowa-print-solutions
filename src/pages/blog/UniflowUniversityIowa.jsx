@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Building2, Users, FileText, Workflow, CheckCircle, ArrowRight, BarChart3, Shield } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -214,6 +213,50 @@ const UniflowUniversityIowa = () => {
         description="Transform your Iowa university with Uniflow's advanced academic document workflows. FERPA compliance, research management, and administrative automation for higher education."
         keywords="Uniflow university Iowa, academic document workflows, FERPA compliance, Iowa State University, University of Iowa, higher education automation"
         canonicalUrl="https://iowaprintsolutions.com/blog/uniflow-university-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Uniflow University Solutions for Iowa Higher Education - Academic Document Workflows',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-06-08',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Higher Education',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Higher Education',
+              'sameAs': 'https://en.wikipedia.org/wiki/Higher_education'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'FERPA',
+              'sameAs': 'https://en.wikipedia.org/wiki/Family_Educational_Rights_and_Privacy_Act'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">

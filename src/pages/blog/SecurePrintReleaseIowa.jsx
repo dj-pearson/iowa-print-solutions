@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Lock, Shield, Eye, UserCheck, CheckCircle, ArrowRight, AlertTriangle, FileText } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -258,6 +257,49 @@ const SecurePrintReleaseIowa = () => {
         description="Protect sensitive documents with secure print release solutions for Iowa businesses. HIPAA compliance, audit trails, and document security for healthcare, legal, and financial services."
         keywords="secure print release Iowa, document security printing, Iowa print security software, HIPAA compliant printing, secure printing Des Moines, document protection Cedar Rapids"
         canonicalUrl="https://iowaprintsolutions.com/blog/secure-print-release-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Secure Print Release Iowa - Document Security Solutions for Businesses',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-04-18',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Document Security',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Information Security',
+              'sameAs': 'https://en.wikipedia.org/wiki/Information_security'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Document Security'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">

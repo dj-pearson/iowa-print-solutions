@@ -108,6 +108,49 @@ const Uniflow2025Updates = () => {
         keywords="uniFLOW 2025, Canon print management, Microsoft Modern Printing, print security, Iowa document management, Sharp device integration, zero trust printing"
         canonicalUrl="https://iowaprintsolutions.com/blog/uniflow-2025-updates"
         ogImage="https://iowaprintsolutions.com/images/uniflow-2025-updates.jpg"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'uniFLOW 2025 Updates: Enhanced Security & Modern Print Architecture for Iowa',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-08-20',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Software Updates',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Print Management Software',
+              'sameAs': 'https://en.wikipedia.org/wiki/Print_management'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Microsoft Modern Printing'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">

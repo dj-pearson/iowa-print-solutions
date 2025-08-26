@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { GraduationCap, Users, BookOpen, DollarSign, Shield, CheckCircle, Phone, Mail } from 'lucide-react'
 import SEO from '../../components/SEO'
@@ -88,6 +87,50 @@ const SchoolDistrictIowa = () => {
         description="Comprehensive print management solutions for Iowa K-12 school districts. Student account management, FERPA compliance, cost control, and secure printing for educational environments."
         keywords="Iowa school district print management, K-12 printing solutions Iowa, student print accounts, FERPA compliant printing, school print security Iowa, educational print management"
         canonicalUrl="https://iowaprintsolutions.com/blog/school-district-iowa"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'Print Management for Iowa School Districts - K-12 Education Solutions',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-04-05',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Education Technology',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Educational Technology',
+              'sameAs': 'https://en.wikipedia.org/wiki/Educational_technology'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'FERPA',
+              'sameAs': 'https://en.wikipedia.org/wiki/Family_Educational_Rights_and_Privacy_Act'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">

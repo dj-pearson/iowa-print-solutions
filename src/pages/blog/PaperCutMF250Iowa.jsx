@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, User, ArrowRight, CheckCircle, Zap, Shield, TrendingUp, FileText, Users, Building2, GraduationCap, Heart } from 'lucide-react'
 import SEO from '../../components/SEO'
@@ -107,6 +106,49 @@ const PaperCutMF250Iowa = () => {
         description="Discover how PaperCut MF 25.0's Advanced Scanning, enhanced security, and improved performance benefit Iowa healthcare, education, and professional organizations. Expert implementation available statewide."
         keywords="PaperCut MF 25.0 Iowa, Advanced Scanning Iowa, PaperCut upgrade Iowa, document management Iowa, PaperCut MF 25 features, Iowa print management upgrade, Infomax Office Systems PaperCut"
         canonicalUrl="https://iowaprintsolutions.com/blog/papercut-mf-25-iowa-benefits"
+        schemaType="Article"
+        additionalSchema={{
+          '@type': 'Article',
+          'headline': 'PaperCut MF 25.0 Released: Revolutionary Features for Iowa Businesses',
+          'author': {
+            '@type': 'Organization',
+            'name': 'Infomax Office Systems',
+            'url': 'https://www.infomaxoffice.com'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Iowa Print Solutions',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://iowaprintsolutions.com/logo.png'
+            }
+          },
+          'datePublished': '2024-08-15',
+          'dateModified': '2025-08-26',
+          'articleSection': 'Software Updates',
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'PaperCut MF',
+              'sameAs': 'https://en.wikipedia.org/wiki/PaperCut'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Document Scanning'
+            }
+          ],
+          'mentions': [
+            {
+              '@type': 'Place',
+              'name': 'Iowa',
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': 42.0046,
+                'longitude': -93.214
+              }
+            }
+          ]
+        }}
       />
 
       <div className="min-h-screen bg-gray-50">
