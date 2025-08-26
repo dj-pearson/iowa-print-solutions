@@ -1,3 +1,4 @@
+import React from 'react'
 
 import { motion } from 'framer-motion'
 import { FileText, Search, Shield, Clock, Users, CheckCircle, Phone, Mail } from 'lucide-react'

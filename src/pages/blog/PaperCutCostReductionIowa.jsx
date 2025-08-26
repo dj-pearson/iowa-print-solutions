@@ -1,3 +1,4 @@
+import React from 'react'
 
 import { motion } from 'framer-motion'
 import { DollarSign, TrendingDown, PieChart, CheckCircle, Calculator, BarChart3, Target, Users } from 'lucide-react'

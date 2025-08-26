@@ -1,3 +1,4 @@
+import React from 'react'
 
 import { motion } from 'framer-motion'
 import { Monitor, CheckCircle, Star, DollarSign, Shield, Settings, Phone, Mail } from 'lucide-react'

@@ -1,3 +1,4 @@
+import React from 'react'
 
 import { motion } from 'framer-motion'
 import { Shield, Lock, FileText, Eye, CheckCircle, AlertTriangle } from 'lucide-react'

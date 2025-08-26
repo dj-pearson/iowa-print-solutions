@@ -1,3 +1,4 @@
+import React from 'react'
 
 import { motion } from 'framer-motion'
 import { Shield, Layers, Lock, FileText, CheckCircle, ArrowRight, Heart, Settings } from 'lucide-react'
