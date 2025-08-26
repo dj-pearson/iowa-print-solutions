@@ -1,28 +1,19 @@
 name = "iowa-print-solutions"
 compatibility_date = "2024-08-01"
 
-[env.production]
-name = "iowa-print-solutions"
-routes = [
-  { pattern = "iowaprint.solutions", zone_name = "iowaprint.solutions" },
-  { pattern = "*.iowaprint.solutions", zone_name = "iowaprint.solutions" }
-]
+# Pages configuration
+[pages]
+build_output_dir = "./dist"
+build_command = "npm run build"
 
-# Build configuration
+# Build configuration for Cloudflare Pages
 [build]
 command = "npm run build"
-cwd = "."
-watch_dir = "src"
+publish = "dist"
 
 # Environment variables for build
 [env.production.vars]
 NODE_ENV = "production"
 
-# Pages configuration
-[pages]
-build_output_dir = "./dist"
-build_command = "npm run build"
-dev_command = "npm run dev"
-
-# Compatibility settings
+# Compatibility settings for proper asset serving
 compatibility_flags = ["nodejs_compat"]

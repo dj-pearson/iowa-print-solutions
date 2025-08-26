@@ -1,13 +1,3 @@
-# React Router SPA redirects - must be last rule
-# This catches all routes that don't match static files and sends them to index.html
-# so React Router can handle client-side routing
-
-# Redirect common extensions to prevent 404s
-*.js /assets/:splat 200
-*.css /assets/:splat 200
-
-# Handle API routes if any (none currently)
-/api/* /api/:splat 200
-
-# Redirect all other routes to index.html for React Router
-/* /index.html 200
+# Cloudflare Pages SPA redirect
+# This is the minimal configuration for React Router SPA
+/*    /index.html   200
