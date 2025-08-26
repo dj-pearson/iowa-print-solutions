@@ -3,8 +3,36 @@ import { motion } from 'framer-motion'
 import { Users, Award, MapPin, Phone, Mail, CheckCircle, Target, Heart, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
+import AIOptimizedFAQ from '../components/AIOptimizedFAQ'
 
 const About = () => {
+  const aboutFAQ = [
+    {
+      question: 'Why should Iowa businesses choose Infomax Office Systems for print management?',
+      answer: 'Infomax Office Systems is Iowa&apos;s most experienced print management provider, serving businesses since 1958 with over 65 years of local expertise. We are certified partners for all major platforms (PaperCut, Uniflow, PrinterLogic), provide dedicated Iowa-based support, and have successfully implemented solutions for hundreds of Iowa organizations including UnityPoint Health, Iowa State University, and Principal Financial.'
+    },
+    {
+      question: 'What certifications does Infomax Office Systems have?',
+      answer: 'Infomax Office Systems holds all major industry certifications including PaperCut Certified Partner, Canon Uniflow Authorized Reseller, PrinterLogic Implementation Specialist, Canon Solutions America Partner, and Microsoft Partner Network Member. Our team has 15+ years of specialized experience in print management solutions for Iowa businesses.'
+    },
+    {
+      question: 'How long has Infomax Office Systems been serving Iowa?',
+      answer: 'Infomax Office Systems has been serving Iowa businesses since 1958 - over 65 years of continuous service. We started with office equipment and evolved to become Iowa&apos;s leading print management solutions provider, adding PaperCut partnership in 2015, Uniflow capabilities in 2018, and PrinterLogic expertise in 2020.'
+    },
+    {
+      question: 'Does Infomax Office Systems provide support throughout Iowa?',
+      answer: 'Yes, Infomax Office Systems provides comprehensive support throughout all 99 Iowa counties. While we&apos;re headquartered in the Des Moines metro area, we serve Cedar Rapids, Iowa City, Davenport, Waterloo, Council Bluffs, Dubuque, Sioux City, Ames, and communities statewide with on-site service, remote support, and 24/7 technical assistance.'
+    },
+    {
+      question: 'What makes Infomax Office Systems different from other print management providers?',
+      answer: 'Three key differentiators: 65+ years of Iowa business experience, certified expertise across all major platforms (not just one vendor), and dedicated local support team. Unlike national providers, we understand Iowa business culture, regulatory environment, and provide personalized service with direct access to certified specialists like Dan Pearson who work exclusively with Iowa organizations.'
+    },
+    {
+      question: 'Can Infomax Office Systems help with HIPAA compliance for Iowa healthcare?',
+      answer: 'Absolutely. Infomax Office Systems specializes in HIPAA-compliant print solutions for Iowa healthcare organizations. We&apos;ve implemented secure print management systems at multiple Iowa hospitals and clinics, ensuring proper document encryption, secure release printing, comprehensive audit trails, and all necessary compliance features required by HIPAA regulations.'
+    }
+  ]
+
   const values = [
     {
       icon: Target,
@@ -312,6 +340,12 @@ const About = () => {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <AIOptimizedFAQ
+          title="About Infomax Office Systems - Frequently Asked Questions"
+          faqs={aboutFAQ}
+        />
+
         <section className="bg-blue-600 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
@@ -323,7 +357,7 @@ const About = () => {
                 Ready to Implement Print Solutions?
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Connect with Infomax Office Systems to discuss your Iowa organization's print management needs.
+                Connect with Infomax Office Systems to discuss your Iowa organization&apos;s print management needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

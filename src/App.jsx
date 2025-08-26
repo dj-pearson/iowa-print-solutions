@@ -29,6 +29,7 @@ import PrinterLogicServerlessPrinting from './pages/resources/PrinterLogicServer
 import PrinterLogicSelfServiceInstallation from './pages/resources/PrinterLogicSelfServiceInstallation'
 import PrinterLogicSecureReleasePrinting from './pages/resources/PrinterLogicSecureReleasePrinting'
 import PaperCutVsUniflowComparison from './pages/resources/PaperCutVsUniflowComparison'
+import PrintManagementSoftwareComparison from './pages/resources/PrintManagementSoftwareComparison'
 import Blog from './pages/Blog'
 import PaperCutHealthcareIowa from './pages/blog/PaperCutHealthcareIowa'
 import HIPAAPrintingIowa from './pages/blog/HIPAAPrintingIowa'
@@ -88,6 +89,7 @@ const App = () => {
             <Route path="/resources/printerlogic-self-service-installation" element={<PrinterLogicSelfServiceInstallation />} />
             <Route path="/resources/printerlogic-secure-release-printing" element={<PrinterLogicSecureReleasePrinting />} />
             <Route path="/resources/papercut-vs-uniflow-comparison" element={<PaperCutVsUniflowComparison />} />
+            <Route path="/resources/print-management-software-comparison" element={<PrintManagementSoftwareComparison />} />
             <Route path="/services/papercut" element={<PaperCutService />} />
             <Route path="/services/uniflow" element={<UniflowService />} />
             <Route path="/blog/papercut-healthcare-iowa" element={<PaperCutHealthcareIowa />} />

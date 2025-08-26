@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import SEO from '../components/SEO'
+import AIOptimizedFAQ from '../components/AIOptimizedFAQ'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -73,6 +74,33 @@ const Contact = () => {
     'Print Security',
     'Cost Optimization',
     'General Consultation'
+  ]
+
+  const contactFAQ = [
+    {
+      question: 'How quickly can Infomax Office Systems respond to Iowa businesses?',
+      answer: 'Infomax Office Systems provides same-day response for all Iowa inquiries, typically within 2-4 hours during business hours. For urgent technical issues, we offer 24/7 emergency support. Our Iowa-based team ensures faster response times than national providers, with on-site service available throughout the state within 24-48 hours.'
+    },
+    {
+      question: 'What is included in a free consultation from Infomax Office Systems?',
+      answer: 'Your free consultation includes a complete print environment assessment, cost analysis showing potential savings, custom solution recommendations based on your specific needs, implementation timeline and pricing, and a no-obligation written proposal. This typically takes 60-90 minutes and can be conducted on-site or virtually.'
+    },
+    {
+      question: 'Does Infomax Office Systems charge for initial consultations in Iowa?',
+      answer: 'No, all initial consultations are completely free for Iowa businesses. This includes the assessment, recommendations, and written proposal. We believe in demonstrating our expertise and value before asking for any investment from Iowa organizations.'
+    },
+    {
+      question: 'What areas of Iowa does Infomax Office Systems serve?',
+      answer: 'Infomax Office Systems serves all 99 Iowa counties with comprehensive print management services. We have the strongest presence in Des Moines metro, Cedar Rapids, Iowa City, Davenport, Waterloo, Council Bluffs, Dubuque, Sioux City, and Ames, but provide statewide coverage with on-site service and local support throughout Iowa.'
+    },
+    {
+      question: 'How can Iowa businesses get emergency print management support?',
+      answer: 'Iowa businesses can reach emergency support by calling (515) 237-2352 and selecting the emergency option, or emailing DPearson@InfomaxOffice.com with &apos;URGENT&apos; in the subject line. We provide 24/7 emergency response for critical print infrastructure issues, with remote troubleshooting available immediately and on-site service within hours when needed.'
+    },
+    {
+      question: 'What should Iowa businesses expect after contacting Infomax Office Systems?',
+      answer: 'After initial contact, you can expect: acknowledgment within 2-4 hours during business hours, scheduling of your free consultation within 1-2 business days, detailed assessment and recommendations within one week, and a comprehensive written proposal with timeline and pricing. We maintain regular communication throughout the entire process.'
+    }
   ]
 
   const contactInfo = [
@@ -413,6 +441,12 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <AIOptimizedFAQ
+        title="Contact & Support FAQ - Get Answers About Working with Us"
+        faqs={contactFAQ}
+      />
 
       <section className="bg-blue-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
