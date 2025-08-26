@@ -1,5 +1,1 @@
-# Fixed Cloudflare Pages Redirects - Remove Invalid 200! Syntax
-# Static assets should be served normally by Cloudflare
-
-# Simple catch-all for SPA routing
-/*    /index.html   200
+# Cloudflare Pages - No redirects needed for proper asset serving
