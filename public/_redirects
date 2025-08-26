@@ -1,1 +1,12 @@
-# Cloudflare Pages - No redirects needed for proper asset serving
+# Cloudflare Pages SPA redirects
+# Serve assets normally, redirect page routes to index.html
+
+# Don't redirect assets
+/assets/* 200
+/IPSLogo-Icon.ico 200
+/IPSLogo.png 200
+/robots.txt 200
+/sitemap.xml 200
+
+# SPA catch-all for page routes
+/* /index.html 200
