@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Debug Deploy - 2025-08-26</title>
+    <style>body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:2rem} pre{background:#f6f8fa;padding:1rem;border-radius:6px}</style>
+  </head>
+  <body>
+    <h1>Debug Deploy</h1>
+    <p>Timestamp: 2025-08-26T00:00:00Z</p>
+    <p>This file is <strong>unique</strong> to help verify which server is serving your site.</p>
+
+    <h2>Root fetch (first 300 chars)</h2>
+    <pre id="root">(fetching...)</pre>
+
+    <script>
+      (async()=>{
+        try{
+          const r = await fetch('/');
+          const text = await r.text();
+          document.getElementById('root').textContent = text.slice(0,300).replace(/</g,'&lt;');
+        }catch(e){ document.getElementById('root').textContent = 'fetch error: '+e }
+      })();
+    </script>
+  </body>
+</html>
