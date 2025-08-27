@@ -94,7 +94,7 @@ export default {
     console.log(`[WORKER] SPA route: ${url.pathname}`);
     
     try {
-      const indexUrl = `${GITHUB_RAW_BASE}/index.html`;
+      const indexUrl = `${GITHUB_RAW_BASE}/index.html?t=${Date.now()}`;
       console.log(`[WORKER] Fetching index.html: ${indexUrl}`);
       
       const indexResponse = await fetch(indexUrl, {
@@ -112,7 +112,9 @@ export default {
         return new Response(html, {
           headers: {
             'Content-Type': 'text/html; charset=utf-8',
-            'Cache-Control': 'public, max-age=300',
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0',
             'X-Frame-Options': 'DENY',
             'X-Content-Type-Options': 'nosniff',
             'X-XSS-Protection': '1; mode=block',
