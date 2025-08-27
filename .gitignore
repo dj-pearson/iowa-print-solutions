@@ -22,7 +22,6 @@ build-output.md
 .env.production.local
 
 # Vite
-vite.config.js
 vite.config.ts
 vite.preview.config.js
 *.tsbuildinfo
