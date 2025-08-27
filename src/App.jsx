@@ -58,6 +58,7 @@ import IowaCityPrintSolutions from './pages/locations/IowaCityPrintSolutions'
 import DavenportPrintSolutions from './pages/locations/DavenportPrintSolutions'
 import SmallBusinessPrintManagementIowa from './pages/blog/SmallBusinessPrintManagementIowa'
 import PaperCutVsUniflowIowa from './pages/blog/PaperCutVsUniflowIowa'
+import ReducingPrintingCostsIowaSchools from './pages/blog/ReducingPrintingCostsIowaSchools'
 
 const App = () => {
   return (
@@ -118,6 +119,7 @@ const App = () => {
             <Route path="/blog/papercut-mf-25-iowa-benefits" element={<PaperCutMF250Iowa />} />
             <Route path="/blog/small-business-print-management-iowa" element={<SmallBusinessPrintManagementIowa />} />
             <Route path="/blog/papercut-vs-uniflow-iowa" element={<PaperCutVsUniflowIowa />} />
+            <Route path="/blog/reducing-printing-costs-iowa-schools" element={<ReducingPrintingCostsIowaSchools />} />
             <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
             <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintSolutions />} />
             <Route path="/locations/iowa-city" element={<IowaCityPrintSolutions />} />
