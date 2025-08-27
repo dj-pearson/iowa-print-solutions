@@ -9,11 +9,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Resources', path: '/resources' },
-    { name: 'Tools', path: '/tools' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Blog', path: '/blog' },
     { 
       name: 'Iowa Locations', 
       path: '/locations',
@@ -22,7 +21,9 @@ const Navbar = () => {
         { name: 'Cedar Rapids', path: '/locations/cedar-rapids' },
         { name: 'Iowa City', path: '/locations/iowa-city' }
       ]
-    }
+    },
+    { name: 'Tools', path: '/tools' },
+    { name: 'Contact', path: '/contact' }
   ]
 
   return (
@@ -54,9 +55,6 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Link to="/blog" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
-              Blog
-            </Link>
           </div>
 
           <div className="md:hidden flex items-center">
