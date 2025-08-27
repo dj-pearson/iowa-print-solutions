@@ -6,5 +6,5 @@
 /sitemap.xml /sitemap.xml 200
 /test-deploy.txt /test-deploy.txt 200
 
-# SPA fallback for everything else
-/* /index.html 200
+# SPA fallback - redirect all non-asset routes to index.html
+/:path*    /index.html   200
