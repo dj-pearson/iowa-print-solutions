@@ -56,6 +56,7 @@ import DesMoinesPrintSolutions from './pages/locations/DesMoinesPrintSolutions'
 import CedarRapidsPrintSolutions from './pages/locations/CedarRapidsPrintSolutions'
 import IowaCityPrintSolutions from './pages/locations/IowaCityPrintSolutions'
 import DavenportPrintSolutions from './pages/locations/DavenportPrintSolutions'
+import SmallBusinessPrintManagementIowa from './pages/blog/SmallBusinessPrintManagementIowa'
 
 const App = () => {
   return (
@@ -114,6 +115,7 @@ const App = () => {
             <Route path="/blog/papercut-mf-24-1-updates" element={<PaperCutMF241Updates />} />
             <Route path="/blog/uniflow-2025-updates" element={<Uniflow2025Updates />} />
             <Route path="/blog/papercut-mf-25-iowa-benefits" element={<PaperCutMF250Iowa />} />
+            <Route path="/blog/small-business-print-management-iowa" element={<SmallBusinessPrintManagementIowa />} />
             <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
             <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintSolutions />} />
             <Route path="/locations/iowa-city" element={<IowaCityPrintSolutions />} />

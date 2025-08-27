@@ -52,6 +52,12 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://iowaprintsolutions.com/blog/small-business-print-management-iowa</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://iowaprintsolutions.com/blog/papercut-mf-25-iowa-benefits</loc>
     <lastmod>2025-08-26</lastmod>
     <changefreq>monthly</changefreq>

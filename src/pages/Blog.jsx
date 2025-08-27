@@ -11,6 +11,18 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      id: 'small-business-print-management-iowa',
+      title: 'Small Business Print Management in Iowa: SMB Solutions Comparison',
+      excerpt: 'Complete guide to print management solutions for Iowa small businesses. Compare PaperCut, Uniflow, and PrinterLogic for SMB cost savings and efficiency across Des Moines, Cedar Rapids, and statewide.',
+      author: 'Iowa Print Solutions Team',
+      date: '2025-08-27',
+      readTime: '15 min read',
+      category: 'Small Business',
+      image: '/api/placeholder/400/250',
+      slug: 'small-business-print-management-iowa',
+      featured: true
+    },
+    {
       id: 'papercut-mf-25-iowa-benefits',
       title: 'PaperCut MF 25.0 Released: Revolutionary Features for Iowa Businesses',
       excerpt: 'Discover how PaperCut MF 25.0\'s Advanced Scanning, enhanced security, and improved performance benefit Iowa healthcare, education, and professional organizations.',
@@ -233,7 +245,7 @@ const Blog = () => {
     }
   ]
 
-  const categories = ['all', 'Product Updates', 'Healthcare', 'Education', 'Cost Management', 'Technology', 'Security', 'Managed Services', 'Document Management', 'Local Services', 'Comparison', 'Software Comparison']
+  const categories = ['all', 'Small Business', 'Product Updates', 'Healthcare', 'Education', 'Cost Management', 'Technology', 'Security', 'Managed Services', 'Document Management', 'Local Services', 'Comparison', 'Software Comparison']
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
