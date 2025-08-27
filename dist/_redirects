@@ -1,6 +1,4 @@
 # Static assets - serve directly without redirect
-/assets/index-CdzW8wxY.js /assets/index-CdzW8wxY.js 200
-/assets/index-Bv3NC5aP.css /assets/index-Bv3NC5aP.css 200
 /assets/* /assets/:splat 200
 /IPSLogo-Icon.ico /IPSLogo-Icon.ico 200
 /IPSLogo.png /IPSLogo.png 200
