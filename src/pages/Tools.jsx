@@ -218,7 +218,7 @@ const Tools = () => {
         title="Free Print Management Calculators & Tools for Iowa Businesses | Cost Savings Analysis"
         description="Professional print management calculators for Iowa organizations. Calculate cost savings, ROI, fleet optimization, and environmental impact with PaperCut, Uniflow, and PrinterLogic solutions. Free tools from Infomax Office Systems."
         keywords="print management calculator Iowa, cost savings calculator, ROI calculator Iowa, printer fleet optimization, paper usage calculator, PaperCut calculator, Uniflow cost analysis, PrinterLogic ROI, Iowa print solutions tools, document management calculator, copier cost analysis Iowa"
-        canonicalUrl="https://iowa-print-solutions.pages.dev/tools"
+        canonicalUrl="https://iowaprintsolutions.com/tools"
         schemaType="WebApplication"
         additionalSchema={{
           '@type': ['WebApplication', 'SoftwareApplication'],

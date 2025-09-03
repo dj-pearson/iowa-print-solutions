@@ -1,10 +1,19 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Shield } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const PrivacyPolicy = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="Privacy Policy | Iowa Print Solutions"
+        description="Iowa Print Solutions privacy policy. Learn how we protect your information and data when you use our print management resources and contact our services."
+        keywords="privacy policy, data protection, Iowa Print Solutions privacy"
+        canonicalUrl="https://iowaprintsolutions.com/privacy-policy"
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -93,7 +102,8 @@ const PrivacyPolicy = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

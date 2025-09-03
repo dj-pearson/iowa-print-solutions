@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Printer, CheckCircle, ArrowRight, Users, BarChart3, Shield, Settings } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const PaperCutService = () => {
   const features = [
@@ -64,8 +65,31 @@ const PaperCutService = () => {
     }
   ]
 
+  const seoSchema = {
+    '@type': 'Service',
+    'serviceType': 'PaperCut MF Implementation',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'Infomax Office Systems'
+    },
+    'areaServed': {
+      '@type': 'State',
+      'name': 'Iowa'
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="PaperCut MF Implementation Services Iowa | Print Management Solutions"
+        description="Professional PaperCut MF implementation services for Iowa businesses. Complete setup, user training, and ongoing support for print cost reduction and security. Contact Infomax Office Systems today."
+        keywords="PaperCut MF implementation Iowa, PaperCut installation Iowa, print management services Iowa, document security Iowa, cost tracking Iowa, follow me printing Iowa"
+        canonicalUrl="https://iowaprintsolutions.com/services/papercut"
+        schemaType="Service"
+        additionalSchema={seoSchema}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -290,7 +314,8 @@ const PaperCutService = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

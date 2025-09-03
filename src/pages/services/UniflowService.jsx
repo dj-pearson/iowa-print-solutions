@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Settings, CheckCircle, ArrowRight, FileText, Shield, Smartphone, Workflow } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const UniflowService = () => {
   const features = [
@@ -55,8 +56,31 @@ const UniflowService = () => {
     }
   ]
 
+  const seoSchema = {
+    '@type': 'Service',
+    'serviceType': 'Canon Uniflow Implementation',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'Infomax Office Systems'
+    },
+    'areaServed': {
+      '@type': 'State',
+      'name': 'Iowa'
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="Canon Uniflow Implementation Services Iowa | Document Management Solutions"
+        description="Professional Canon Uniflow implementation services for Iowa businesses. Complete document workflow automation, secure printing, and mobile solutions. Contact Infomax Office Systems for expert setup."
+        keywords="Canon Uniflow implementation Iowa, document workflow automation Iowa, secure printing Iowa, mobile printing solutions Iowa, document management Iowa, Uniflow services Iowa"
+        canonicalUrl="https://iowaprintsolutions.com/services/uniflow"
+        schemaType="Service"
+        additionalSchema={seoSchema}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       <section className="bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -279,7 +303,8 @@ const UniflowService = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

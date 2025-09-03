@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FileText, Clock, ArrowRight, BookOpen, Shield, DollarSign, Smartphone, Settings, Layers, MapPin, Cloud, UserCheck, Lock, Users } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const Resources = () => {
   const resources = [
@@ -211,8 +212,34 @@ const Resources = () => {
     return categoryMatch && productMatch
   })
 
+  const seoSchema = {
+    '@type': 'CollectionPage',
+    'about': 'Print management resources and guides for Iowa businesses',
+    'mainEntity': {
+      '@type': 'ItemList',
+      'numberOfItems': resources.length,
+      'itemListElement': resources.slice(0, 5).map((resource, index) => ({
+        '@type': 'Article',
+        'position': index + 1,
+        'name': resource.title,
+        'description': resource.description,
+        'url': `https://iowaprintsolutions.com${resource.link}`
+      }))
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="Iowa Print Management Resources & Guides | PaperCut, Uniflow & PrinterLogic"
+        description="Comprehensive print management resources for Iowa businesses. Implementation guides, best practices, cost savings strategies, and expert insights for PaperCut MF, Uniflow, and PrinterLogic solutions."
+        keywords="Iowa print management resources, PaperCut implementation guide Iowa, Uniflow best practices Iowa, PrinterLogic setup guide, print management guides Iowa, document management resources Iowa, print cost reduction strategies"
+        canonicalUrl="https://iowaprintsolutions.com/resources"
+        schemaType="CollectionPage"
+        additionalSchema={seoSchema}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -394,7 +421,8 @@ const Resources = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 
