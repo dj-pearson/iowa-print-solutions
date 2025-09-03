@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Smartphone, Wifi, Cloud, Users, CheckCircle, ArrowRight, Download, Settings } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
+import Breadcrumbs from '../../components/Breadcrumbs'
 
 const PaperCutMobilePrinting = () => {
   const mobileFeatures = [
@@ -142,8 +144,36 @@ const PaperCutMobilePrinting = () => {
     }
   ]
 
+  const seoSchema = {
+    '@type': 'TechArticle',
+    'headline': 'PaperCut Mobile Printing Setup Guide for Iowa Organizations',
+    'description': 'Complete mobile printing implementation guide using PaperCut MF for Iowa businesses.',
+    'author': {
+      '@type': 'Organization',
+      'name': 'Iowa Print Solutions'
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="PaperCut Mobile Printing Setup Guide | Iowa Print Solutions"
+        description="Complete PaperCut mobile printing setup guide for Iowa businesses. Learn smartphone printing, app configuration, and secure mobile document management for your organization."
+        keywords="PaperCut mobile printing Iowa, mobile print setup Iowa, smartphone printing Iowa, PaperCut app Iowa, mobile document management Iowa, secure mobile printing Iowa"
+        canonicalUrl="https://iowaprintsolutions.com/resources/papercut-mobile-printing"
+        schemaType="TechArticle"
+        additionalSchema={seoSchema}
+      />
+      
+      <Breadcrumbs 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Resources', href: '/resources' },
+          { label: 'PaperCut Mobile Printing Guide' }
+        ]}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       <section className="bg-gradient-to-br from-purple-600 to-purple-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -429,7 +459,8 @@ const PaperCutMobilePrinting = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

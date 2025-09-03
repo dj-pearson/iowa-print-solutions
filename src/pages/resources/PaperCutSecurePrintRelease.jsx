@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Shield, Lock, Key, UserCheck, CheckCircle, ArrowRight, Eye, AlertTriangle } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
+import Breadcrumbs from '../../components/Breadcrumbs'
 
 const PaperCutSecurePrintRelease = () => {
   const secureReleaseFeatures = [
@@ -288,8 +290,36 @@ const PaperCutSecurePrintRelease = () => {
     }
   ]
 
+  const seoSchema = {
+    '@type': 'TechArticle',
+    'headline': 'PaperCut Secure Print Release Implementation Guide',
+    'description': 'Complete guide to implementing secure print release with PaperCut for Iowa organizations.',
+    'author': {
+      '@type': 'Organization',
+      'name': 'Iowa Print Solutions'
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="PaperCut Secure Print Release Setup Guide | Iowa Print Solutions"
+        description="Complete PaperCut secure print release implementation guide for Iowa businesses. Learn PIN codes, card authentication, and document security configuration for your organization."
+        keywords="PaperCut secure print release Iowa, secure printing Iowa, PIN code printing Iowa, card authentication Iowa, document security Iowa, print security Iowa"
+        canonicalUrl="https://iowaprintsolutions.com/resources/papercut-secure-print-release"
+        schemaType="TechArticle"
+        additionalSchema={seoSchema}
+      />
+      
+      <Breadcrumbs 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Resources', href: '/resources' },
+          { label: 'PaperCut Secure Print Release' }
+        ]}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       <section className="bg-gradient-to-br from-orange-600 to-orange-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -598,7 +628,8 @@ const PaperCutSecurePrintRelease = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Wifi, Cloud, Users, CheckCircle, ArrowRight, Laptop, Building, Home } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
+import Breadcrumbs from '../../components/Breadcrumbs'
 
 const UniflowPrintFromAnywhere = () => {
   const printFromAnywhereFeatures = [

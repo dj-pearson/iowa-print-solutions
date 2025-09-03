@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Users, MapPin, ArrowRight, Zap, CheckCircle, Building, Wifi, Smartphone } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
+import Breadcrumbs from '../../components/Breadcrumbs'
 
 const PaperCutFollowMePrint = () => {
   const followMeFeatures = [
@@ -264,8 +266,40 @@ const PaperCutFollowMePrint = () => {
     }
   ]
 
+  const seoSchema = {
+    '@type': 'TechArticle',
+    'headline': 'PaperCut Follow-Me Print Implementation Guide for Iowa Organizations',
+    'description': 'Complete guide to implementing PaperCut Follow-Me printing in Iowa businesses. Setup, configuration, and best practices for secure mobile printing.',
+    'author': {
+      '@type': 'Organization',
+      'name': 'Iowa Print Solutions'
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Infomax Office Systems'
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="PaperCut Follow-Me Print Setup Guide | Iowa Print Solutions"
+        description="Complete PaperCut Follow-Me printing implementation guide for Iowa businesses. Learn secure mobile printing setup, user authentication, and print release configuration for your organization."
+        keywords="PaperCut Follow-Me printing Iowa, mobile printing setup Iowa, secure print release Iowa, PaperCut authentication Iowa, print anywhere Iowa, document security Iowa"
+        canonicalUrl="https://iowaprintsolutions.com/resources/papercut-follow-me-print"
+        schemaType="TechArticle"
+        additionalSchema={seoSchema}
+      />
+      
+      <Breadcrumbs 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Resources', href: '/resources' },
+          { label: 'PaperCut Follow-Me Print Guide' }
+        ]}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -608,7 +642,8 @@ const PaperCutFollowMePrint = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

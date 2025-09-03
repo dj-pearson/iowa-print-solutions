@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Layers, Printer, QrCode, Settings, CheckCircle, ArrowRight, Zap, Shield, BarChart3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
+import Breadcrumbs from '../../components/Breadcrumbs'
 
 const UniflowPlatformOverview = () => {
   const platformFeatures = [
@@ -133,8 +135,40 @@ const UniflowPlatformOverview = () => {
     }
   ]
 
+  const seoSchema = {
+    '@type': 'TechArticle',
+    'headline': 'Canon Uniflow Platform Complete Overview for Iowa Organizations',
+    'description': 'Comprehensive guide to Canon Uniflow platform features, capabilities, and implementation for Iowa businesses.',
+    'author': {
+      '@type': 'Organization',
+      'name': 'Iowa Print Solutions'
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Infomax Office Systems'
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title="Canon Uniflow Platform Overview | Complete Features Guide Iowa"
+        description="Complete Canon Uniflow platform overview for Iowa businesses. Learn about advanced document management, secure printing, mobile solutions, and workflow automation features and capabilities."
+        keywords="Canon Uniflow platform Iowa, Uniflow features Iowa, document management Iowa, secure printing Iowa, workflow automation Iowa, mobile printing Iowa, Uniflow capabilities Iowa"
+        canonicalUrl="https://iowaprintsolutions.com/resources/uniflow-platform-overview"
+        schemaType="TechArticle"
+        additionalSchema={seoSchema}
+      />
+      
+      <Breadcrumbs 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Resources', href: '/resources' },
+          { label: 'Uniflow Platform Overview' }
+        ]}
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       <section className="bg-gradient-to-br from-indigo-600 to-indigo-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -359,7 +393,8 @@ const UniflowPlatformOverview = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

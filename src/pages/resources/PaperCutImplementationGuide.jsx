@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight, Users, Settings, Shield, BarChart3, Smartphone, FileText } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
+import Breadcrumbs from '../../components/Breadcrumbs'
 
 const PaperCutImplementationGuide = () => {
   const implementationSteps = [
