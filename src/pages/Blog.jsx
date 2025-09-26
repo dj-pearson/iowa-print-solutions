@@ -11,6 +11,18 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      id: 'papercut-hive-q4-2025-iowa',
+      title: 'PaperCut Hive Q4 2025 Release: Game-Changing Features for Iowa Businesses',
+      excerpt: 'Discover how PaperCut Hive\'s Q4 2025 release transforms Iowa business printing with User Data Import Tool, Scheduled Reports, Copy Quota Control, multilingual support, and ARM 64 compatibility.',
+      author: 'Iowa Print Solutions Team',
+      date: '2025-09-26',
+      readTime: '12 min read',
+      category: 'Product Updates',
+      image: '/api/placeholder/400/250',
+      slug: 'papercut-hive-q4-2025-iowa',
+      featured: true
+    },
+    {
       id: 'reducing-printing-costs-iowa-schools',
       title: 'Reducing Printing Costs in Iowa Schools with PaperCut & uniFLOW',
       excerpt: 'Reduce printing costs in Iowa schools by 40-60% with PaperCut and uniFLOW print management. Student print policies, FERPA compliance, and budget optimization for K-12 and higher education.',
