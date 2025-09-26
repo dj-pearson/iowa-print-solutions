@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 import ServiceCard from '../components/ServiceCard'
@@ -6,10 +6,26 @@ import TestimonialCard from '../components/TestimonialCard'
 import SEO from '../components/SEO'
 import IowaBusinessFAQSchema from '../components/IowaBusinessFAQSchema'
 import OrganizationSchema from '../components/OrganizationSchema'
+import { SmartCTA, ExitIntentModal, SocialProofBanner } from '../components/PerformanceComponents'
+import { useEngagementTracking, PhoneTracker } from '../components/AnalyticsComponents'
 import { Printer, Settings, BarChart3, Shield, Users, Award, ArrowRight, Wrench } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+  const [showExitIntent, setShowExitIntent] = useState(false)
+  const { scrollDepth, timeOnPage } = useEngagementTracking()
+  
+  useEffect(() => {
+    const handleMouseLeave = (e) => {
+      if (e.clientY <= 0 && timeOnPage > 30 && !showExitIntent) {
+        setShowExitIntent(true)
+      }
+    }
+    
+    document.addEventListener('mouseleave', handleMouseLeave)
+    return () => document.removeEventListener('mouseleave', handleMouseLeave)
+  }, [timeOnPage, showExitIntent])
+
   const stats = [
     { icon: Users, number: 'Hundreds', label: 'Iowa Clients via Infomax' },
     { icon: Award, number: '15+', label: 'Years Infomax Software Solutions' },
@@ -491,6 +507,22 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* Performance Components */}
+        <SocialProofBanner 
+          message="Join 200+ Iowa businesses saving 30% on printing costs"
+          cta="Get Your Free Assessment"
+          ctaLink="/contact"
+        />
+        
+        <ExitIntentModal 
+          isOpen={showExitIntent}
+          onClose={() => setShowExitIntent(false)}
+          title="Wait! Don't Miss Out on Print Savings"
+          message="Iowa businesses save an average of $2,400 annually with our print management solutions. Get your free cost analysis before you leave!"
+          ctaText="Get Free Analysis"
+          ctaLink="/print-cost-calculator"
+        />
       </div>
     </>
   )

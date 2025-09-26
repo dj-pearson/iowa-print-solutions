@@ -4,12 +4,20 @@ import { Calendar, User, Clock, ArrowRight, Search, Tag } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import Breadcrumbs from '../components/Breadcrumbs'
+import { SmartLeadCTA, BehaviorTrigger } from '../components/LeadScoringComponents'
+import { PhoneTracker, DownloadTracker } from '../components/AnalyticsComponents'
+import { useLeadScoring } from '../components/LeadScoringComponents'
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
+  const { addInteraction, addPageView } = useLeadScoring()
+  
+  React.useEffect(() => {
+    addPageView('/blog', 'Blog - Iowa Print Solutions')
+  }, [addPageView])
 
-  const blogPosts = [
+  const blogPosts = [ 
     {
       id: 'papercut-vs-uniflow-vs-printerlogic-iowa-k12',
       title: 'PaperCut vs uniFLOW vs PrinterLogic: Which Fits Iowa K-12 Schools?',
@@ -371,13 +379,14 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post, index) => (
-              <motion.article
-                key={post.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
+              <BehaviorTrigger key={post.id} triggerType="blog_post_view" threshold={1}>
+                <motion.article
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                  onClick={() => addInteraction('blog_post_click', { title: post.title, category: post.category })}
+                >
                 <div className="aspect-w-16 aspect-h-9 bg-gray-200">
                   <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                     <span className="text-white font-semibold">{post.category}</span>
@@ -420,14 +429,89 @@ const Blog = () => {
                   </Link>
                 </div>
               </motion.article>
+            </BehaviorTrigger>
             ))}
           </div>
-
           {filteredPosts.length === 0 && (
             <div className="text-center py-12">
               <p className="text-gray-500 text-lg">No articles found matching your criteria.</p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Smart Lead CTA Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SmartLeadCTA 
+            defaultCTA={{
+              primaryText: "Calculate Your Print Savings",
+              primaryLink: "/print-cost-calculator",
+              secondaryText: "Browse Resources",
+              secondaryLink: "/resource-library"
+            }}
+            urgentCTA={{
+              primaryText: "Get Immediate Assessment",
+              primaryLink: "/contact",
+              secondaryText: "Call Now: (515) 123-4567",
+              secondaryLink: "tel:(515)123-4567"
+            }}
+            premiumCTA={{
+              primaryText: "Schedule Executive Consultation",
+              primaryLink: "/contact?consultation=executive",
+              secondaryText: "Download ROI Calculator",
+              secondaryLink: "/print-cost-calculator"
+            }}
+          />
+        </div>
+      </section>
+      
+      {/* Resource Downloads with Tracking */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Helpful Resources for Iowa Businesses</h2>
+            <p className="text-gray-600">Download our comprehensive guides to print management success</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-semibold text-gray-900 mb-3">PaperCut Implementation Guide</h3>
+              <p className="text-gray-600 mb-4">Step-by-step implementation process for Iowa organizations</p>
+              <DownloadTracker 
+                fileName="PaperCut Implementation Guide"
+                category="Blog Resources"
+                href="/resources/papercut-implementation-guide"
+                className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
+              >
+                Download PDF →
+              </DownloadTracker>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-semibold text-gray-900 mb-3">Cost Reduction Calculator</h3>
+              <p className="text-gray-600 mb-4">Interactive tool to estimate your potential savings</p>
+              <Link 
+                to="/print-cost-calculator"
+                className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                onClick={() => addInteraction('calculator_link_click', { source: 'blog_resources' })}
+              >
+                Use Calculator →
+              </Link>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-semibold text-gray-900 mb-3">Industry Comparison</h3>
+              <p className="text-gray-600 mb-4">Compare PaperCut, uniFLOW, and other solutions</p>
+              <Link 
+                to="/print-management-comparison"
+                className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                onClick={() => addInteraction('comparison_link_click', { source: 'blog_resources' })}
+              >
+                View Comparison →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -446,7 +530,10 @@ const Blog = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium">
+            <button 
+              className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium"
+              onClick={() => addInteraction('newsletter_signup', { source: 'blog' })}
+            >
               Subscribe
             </button>
           </div>

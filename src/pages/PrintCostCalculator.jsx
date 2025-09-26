@@ -3,6 +3,9 @@ import { motion } from 'framer-motion'
 import { Calculator, DollarSign, TrendingDown, Users, Printer, Mail, Phone, Download, CheckCircle } from 'lucide-react'
 import SEO from '../components/SEO'
 import Breadcrumbs from '../components/Breadcrumbs'
+import { SmartCTA, LoadingSpinner } from '../components/PerformanceComponents'
+import { PhoneTracker, FormTracker } from '../components/AnalyticsComponents'
+import { trackCalculatorUsage, trackFormSubmission } from '../utils/analytics'
 
 const PrintCostCalculator = () => {
   const [formData, setFormData] = useState({
@@ -56,6 +59,7 @@ const PrintCostCalculator = () => {
         wastageReduction = 0.35
         efficiencyGain = 0.3 // Higher efficiency due to workflows
         break
+        break
       case 'manufacturing':
         wastageReduction = 0.45
         efficiencyGain = 0.25
@@ -89,6 +93,14 @@ const PrintCostCalculator = () => {
       employees,
       pagesPerMonth: pagesPerMonth.toLocaleString()
     })
+    
+    // Track calculator completion
+    trackCalculatorUsage(
+      employees,
+      pagesPerMonth,
+      formData.organizationType,
+      parseInt(totalAnnualSavings)
+    )
     
     setShowLeadForm(true)
   }

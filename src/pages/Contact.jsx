@@ -3,6 +3,9 @@ import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import SEO from '../components/SEO'
 import AIOptimizedFAQ from '../components/AIOptimizedFAQ'
+import { SmartCTA } from '../components/PerformanceComponents'
+import { PhoneTracker, EmailTracker, FormTracker } from '../components/AnalyticsComponents'
+import { trackFormSubmission } from '../utils/analytics'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +29,9 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('submitting')
+
+    // Track form submission
+    trackFormSubmission('contact_form', 'Contact Page')
 
     try {
       const response = await fetch('https://formspree.io/f/mwpqlzdw', {
@@ -239,7 +245,11 @@ const Contact = () => {
                 Get Your Free Consultation
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <FormTracker 
+                formType="contact_form"
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
                 {/* Honeypot field for spam protection - hidden from users */}
                 <input
                   type="text"
@@ -416,7 +426,7 @@ const Contact = () => {
                     </>
                   )}
                 </button>
-              </form>
+              </FormTracker>
             </motion.div>
 
             <motion.div
@@ -482,11 +492,22 @@ const Contact = () => {
                 </ul>
               </div>
             </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
+        </section>
+        
+        {/* Smart CTA Section */}
+        <section className="py-8 bg-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SmartCTA 
+              primaryText="Ready to Transform Your Print Environment?"
+              secondaryText="Get a free assessment and discover how much you could save"
+              ctaText="Schedule Free Consultation"
+              ctaLink="/print-cost-calculator"
+              variant="conversion"
+            />
+          </div>
+        </section>      {/* FAQ Section */}
       <AIOptimizedFAQ
         title="Contact & Support FAQ - Get Answers About Working with Us"
         faqs={contactFAQ}

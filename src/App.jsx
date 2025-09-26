@@ -2,6 +2,7 @@ import React from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
 import { usePageTracking } from './utils/analytics'
+import { useLeadScoring } from './components/LeadScoringComponents'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -83,6 +84,9 @@ import AnalyticsTest from './pages/AnalyticsTest'
 const App = () => {
   // Initialize page tracking
   usePageTracking()
+  
+  // Initialize lead scoring
+  const { addPageView } = useLeadScoring()
   
   return (
     <ErrorBoundary>
