@@ -7,8 +7,19 @@ import Breadcrumbs from '../../components/Breadcrumbs'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
 import LocationBusinessSchema from '../../components/LocationBusinessSchema'
 import FAQSchema from '../../components/FAQSchema'
+import { SmartLeadCTA, BehaviorTrigger } from '../../components/LeadScoringComponents'
+import { PhoneTracker, EmailTracker } from '../../components/AnalyticsComponents'
+import { useLeadScoring } from '../../components/LeadScoringComponents'
+import { trackLocationPageView } from '../../utils/analytics'
 
 const DesMoinesPrintManagement = () => {
+  const { addInteraction, addPageView } = useLeadScoring()
+  
+  React.useEffect(() => {
+    addPageView('/locations/des-moines-print-management', 'Des Moines Print Management')
+    trackLocationPageView('Des Moines')
+  }, [addPageView])
+
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Locations', href: '/locations' },
@@ -220,7 +231,13 @@ const DesMoinesPrintManagement = () => {
                   className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   <Phone className="h-5 w-5 mr-2" />
-                  Call Des Moines: (515) 237-2352
+                  <PhoneTracker 
+                    phoneNumber="(515) 237-2352"
+                    location="Des Moines Page - Hero CTA"
+                    className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors block text-center"
+                  >
+                    Call Des Moines: (515) 237-2352
+                  </PhoneTracker>
                 </a>
                 <a
                   href="mailto:gfleschinfomaxoffice@gmail.com"
@@ -500,7 +517,13 @@ const DesMoinesPrintManagement = () => {
                   className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   <Phone className="h-5 w-5 mr-2" />
-                  Call Des Moines Team: (515) 237-2352
+                  <PhoneTracker 
+                    phoneNumber="(515) 237-2352"
+                    location="Des Moines Page - Footer CTA"
+                    className="bg-yellow-400 text-blue-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition-colors"
+                  >
+                    Call Des Moines Team: (515) 237-2352
+                  </PhoneTracker>
                 </a>
                 <a
                   href="mailto:gfleschinfomaxoffice@gmail.com"

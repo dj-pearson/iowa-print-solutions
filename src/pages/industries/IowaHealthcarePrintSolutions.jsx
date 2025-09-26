@@ -180,7 +180,33 @@ const IowaHealthcarePrintSolutions = () => {
           </div>
         </section>
 
-        {/* Healthcare Services */}
+        {/* Healthcare Smart Lead CTA */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SmartLeadCTA 
+              defaultCTA={{
+                primaryText: "Get HIPAA Compliance Assessment",
+                primaryLink: "/contact?industry=healthcare",
+                secondaryText: "Download Healthcare Guide",
+                secondaryLink: "/resources/hipaa-printing-guide"
+              }}
+              urgentCTA={{
+                primaryText: "Emergency HIPAA Audit Support",
+                primaryLink: "/contact?urgent=true&industry=healthcare",
+                secondaryText: "Call Healthcare Team: (515) 123-4567",
+                secondaryLink: "tel:(515)123-4567"
+              }}
+              premiumCTA={{
+                primaryText: "Enterprise Healthcare Consultation",
+                primaryLink: "/contact?enterprise=true&industry=healthcare",
+                secondaryText: "Priority Implementation",
+                secondaryLink: "/contact?priority=healthcare"
+              }}
+            />
+          </div>
+        </section>
+
+        {/* Healthcare Resources */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
