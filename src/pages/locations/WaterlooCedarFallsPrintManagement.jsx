@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail, Clock, Users, CheckCircle, Star, ArrowRight, Shield, BarChart3 } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -322,6 +323,86 @@ const WaterlooCedarFallsPrintManagement = () => {
 
             <div className="max-w-4xl mx-auto">
               <AIOptimizedFAQ faqs={waterlooFAQ} />
+            </div>
+          </div>
+        </section>
+
+        {/* Other Iowa Locations */}
+        <section className="py-16 bg-blue-50">
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Other Iowa Print Management Locations
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Explore our specialized print management services in other major Iowa cities.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                {
+                  city: "Des Moines",
+                  href: "/locations/des-moines-print-management",
+                  description: "Capital city print solutions",
+                  specialties: "Insurance • Government • Healthcare"
+                },
+                {
+                  city: "Cedar Rapids",
+                  href: "/locations/cedar-rapids-print-management",
+                  description: "Manufacturing hub expertise", 
+                  specialties: "Manufacturing • Medical • Tech"
+                },
+                {
+                  city: "Sioux City",
+                  href: "/locations/sioux-city-print-management",
+                  description: "Agriculture & transportation",
+                  specialties: "Agriculture • Transportation • Logistics"
+                },
+                {
+                  city: "Dubuque", 
+                  href: "/locations/dubuque-print-management",
+                  description: "Tri-state manufacturing",
+                  specialties: "Manufacturing • Healthcare • Education"
+                },
+                {
+                  city: "Iowa City",
+                  href: "/locations/iowa-city-print-management", 
+                  description: "University & healthcare",
+                  specialties: "University • Healthcare • Research"
+                },
+                {
+                  city: "Council Bluffs",
+                  href: "/locations/council-bluffs-print-management",
+                  description: "Omaha metro solutions",
+                  specialties: "Transportation • Manufacturing • Logistics"
+                }
+              ].map((location, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <h3 className="font-bold text-gray-900 mb-2 text-lg">{location.city}</h3>
+                  <p className="text-gray-600 mb-3">{location.description}</p>
+                  <p className="text-sm text-gray-500 mb-4">{location.specialties}</p>
+                  <Link
+                    to={location.href}
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    Learn More
+                    <ArrowRight className="h-4 w-4 ml-1" />
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

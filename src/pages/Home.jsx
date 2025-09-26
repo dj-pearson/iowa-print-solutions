@@ -5,6 +5,7 @@ import ServiceCard from '../components/ServiceCard'
 import TestimonialCard from '../components/TestimonialCard'
 import SEO from '../components/SEO'
 import IowaBusinessFAQSchema from '../components/IowaBusinessFAQSchema'
+import OrganizationSchema from '../components/OrganizationSchema'
 import { Printer, Settings, BarChart3, Shield, Users, Award, ArrowRight, Wrench } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -148,6 +149,7 @@ const Home = () => {
         schemaType="WebSite"
         additionalSchema={seoSchema}
       />
+      <OrganizationSchema />
       <IowaBusinessFAQSchema />
 
       <div className="min-h-screen">

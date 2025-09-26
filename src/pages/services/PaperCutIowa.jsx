@@ -6,6 +6,7 @@ import Breadcrumbs from '../../components/Breadcrumbs'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
 import ServiceSchema from '../../components/ServiceSchema'
 import FAQSchema from '../../components/FAQSchema'
+import BreadcrumbSchema from '../../components/BreadcrumbSchema'
 
 const PaperCutIowa = () => {
   const breadcrumbItems = [
@@ -214,6 +215,8 @@ const PaperCutIowa = () => {
       />
       
       <FAQSchema faqs={paperCutFAQ} />
+      
+      <BreadcrumbSchema breadcrumbs={breadcrumbItems} />
 
       <div className="min-h-screen bg-white">
         <Breadcrumbs items={breadcrumbItems} className="bg-gray-50 py-4" />

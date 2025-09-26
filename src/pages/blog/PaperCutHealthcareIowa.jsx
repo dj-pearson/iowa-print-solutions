@@ -382,6 +382,46 @@ const PaperCutHealthcareIowa = () => {
           </div>
         </section>
 
+        {/* Related Resources Section */}
+        <section className="py-12 bg-blue-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-lg shadow-sm"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Related Iowa Healthcare Resources</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-800">Healthcare Solutions:</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li><Link to="/services/papercut-iowa" className="text-blue-600 hover:text-blue-700">🏥 PaperCut HIPAA Solutions</Link></li>
+                    <li><Link to="/services/uniflow-iowa" className="text-blue-600 hover:text-blue-700">🏥 uniFLOW Medical Workflows</Link></li>
+                    <li><Link to="/blog/hipaa-printing-iowa" className="text-blue-600 hover:text-blue-700">📖 HIPAA Printing Guide</Link></li>
+                  </ul>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-800">Healthcare Locations:</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li><Link to="/locations/des-moines-print-management" className="text-blue-600 hover:text-blue-700">📍 Des Moines Medical Centers</Link></li>
+                    <li><Link to="/locations/cedar-rapids-print-management" className="text-blue-600 hover:text-blue-700">📍 Cedar Rapids Healthcare</Link></li>
+                    <li><Link to="/locations/iowa-city-print-management" className="text-blue-600 hover:text-blue-700">📍 Iowa City Medical</Link></li>
+                  </ul>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-800">Related Topics:</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li><Link to="/blog/uniflow-medical-iowa" className="text-blue-600 hover:text-blue-700">📖 uniFLOW Medical Iowa</Link></li>
+                    <li><Link to="/blog/document-security-printing-cedar-rapids" className="text-blue-600 hover:text-blue-700">📖 Document Security</Link></li>
+                    <li><Link to="/blog/secure-print-release-iowa" className="text-blue-600 hover:text-blue-700">📖 Secure Print Release</Link></li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         <section className="bg-blue-700 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div

@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { GraduationCap, Shield, Users, DollarSign, CheckCircle, Star, ArrowRight, Phone, Mail, Building, BookOpen, Calculator } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -761,6 +762,48 @@ const PaperCutVsUniflowVsPrinterLogicIowaK12 = () => {
 
         {/* Article Footer */}
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Related Resources Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-blue-50 p-6 rounded-lg mb-8"
+          >
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Related Iowa K-12 Resources</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-3">
+                <h4 className="font-semibold text-gray-800">Service Pages:</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><Link to="/services/papercut-iowa" className="text-blue-600 hover:text-blue-700">🎯 PaperCut Iowa Implementation</Link></li>
+                  <li><Link to="/services/uniflow-iowa" className="text-blue-600 hover:text-blue-700">🎯 uniFLOW Iowa Solutions</Link></li>
+                  <li><Link to="/services/printerlogic-iowa" className="text-blue-600 hover:text-blue-700">🎯 PrinterLogic Iowa Services</Link></li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h4 className="font-semibold text-gray-800">Location Pages:</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><Link to="/locations/des-moines-print-management" className="text-blue-600 hover:text-blue-700">📍 Des Moines Print Management</Link></li>
+                  <li><Link to="/locations/cedar-rapids-print-management" className="text-blue-600 hover:text-blue-700">📍 Cedar Rapids K-12 Solutions</Link></li>
+                  <li><Link to="/locations/waterloo-cedar-falls-print-management" className="text-blue-600 hover:text-blue-700">📍 UNI & Cedar Valley Schools</Link></li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-4 pt-4 border-t border-blue-200">
+              <h4 className="font-semibold text-gray-800 mb-2">Related Blog Posts:</h4>
+              <div className="flex flex-wrap gap-2">
+                <Link to="/blog/reducing-printing-costs-iowa-schools" className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs hover:bg-blue-200 transition-colors">
+                  Reducing Iowa School Print Costs
+                </Link>
+                <Link to="/blog/papercut-education-iowa" className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs hover:bg-blue-200 transition-colors">
+                  PaperCut for Iowa Education
+                </Link>
+                <Link to="/blog/school-district-iowa" className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs hover:bg-blue-200 transition-colors">
+                  Iowa School District Solutions
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

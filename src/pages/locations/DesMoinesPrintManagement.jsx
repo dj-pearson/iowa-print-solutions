@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail, Clock, Users, CheckCircle, Star, ArrowRight, Shield, BarChart3 } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -388,6 +389,93 @@ const DesMoinesPrintManagement = () => {
               title="Des Moines Print Management - Frequently Asked Questions"
               description="Get answers to common questions about print management services specifically for Des Moines businesses."
             />
+          </div>
+        </section>
+
+        {/* Nearby Locations */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Serving Iowa Statewide
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                While based in Des Moines, we provide expert print management services throughout Iowa. 
+                Explore our specialized solutions for other major Iowa cities.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  city: "Cedar Rapids",
+                  href: "/locations/cedar-rapids-print-management",
+                  description: "Manufacturing & healthcare print solutions",
+                  industries: "Medical • Manufacturing • Professional"
+                },
+                {
+                  city: "Iowa City", 
+                  href: "/locations/iowa-city-print-management",
+                  description: "University & healthcare specialization",
+                  industries: "University • Healthcare • Research"
+                },
+                {
+                  city: "Waterloo-Cedar Falls",
+                  href: "/locations/waterloo-cedar-falls-print-management", 
+                  description: "UNI & manufacturing expertise",
+                  industries: "Education • Manufacturing • Agriculture"
+                },
+                {
+                  city: "Davenport",
+                  href: "/locations/davenport-print-management",
+                  description: "Quad Cities business solutions",
+                  industries: "Healthcare • Manufacturing • Logistics"
+                },
+                {
+                  city: "Sioux City",
+                  href: "/locations/sioux-city-print-management",
+                  description: "Agriculture & transportation focus", 
+                  industries: "Agriculture • Transportation • Medical"
+                },
+                {
+                  city: "Dubuque",
+                  href: "/locations/dubuque-print-management",
+                  description: "Tri-state manufacturing solutions",
+                  industries: "Manufacturing • Healthcare • Education"
+                },
+                {
+                  city: "Council Bluffs", 
+                  href: "/locations/council-bluffs-print-management",
+                  description: "Omaha metro area expertise",
+                  industries: "Transportation • Manufacturing • Healthcare"
+                }
+              ].map((location, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-4 rounded-lg hover:shadow-md transition-all duration-300"
+                >
+                  <h3 className="font-bold text-gray-900 mb-2">{location.city}</h3>
+                  <p className="text-sm text-gray-600 mb-3">{location.description}</p>
+                  <p className="text-xs text-gray-500 mb-4">{location.industries}</p>
+                  <Link
+                    to={location.href}
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 text-sm font-medium"
+                  >
+                    Learn More
+                    <ArrowRight className="h-3 w-3 ml-1" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
