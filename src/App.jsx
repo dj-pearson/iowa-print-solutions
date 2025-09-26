@@ -1,6 +1,7 @@
 import React from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
+import { usePageTracking } from './utils/analytics'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -72,8 +73,17 @@ import WaterlooCedarFallsPrintManagement from './pages/locations/WaterlooCedarFa
 import SiouxCityPrintManagement from './pages/locations/SiouxCityPrintManagement'
 import DubuquePrintManagement from './pages/locations/DubuquePrintManagement'
 import CouncilBluffsPrintManagement from './pages/locations/CouncilBluffsPrintManagement'
+import IowaHealthcarePrintSolutions from './pages/industries/IowaHealthcarePrintSolutions'
+import IowaEducationPrintSolutions from './pages/industries/IowaEducationPrintSolutions'
+import PrintManagementComparison from './pages/PrintManagementComparison'
+import PrintCostCalculator from './pages/PrintCostCalculator'
+import ResourceLibrary from './pages/ResourceLibrary'
+import AnalyticsTest from './pages/AnalyticsTest'
 
 const App = () => {
+  // Initialize page tracking
+  usePageTracking()
+  
   return (
     <ErrorBoundary>
       <Router>
@@ -150,6 +160,12 @@ const App = () => {
             <Route path="/locations/sioux-city-print-management" element={<SiouxCityPrintManagement />} />
             <Route path="/locations/dubuque-print-management" element={<DubuquePrintManagement />} />
             <Route path="/locations/council-bluffs-print-management" element={<CouncilBluffsPrintManagement />} />
+            <Route path="/industries/iowa-healthcare-print-solutions" element={<IowaHealthcarePrintSolutions />} />
+            <Route path="/industries/iowa-education-print-solutions" element={<IowaEducationPrintSolutions />} />
+            <Route path="/print-management-comparison" element={<PrintManagementComparison />} />
+            <Route path="/print-cost-calculator" element={<PrintCostCalculator />} />
+            <Route path="/resource-library" element={<ResourceLibrary />} />
+            <Route path="/analytics-test" element={<AnalyticsTest />} />
           </Routes>
         </main>
         <Footer />
