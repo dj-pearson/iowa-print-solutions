@@ -57,6 +57,9 @@ import CedarRapidsPrintSolutions from './pages/locations/CedarRapidsPrintSolutio
 import IowaCityPrintSolutions from './pages/locations/IowaCityPrintSolutions'
 import DavenportPrintSolutions from './pages/locations/DavenportPrintSolutions'
 import DesMoinesPrintManagement from './pages/locations/DesMoinesPrintManagement'
+import CedarRapidsPrintManagement from './pages/locations/CedarRapidsPrintManagement'
+import IowaCityPrintManagement from './pages/locations/IowaCityPrintManagement'
+import DavenportPrintManagement from './pages/locations/DavenportPrintManagement'
 import SmallBusinessPrintManagementIowa from './pages/blog/SmallBusinessPrintManagementIowa'
 import PaperCutVsUniflowIowa from './pages/blog/PaperCutVsUniflowIowa'
 import ReducingPrintingCostsIowaSchools from './pages/blog/ReducingPrintingCostsIowaSchools'
@@ -132,8 +135,11 @@ const App = () => {
             <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
             <Route path="/locations/des-moines-print-management" element={<DesMoinesPrintManagement />} />
             <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintSolutions />} />
+            <Route path="/locations/cedar-rapids-print-management" element={<CedarRapidsPrintManagement />} />
             <Route path="/locations/iowa-city" element={<IowaCityPrintSolutions />} />
+            <Route path="/locations/iowa-city-print-management" element={<IowaCityPrintManagement />} />
             <Route path="/locations/davenport" element={<DavenportPrintSolutions />} />
+            <Route path="/locations/davenport-print-management" element={<DavenportPrintManagement />} />
           </Routes>
         </main>
         <Footer />
