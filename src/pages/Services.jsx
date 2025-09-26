@@ -166,8 +166,8 @@ const Services = () => {
   return (
     <>
       <SEO 
-        title="Iowa Print Management Services - PaperCut, Uniflow & PrinterLogic Implementation"
-        description="Professional print management services in Iowa. Expert PaperCut, Uniflow, and PrinterLogic implementation through Infomax Office Systems. Serving Des Moines, Cedar Rapids, Iowa City & statewide since 1958."
+        title="Iowa Print Services | PaperCut, uniFLOW & PrinterLogic"
+        description="Professional print management services in Iowa. Expert PaperCut, uniFLOW, PrinterLogic implementation via Infomax. Des Moines, Cedar Rapids, statewide."
         keywords="Iowa print management services, PaperCut implementation Iowa, Uniflow services Iowa, PrinterLogic setup Iowa, managed print services Des Moines, print solutions Cedar Rapids, document management Iowa City, print security services Iowa, Infomax Office Systems services"
         canonicalUrl="https://iowaprintsolutions.com/services"
         schemaType="Service"

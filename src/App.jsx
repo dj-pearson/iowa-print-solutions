@@ -56,10 +56,14 @@ import DesMoinesPrintSolutions from './pages/locations/DesMoinesPrintSolutions'
 import CedarRapidsPrintSolutions from './pages/locations/CedarRapidsPrintSolutions'
 import IowaCityPrintSolutions from './pages/locations/IowaCityPrintSolutions'
 import DavenportPrintSolutions from './pages/locations/DavenportPrintSolutions'
+import DesMoinesPrintManagement from './pages/locations/DesMoinesPrintManagement'
 import SmallBusinessPrintManagementIowa from './pages/blog/SmallBusinessPrintManagementIowa'
 import PaperCutVsUniflowIowa from './pages/blog/PaperCutVsUniflowIowa'
 import ReducingPrintingCostsIowaSchools from './pages/blog/ReducingPrintingCostsIowaSchools'
 import PaperCutHiveQ42025Iowa from './pages/blog/PaperCutHiveQ42025Iowa'
+import PaperCutIowa from './pages/services/PaperCutIowa'
+import UniflowIowa from './pages/services/UniflowIowa'
+import PrinterLogicIowa from './pages/services/PrinterLogicIowa'
 
 const App = () => {
   return (
@@ -98,6 +102,9 @@ const App = () => {
             <Route path="/resources/print-management-software-comparison" element={<PrintManagementSoftwareComparison />} />
             <Route path="/services/papercut" element={<PaperCutService />} />
             <Route path="/services/uniflow" element={<UniflowService />} />
+            <Route path="/services/papercut-iowa" element={<PaperCutIowa />} />
+            <Route path="/services/uniflow-iowa" element={<UniflowIowa />} />
+            <Route path="/services/printerlogic-iowa" element={<PrinterLogicIowa />} />
             <Route path="/blog/papercut-healthcare-iowa" element={<PaperCutHealthcareIowa />} />
             <Route path="/blog/hipaa-printing-iowa" element={<HIPAAPrintingIowa />} />
             <Route path="/blog/uniflow-medical-iowa" element={<UniflowMedicalIowa />} />
@@ -123,6 +130,7 @@ const App = () => {
             <Route path="/blog/reducing-printing-costs-iowa-schools" element={<ReducingPrintingCostsIowaSchools />} />
             <Route path="/blog/papercut-hive-q4-2025-iowa" element={<PaperCutHiveQ42025Iowa />} />
             <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
+            <Route path="/locations/des-moines-print-management" element={<DesMoinesPrintManagement />} />
             <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintSolutions />} />
             <Route path="/locations/iowa-city" element={<IowaCityPrintSolutions />} />
             <Route path="/locations/davenport" element={<DavenportPrintSolutions />} />

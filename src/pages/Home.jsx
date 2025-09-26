@@ -40,42 +40,109 @@ const Home = () => {
     }
   ]
 
-  const seoSchema = {
-    '@type': 'WebSite',
-    'potentialAction': {
-      '@type': 'SearchAction',
-      'target': 'https://iowaprintsolutions.com/resources?search={search_term_string}',
-      'query-input': 'required name=search_term_string'
-    },
-    'about': [
-      {
-        '@type': 'Thing',
-        'name': 'Print Management Solutions',
-        'sameAs': 'https://en.wikipedia.org/wiki/Print_management'
-      },
-      {
-        '@type': 'Thing', 
-        'name': 'Document Management',
-        'sameAs': 'https://en.wikipedia.org/wiki/Document_management_system'
+  const seoSchema = [
+    {
+      '@type': 'WebSite',
+      'potentialAction': {
+        '@type': 'SearchAction',
+        'target': 'https://iowaprintsolutions.com/resources?search={search_term_string}',
+        'query-input': 'required name=search_term_string'
       }
-    ],
-    'mainEntity': {
-      '@type': 'Organization',
+    },
+    {
+      '@type': 'LocalBusiness',
       'name': 'Infomax Office Systems',
+      'alternateName': 'Iowa Print Solutions',
+      'description': 'Leading provider of print management solutions in Iowa since 1958. Expert PaperCut, uniFLOW, and PrinterLogic implementation and support.',
       'foundingDate': '1958',
-      'description': 'Leading provider of print management solutions in Iowa since 1958',
-      'areaServed': {
-        '@type': 'State',
-        'name': 'Iowa'
+      'telephone': '515-237-2352',
+      'email': 'gfleschinfomaxoffice@gmail.com',
+      'url': 'https://iowaprintsolutions.com',
+      'logo': 'https://iowaprintsolutions.com/logo.png',
+      'image': 'https://iowaprintsolutions.com/logo.png',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Des Moines',
+        'addressRegion': 'IA',
+        'addressCountry': 'US'
+      },
+      'geo': {
+        '@type': 'GeoCoordinates',
+        'latitude': '41.5868',
+        'longitude': '-93.6250'
+      },
+      'areaServed': [
+        {
+          '@type': 'State',
+          'name': 'Iowa'
+        },
+        {
+          '@type': 'City',
+          'name': 'Des Moines'
+        },
+        {
+          '@type': 'City',
+          'name': 'Cedar Rapids'
+        },
+        {
+          '@type': 'City',
+          'name': 'Iowa City'
+        },
+        {
+          '@type': 'City',
+          'name': 'Davenport'
+        }
+      ],
+      'serviceType': [
+        'Print Management Software Implementation',
+        'PaperCut Support and Services',
+        'uniFLOW Implementation',
+        'PrinterLogic Deployment',
+        'Managed Print Services',
+        'Document Management Solutions'
+      ],
+      'openingHours': 'Mo-Fr 08:00-17:00',
+      'sameAs': [
+        'https://www.infomaxoffice.com'
+      ],
+      'hasOfferCatalog': {
+        '@type': 'OfferCatalog',
+        'name': 'Print Management Services',
+        'itemListElement': [
+          {
+            '@type': 'Offer',
+            'itemOffered': {
+              '@type': 'Service',
+              'name': 'PaperCut Implementation',
+              'description': 'Complete PaperCut MF deployment and support'
+            }
+          },
+          {
+            '@type': 'Offer',
+            'itemOffered': {
+              '@type': 'Service',
+              'name': 'uniFLOW Implementation',
+              'description': 'Canon uniFLOW document workflow solutions'
+            }
+          },
+          {
+            '@type': 'Offer',
+            'itemOffered': {
+              '@type': 'Service',
+              'name': 'PrinterLogic Implementation',
+              'description': 'Serverless print management deployment'
+            }
+          }
+        ]
       }
     }
-  }
+  ]
 
   return (
     <>
       <SEO 
-        title="Iowa Print Solutions - Leading Print Management Provider | Infomax Office Systems"
-        description="Iowa's #1 resource for print management solutions. Expert PaperCut, Uniflow & PrinterLogic implementation through Infomax Office Systems. Serving Iowa since 1958. Get your free consultation today."
+        title="Print Management for Iowa | PaperCut, uniFLOW, PrinterLogic"
+        description="Iowa print management experts. PaperCut, uniFLOW & PrinterLogic solutions via Infomax Office Systems. Serving Des Moines, Cedar Rapids since 1958."
         keywords="Iowa print management, print solutions Iowa, PaperCut Iowa implementation, Uniflow Iowa, PrinterLogic Iowa, managed print services Iowa, document management Iowa, print security Iowa, Infomax Office Systems, Des Moines print solutions, Cedar Rapids print management, Iowa City print services"
         canonicalUrl="https://iowaprintsolutions.com"
         schemaType="WebSite"

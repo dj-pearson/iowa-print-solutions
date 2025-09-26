@@ -119,8 +119,8 @@ const About = () => {
   return (
     <>
       <SEO 
-        title="About Iowa Print Solutions | Infomax Office Systems - 65+ Years Serving Iowa"
-        description="Since 1958, Infomax Office Systems has been Iowa's trusted print management partner. Learn about our 65+ year history serving Des Moines, Cedar Rapids, Iowa City, and all of Iowa with PaperCut, Uniflow, and PrinterLogic solutions."
+        title="About Iowa Print Solutions | Infomax Office Systems"
+        description="Since 1958, Infomax Office Systems serves Iowa with expert print management. 65+ years of PaperCut, uniFLOW & PrinterLogic solutions in Des Moines, Cedar Rapids."
         keywords="About Infomax Office Systems, Iowa print management history, Iowa office technology since 1958, Des Moines print solutions, Cedar Rapids document management, Iowa business services history"
         canonicalUrl="https://iowaprintsolutions.com/about"
         schemaType="AboutPage"

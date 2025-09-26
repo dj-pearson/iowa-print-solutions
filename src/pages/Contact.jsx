@@ -130,35 +130,79 @@ const Contact = () => {
     }
   ]
 
-  const seoSchema = {
-    '@type': 'ContactPage',
-    'mainEntity': {
-      '@type': 'Organization',
+  const seoSchema = [
+    {
+      '@type': 'ContactPage'
+    },
+    {
+      '@type': 'LocalBusiness',
       'name': 'Infomax Office Systems',
-      'telephone': '+15152372352',
-      'email': 'DPearson@InfomaxOffice.com',
-      'areaServed': {
-        '@type': 'State',
-        'name': 'Iowa'
+      'alternateName': 'Iowa Print Solutions',
+      'description': 'Expert print management solutions for Iowa businesses since 1958',
+      'telephone': '515-237-2352',
+      'email': 'gfleschinfomaxoffice@gmail.com',
+      'url': 'https://iowaprintsolutions.com',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Des Moines',
+        'addressRegion': 'IA',
+        'postalCode': '50309',
+        'addressCountry': 'US'
       },
-      'serviceArea': [{
-        '@type': 'City',
-        'name': 'Des Moines'
-      }, {
-        '@type': 'City',
-        'name': 'Cedar Rapids' 
-      }, {
-        '@type': 'City',
-        'name': 'Iowa City'
-      }]
+      'geo': {
+        '@type': 'GeoCoordinates',
+        'latitude': '41.5868',
+        'longitude': '-93.6250'
+      },
+      'areaServed': [
+        {
+          '@type': 'State',
+          'name': 'Iowa'
+        },
+        {
+          '@type': 'City',
+          'name': 'Des Moines',
+          'containedInPlace': 'Iowa'
+        },
+        {
+          '@type': 'City',
+          'name': 'Cedar Rapids',
+          'containedInPlace': 'Iowa'
+        },
+        {
+          '@type': 'City',
+          'name': 'Iowa City',
+          'containedInPlace': 'Iowa'
+        },
+        {
+          '@type': 'City',
+          'name': 'Davenport',
+          'containedInPlace': 'Iowa'
+        }
+      ],
+      'serviceType': [
+        'Print Management Implementation',
+        'PaperCut Services',
+        'uniFLOW Solutions',
+        'PrinterLogic Deployment'
+      ],
+      'openingHours': 'Mo-Fr 08:00-18:00',
+      'foundingDate': '1958',
+      'contactPoint': {
+        '@type': 'ContactPoint',
+        'telephone': '515-237-2352',
+        'contactType': 'customer service',
+        'availableLanguage': 'English',
+        'areaServed': 'Iowa'
+      }
     }
-  }
+  ]
 
   return (
     <>
       <SEO 
-        title="Contact Iowa Print Solutions | Infomax Office Systems - (515) 237-2352"
-        description="Contact Iowa's leading print management experts. Get your free consultation for PaperCut, Uniflow, and PrinterLogic implementation. Serving Des Moines, Cedar Rapids, Iowa City and statewide. Call (515) 237-2352."
+        title="Contact Iowa Print Solutions | Call (515) 237-2352"
+        description="Contact Iowa's leading print management experts. Free PaperCut, uniFLOW & PrinterLogic consultations. Serving Des Moines, Cedar Rapids statewide."
         keywords="contact Iowa print solutions, Infomax Office Systems contact, Iowa print management consultation, PaperCut Iowa contact, print solutions Des Moines phone, Cedar Rapids print services contact, Iowa document management consultation"
         canonicalUrl="https://iowaprintsolutions.com/contact"
         schemaType="ContactPage"
