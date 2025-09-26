@@ -64,6 +64,7 @@ import SmallBusinessPrintManagementIowa from './pages/blog/SmallBusinessPrintMan
 import PaperCutVsUniflowIowa from './pages/blog/PaperCutVsUniflowIowa'
 import ReducingPrintingCostsIowaSchools from './pages/blog/ReducingPrintingCostsIowaSchools'
 import PaperCutHiveQ42025Iowa from './pages/blog/PaperCutHiveQ42025Iowa'
+import PaperCutVsUniflowVsPrinterLogicIowaK12 from './pages/blog/PaperCutVsUniflowVsPrinterLogicIowaK12'
 import PaperCutIowa from './pages/services/PaperCutIowa'
 import UniflowIowa from './pages/services/UniflowIowa'
 import PrinterLogicIowa from './pages/services/PrinterLogicIowa'
@@ -132,6 +133,7 @@ const App = () => {
             <Route path="/blog/papercut-vs-uniflow-iowa" element={<PaperCutVsUniflowIowa />} />
             <Route path="/blog/reducing-printing-costs-iowa-schools" element={<ReducingPrintingCostsIowaSchools />} />
             <Route path="/blog/papercut-hive-q4-2025-iowa" element={<PaperCutHiveQ42025Iowa />} />
+            <Route path="/blog/papercut-vs-uniflow-vs-printerlogic-iowa-k12" element={<PaperCutVsUniflowVsPrinterLogicIowaK12 />} />
             <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
             <Route path="/locations/des-moines-print-management" element={<DesMoinesPrintManagement />} />
             <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintSolutions />} />
