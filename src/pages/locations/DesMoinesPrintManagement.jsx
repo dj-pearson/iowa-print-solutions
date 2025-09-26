@@ -4,6 +4,8 @@ import { MapPin, Phone, Mail, Clock, Users, CheckCircle, Star, ArrowRight, Shiel
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
+import LocationBusinessSchema from '../../components/LocationBusinessSchema'
+import FAQSchema from '../../components/FAQSchema'
 
 const DesMoinesPrintManagement = () => {
   const breadcrumbItems = [
@@ -148,6 +150,44 @@ const DesMoinesPrintManagement = () => {
         schemaType="LocalBusiness"
         additionalSchema={seoSchema}
       />
+      
+      <LocationBusinessSchema 
+        locationName="Des Moines"
+        description="Professional print management services for Des Moines area businesses. Expert implementation of PaperCut, uniFLOW, and PrinterLogic solutions with specialized support for insurance companies, government agencies, and healthcare organizations."
+        address={{
+          streetAddress: "5619 NE 14th St",
+          city: "Des Moines",
+          state: "IA",
+          postalCode: "50313"
+        }}
+        serviceArea="Des Moines Metro Area"
+        services={[
+          {
+            name: "PaperCut Implementation",
+            description: "Complete PaperCut MF setup for Des Moines businesses with secure printing and cost tracking"
+          },
+          {
+            name: "uniFLOW Document Workflows",
+            description: "Advanced document workflow automation for Des Moines healthcare and insurance companies"
+          },
+          {
+            name: "PrinterLogic Serverless Printing",
+            description: "Modern serverless print management for Des Moines multi-location businesses"
+          }
+        ]}
+        aggregateRating={{
+          ratingValue: "4.9",
+          reviewCount: "52"
+        }}
+        review={{
+          ratingValue: "5",
+          author: "Jennifer Martinez, Insurance Operations Manager",
+          reviewBody: "Iowa Print Solutions revolutionized our Des Moines office printing workflows. Their PaperCut implementation saved us thousands annually while improving security and efficiency.",
+          datePublished: "2024-01-10"
+        }}
+      />
+      
+      <FAQSchema faqs={desMoinesFAQ} />
 
       <div className="min-h-screen bg-white">
         <Breadcrumbs items={breadcrumbItems} className="bg-gray-50 py-4" />

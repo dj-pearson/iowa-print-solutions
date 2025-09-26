@@ -1,9 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Server, Cloud, Zap, Shield, Clock, CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react'
+import { Server, Zap, Shield, BarChart3, Clock, CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
+import ServiceSchema from '../../components/ServiceSchema'
+import FAQSchema from '../../components/FAQSchema'
 
 const PrinterLogicIowa = () => {
   const breadcrumbItems = [
@@ -198,6 +200,38 @@ const PrinterLogicIowa = () => {
         schemaType="Service"
         additionalSchema={seoSchema}
       />
+      
+      <ServiceSchema 
+        serviceName="PrinterLogic Serverless Print Management"
+        description="Professional PrinterLogic implementation and support for Iowa businesses eliminating traditional print servers. Serverless architecture reduces IT costs, improves reliability, and simplifies print management across multiple locations."
+        serviceType="Serverless Print Management Service"
+        offers={[
+          {
+            name: "PrinterLogic Implementation",
+            description: "Complete migration from print servers to PrinterLogic's serverless architecture with zero downtime"
+          },
+          {
+            name: "Multi-Location Setup", 
+            description: "Centralized print management across multiple Iowa business locations without dedicated print servers"
+          },
+          {
+            name: "Print Server Elimination",
+            description: "Complete removal of traditional print server infrastructure with modern serverless solution"
+          }
+        ]}
+        aggregateRating={{
+          ratingValue: "4.7",
+          reviewCount: "28"
+        }}
+        review={{
+          ratingValue: "5",
+          author: "Tom Richards, IT Manager",
+          reviewBody: "PrinterLogic eliminated our print server headaches completely. Iowa Print Solutions' expertise made the transition seamless and our IT team can now focus on strategic initiatives instead of print server maintenance.",
+          datePublished: "2024-01-25"
+        }}
+      />
+      
+      <FAQSchema faqs={printerLogicFAQ} />
 
       <div className="min-h-screen bg-white">
         <Breadcrumbs items={breadcrumbItems} className="bg-gray-50 py-4" />

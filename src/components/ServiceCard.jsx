@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-const ServiceCard = ({ icon: Icon, title, description, features, link, delay = 0 }) => {
+const ServiceCard = ({ icon: Icon, title, description, features, link, iowaLink, delay = 0 }) => {
   const LinkComponent = link?.startsWith('http') ? 'a' : Link;
   const linkProps = link?.startsWith('http') 
     ? { href: link, target: '_blank', rel: 'noopener noreferrer' } 
@@ -36,20 +36,29 @@ const ServiceCard = ({ icon: Icon, title, description, features, link, delay = 0
         </div>
       )}
       
-      {link ? (
-        <LinkComponent 
-          {...linkProps}
-          className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center space-x-1 group"
-        >
-          <span>Learn More</span>
-          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </LinkComponent>
-      ) : (
-        <button className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center space-x-1 group">
-          <span>Learn More</span>
-          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </button>
-      )}
+      <div className="space-y-3">
+        {link && (
+          <LinkComponent 
+            {...linkProps}
+            className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center space-x-1 group"
+          >
+            <span>Learn More</span>
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </LinkComponent>
+        )}
+        
+        {iowaLink && (
+          <div>
+            <Link 
+              to={iowaLink}
+              className="text-green-600 hover:text-green-700 font-medium inline-flex items-center space-x-1 group text-sm"
+            >
+              <span>🎯 Iowa-Specific Guide</span>
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        )}
+      </div>
     </motion.div>
   )
 }

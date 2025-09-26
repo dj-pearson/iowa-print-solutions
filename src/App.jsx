@@ -68,6 +68,10 @@ import PaperCutVsUniflowVsPrinterLogicIowaK12 from './pages/blog/PaperCutVsUnifl
 import PaperCutIowa from './pages/services/PaperCutIowa'
 import UniflowIowa from './pages/services/UniflowIowa'
 import PrinterLogicIowa from './pages/services/PrinterLogicIowa'
+import WaterlooCedarFallsPrintManagement from './pages/locations/WaterlooCedarFallsPrintManagement'
+import SiouxCityPrintManagement from './pages/locations/SiouxCityPrintManagement'
+import DubuquePrintManagement from './pages/locations/DubuquePrintManagement'
+import CouncilBluffsPrintManagement from './pages/locations/CouncilBluffsPrintManagement'
 
 const App = () => {
   return (
@@ -142,6 +146,10 @@ const App = () => {
             <Route path="/locations/iowa-city-print-management" element={<IowaCityPrintManagement />} />
             <Route path="/locations/davenport" element={<DavenportPrintSolutions />} />
             <Route path="/locations/davenport-print-management" element={<DavenportPrintManagement />} />
+            <Route path="/locations/waterloo-cedar-falls-print-management" element={<WaterlooCedarFallsPrintManagement />} />
+            <Route path="/locations/sioux-city-print-management" element={<SiouxCityPrintManagement />} />
+            <Route path="/locations/dubuque-print-management" element={<DubuquePrintManagement />} />
+            <Route path="/locations/council-bluffs-print-management" element={<CouncilBluffsPrintManagement />} />
           </Routes>
         </main>
         <Footer />

@@ -4,6 +4,8 @@ import { FileText, Shield, Users, Workflow, Clock, CheckCircle, Phone, Mail, Arr
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
+import ServiceSchema from '../../components/ServiceSchema'
+import FAQSchema from '../../components/FAQSchema'
 
 const UniflowIowa = () => {
   const breadcrumbItems = [
@@ -180,6 +182,38 @@ const UniflowIowa = () => {
         schemaType="Service"
         additionalSchema={seoSchema}
       />
+      
+      <ServiceSchema 
+        serviceName="uniFLOW Document Workflow Solutions"
+        description="Professional Canon uniFLOW implementation and support for Iowa healthcare, legal, and business organizations. Advanced document workflows, HIPAA compliance, secure printing, and digital transformation solutions."
+        serviceType="Document Workflow Management Service"
+        offers={[
+          {
+            name: "uniFLOW Implementation",
+            description: "Complete setup and configuration of Canon uniFLOW software with advanced document workflows and security features"
+          },
+          {
+            name: "HIPAA Compliance Setup", 
+            description: "Healthcare-specific uniFLOW configuration ensuring complete HIPAA compliance and audit trails"
+          },
+          {
+            name: "Digital Workflow Design",
+            description: "Custom document workflow development to automate business processes and improve efficiency"
+          }
+        ]}
+        aggregateRating={{
+          ratingValue: "4.9",
+          reviewCount: "32"
+        }}
+        review={{
+          ratingValue: "5",
+          author: "Dr. Michael Chen, Healthcare Administrator",
+          reviewBody: "uniFLOW implementation by Iowa Print Solutions revolutionized our medical practice workflows. HIPAA compliance is seamless and our document security is now bulletproof.",
+          datePublished: "2024-01-20"
+        }}
+      />
+      
+      <FAQSchema faqs={uniflowFAQ} />
 
       <div className="min-h-screen bg-white">
         <Breadcrumbs items={breadcrumbItems} className="bg-gray-50 py-4" />

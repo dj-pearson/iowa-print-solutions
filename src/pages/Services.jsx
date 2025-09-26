@@ -39,6 +39,7 @@ const Services = () => {
       title: 'PaperCut MF Implementation Services',
       description: 'Complete PaperCut Mobility & Fleet solutions for Iowa organizations through Infomax Office Systems. From planning to deployment and ongoing support.',
       link: '/services/papercut',
+      iowaLink: '/services/papercut-iowa',
       features: [
         'Professional installation and configuration',
         'User authentication and directory setup',
@@ -53,6 +54,7 @@ const Services = () => {
       title: 'Uniflow Document Management Solutions',
       description: 'Advanced document workflow automation and security solutions through Infomax Office Systems. Streamline processes and enhance security for Iowa businesses.',
       link: '/services/uniflow',
+      iowaLink: '/services/uniflow-iowa',
       features: [
         'Secure pull printing implementation',
         'Document workflow automation design',
@@ -67,6 +69,7 @@ const Services = () => {
       title: 'PrinterLogic Serverless Printing Setup',
       description: 'Eliminate print servers with cloud-based print management through Infomax Office Systems. Reduce costs and improve reliability for Iowa organizations.',
       link: 'https://www.infomaxoffice.com/',
+      iowaLink: '/services/printerlogic-iowa',
       features: [
         'Serverless printing architecture migration',
         'Automated driver management setup',

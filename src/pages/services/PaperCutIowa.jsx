@@ -4,6 +4,8 @@ import { Printer, Shield, Users, BarChart3, Clock, CheckCircle, Phone, Mail, Arr
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
+import ServiceSchema from '../../components/ServiceSchema'
+import FAQSchema from '../../components/FAQSchema'
 
 const PaperCutIowa = () => {
   const breadcrumbItems = [
@@ -180,6 +182,38 @@ const PaperCutIowa = () => {
         schemaType="Service"
         additionalSchema={seoSchema}
       />
+      
+      <ServiceSchema 
+        serviceName="PaperCut Print Management Solutions"
+        description="Professional PaperCut MF implementation and support for Iowa businesses, schools, and healthcare organizations. Complete setup of secure printing, cost tracking, user authentication, and mobile printing solutions."
+        serviceType="Print Management Technology Service"
+        offers={[
+          {
+            name: "PaperCut MF Implementation",
+            description: "Complete setup and configuration of PaperCut MF software with user authentication, print quotas, and reporting"
+          },
+          {
+            name: "PaperCut Training & Support", 
+            description: "Comprehensive user training and ongoing technical support for PaperCut systems"
+          },
+          {
+            name: "Print Security Setup",
+            description: "Secure print release configuration with badge readers, PIN codes, and mobile app integration"
+          }
+        ]}
+        aggregateRating={{
+          ratingValue: "4.8",
+          reviewCount: "47"
+        }}
+        review={{
+          ratingValue: "5",
+          author: "Sarah Johnson, IT Director",
+          reviewBody: "Iowa Print Solutions transformed our school district's printing chaos into an organized, cost-effective system. PaperCut implementation was flawless and their ongoing support is exceptional.",
+          datePublished: "2024-01-15"
+        }}
+      />
+      
+      <FAQSchema faqs={paperCutFAQ} />
 
       <div className="min-h-screen bg-white">
         <Breadcrumbs items={breadcrumbItems} className="bg-gray-50 py-4" />
