@@ -157,10 +157,10 @@ const Home = () => {
 
   return (
     <>
-      <SEO 
-        title="Print Management for Iowa | PaperCut, uniFLOW, PrinterLogic"
-        description="Iowa print management experts. PaperCut, uniFLOW & PrinterLogic solutions via Infomax Office Systems. Serving Des Moines, Cedar Rapids since 1958."
-        keywords="Iowa print management, print solutions Iowa, PaperCut Iowa implementation, Uniflow Iowa, PrinterLogic Iowa, managed print services Iowa, document management Iowa, print security Iowa, Infomax Office Systems, Des Moines print solutions, Cedar Rapids print management, Iowa City print services"
+      <SEO
+        title="Secure Copier Software for Iowa | PaperCut, uniFLOW, PrinterLogic Security Solutions"
+        description="Protect your Iowa business from printer security breaches. Expert PaperCut, uniFLOW & PrinterLogic copier software implementation. Prevent data leaks, ensure HIPAA compliance, and secure your MFPs across Des Moines, Cedar Rapids, and Iowa."
+        keywords="Iowa copier software, copier security software Iowa, secure copier solutions Iowa, MFP security software, printer security Iowa, PaperCut Iowa implementation, Uniflow Iowa security, PrinterLogic Iowa, prevent printer data breach, HIPAA compliant printing Iowa, secure print release Iowa, copier data protection, multifunction printer security Iowa, Infomax Office Systems, Des Moines copier security, Cedar Rapids print security"
         canonicalUrl="https://iowaprintsolutions.com"
         schemaType="WebSite"
         additionalSchema={seoSchema}
@@ -171,7 +171,42 @@ const Home = () => {
       <div className="min-h-screen">
         <Hero />
 
-        {/* Iowa Print Solutions Overview - GEO Optimized */}
+        {/* Security-Focused Hero Message */}
+        <section className="bg-red-50 py-12 border-b-4 border-red-600">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center"
+            >
+              <div className="flex justify-center mb-4">
+                <Shield className="h-16 w-16 text-red-600" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Is Your Iowa Business at Risk? Unsecured Copiers Are a Data Breach Waiting to Happen
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-6">
+                Your office copiers and multifunction printers store sensitive data that hackers can access. Without proper copier security software like PaperCut, uniFLOW, or PrinterLogic, you're exposing confidential client information, employee data, and financial records.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-600">
+                  <p className="text-4xl font-bold text-red-600 mb-2">60%</p>
+                  <p className="text-gray-700 font-semibold">Of data breaches involve unsecured printers and copiers</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-600">
+                  <p className="text-4xl font-bold text-red-600 mb-2">$4.45M</p>
+                  <p className="text-gray-700 font-semibold">Average cost of a data breach for businesses in 2024</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-600">
+                  <p className="text-4xl font-bold text-red-600 mb-2">HIPAA</p>
+                  <p className="text-gray-700 font-semibold">Iowa healthcare faces severe penalties for unsecured printing</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Why Iowa Businesses Need Copier Security Software */}
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -179,11 +214,83 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Iowa's Leading Print Management Solutions Provider Since 1958
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Why Every Iowa Company Needs Secure Copier Software Solutions
               </h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-                Infomax Office Systems serves as Iowa's premier print management partner, specializing in PaperCut MF, Canon Uniflow, and PrinterLogic implementations across Des Moines, Cedar Rapids, Iowa City, Davenport, and statewide. Our certified experts help Iowa businesses including healthcare systems like UnityPoint Health and Mercy Medical, educational institutions such as Iowa State University and University of Iowa, major corporations like Principal Financial and HyVee, and government agencies optimize printing costs, enhance security, and streamline document workflows.
+                Infomax Office Systems serves as Iowa's premier copier security partner, specializing in PaperCut MF, Canon uniFLOW, and PrinterLogic implementations across Des Moines, Cedar Rapids, Iowa City, Davenport, and statewide. Our certified experts help Iowa businesses including healthcare systems like UnityPoint Health and Mercy Medical, educational institutions such as Iowa State University and University of Iowa, major corporations like Principal Financial and HyVee, and government agencies prevent data breaches, ensure compliance, and secure their multifunction printers and copiers.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <div className="bg-blue-600 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Prevent Data Breaches</h3>
+                  <p className="text-gray-700">Secure print release ensures confidential documents don't sit exposed on copier output trays where anyone can access them.</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <div className="bg-green-600 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">HIPAA & Compliance</h3>
+                  <p className="text-gray-700">Iowa healthcare organizations must comply with HIPAA. Our copier software solutions provide audit trails and secure document handling.</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <div className="bg-purple-600 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Stop Unauthorized Access</h3>
+                  <p className="text-gray-700">User authentication via badge readers, PIN codes, or mobile apps prevents unauthorized users from accessing your copiers and printers.</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <div className="bg-red-600 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Track Every Document</h3>
+                  <p className="text-gray-700">Complete audit trails show who printed what, when, and where—essential for Iowa businesses handling sensitive information.</p>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Iowa Print Solutions Overview - GEO Optimized */}
+        <section className="bg-gray-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Iowa's Leading Copier Security Software Provider Since 1958
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+                With over 65 years serving Iowa businesses, Infomax Office Systems provides enterprise-grade copier and printer security solutions. We implement PaperCut MF, Canon uniFLOW, and PrinterLogic software to protect your sensitive data, ensure regulatory compliance, and give you complete control over your multifunction printers and copiers.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
