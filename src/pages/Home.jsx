@@ -7,13 +7,14 @@ import SEO from '../components/SEO'
 import IowaBusinessFAQSchema from '../components/IowaBusinessFAQSchema'
 import OrganizationSchema from '../components/OrganizationSchema'
 import { SmartCTA, ExitIntentModal, SocialProofBanner } from '../components/PerformanceComponents'
-import { useEngagementTracking, PhoneTracker } from '../components/AnalyticsComponents'
+// import { useEngagementTracking, PhoneTracker } from '../components/AnalyticsComponents'
 import { Printer, Settings, BarChart3, Shield, Users, Award, ArrowRight, Wrench } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
   const [showExitIntent, setShowExitIntent] = useState(false)
-  const { scrollDepth, timeOnPage } = useEngagementTracking()
+  // const { scrollDepth, timeOnPage } = useEngagementTracking()
+  const timeOnPage = 0 // Temporary fallback
   
   useEffect(() => {
     const handleMouseLeave = (e) => {

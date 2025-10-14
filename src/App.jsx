@@ -1,8 +1,6 @@
 import React from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
-import { usePageTracking } from './utils/analytics'
-import { useLeadScoring } from './components/LeadScoringComponents'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -85,20 +83,12 @@ import PrintCostCalculator from './pages/PrintCostCalculator'
 import ResourceLibrary from './pages/ResourceLibrary'
 import AnalyticsTest from './pages/AnalyticsTest'
 
-const App = () => {
-  // Initialize page tracking
-  usePageTracking()
-  
-  // Initialize lead scoring
-  const { addPageView } = useLeadScoring()
-  
+const AppContent = () => {
   return (
-    <ErrorBoundary>
-      <Router>
-        <div className="min-h-screen bg-gray-50">
-          <Navbar />
-          <main>
-          <Routes>
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      <main>
+        <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/resources" element={<Resources />} />
@@ -182,7 +172,15 @@ const App = () => {
         </main>
         <Footer />
       </div>
-    </Router>
+  )
+}
+
+const App = () => {
+  return (
+    <ErrorBoundary>
+      <Router>
+        <AppContent />
+      </Router>
     </ErrorBoundary>
   )
 }

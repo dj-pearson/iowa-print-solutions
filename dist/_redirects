@@ -1,10 +1,10 @@
 # Static assets - serve directly without redirect
-/assets/* /assets/:splat 200
 /IPSLogo-Icon.ico /IPSLogo-Icon.ico 200
 /IPSLogo.png /IPSLogo.png 200
 /robots.txt /robots.txt 200
 /sitemap.xml /sitemap.xml 200
 /test-deploy.txt /test-deploy.txt 200
+/assets/* /assets/:splat 200
 
-# SPA fallback - redirect all non-asset routes to index.html
-/:path*    /index.html   200
+# SPA fallback - all other routes go to index.html for HashRouter handling
+/* /index.html 200
