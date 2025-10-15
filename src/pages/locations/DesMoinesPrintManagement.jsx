@@ -9,16 +9,16 @@ import LocationBusinessSchema from '../../components/LocationBusinessSchema'
 import FAQSchema from '../../components/FAQSchema'
 import { SmartLeadCTA, BehaviorTrigger } from '../../components/LeadScoringComponents'
 import { PhoneTracker, EmailTracker } from '../../components/AnalyticsComponents'
-import { useLeadScoring } from '../../components/LeadScoringComponents'
+// import { useLeadScoring } from '../../components/LeadScoringComponents'
 import { trackLocationPageView } from '../../utils/analytics'
 
 const DesMoinesPrintManagement = () => {
-  const { addInteraction, addPageView } = useLeadScoring()
+  // const { addInteraction, addPageView } = useLeadScoring()
   
   React.useEffect(() => {
-    addPageView('/locations/des-moines-print-management', 'Des Moines Print Management')
+    // addPageView('/locations/des-moines-print-management', 'Des Moines Print Management')
     trackLocationPageView('Des Moines')
-  }, [addPageView])
+  }, [])
 
   const breadcrumbItems = [
     { label: 'Home', href: '/' },

@@ -6,7 +6,7 @@ import SEO from '../SEO'
 import Breadcrumbs from '../Breadcrumbs'
 import { SmartLeadCTA, BehaviorTrigger } from '../LeadScoringComponents'
 import { PhoneTracker, DownloadTracker } from '../AnalyticsComponents'
-import { useLeadScoring } from '../LeadScoringComponents'
+// import { useLeadScoring } from '../LeadScoringComponents'
 import { trackIndustryPageView } from '../../utils/analytics'
 
 const EnhancedIndustryTemplate = ({ 
@@ -22,12 +22,12 @@ const EnhancedIndustryTemplate = ({
   complianceInfo,
   industrySpecificCTA
 }) => {
-  const { addInteraction, addPageView } = useLeadScoring()
+  // const { addInteraction, addPageView } = useLeadScoring()
   
   React.useEffect(() => {
-    addPageView(`/industries/iowa-${industryName.toLowerCase()}-print-solutions`, `Iowa ${industryName} Print Solutions`)
+    // addPageView(`/industries/iowa-${industryName.toLowerCase()}-print-solutions`, `Iowa ${industryName} Print Solutions`)
     trackIndustryPageView(industryName)
-  }, [addPageView, industryName])
+  }, [industryName])
 
   const breadcrumbs = [
     { name: 'Home', href: '/' },
@@ -72,7 +72,7 @@ const EnhancedIndustryTemplate = ({
                   <Link
                     to={`/contact?industry=${industryName.toLowerCase()}`}
                     className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors text-center"
-                    onClick={() => addInteraction('industry_cta_click', { industry: industryName, type: 'contact' })}
+                    // onClick={() => addInteraction('industry_cta_click', { industry: industryName, type: 'contact' })}
                   >
                     Get {industryName} Assessment
                   </Link>
@@ -132,7 +132,7 @@ const EnhancedIndustryTemplate = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow"
-                  onClick={() => addInteraction('feature_interest', { industry: industryName, feature: feature.title })}
+                  // onClick={() => addInteraction('feature_interest', { industry: industryName, feature: feature.title })}
                 >
                   <feature.icon className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
@@ -233,7 +233,7 @@ const EnhancedIndustryTemplate = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="bg-gray-50 p-8 rounded-lg"
-                  onClick={() => addInteraction('case_study_interest', { industry: industryName, case: caseStudy.title })}
+                  // onClick={() => addInteraction('case_study_interest', { industry: industryName, case: caseStudy.title })}
                 >
                   <div className="mb-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{caseStudy.title}</h3>
@@ -294,7 +294,7 @@ const EnhancedIndustryTemplate = ({
                   category={`${industryName} Resources`}
                   href={resource.href}
                   className="text-blue-600 hover:text-blue-700 font-medium transition-colors inline-flex items-center"
-                  onClick={() => addInteraction('industry_resource_download', { industry: industryName, resource: resource.title })}
+                  // onClick={() => addInteraction('industry_resource_download', { industry: industryName, resource: resource.title })}
                 >
                   {resource.ctaText}
                   <ArrowRight className="w-4 h-4 ml-1" />
@@ -319,7 +319,7 @@ const EnhancedIndustryTemplate = ({
             <Link
               to={`/contact?industry=${industryName.toLowerCase()}`}
               className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors"
-              onClick={() => addInteraction('final_industry_cta', { industry: industryName })}
+              // onClick={() => addInteraction('final_industry_cta', { industry: industryName })}
             >
               {industrySpecificCTA.primaryCTA}
             </Link>

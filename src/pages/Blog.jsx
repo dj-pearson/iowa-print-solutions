@@ -6,16 +6,17 @@ import SEO from '../components/SEO'
 import Breadcrumbs from '../components/Breadcrumbs'
 import { SmartLeadCTA, BehaviorTrigger } from '../components/LeadScoringComponents'
 import { PhoneTracker, DownloadTracker } from '../components/AnalyticsComponents'
-import { useLeadScoring } from '../components/LeadScoringComponents'
+// import { useLeadScoring } from '../components/LeadScoringComponents'
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
-  const { addInteraction, addPageView } = useLeadScoring()
+  // Temporarily disable lead scoring
+  // const { addInteraction, addPageView } = useLeadScoring()
   
-  React.useEffect(() => {
-    addPageView('/blog', 'Blog - Iowa Print Solutions')
-  }, [addPageView])
+  // React.useEffect(() => {
+  //   addPageView('/blog', 'Blog - Iowa Print Solutions')
+  // }, [addPageView])
 
   const blogPosts = [ 
     {

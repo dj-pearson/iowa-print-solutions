@@ -6,7 +6,7 @@ import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import { SmartLeadCTA, BehaviorTrigger } from '../../components/LeadScoringComponents'
 import { PhoneTracker, EmailTracker, DownloadTracker } from '../../components/AnalyticsComponents'
-import { useLeadScoring } from '../../components/LeadScoringComponents'
+// import { useLeadScoring } from '../../components/LeadScoringComponents'
 import { trackLocationPageView } from '../../utils/analytics'
 
 const EnhancedLocationTemplate = ({ 
@@ -19,12 +19,12 @@ const EnhancedLocationTemplate = ({
   localClients,
   locationSpecificFeatures 
 }) => {
-  const { addInteraction, addPageView } = useLeadScoring()
+  // const { addInteraction, addPageView } = useLeadScoring()
   
   React.useEffect(() => {
-    addPageView(`/locations/${cityName.toLowerCase().replace(' ', '-')}-print-management`, `${cityName} Print Management`)
+    // addPageView(`/locations/${cityName.toLowerCase().replace(' ', '-')}-print-management`, `${cityName} Print Management`)
     trackLocationPageView(cityName)
-  }, [addPageView, cityName])
+  }, [cityName])
 
   const breadcrumbs = [
     { name: 'Home', href: '/' },

@@ -16,11 +16,26 @@ export const useLeadScoring = () => {
 
   useEffect(() => {
     // Load existing profile from localStorage
-    const savedProfile = localStorage.getItem('ips_user_profile')
-    if (savedProfile) {
-      const profile = JSON.parse(savedProfile)
-      setUserProfile(profile)
-      calculateLeadScore(profile)
+    try {
+      const savedProfile = localStorage.getItem('ips_user_profile')
+      if (savedProfile) {
+        const profile = JSON.parse(savedProfile)
+        // Ensure all required properties exist with defaults
+        const safeProfile = {
+          visitCount: profile.visitCount || 0,
+          pagesViewed: Array.isArray(profile.pagesViewed) ? profile.pagesViewed : [],
+          timeOnSite: profile.timeOnSite || 0,
+          interactions: Array.isArray(profile.interactions) ? profile.interactions : [],
+          lastVisit: profile.lastVisit || null,
+          interests: Array.isArray(profile.interests) ? profile.interests : []
+        }
+        setUserProfile(safeProfile)
+        calculateLeadScore(safeProfile)
+      }
+    } catch (error) {
+      console.warn('Error loading user profile from localStorage:', error)
+      // Reset to defaults if parsing fails
+      localStorage.removeItem('ips_user_profile')
     }
   }, [])
 
@@ -33,12 +48,13 @@ export const useLeadScoring = () => {
 
   const addPageView = (pathname, title) => {
     const pageType = getPageType(pathname)
-    const newPages = [...userProfile.pagesViewed, { path: pathname, title, timestamp: Date.now(), type: pageType }]
+    const currentPages = Array.isArray(userProfile.pagesViewed) ? userProfile.pagesViewed : []
+    const newPages = [...currentPages, { path: pathname, title, timestamp: Date.now(), type: pageType }]
     
     updateUserProfile({
       visitCount: userProfile.visitCount + 1,
       pagesViewed: newPages,
-      interests: updateInterests(pathname, userProfile.interests)
+      interests: updateInterests(pathname, Array.isArray(userProfile.interests) ? userProfile.interests : [])
     })
 
     // Track high-value page views
@@ -55,7 +71,8 @@ export const useLeadScoring = () => {
       value: getInteractionValue(type)
     }
 
-    const newInteractions = [...userProfile.interactions, interaction]
+    const currentInteractions = Array.isArray(userProfile.interactions) ? userProfile.interactions : []
+    const newInteractions = [...currentInteractions, interaction]
     updateUserProfile({ interactions: newInteractions })
 
     // Track significant interactions
@@ -76,10 +93,11 @@ export const useLeadScoring = () => {
     // Page visit scoring
     score += Math.min(profile.visitCount * 5, 50) // Max 50 points for visits
 
-    // Page type scoring
-    const industryPages = profile.pagesViewed.filter(p => p.type === 'Industry Page').length
-    const toolPages = profile.pagesViewed.filter(p => p.type === 'Tool Page').length
-    const servicePages = profile.pagesViewed.filter(p => p.type === 'Service Page').length
+    // Page type scoring (with null checks)
+    const pagesViewed = Array.isArray(profile.pagesViewed) ? profile.pagesViewed : []
+    const industryPages = pagesViewed.filter(p => p && p.type === 'Industry Page').length
+    const toolPages = pagesViewed.filter(p => p && p.type === 'Tool Page').length
+    const servicePages = pagesViewed.filter(p => p && p.type === 'Service Page').length
 
     score += industryPages * 15 // High value for industry interest
     score += toolPages * 20 // Very high value for tool usage
@@ -91,8 +109,9 @@ export const useLeadScoring = () => {
     if (timeMinutes > 30) score += 30
     if (timeMinutes > 60) score += 50
 
-    // Interaction scoring
-    const interactionScore = profile.interactions.reduce((sum, interaction) => {
+    // Interaction scoring (with null check)
+    const interactions = Array.isArray(profile.interactions) ? profile.interactions : []
+    const interactionScore = interactions.reduce((sum, interaction) => {
       return sum + interaction.value
     }, 0)
     score += interactionScore
@@ -102,8 +121,9 @@ export const useLeadScoring = () => {
     if (hoursSinceLastVisit < 24) score += 10
     if (hoursSinceLastVisit < 1) score += 20
 
-    // Interest diversity bonus
-    const uniqueInterests = [...new Set(profile.interests)]
+    // Interest diversity bonus (with null check)
+    const interests = Array.isArray(profile.interests) ? profile.interests : []
+    const uniqueInterests = [...new Set(interests)]
     if (uniqueInterests.length > 2) score += 15
 
     setLeadScore(Math.min(score, 300)) // Cap at 300
@@ -239,11 +259,11 @@ export const useLeadScoring = () => {
 
 // Smart CTA Component with Lead Scoring
 export const SmartLeadCTA = ({ defaultCTA, urgentCTA, premiumCTA }) => {
-  const { engagementLevel, getLeadQuality, personalizedMessage, shouldShowAggressiveCTA } = useLeadScoring()
+  // const { engagementLevel, getLeadQuality, personalizedMessage, shouldShowAggressiveCTA } = useLeadScoring()
   
   const getCTA = () => {
-    if (shouldShowAggressiveCTA && premiumCTA) return premiumCTA
-    if (engagementLevel === 'warm' && urgentCTA) return urgentCTA
+    // if (shouldShowAggressiveCTA && premiumCTA) return premiumCTA
+    // if (engagementLevel === 'warm' && urgentCTA) return urgentCTA
     return defaultCTA
   }
 
@@ -281,7 +301,7 @@ export const SmartLeadCTA = ({ defaultCTA, urgentCTA, premiumCTA }) => {
 
 // Behavioral Trigger Component
 export const BehaviorTrigger = ({ children, triggerType, threshold = 1 }) => {
-  const { addInteraction } = useLeadScoring()
+  // const { addInteraction } = useLeadScoring()
   const [triggerCount, setTriggerCount] = useState(0)
 
   const handleTrigger = () => {
@@ -289,7 +309,7 @@ export const BehaviorTrigger = ({ children, triggerType, threshold = 1 }) => {
     setTriggerCount(newCount)
     
     if (newCount >= threshold) {
-      addInteraction(triggerType, { count: newCount })
+      // addInteraction(triggerType, { count: newCount })
     }
   }
 
