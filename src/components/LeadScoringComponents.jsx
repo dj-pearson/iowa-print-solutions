@@ -257,65 +257,23 @@ export const useLeadScoring = () => {
   }
 }
 
-// Smart CTA Component with Lead Scoring
-export const SmartLeadCTA = ({ defaultCTA, urgentCTA, premiumCTA }) => {
-  // const { engagementLevel, getLeadQuality, personalizedMessage, shouldShowAggressiveCTA } = useLeadScoring()
+// Smart CTA Component (simplified to prevent errors)
+export const SmartLeadCTA = ({ children, className = "", variant = "primary", size = "md" }) => {
+  const baseClasses = "font-semibold transition-colors inline-block text-center"
+  const variantClasses = variant === "primary" 
+    ? "bg-blue-600 hover:bg-blue-700 text-white" 
+    : "bg-gray-600 hover:bg-gray-700 text-white"
+  const sizeClasses = size === "lg" ? "px-8 py-4 text-lg" : "px-6 py-3"
   
-  const getCTA = () => {
-    // if (shouldShowAggressiveCTA && premiumCTA) return premiumCTA
-    // if (engagementLevel === 'warm' && urgentCTA) return urgentCTA
-    return defaultCTA
-  }
-
-  const cta = getCTA()
-
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-lg shadow-lg">
-      <p className="text-lg mb-4">{personalizedMessage}</p>
-      <div className="flex flex-col sm:flex-row gap-4">
-        <a
-          href={cta.primaryLink}
-          className="bg-yellow-400 text-blue-900 px-6 py-3 rounded font-bold hover:bg-yellow-300 transition-colors text-center"
-          onClick={() => trackEvent('smart_cta_click', 'Lead Scoring', `${engagementLevel}_${getLeadQuality}`)}
-        >
-          {cta.primaryText}
-        </a>
-        {cta.secondaryLink && (
-          <a
-            href={cta.secondaryLink}
-            className="border-2 border-white text-white px-6 py-3 rounded font-bold hover:bg-white hover:text-blue-600 transition-colors text-center"
-            onClick={() => trackEvent('smart_cta_secondary', 'Lead Scoring', `${engagementLevel}_${getLeadQuality}`)}
-          >
-            {cta.secondaryText}
-          </a>
-        )}
-      </div>
-      {shouldShowAggressiveCTA && (
-        <div className="mt-4 text-sm opacity-90">
-          <p>🔥 Limited time: Free implementation for qualifying organizations</p>
-        </div>
-      )}
+    <div className={`${baseClasses} ${variantClasses} ${sizeClasses} rounded-lg ${className}`}>
+      {children || "Learn More"}
     </div>
   )
 }
 
-// Behavioral Trigger Component
-export const BehaviorTrigger = ({ children, triggerType, threshold = 1 }) => {
-  // const { addInteraction } = useLeadScoring()
-  const [triggerCount, setTriggerCount] = useState(0)
-
-  const handleTrigger = () => {
-    const newCount = triggerCount + 1
-    setTriggerCount(newCount)
-    
-    if (newCount >= threshold) {
-      // addInteraction(triggerType, { count: newCount })
-    }
-  }
-
-  return (
-    <div onClick={handleTrigger} onMouseEnter={handleTrigger}>
-      {children}
-    </div>
-  )
+// Behavioral Trigger Component (simplified to prevent errors)
+export const BehaviorTrigger = ({ children }) => {
+  // Simple wrapper that just renders children without analytics
+  return <>{children}</>
 }
