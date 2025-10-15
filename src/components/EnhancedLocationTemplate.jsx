@@ -65,7 +65,7 @@ const EnhancedLocationTemplate = ({
                   <Link
                     to={`/contact?location=${cityName.toLowerCase().replace(' ', '-')}`}
                     className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors text-center"
-                    onClick={() => addInteraction('location_cta_click', { city: cityName, type: 'contact' })}
+                    // onClick={() => addInteraction('location_cta_click', { city: cityName, type: 'contact' })}
                   >
                     Get Free {cityName} Assessment
                   </Link>
@@ -143,7 +143,7 @@ const EnhancedLocationTemplate = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow"
-                  onClick={() => addInteraction('business_type_interest', { city: cityName, type })}
+                  // onClick={() => addInteraction('business_type_interest', { city: cityName, type })}
                 >
                   <Users className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                   <h3 className="font-semibold text-gray-900">{type}</h3>
@@ -245,10 +245,10 @@ const EnhancedLocationTemplate = ({
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-gray-900 mb-3">Cost Calculator</h3>
               <p className="text-gray-600 mb-4">Calculate potential savings for your {cityName} organization</p>
-              <Link 
+              <Link
                 to={`/print-cost-calculator?location=${cityName.toLowerCase().replace(' ', '-')}`}
                 className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
-                onClick={() => addInteraction('calculator_link_click', { source: `${cityName}_location_page` })}
+                // onClick={() => addInteraction('calculator_link_click', { source: `${cityName}_location_page` })}
               >
                 Use Calculator →
               </Link>
@@ -257,10 +257,10 @@ const EnhancedLocationTemplate = ({
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-gray-900 mb-3">Local Case Studies</h3>
               <p className="text-gray-600 mb-4">See how other {cityName} organizations succeeded</p>
-              <Link 
+              <Link
                 to={`/case-studies?location=${cityName.toLowerCase().replace(' ', '-')}`}
                 className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
-                onClick={() => addInteraction('case_studies_click', { city: cityName })}
+                // onClick={() => addInteraction('case_studies_click', { city: cityName })}
               >
                 View Case Studies →
               </Link>
@@ -283,7 +283,7 @@ const EnhancedLocationTemplate = ({
             <Link
               to={`/contact?location=${cityName.toLowerCase().replace(' ', '-')}`}
               className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-colors"
-              onClick={() => addInteraction('final_cta_click', { city: cityName })}
+              // onClick={() => addInteraction('final_cta_click', { city: cityName })}
             >
               Schedule Free Consultation
             </Link>

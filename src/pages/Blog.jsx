@@ -434,7 +434,7 @@ const Blog = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                  onClick={() => addInteraction('blog_post_click', { title: post.title, category: post.category })}
+                  // onClick={() => addInteraction('blog_post_click', { title: post.title, category: post.category })}
                 >
                 <div className="aspect-w-16 aspect-h-9 bg-gray-200">
                   <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
@@ -540,10 +540,10 @@ const Blog = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-3">Cost Reduction Calculator</h3>
               <p className="text-gray-600 mb-4">Interactive tool to estimate your potential savings</p>
-              <Link 
+              <Link
                 to="/print-cost-calculator"
                 className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
-                onClick={() => addInteraction('calculator_link_click', { source: 'blog_resources' })}
+                // onClick={() => addInteraction('calculator_link_click', { source: 'blog_resources' })}
               >
                 Use Calculator →
               </Link>
@@ -552,10 +552,10 @@ const Blog = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-3">Industry Comparison</h3>
               <p className="text-gray-600 mb-4">Compare PaperCut, uniFLOW, and other solutions</p>
-              <Link 
+              <Link
                 to="/print-management-comparison"
                 className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
-                onClick={() => addInteraction('comparison_link_click', { source: 'blog_resources' })}
+                // onClick={() => addInteraction('comparison_link_click', { source: 'blog_resources' })}
               >
                 View Comparison →
               </Link>
@@ -579,9 +579,9 @@ const Blog = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button 
+            <button
               className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium"
-              onClick={() => addInteraction('newsletter_signup', { source: 'blog' })}
+              // onClick={() => addInteraction('newsletter_signup', { source: 'blog' })}
             >
               Subscribe
             </button>
