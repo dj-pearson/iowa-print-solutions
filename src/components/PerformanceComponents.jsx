@@ -259,11 +259,21 @@ const SocialProofBanner = ({ stats }) => {
   const [currentStat, setCurrentStat] = useState(0)
 
   useEffect(() => {
+    // Defensive programming: ensure stats is an array before setting interval
+    if (!stats || !Array.isArray(stats) || stats.length === 0) {
+      return
+    }
+
     const interval = setInterval(() => {
       setCurrentStat((prev) => (prev + 1) % stats.length)
     }, 4000)
     return () => clearInterval(interval)
-  }, [stats.length])
+  }, [stats, stats?.length])
+
+  // Defensive programming: ensure stats is an array before rendering
+  if (!stats || !Array.isArray(stats) || stats.length === 0) {
+    return null
+  }
 
   return (
     <div className="bg-blue-600 text-white py-2">
