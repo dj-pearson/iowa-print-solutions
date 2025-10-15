@@ -4,36 +4,46 @@ import { Link, useLocation } from 'react-router-dom'
 import { ChevronRight, Home } from 'lucide-react'
 import { Helmet } from 'react-helmet'
 
-const Breadcrumbs = ({ customPath = null }) => {
+const Breadcrumbs = ({ customPath = null, items = null }) => {
   const location = useLocation()
 
-  // Defensive: Ensure we always have a valid array of pathnames
-  let pathnames = []
-  if (customPath && Array.isArray(customPath)) {
-    pathnames = customPath
-  } else if (customPath && typeof customPath === 'string') {
-    pathnames = customPath.split('/').filter(x => x)
-  } else if (location && location.pathname) {
-    pathnames = location.pathname.split('/').filter(x => x)
-  }
+  let breadcrumbItems = []
 
-  const breadcrumbItems = [
-    { name: 'Home', path: '/' }
-  ]
+  // If items prop is provided, use it directly
+  if (items && Array.isArray(items) && items.length > 0) {
+    // Map items to the expected format, handling different property names
+    breadcrumbItems = items.map(item => ({
+      name: item.name || item.label || '',
+      path: item.path || item.href || '/'
+    }))
+  } else {
+    // Otherwise, build breadcrumbs from path
+    breadcrumbItems = [{ name: 'Home', path: '/' }]
 
-  // Defensive: Only process if pathnames is a valid array
-  if (Array.isArray(pathnames) && pathnames.length > 0) {
-    let currentPath = ''
-    pathnames.forEach(pathname => {
-      if (pathname && typeof pathname === 'string') {
-        currentPath += `/${pathname}`
-        const name = pathname.charAt(0).toUpperCase() + pathname.slice(1)
-          .replace(/-/g, ' ')
-          .replace(/([A-Z])/g, ' $1')
-          .trim()
-        breadcrumbItems.push({ name, path: currentPath })
-      }
-    })
+    // Defensive: Ensure we always have a valid array of pathnames
+    let pathnames = []
+    if (customPath && Array.isArray(customPath)) {
+      pathnames = customPath
+    } else if (customPath && typeof customPath === 'string') {
+      pathnames = customPath.split('/').filter(x => x)
+    } else if (location && location.pathname) {
+      pathnames = location.pathname.split('/').filter(x => x)
+    }
+
+    // Defensive: Only process if pathnames is a valid array
+    if (Array.isArray(pathnames) && pathnames.length > 0) {
+      let currentPath = ''
+      pathnames.forEach(pathname => {
+        if (pathname && typeof pathname === 'string') {
+          currentPath += `/${pathname}`
+          const name = pathname.charAt(0).toUpperCase() + pathname.slice(1)
+            .replace(/-/g, ' ')
+            .replace(/([A-Z])/g, ' $1')
+            .trim()
+          breadcrumbItems.push({ name, path: currentPath })
+        }
+      })
+    }
   }
 
   // Defensive: Ensure breadcrumbItems is valid before mapping
@@ -48,8 +58,8 @@ const Breadcrumbs = ({ customPath = null }) => {
     }))
   }
 
-  // Don't render if there are no additional paths beyond home
-  if (!Array.isArray(pathnames) || pathnames.length === 0) return null
+  // Don't render if there are no breadcrumb items or only Home
+  if (!Array.isArray(breadcrumbItems) || breadcrumbItems.length <= 1) return null
 
   return (
     <>

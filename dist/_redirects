@@ -1,4 +1,7 @@
-# Static assets - serve directly without redirect
+# Serve index.html for the root
+/ /index.html 200
+
+# Static assets - serve directly
 /IPSLogo-Icon.ico /IPSLogo-Icon.ico 200
 /IPSLogo.png /IPSLogo.png 200
 /robots.txt /robots.txt 200
@@ -8,5 +11,8 @@
 # Assets should be served directly
 /assets/* /assets/:splat 200
 
-# SPA fallback - all other paths go to index.html (200 rewrite, not redirect)
-/* /index.html 200
+# Don't redirect index.html itself
+/index.html /index.html 200
+
+# SPA fallback - all other paths go to index.html
+/:path* /index.html 200
