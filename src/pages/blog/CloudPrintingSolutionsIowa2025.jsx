@@ -159,7 +159,7 @@ const CloudPrintingSolutionsIowa2025 = () => {
                     </div>
                     
                     <div className="space-y-3 mb-4">
-                      {solution.features.map((feature, idx) => (
+                      {(solution.features && Array.isArray(solution.features) ? solution.features : []).map((feature, idx) => (
                         <div key={idx} className="flex items-center">
                           <CheckCircle className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
                           <span className="text-gray-700 text-sm">{feature}</span>

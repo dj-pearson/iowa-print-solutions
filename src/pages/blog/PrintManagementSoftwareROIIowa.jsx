@@ -190,7 +190,7 @@ const PrintManagementSoftwareROIIowa = () => {
                     </h3>
                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                      {category.metrics.map((metric, idx) => (
+                      {(category.metrics && Array.isArray(category.metrics) ? category.metrics : []).map((metric, idx) => (
                         <div key={idx} className="border border-gray-200 p-4 rounded-lg">
                           <h4 className="font-semibold text-gray-900 mb-2">{metric.item}</h4>
                           <p className="text-2xl font-bold text-green-600 mb-1">{metric.saving}</p>
@@ -249,7 +249,7 @@ const PrintManagementSoftwareROIIowa = () => {
                     <div className="border-t pt-4">
                       <h4 className="font-semibold text-gray-900 mb-2">Key Benefits:</h4>
                       <ul className="space-y-1">
-                        {study.keyBenefits.map((benefit, idx) => (
+                        {(study.keyBenefits && Array.isArray(study.keyBenefits) ? study.keyBenefits : []).map((benefit, idx) => (
                           <li key={idx} className="flex items-center text-sm text-gray-600">
                             <CheckCircle className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
                             {benefit}
@@ -291,7 +291,7 @@ const PrintManagementSoftwareROIIowa = () => {
                     <p className="text-gray-600 mb-4">{step.description}</p>
                     
                     <ul className="text-left text-sm text-gray-600 space-y-1">
-                      {step.items.map((item, idx) => (
+                      {(step.items && Array.isArray(step.items) ? step.items : []).map((item, idx) => (
                         <li key={idx} className="flex items-center">
                           <BarChart3 className="h-3 w-3 text-blue-600 mr-2 flex-shrink-0" />
                           {item}

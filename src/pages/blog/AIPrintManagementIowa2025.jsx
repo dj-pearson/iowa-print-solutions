@@ -226,7 +226,7 @@ const AIPrintManagementIowa2025 = () => {
                   key={index}
                   eventName="ai_feature_category_view"
                   value={10}
-                  metadata={{ category: category.category, features: category.features.length }}
+                  metadata={{ category: category.category, features: (category.features && Array.isArray(category.features)) ? category.features.length : 0 }}
                 >
                   <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                     <div className="flex items-center mb-4">
@@ -235,7 +235,7 @@ const AIPrintManagementIowa2025 = () => {
                     </div>
                     
                     <div className="space-y-3 mb-4">
-                      {category.features.map((feature, idx) => (
+                      {(category.features && Array.isArray(category.features) ? category.features : []).map((feature, idx) => (
                         <div key={idx} className="flex items-start">
                           <Brain className="h-4 w-4 text-purple-600 mr-2 mt-1 flex-shrink-0" />
                           <span className="text-gray-700">{feature}</span>
@@ -293,7 +293,7 @@ const AIPrintManagementIowa2025 = () => {
                       <div className="md:col-span-2">
                         <h4 className="font-semibold text-gray-900 mb-3">AI Capabilities:</h4>
                         <div className="grid md:grid-cols-2 gap-2">
-                          {platform.aiCapabilities.map((capability, idx) => (
+                          {(platform.aiCapabilities && Array.isArray(platform.aiCapabilities) ? platform.aiCapabilities : []).map((capability, idx) => (
                             <div key={idx} className="flex items-center">
                               <CheckCircle className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
                               <span className="text-gray-700 text-sm">{capability}</span>
@@ -336,7 +336,7 @@ const AIPrintManagementIowa2025 = () => {
                     <p className="text-purple-600 font-medium mb-4">{phase.duration}</p>
                     
                     <ul className="text-left text-sm text-gray-600 space-y-2">
-                      {phase.activities.map((activity, idx) => (
+                      {(phase.activities && Array.isArray(phase.activities) ? phase.activities : []).map((activity, idx) => (
                         <li key={idx} className="flex items-start">
                           <BarChart3 className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
                           {activity}

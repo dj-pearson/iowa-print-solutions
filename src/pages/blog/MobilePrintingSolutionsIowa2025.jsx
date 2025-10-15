@@ -223,7 +223,7 @@ const MobilePrintingSolutionsIowa2025 = () => {
                         <div className="mb-4">
                           <h4 className="font-semibold text-gray-900 mb-2">Supported Platforms:</h4>
                           <div className="flex flex-wrap gap-2">
-                            {solution.platforms.map((platform, idx) => (
+                            {(solution.platforms && Array.isArray(solution.platforms) ? solution.platforms : []).map((platform, idx) => (
                               <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-700 text-sm rounded">
                                 {platform}
                               </span>
@@ -241,7 +241,7 @@ const MobilePrintingSolutionsIowa2025 = () => {
                       <div className="md:col-span-2">
                         <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
                         <div className="grid md:grid-cols-2 gap-2">
-                          {solution.features.map((feature, idx) => (
+                          {(solution.features && Array.isArray(solution.features) ? solution.features : []).map((feature, idx) => (
                             <div key={idx} className="flex items-center">
                               <CheckCircle className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
                               <span className="text-gray-700 text-sm">{feature}</span>
@@ -316,7 +316,7 @@ const MobilePrintingSolutionsIowa2025 = () => {
                     <p className="text-purple-600 font-medium mb-4">{step.duration}</p>
                     
                     <ul className="text-left text-sm text-gray-600 space-y-2">
-                      {step.tasks.map((task, idx) => (
+                      {(step.tasks && Array.isArray(step.tasks) ? step.tasks : []).map((task, idx) => (
                         <li key={idx} className="flex items-start">
                           <CheckCircle className="h-4 w-4 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
                           {task}
