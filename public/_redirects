@@ -4,14 +4,9 @@
 /robots.txt /robots.txt 200
 /sitemap.xml /sitemap.xml 200
 /test-deploy.txt /test-deploy.txt 200
+
+# Assets should be served directly
 /assets/* /assets/:splat 200
 
-# SPA fallback - HashRouter handles client-side routing
-/blog/* /index.html 200
-/services/* /index.html 200
-/locations/* /index.html 200
-/resources/* /index.html 200
-/industries/* /index.html 200
-/tools/* /index.html 200
-/about /index.html 200
-/contact /index.html 200
+# SPA fallback - all other paths go to index.html (200 rewrite, not redirect)
+/* /index.html 200

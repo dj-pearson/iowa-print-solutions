@@ -6,34 +6,50 @@ import { Helmet } from 'react-helmet'
 
 const Breadcrumbs = ({ customPath = null }) => {
   const location = useLocation()
-  const pathnames = customPath || location.pathname.split('/').filter(x => x)
+
+  // Defensive: Ensure we always have a valid array of pathnames
+  let pathnames = []
+  if (customPath && Array.isArray(customPath)) {
+    pathnames = customPath
+  } else if (customPath && typeof customPath === 'string') {
+    pathnames = customPath.split('/').filter(x => x)
+  } else if (location && location.pathname) {
+    pathnames = location.pathname.split('/').filter(x => x)
+  }
 
   const breadcrumbItems = [
     { name: 'Home', path: '/' }
   ]
 
-  let currentPath = ''
-  pathnames.forEach(pathname => {
-    currentPath += `/${pathname}`
-    const name = pathname.charAt(0).toUpperCase() + pathname.slice(1)
-      .replace(/-/g, ' ')
-      .replace(/([A-Z])/g, ' $1')
-      .trim()
-    breadcrumbItems.push({ name, path: currentPath })
-  })
+  // Defensive: Only process if pathnames is a valid array
+  if (Array.isArray(pathnames) && pathnames.length > 0) {
+    let currentPath = ''
+    pathnames.forEach(pathname => {
+      if (pathname && typeof pathname === 'string') {
+        currentPath += `/${pathname}`
+        const name = pathname.charAt(0).toUpperCase() + pathname.slice(1)
+          .replace(/-/g, ' ')
+          .replace(/([A-Z])/g, ' $1')
+          .trim()
+        breadcrumbItems.push({ name, path: currentPath })
+      }
+    })
+  }
 
+  // Defensive: Ensure breadcrumbItems is valid before mapping
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    'itemListElement': breadcrumbItems.map((item, index) => ({
+    'itemListElement': (Array.isArray(breadcrumbItems) ? breadcrumbItems : []).map((item, index) => ({
       '@type': 'ListItem',
       'position': index + 1,
-      'name': item.name,
-      'item': `https://iowa-print-solutions.pages.dev${item.path}`
+      'name': item.name || '',
+      'item': `https://iowaprintsolutions.com${item.path || '/'}`
     }))
   }
 
-  if (pathnames.length === 0) return null
+  // Don't render if there are no additional paths beyond home
+  if (!Array.isArray(pathnames) || pathnames.length === 0) return null
 
   return (
     <>
@@ -49,14 +65,14 @@ const Breadcrumbs = ({ customPath = null }) => {
               <Home className="h-4 w-4 mr-1" />
               Home
             </Link>
-            {breadcrumbItems.slice(1).map((item, index) => (
-              <React.Fragment key={item.path}>
+            {(Array.isArray(breadcrumbItems) ? breadcrumbItems.slice(1) : []).map((item, index) => (
+              <React.Fragment key={item.path || index}>
                 <ChevronRight className="h-4 w-4 text-gray-400" />
                 {index === breadcrumbItems.length - 2 ? (
-                  <span className="text-gray-600 font-medium">{item.name}</span>
+                  <span className="text-gray-600 font-medium">{item.name || ''}</span>
                 ) : (
-                  <Link to={item.path} className="text-blue-600 hover:text-blue-800">
-                    {item.name}
+                  <Link to={item.path || '/'} className="text-blue-600 hover:text-blue-800">
+                    {item.name || ''}
                   </Link>
                 )}
               </React.Fragment>
