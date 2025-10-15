@@ -94,7 +94,7 @@ const EnhancedIndustryTemplate = ({
               >
                 <h3 className="text-xl font-semibold mb-4">{industryName} Benefits</h3>
                 <div className="space-y-3">
-                  {keyBenefits.slice(0, 4).map((benefit, index) => (
+                  {(Array.isArray(keyBenefits) ? keyBenefits.slice(0, 4) : []).map((benefit, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
                       <span>{benefit}</span>
@@ -125,7 +125,7 @@ const EnhancedIndustryTemplate = ({
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {industryFeatures.map((feature, index) => (
+              {(Array.isArray(industryFeatures) ? industryFeatures : []).map((feature, index) => (
                 <motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 20 }}
@@ -164,7 +164,7 @@ const EnhancedIndustryTemplate = ({
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {complianceInfo.features.map((feature, index) => (
+                {(Array.isArray(complianceInfo.features) ? complianceInfo.features : []).map((feature, index) => (
                   <motion.div
                     key={feature}
                     initial={{ opacity: 0, y: 20 }}
@@ -226,7 +226,7 @@ const EnhancedIndustryTemplate = ({
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
+              {(Array.isArray(caseStudies) ? caseStudies : []).map((caseStudy, index) => (
                 <motion.div
                   key={caseStudy.title}
                   initial={{ opacity: 0, y: 20 }}
@@ -284,7 +284,7 @@ const EnhancedIndustryTemplate = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {resources.map((resource, index) => (
+            {(Array.isArray(resources) ? resources : []).map((resource, index) => (
               <div key={resource.title} className="bg-white p-6 rounded-lg shadow-sm">
                 <resource.icon className="w-8 h-8 text-blue-600 mb-4" />
                 <h3 className="font-semibold text-gray-900 mb-3">{resource.title}</h3>

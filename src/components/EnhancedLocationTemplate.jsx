@@ -136,7 +136,7 @@ const EnhancedLocationTemplate = ({
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {businessTypes.map((type, index) => (
+              {(Array.isArray(businessTypes) ? businessTypes : []).map((type, index) => (
                 <motion.div
                   key={type}
                   initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ const EnhancedLocationTemplate = ({
       {/* Smart Lead CTA Section */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SmartLeadCTA 
+          <SmartLeadCTA
             defaultCTA={{
               primaryText: `Get ${cityName} Assessment`,
               primaryLink: `/contact?location=${cityName.toLowerCase().replace(' ', '-')}`,
@@ -198,7 +198,7 @@ const EnhancedLocationTemplate = ({
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {locationSpecificFeatures.map((feature, index) => (
+              {(Array.isArray(locationSpecificFeatures) ? locationSpecificFeatures : []).map((feature, index) => (
                 <motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 20 }}
