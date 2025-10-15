@@ -1,18 +1,11 @@
-# Serve index.html for the root
-/ /index.html 200
-
-# Static assets - serve directly
+# Static assets - serve directly (must be first to avoid catch-all)
+/index.html /index.html 200
 /IPSLogo-Icon.ico /IPSLogo-Icon.ico 200
 /IPSLogo.png /IPSLogo.png 200
 /robots.txt /robots.txt 200
 /sitemap.xml /sitemap.xml 200
 /test-deploy.txt /test-deploy.txt 200
-
-# Assets should be served directly
 /assets/* /assets/:splat 200
 
-# Don't redirect index.html itself
-/index.html /index.html 200
-
-# SPA fallback - all other paths go to index.html
-/:path* /index.html 200
+# SPA fallback - all other paths go to index.html (must be last)
+/* /index.html 200
