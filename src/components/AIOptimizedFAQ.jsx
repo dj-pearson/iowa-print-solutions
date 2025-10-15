@@ -10,6 +10,11 @@ const AIOptimizedFAQ = ({ faqs, title = "Frequently Asked Questions", className 
     setActiveIndex(activeIndex === index ? null : index)
   }
 
+  // Defensive programming: ensure faqs is an array
+  if (!faqs || !Array.isArray(faqs) || faqs.length === 0) {
+    return null
+  }
+
   return (
     <section className={`py-16 bg-gray-50 ${className}`}>
       <FAQSchema faqs={faqs} />
