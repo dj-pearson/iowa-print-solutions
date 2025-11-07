@@ -206,10 +206,10 @@ const Contact = () => {
 
   return (
     <>
-      <SEO 
-        title="Contact Iowa Print Solutions | Call (515) 237-2352"
-        description="Contact Iowa's leading print management experts. Free PaperCut, uniFLOW & PrinterLogic consultations. Serving Des Moines, Cedar Rapids statewide."
-        keywords="contact Iowa print solutions, Infomax Office Systems contact, Iowa print management consultation, PaperCut Iowa contact, print solutions Des Moines phone, Cedar Rapids print services contact, Iowa document management consultation"
+      <SEO
+        title="Contact Iowa Print Solutions 2025 | Call (515) 237-2352 - Free Consultation, 2-4 Hour Response"
+        description="Contact Infomax Office Systems for print management solutions. Call (515) 237-2352 or email DPearson@InfomaxOffice.com. Free consultations, 2-4 hour response time. 24/7 emergency support. Serving all 99 Iowa counties: Des Moines, Cedar Rapids, Iowa City, Davenport, Waterloo. PaperCut, uniFLOW & PrinterLogic experts since 1958."
+        keywords="contact Iowa print solutions 2025, Infomax Office Systems contact, Iowa print management consultation, PaperCut Iowa contact, print solutions Des Moines phone, Cedar Rapids print services contact, Iowa document management consultation, free print assessment Iowa, 515-237-2352, DPearson InfomaxOffice"
         canonicalUrl="https://iowaprintsolutions.com/contact"
         schemaType="ContactPage"
         additionalSchema={seoSchema}

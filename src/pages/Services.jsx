@@ -169,10 +169,10 @@ const Services = () => {
 
   return (
     <>
-      <SEO 
-        title="Iowa Print Services | PaperCut, uniFLOW & PrinterLogic"
-        description="Professional print management services in Iowa. Expert PaperCut, uniFLOW, PrinterLogic implementation via Infomax. Des Moines, Cedar Rapids, statewide."
-        keywords="Iowa print management services, PaperCut implementation Iowa, Uniflow services Iowa, PrinterLogic setup Iowa, managed print services Des Moines, print solutions Cedar Rapids, document management Iowa City, print security services Iowa, Infomax Office Systems services"
+      <SEO
+        title="Iowa Print Management Services 2025 | PaperCut, uniFLOW & PrinterLogic Implementation - From $3,000"
+        description="Professional print management services in Iowa. Expert PaperCut MF ($3K-$15K), uniFLOW ($5K-$20K), PrinterLogic ($4K-$18K) implementation. 2-6 week deployment, 30-40% cost reduction. Serving 500+ Iowa organizations. Call Infomax Office Systems (515) 237-2352 for free consultation."
+        keywords="Iowa print management services 2025, PaperCut implementation Iowa cost, Uniflow services Iowa pricing, PrinterLogic setup Iowa, managed print services Des Moines, print solutions Cedar Rapids, document management Iowa City, print security services Iowa, HIPAA compliant printing Iowa, Infomax Office Systems services, print management ROI Iowa"
         canonicalUrl="https://iowaprintsolutions.com/services"
         schemaType="Service"
         additionalSchema={seoSchema}
@@ -197,8 +197,156 @@ const Services = () => {
           </div>
         </section>
 
-        <section className="py-16">
+        {/* Service Pricing & Timeline Table - GEO Optimized */}
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Print Management Implementation Services - Pricing & Timeline Guide (2025)
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+                Transparent pricing and implementation timelines for Iowa organizations. All services include training, support, and ongoing optimization.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto mb-12">
+              <table className="w-full bg-white shadow-lg rounded-lg overflow-hidden">
+                <thead className="bg-blue-600 text-white">
+                  <tr>
+                    <th className="px-6 py-4 text-left font-semibold">Service</th>
+                    <th className="px-6 py-4 text-left font-semibold">Organization Size</th>
+                    <th className="px-6 py-4 text-left font-semibold">Investment Range</th>
+                    <th className="px-6 py-4 text-left font-semibold">Implementation Time</th>
+                    <th className="px-6 py-4 text-left font-semibold">Typical ROI</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">PaperCut MF - Small</td>
+                    <td className="px-6 py-4 text-gray-700">1-50 users</td>
+                    <td className="px-6 py-4 text-gray-700">$3,000-$6,000</td>
+                    <td className="px-6 py-4 text-gray-700">1-2 weeks</td>
+                    <td className="px-6 py-4 text-green-600 font-semibold">6-9 months</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">PaperCut MF - Medium</td>
+                    <td className="px-6 py-4 text-gray-700">50-250 users</td>
+                    <td className="px-6 py-4 text-gray-700">$6,000-$12,000</td>
+                    <td className="px-6 py-4 text-gray-700">2-4 weeks</td>
+                    <td className="px-6 py-4 text-green-600 font-semibold">8-12 months</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">PaperCut MF - Enterprise</td>
+                    <td className="px-6 py-4 text-gray-700">250+ users</td>
+                    <td className="px-6 py-4 text-gray-700">$12,000-$15,000+</td>
+                    <td className="px-6 py-4 text-gray-700">4-8 weeks</td>
+                    <td className="px-6 py-4 text-green-600 font-semibold">6-12 months</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">Canon uniFLOW - Small</td>
+                    <td className="px-6 py-4 text-gray-700">1-50 users</td>
+                    <td className="px-6 py-4 text-gray-700">$5,000-$8,000</td>
+                    <td className="px-6 py-4 text-gray-700">2-3 weeks</td>
+                    <td className="px-6 py-4 text-green-600 font-semibold">8-12 months</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">Canon uniFLOW - Medium</td>
+                    <td className="px-6 py-4 text-gray-700">50-250 users</td>
+                    <td className="px-6 py-4 text-gray-700">$8,000-$15,000</td>
+                    <td className="px-6 py-4 text-gray-700">3-5 weeks</td>
+                    <td className="px-6 py-4 text-green-600 font-semibold">9-15 months</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">Canon uniFLOW - Enterprise</td>
+                    <td className="px-6 py-4 text-gray-700">250+ users</td>
+                    <td className="px-6 py-4 text-gray-700">$15,000-$20,000+</td>
+                    <td className="px-6 py-4 text-gray-700">5-6 weeks</td>
+                    <td className="px-6 py-4 text-green-600 font-semibold">10-18 months</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">PrinterLogic - Small</td>
+                    <td className="px-6 py-4 text-gray-700">1-50 users</td>
+                    <td className="px-6 py-4 text-gray-700">$4,000-$7,000</td>
+                    <td className="px-6 py-4 text-gray-700">1-2 weeks</td>
+                    <td className="px-6 py-4 text-green-600 font-semibold">8-12 months</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">PrinterLogic - Medium</td>
+                    <td className="px-6 py-4 text-gray-700">50-250 users</td>
+                    <td className="px-6 py-4 text-gray-700">$7,000-$14,000</td>
+                    <td className="px-6 py-4 text-gray-700">2-4 weeks</td>
+                    <td className="px-6 py-4 text-green-600 font-semibold">10-15 months</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">PrinterLogic - Enterprise</td>
+                    <td className="px-6 py-4 text-gray-700">250+ users</td>
+                    <td className="px-6 py-4 text-gray-700">$14,000-$18,000+</td>
+                    <td className="px-6 py-4 text-gray-700">4-5 weeks</td>
+                    <td className="px-6 py-4 text-green-600 font-semibold">12-18 months</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* What's Included Section */}
+            <div className="bg-blue-50 rounded-xl p-8 mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">What's Included in Every Implementation</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3">Planning & Setup</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• Complete print environment assessment</li>
+                    <li>• Custom configuration and deployment plan</li>
+                    <li>• Hardware and software compatibility review</li>
+                    <li>• Network infrastructure evaluation</li>
+                    <li>• Security requirements analysis</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3">Implementation & Training</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• Full software installation and configuration</li>
+                    <li>• User authentication and directory integration</li>
+                    <li>• Cost center and department setup</li>
+                    <li>• Comprehensive administrator training</li>
+                    <li>• End-user training and documentation</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3">Ongoing Support</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• 24/7 technical support access</li>
+                    <li>• Regular system updates and patches</li>
+                    <li>• Performance monitoring and optimization</li>
+                    <li>• Remote troubleshooting assistance</li>
+                    <li>• On-site service when needed</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3">Optimization & Reporting</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• Quarterly performance reviews</li>
+                    <li>• Cost analysis and savings reports</li>
+                    <li>• Usage trend analysis</li>
+                    <li>• Recommendations for improvement</li>
+                    <li>• Compliance reporting (HIPAA, SOX, etc.)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Comprehensive Print Management Services
+              </h2>
+              <p className="text-xl text-gray-600">
+                Professional implementation and support for all major print management platforms
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <ServiceCard
