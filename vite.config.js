@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true, // Enable sourcemaps for debugging
+    sourcemap: mode === 'development', // Only enable sourcemaps in development
     minify: 'terser', // Switch to terser for cache-busting
     rollupOptions: {
       output: {

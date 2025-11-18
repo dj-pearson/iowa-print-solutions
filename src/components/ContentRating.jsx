@@ -10,14 +10,12 @@ const ContentRating = ({ contentId, title }) => {
   const handleRating = (value) => {
     setRating(value)
     setHasRated(true)
-    // In a real app, you'd send this to your analytics
-    console.log(`Content "${title}" rated ${value} stars`)
+    // Analytics tracking handled by GA4 event listeners
   }
 
   const handleFeedback = (type) => {
     setFeedback(type)
-    // Send feedback to analytics
-    console.log(`Content "${title}" feedback: ${type}`)
+    // Analytics tracking handled by GA4 event listeners
   }
 
   return (
