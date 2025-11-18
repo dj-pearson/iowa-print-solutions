@@ -84,7 +84,9 @@ const SEO = ({
         Object.assign(finalSchema, additionalSchema)
       }
     } catch (error) {
-      console.warn('Error merging additional schema:', error)
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Error merging additional schema:', error)
+      }
       finalSchema = structuredData
     }
   }
