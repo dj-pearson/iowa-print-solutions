@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
+import { initGA4 } from './utils/analytics.js'
+import { GA_CONFIG } from './utils/analyticsConfig.js'
 
-// Temporarily comment out analytics initialization to debug
-// import { initGA4 } from './utils/analytics.js'
-// const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'
-// initGA4(GA_MEASUREMENT_ID)
+// Initialize Google Analytics
+initGA4(GA_CONFIG.MEASUREMENT_ID)
 
 // Ensure React is available globally for compatibility
 window.React = React

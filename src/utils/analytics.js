@@ -27,10 +27,9 @@ export const initGA4 = (measurementId) => {
 // Track page views
 export const trackPageView = (url, title) => {
   if (typeof window.gtag !== 'undefined') {
-    window.gtag('config', 'GA_MEASUREMENT_ID', {
+    window.gtag('event', 'page_view', {
       page_title: title,
-      page_location: url,
-      send_page_view: true
+      page_location: url
     })
   }
 }

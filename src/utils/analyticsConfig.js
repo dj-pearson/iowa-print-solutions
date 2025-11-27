@@ -1,7 +1,7 @@
 // Analytics configuration for Iowa Print Solutions
 export const GA_CONFIG = {
-  // Replace with your actual Google Analytics 4 measurement ID
-  MEASUREMENT_ID: 'G-XXXXXXXXXX',
+  // Google Analytics 4 measurement ID
+  MEASUREMENT_ID: 'G-VE67JBGBKL',
   
   // Enable debug mode for development
   DEBUG_MODE: process.env.NODE_ENV === 'development',
