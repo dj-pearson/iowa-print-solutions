@@ -436,10 +436,19 @@ const Blog = () => {
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                   // onClick={() => addInteraction('blog_post_click', { title: post.title, category: post.category })}
                 >
-                <div className="aspect-w-16 aspect-h-9 bg-gray-200">
+                <div className="aspect-w-16 aspect-h-9 bg-gray-200 relative">
                   <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                     <span className="text-white font-semibold">{post.category}</span>
                   </div>
+                  {/* Semantic image placeholder - replace with actual images for production */}
+                  <img
+                    src={post.image !== '/api/placeholder/400/250' ? post.image : undefined}
+                    alt={`${post.title} - ${post.category} article about print management in Iowa`}
+                    className={post.image !== '/api/placeholder/400/250' ? 'absolute inset-0 w-full h-48 object-cover' : 'sr-only'}
+                    loading="lazy"
+                    width="400"
+                    height="250"
+                  />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center mb-3">
