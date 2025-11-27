@@ -18,7 +18,7 @@ const Blog = () => {
   //   addPageView('/blog', 'Blog - Iowa Print Solutions')
   // }, [addPageView])
 
-  const blogPosts = [ 
+  const blogPosts = [
     {
       id: 'ai-print-management-iowa-2025',
       title: 'AI Print Management Iowa 2025: The Intelligence Revolution',
@@ -27,7 +27,7 @@ const Blog = () => {
       date: '2025-10-14',
       readTime: '18 min read',
       category: 'AI & Technology',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop',
       slug: 'ai-print-management-iowa-2025',
       featured: true
     },
@@ -39,7 +39,7 @@ const Blog = () => {
       date: '2025-10-14',
       readTime: '16 min read',
       category: 'Mobile Technology',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop',
       slug: 'mobile-printing-solutions-iowa-2025',
       featured: true
     },
@@ -51,7 +51,7 @@ const Blog = () => {
       date: '2025-10-14',
       readTime: '14 min read',
       category: 'ROI & Analysis',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop',
       slug: 'print-management-software-roi-iowa',
       featured: true
     },
@@ -63,7 +63,7 @@ const Blog = () => {
       date: '2025-10-14',
       readTime: '12 min read',
       category: 'Cloud Technology',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop',
       slug: 'cloud-printing-solutions-iowa-2025',
       featured: true
     },
@@ -75,7 +75,7 @@ const Blog = () => {
       date: '2025-09-26',
       readTime: '15 min read',
       category: 'Education',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=250&fit=crop',
       slug: 'papercut-vs-uniflow-vs-printerlogic-iowa-k12',
       featured: true
     },
@@ -87,7 +87,7 @@ const Blog = () => {
       date: '2025-09-26',
       readTime: '12 min read',
       category: 'Product Updates',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop',
       slug: 'papercut-hive-q4-2025-iowa',
       featured: true
     },
@@ -99,7 +99,7 @@ const Blog = () => {
       date: '2025-08-27',
       readTime: '16 min read',
       category: 'Education',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop',
       slug: 'reducing-printing-costs-iowa-schools',
       featured: true
     },
@@ -111,7 +111,7 @@ const Blog = () => {
       date: '2025-08-27',
       readTime: '18 min read',
       category: 'Comparison',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop',
       slug: 'papercut-vs-uniflow-iowa',
       featured: true
     },
@@ -123,7 +123,7 @@ const Blog = () => {
       date: '2025-08-27',
       readTime: '15 min read',
       category: 'Small Business',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=250&fit=crop',
       slug: 'small-business-print-management-iowa',
       featured: true
     },
@@ -135,7 +135,7 @@ const Blog = () => {
       date: '2025-08-26',
       readTime: '8 min read',
       category: 'Product Updates',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop',
       slug: 'papercut-mf-25-iowa-benefits',
       featured: true
     },
@@ -147,7 +147,7 @@ const Blog = () => {
       date: '2025-07-24',
       readTime: '14 min read',
       category: 'Product Updates',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop',
       slug: 'uniflow-2025-updates'
     },
     {
@@ -158,7 +158,7 @@ const Blog = () => {
       date: '2025-07-24',
       readTime: '15 min read',
       category: 'Product Updates',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&h=250&fit=crop',
       slug: 'papercut-mf-24-1-updates'
     },
     {
@@ -169,7 +169,7 @@ const Blog = () => {
       date: '2024-01-10',
       readTime: '12 min read',
       category: 'Healthcare',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=250&fit=crop',
       slug: 'papercut-healthcare-iowa'
     },
     {
@@ -180,7 +180,7 @@ const Blog = () => {
       date: '2024-01-12',
       readTime: '10 min read',
       category: 'Healthcare',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=250&fit=crop',
       slug: 'hipaa-printing-iowa'
     },
     {
@@ -191,7 +191,7 @@ const Blog = () => {
       date: '2024-01-14',
       readTime: '11 min read',
       category: 'Healthcare',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=400&h=250&fit=crop',
       slug: 'uniflow-medical-iowa'
     },
     {
@@ -202,7 +202,7 @@ const Blog = () => {
       date: '2024-01-16',
       readTime: '13 min read',
       category: 'Education',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=250&fit=crop',
       slug: 'papercut-education-iowa'
     },
     {
@@ -213,7 +213,7 @@ const Blog = () => {
       date: '2024-01-15',
       readTime: '8 min read',
       category: 'Education',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop',
       slug: 'school-district-iowa'
     },
     {
@@ -224,7 +224,7 @@ const Blog = () => {
       date: '2024-01-17',
       readTime: '14 min read',
       category: 'Education',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=250&fit=crop',
       slug: 'uniflow-university-iowa'
     },
     {
@@ -235,7 +235,7 @@ const Blog = () => {
       date: '2024-01-20',
       readTime: '12 min read',
       category: 'Cost Management',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop',
       slug: 'reduce-printing-costs-iowa'
     },
     {
@@ -246,7 +246,7 @@ const Blog = () => {
       date: '2024-01-22',
       readTime: '10 min read',
       category: 'Technology',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop',
       slug: 'eliminate-print-servers-iowa'
     },
     {
@@ -257,7 +257,7 @@ const Blog = () => {
       date: '2024-01-25',
       readTime: '11 min read',
       category: 'Security',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop',
       slug: 'secure-print-release-iowa'
     },
     {
@@ -268,7 +268,7 @@ const Blog = () => {
       date: '2024-01-18',
       readTime: '9 min read',
       category: 'Cost Management',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=250&fit=crop',
       slug: 'papercut-cost-reduction-iowa'
     },
     {
@@ -279,7 +279,7 @@ const Blog = () => {
       date: '2024-01-20',
       readTime: '10 min read',
       category: 'Security',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=250&fit=crop',
       slug: 'print-security-software-des-moines'
     },
     {
@@ -290,7 +290,7 @@ const Blog = () => {
       date: '2024-01-22',
       readTime: '8 min read',
       category: 'Security',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=250&fit=crop',
       slug: 'document-security-printing-cedar-rapids'
     },
     {
@@ -301,7 +301,7 @@ const Blog = () => {
       date: '2024-01-28',
       readTime: '15 min read',
       category: 'Managed Services',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=400&h=250&fit=crop',
       slug: 'managed-print-services-iowa'
     },
     {
@@ -312,7 +312,7 @@ const Blog = () => {
       date: '2024-01-30',
       readTime: '14 min read',
       category: 'Document Management',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=400&h=250&fit=crop',
       slug: 'document-management-iowa'
     },
     {
@@ -323,7 +323,7 @@ const Blog = () => {
       date: '2024-02-01',
       readTime: '13 min read',
       category: 'Local Services',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop',
       slug: 'print-management-des-moines'
     },
     {
@@ -334,7 +334,7 @@ const Blog = () => {
       date: '2024-02-03',
       readTime: '16 min read',
       category: 'Comparison',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop',
       slug: 'papercut-vs-alternatives-iowa'
     },
     {
@@ -345,7 +345,7 @@ const Blog = () => {
       date: '2024-02-05',
       readTime: '18 min read',
       category: 'Software Comparison',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop',
       slug: 'print-management-software-comparison-iowa'
     }
   ]
@@ -436,15 +436,11 @@ const Blog = () => {
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                   // onClick={() => addInteraction('blog_post_click', { title: post.title, category: post.category })}
                 >
-                <div className="aspect-w-16 aspect-h-9 bg-gray-200 relative">
-                  <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                    <span className="text-white font-semibold">{post.category}</span>
-                  </div>
-                  {/* Semantic image placeholder - replace with actual images for production */}
+                <div className="aspect-w-16 aspect-h-9 bg-gray-200 relative overflow-hidden">
                   <img
-                    src={post.image !== '/api/placeholder/400/250' ? post.image : undefined}
+                    src={post.image}
                     alt={`${post.title} - ${post.category} article about print management in Iowa`}
-                    className={post.image !== '/api/placeholder/400/250' ? 'absolute inset-0 w-full h-48 object-cover' : 'sr-only'}
+                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
                     loading="lazy"
                     width="400"
                     height="250"

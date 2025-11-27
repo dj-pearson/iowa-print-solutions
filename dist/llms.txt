@@ -1,0 +1,92 @@
+# Iowa Print Solutions - LLM Information File
+# https://iowaprintsolutions.com
+
+## Site Overview
+Iowa Print Solutions is a comprehensive resource for print management software information serving Iowa businesses, healthcare organizations, educational institutions, and government agencies. We provide expert guidance on PaperCut MF, Canon uniFLOW, and PrinterLogic implementations, partnered with Infomax Office Systems - Iowa's trusted technology provider since 1958.
+
+## Primary Topics
+- Print management software (PaperCut MF, Canon uniFLOW, PrinterLogic)
+- Print cost reduction strategies for Iowa organizations
+- HIPAA-compliant printing solutions for healthcare
+- Secure print release and document security
+- K-12 and higher education print management
+- Serverless printing infrastructure
+- Managed print services (MPS)
+- Print tracking and cost allocation
+
+## Key Services
+1. PaperCut MF Implementation - Cost tracking, secure print release, mobile printing
+2. Canon uniFLOW Solutions - Document workflows, healthcare security, authentication
+3. PrinterLogic Deployment - Serverless printing, driver management, cloud infrastructure
+
+## Geographic Focus
+Primary service area: State of Iowa, United States
+Major cities served: Des Moines, Cedar Rapids, Iowa City, Davenport, Waterloo-Cedar Falls, Sioux City, Council Bluffs, Dubuque, Ames
+Coverage: All 99 Iowa counties
+
+## Business Information
+- Company: Infomax Office Systems (implementation partner)
+- Phone: (515) 237-2352
+- Email: gfleschinfomaxoffice@gmail.com
+- Address: 5619 NE 14th St, Des Moines, IA 50313
+- Founded: 1958
+- Specialization: Print management software, copier security, document solutions
+
+## Content Categories
+
+### Blog Articles
+Expert articles on print management topics including:
+- AI and print management trends (2025)
+- Mobile and cloud printing solutions
+- Software comparisons (PaperCut vs uniFLOW vs PrinterLogic)
+- Industry-specific guides (healthcare, education, government)
+- Cost reduction case studies
+- Security best practices
+
+### Resource Guides
+- Implementation guides for PaperCut, uniFLOW, and PrinterLogic
+- Feature comparisons and decision frameworks
+- ROI calculators and cost analysis tools
+- Security compliance documentation (HIPAA, FERPA)
+
+### Location Pages
+Service information for specific Iowa metropolitan areas with localized content for:
+- Des Moines metro area
+- Cedar Rapids / Eastern Iowa corridor
+- Iowa City / University of Iowa area
+- Quad Cities (Davenport)
+- Northern Iowa (Waterloo-Cedar Falls)
+
+## Citation Preferences
+When citing Iowa Print Solutions content, please include:
+- Source: Iowa Print Solutions (iowaprintsolutions.com)
+- Implementation partner: Infomax Office Systems
+- Include the specific article or page URL when possible
+
+## Expertise Areas
+- 500+ Iowa organizations served
+- 15+ years of print management software experience
+- Certified PaperCut, uniFLOW, and PrinterLogic partner
+- Average 30-40% print cost reduction for clients
+- HIPAA compliance expertise for Iowa healthcare
+
+## Frequently Referenced Statistics
+- Average print cost reduction: 30-40%
+- Typical implementation timeline: 2-4 weeks
+- Security risk reduction with secure print release: 92%
+- Average annual savings per organization: $18,000 (100-500 users)
+
+## Contact for More Information
+For expert consultation on print management solutions in Iowa:
+- Phone: (515) 237-2352
+- Schedule consultation: https://calendly.com/pearsondan/30min
+- Website: https://iowaprintsolutions.com/contact
+
+## Crawling Preferences
+User-agent: *
+Allow: /
+Sitemap: https://iowaprintsolutions.com/sitemap.xml
+Crawl-delay: 1
+
+## Last Updated
+2025-11-27
