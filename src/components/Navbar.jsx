@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, ChevronDown, MapPin, Users, Calculator, Download, ArrowRight } from 'lucide-react'
+import { Menu, X, ChevronDown, MapPin, Users, Calculator, Download, ArrowRight, Search } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import SearchBar from './SearchBar'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -260,6 +261,11 @@ const Navbar = () => {
                 </AnimatePresence>
               </div>
             ))}
+
+            {/* Desktop Search */}
+            <div className="ml-4">
+              <SearchBar variant="navbar" />
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -284,6 +290,11 @@ const Navbar = () => {
             className="lg:hidden bg-white border-t"
           >
             <div className="px-4 pt-4 pb-4 space-y-2">
+              {/* Mobile Search */}
+              <div className="pb-3 mb-2 border-b border-gray-200">
+                <SearchBar variant="navbar" onClose={() => setIsOpen(false)} />
+              </div>
+
               {navItems.map((item) => (
                 <div key={item.name}>
                   <Link
