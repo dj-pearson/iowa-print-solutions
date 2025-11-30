@@ -6,28 +6,47 @@ import AIOptimizedFAQ from '../components/AIOptimizedFAQ'
 import { SmartCTA } from '../components/PerformanceComponents'
 import { PhoneTracker, EmailTracker, FormTracker } from '../components/AnalyticsComponents'
 import { trackFormSubmission } from '../utils/analytics'
+import { useFormValidation, FormField } from '../hooks/useFormValidation.jsx'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    message: ''
-  })
   const [status, setStatus] = useState('idle') // idle, submitting, success, error
   const [errorMessage, setErrorMessage] = useState('')
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+  // Form validation
+  const {
+    values: formData,
+    handleChange,
+    handleBlur,
+    validateAll,
+    getFieldError,
+    resetForm
+  } = useFormValidation(
+    {
+      name: '',
+      email: '',
+      company: '',
+      phone: '',
+      service: '',
+      message: ''
+    },
+    {
+      name: ['required', { type: 'minLength', value: 2, message: 'Name must be at least 2 characters' }],
+      email: ['required', 'email'],
+      message: ['required', { type: 'minLength', value: 10, message: 'Please provide more details (at least 10 characters)' }],
+      phone: ['phone'],
+      company: [],
+      service: []
+    }
+  )
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    // Validate all fields before submitting
+    if (!validateAll()) {
+      return
+    }
+
     setStatus('submitting')
 
     // Track form submission
@@ -51,14 +70,7 @@ const Contact = () => {
 
       if (response.ok) {
         setStatus('success')
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          service: '',
-          message: ''
-        })
+        resetForm()
         // Reset success message after 5 seconds
         setTimeout(() => setStatus('idle'), 5000)
       } else {
@@ -301,67 +313,63 @@ const Contact = () => {
                   </motion.div>
                 )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
+                  <FormField label="Full Name" name="name" error={getFieldError('name')} required>
                     <input
                       type="text"
                       id="name"
                       name="name"
-                      required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      onBlur={handleBlur}
+                      className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        getFieldError('name') ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                      }`}
                       placeholder="Your full name"
                     />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
-                    </label>
+                  </FormField>
+                  <FormField label="Email Address" name="email" error={getFieldError('email')} required>
                     <input
                       type="email"
                       id="email"
                       name="email"
-                      required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      onBlur={handleBlur}
+                      className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        getFieldError('email') ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                      }`}
                       placeholder="your.email@company.com"
                     />
-                  </div>
+                  </FormField>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                      Company/Organization
-                    </label>
+                  <FormField label="Company/Organization" name="company" error={getFieldError('company')}>
                     <input
                       type="text"
                       id="company"
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Your company name"
                     />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
-                    </label>
+                  </FormField>
+                  <FormField label="Phone Number" name="phone" error={getFieldError('phone')}>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      onBlur={handleBlur}
+                      className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        getFieldError('phone') ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                      }`}
                       placeholder="(515) 555-0123"
                     />
-                  </div>
+                  </FormField>
                 </div>
 
                 <div>
@@ -382,21 +390,20 @@ const Contact = () => {
                   </select>
                 </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
+                <FormField label="Message" name="message" error={getFieldError('message')} required>
                   <textarea
                     id="message"
                     name="message"
-                    required
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    onBlur={handleBlur}
+                    className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                      getFieldError('message') ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                    }`}
                     placeholder="Tell us about your print management needs..."
                   />
-                </div>
+                </FormField>
 
                 <button
                   type="submit"

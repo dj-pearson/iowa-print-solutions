@@ -1,9 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
+import { AnalyticsProvider } from './components/AnalyticsProvider'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import SearchResults from './pages/SearchResults'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -90,6 +92,7 @@ const AppContent = () => {
       <main>
         <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/search" element={<SearchResults />} />
             <Route path="/services" element={<Services />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/tools" element={<Tools />} />
@@ -179,7 +182,9 @@ const App = () => {
   return (
     <ErrorBoundary>
       <Router>
-        <AppContent />
+        <AnalyticsProvider>
+          <AppContent />
+        </AnalyticsProvider>
       </Router>
     </ErrorBoundary>
   )
