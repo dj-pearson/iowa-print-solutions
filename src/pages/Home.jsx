@@ -165,6 +165,8 @@ const Home = () => {
         canonicalUrl="https://iowaprintsolutions.com"
         schemaType="WebSite"
         additionalSchema={seoSchema}
+        dateModified="2025-12-24T12:00:00Z"
+        datePublished="2024-01-01T00:00:00Z"
       />
       <OrganizationSchema />
       <IowaBusinessFAQSchema />

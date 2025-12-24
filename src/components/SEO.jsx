@@ -1,19 +1,26 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-const SEO = ({ 
-  title, 
-  description, 
-  keywords, 
+const SEO = ({
+  title,
+  description,
+  keywords,
   canonicalUrl,
   ogImage = '/og-image.jpg',
   schemaType = 'WebPage',
   additionalSchema = null,
-  noindex = false
+  noindex = false,
+  datePublished = null,
+  dateModified = null
 }) => {
   const siteUrl = 'https://iowaprintsolutions.com'
   const siteName = 'Iowa Print Solutions'
   const fullTitle = title ? `${title} | ${siteName}` : `${siteName} - Leading Print Management Solutions in Iowa`
+
+  // Generate current date for last-modified if not provided
+  const currentDate = new Date().toISOString()
+  const lastModified = dateModified || currentDate
+  const published = datePublished || lastModified
   
   const defaultDescription = 'Iowa\'s premier resource for print management solutions. Expert information on PaperCut, Uniflow, and PrinterLogic implementations. Connect with Infomax Office Systems for professional services.'
   
@@ -124,7 +131,17 @@ const SEO = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
-      
+
+      {/* Content Freshness Signals - Critical for SEO */}
+      <meta httpEquiv="last-modified" content={lastModified} />
+      <meta name="revised" content={lastModified} />
+      {schemaType === 'Article' && (
+        <>
+          <meta property="article:published_time" content={published} />
+          <meta property="article:modified_time" content={lastModified} />
+        </>
+      )}
+
       {/* Additional SEO Tags */}
       <meta name="geo.region" content="US-IA" />
       <meta name="geo.placename" content="Iowa" />
