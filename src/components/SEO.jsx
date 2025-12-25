@@ -1,167 +1,234 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Helmet } from 'react-helmet'
+import { siteConfig, getCanonicalUrl, getPageTitle, getKeywords } from '../config/site'
 
+/**
+ * Enhanced SEO component for comprehensive meta tag management
+ * Provides optimized meta tags for search engines and social sharing
+ *
+ * @param {Object} props
+ * @param {string} props.title - Page title
+ * @param {string} props.description - Page description
+ * @param {string|Array} props.keywords - Additional keywords
+ * @param {string} props.canonicalUrl - Canonical URL (relative or absolute)
+ * @param {string} props.ogImage - Open Graph image path
+ * @param {string} props.ogType - Open Graph type (website, article, etc.)
+ * @param {string} props.schemaType - Schema.org type for structured data
+ * @param {Object} props.additionalSchema - Additional schema data to merge
+ * @param {boolean} props.noindex - Whether to noindex the page
+ * @param {string} props.datePublished - ISO date for article publication
+ * @param {string} props.dateModified - ISO date for last modification
+ * @param {string} props.author - Author name for articles
+ * @param {string} props.category - Content category for articles
+ * @param {Array} props.alternateLanguages - Alternate language versions [{lang, url}]
+ */
 const SEO = ({
   title,
   description,
   keywords,
   canonicalUrl,
-  ogImage = '/og-image.jpg',
+  ogImage,
+  ogType = 'website',
   schemaType = 'WebPage',
   additionalSchema = null,
   noindex = false,
   datePublished = null,
-  dateModified = null
+  dateModified = null,
+  author = null,
+  category = null,
+  alternateLanguages = [],
 }) => {
-  const siteUrl = 'https://iowaprintsolutions.com'
-  const siteName = 'Iowa Print Solutions'
-  const fullTitle = title ? `${title} | ${siteName}` : `${siteName} - Leading Print Management Solutions in Iowa`
+  // Compute meta values using centralized config
+  const metaValues = useMemo(() => {
+    const fullTitle = getPageTitle(title)
+    const metaDescription = description || siteConfig.seo.defaultDescription
+    const metaKeywords = Array.isArray(keywords)
+      ? getKeywords(keywords)
+      : getKeywords(keywords ? keywords.split(',').map(k => k.trim()) : [])
 
-  // Generate current date for last-modified if not provided
-  const currentDate = new Date().toISOString()
-  const lastModified = dateModified || currentDate
-  const published = datePublished || lastModified
-  
-  const defaultDescription = 'Iowa\'s premier resource for print management solutions. Expert information on PaperCut, Uniflow, and PrinterLogic implementations. Connect with Infomax Office Systems for professional services.'
-  
-  const metaDescription = description || defaultDescription
-  
-  const defaultKeywords = 'Iowa print solutions, print management Iowa, PaperCut Iowa, Uniflow Iowa, PrinterLogic Iowa, Infomax Office Systems, print security, managed print services, document management Iowa'
-  const metaKeywords = keywords ? `${keywords}, ${defaultKeywords}` : defaultKeywords
+    // Handle canonical URL - support both relative and absolute
+    let canonical = canonicalUrl
+    if (canonical) {
+      canonical = canonical.startsWith('http')
+        ? canonical
+        : getCanonicalUrl(canonical)
+    }
 
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': schemaType,
-    'name': title || siteName,
-    'description': metaDescription,
-    'url': canonicalUrl || siteUrl,
-    'inLanguage': 'en-US',
-    'isPartOf': {
-      '@type': 'WebSite',
-      'name': siteName,
-      'url': siteUrl
-    },
-    'about': {
-      '@type': 'Thing',
-      'name': 'Print Management Solutions',
-      'description': 'Comprehensive print management and document solutions for Iowa organizations'
-    },
-    'provider': {
-      '@type': 'Organization',
-      'name': 'Infomax Office Systems',
-      'url': 'https://www.infomaxoffice.com',
-      'foundingDate': '1958',
-      'areaServed': {
-        '@type': 'State',
-        'name': 'Iowa'
+    // Handle OG image
+    const ogImageUrl = ogImage
+      ? (ogImage.startsWith('http') ? ogImage : `${siteConfig.url}${ogImage}`)
+      : `${siteConfig.url}${siteConfig.defaultOgImage}`
+
+    // Dates for freshness signals
+    const now = new Date().toISOString()
+    const lastModified = dateModified || now
+    const published = datePublished || lastModified
+
+    return {
+      fullTitle,
+      metaDescription,
+      metaKeywords,
+      canonical,
+      ogImageUrl,
+      lastModified,
+      published,
+    }
+  }, [title, description, keywords, canonicalUrl, ogImage, datePublished, dateModified])
+
+  // Generate structured data
+  const structuredData = useMemo(() => {
+    const baseSchema = {
+      '@context': 'https://schema.org',
+      '@type': schemaType,
+      name: title || siteConfig.name,
+      description: metaValues.metaDescription,
+      url: metaValues.canonical || siteConfig.url,
+      inLanguage: 'en-US',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': `${siteConfig.url}/#website`,
+        name: siteConfig.name,
+        url: siteConfig.url,
       },
-      'serviceArea': {
-        '@type': 'State',
-        'name': 'Iowa'
-      }
+      provider: {
+        '@type': 'Organization',
+        '@id': `${siteConfig.url}/#organization`,
+        name: siteConfig.business.legalName,
+        url: siteConfig.url,
+      },
     }
-  }
 
-  // Create schema based on type
-  let finalSchema = { ...structuredData }
-  
-  if (additionalSchema) {
-    try {
-      // For Article schema, merge more carefully
-      if (schemaType === 'Article' && additionalSchema['@type'] === 'Article') {
-        finalSchema = {
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          'headline': additionalSchema.headline || title,
-          'description': metaDescription,
-          'url': canonicalUrl || siteUrl,
-          'datePublished': additionalSchema.datePublished,
-          'dateModified': additionalSchema.dateModified,
-          'author': additionalSchema.author || {
-            '@type': 'Person',
-            'name': 'Dan Pearson'
+    // Handle Article schema
+    if (schemaType === 'Article' || ogType === 'article') {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: title,
+        description: metaValues.metaDescription,
+        url: metaValues.canonical || siteConfig.url,
+        datePublished: metaValues.published,
+        dateModified: metaValues.lastModified,
+        author: {
+          '@type': 'Person',
+          name: author || siteConfig.defaultAuthor.name,
+        },
+        publisher: {
+          '@type': 'Organization',
+          '@id': `${siteConfig.url}/#organization`,
+          name: siteConfig.name,
+          logo: {
+            '@type': 'ImageObject',
+            url: siteConfig.logoFull,
           },
-          'publisher': additionalSchema.publisher || {
-            '@type': 'Organization',
-            'name': 'Iowa Print Solutions'
-          },
-          'inLanguage': 'en-US'
-        }
-      } else {
-        Object.assign(finalSchema, additionalSchema)
+        },
+        image: metaValues.ogImageUrl,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': metaValues.canonical || siteConfig.url,
+        },
+        articleSection: category || 'Print Management',
+        inLanguage: 'en-US',
+        ...(additionalSchema || {}),
       }
-    } catch (error) {
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('Error merging additional schema:', error)
-      }
-      finalSchema = structuredData
     }
-  }
+
+    // Merge additional schema if provided
+    if (additionalSchema) {
+      return { ...baseSchema, ...additionalSchema }
+    }
+
+    return baseSchema
+  }, [schemaType, ogType, title, metaValues, author, category, additionalSchema])
 
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={metaDescription} />
-      <meta name="keywords" content={metaKeywords} />
-      
+      {/* Primary Meta Tags */}
+      <title>{metaValues.fullTitle}</title>
+      <meta name="title" content={metaValues.fullTitle} />
+      <meta name="description" content={metaValues.metaDescription} />
+      <meta name="keywords" content={metaValues.metaKeywords} />
+
       {/* Robots */}
-      {noindex ? (
-        <meta name="robots" content="noindex, nofollow" />
-      ) : (
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      )}
-      
+      <meta
+        name="robots"
+        content={noindex ? 'noindex, nofollow' : siteConfig.seo.robots}
+      />
+      <meta
+        name="googlebot"
+        content={noindex ? 'noindex, nofollow' : siteConfig.seo.robots}
+      />
+
       {/* Canonical URL */}
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-      
-      {/* Open Graph */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:url" content={canonicalUrl || siteUrl} />
-      <meta property="og:site_name" content={siteName} />
-      <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+      {metaValues.canonical && (
+        <link rel="canonical" href={metaValues.canonical} />
+      )}
+
+      {/* Alternate Languages */}
+      {alternateLanguages.map(({ lang, url }) => (
+        <link key={lang} rel="alternate" hrefLang={lang} href={url} />
+      ))}
+      <link rel="alternate" hrefLang="x-default" href={metaValues.canonical || siteConfig.url} />
+
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content={ogType} />
+      <meta property="og:title" content={metaValues.fullTitle} />
+      <meta property="og:description" content={metaValues.metaDescription} />
+      <meta property="og:url" content={metaValues.canonical || siteConfig.url} />
+      <meta property="og:site_name" content={siteConfig.name} />
+      <meta property="og:image" content={metaValues.ogImageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={title || siteConfig.name} />
       <meta property="og:locale" content="en_US" />
-      
+
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+      <meta name="twitter:title" content={metaValues.fullTitle} />
+      <meta name="twitter:description" content={metaValues.metaDescription} />
+      <meta name="twitter:image" content={metaValues.ogImageUrl} />
+      <meta name="twitter:image:alt" content={title || siteConfig.name} />
 
-      {/* Content Freshness Signals - Critical for SEO */}
-      <meta httpEquiv="last-modified" content={lastModified} />
-      <meta name="revised" content={lastModified} />
-      {schemaType === 'Article' && (
+      {/* Article-specific meta tags */}
+      {(schemaType === 'Article' || ogType === 'article') && (
         <>
-          <meta property="article:published_time" content={published} />
-          <meta property="article:modified_time" content={lastModified} />
+          <meta property="article:published_time" content={metaValues.published} />
+          <meta property="article:modified_time" content={metaValues.lastModified} />
+          <meta property="article:author" content={author || siteConfig.defaultAuthor.name} />
+          {category && <meta property="article:section" content={category} />}
         </>
       )}
 
-      {/* Additional SEO Tags */}
-      <meta name="geo.region" content="US-IA" />
-      <meta name="geo.placename" content="Iowa" />
-      <meta name="geo.position" content="42.0046;-93.214" />
-      <meta name="ICBM" content="42.0046, -93.214" />
-      
-      {/* Google Search Console Verification - Add your verification code */}
-      <meta name="google-site-verification" content="your-verification-code-here" />
-      
-      {/* Local Business */}
-      <meta name="business:contact_data:locality" content="Iowa" />
-      <meta name="business:contact_data:region" content="IA" />
-      <meta name="business:contact_data:country_name" content="USA" />
-      
+      {/* Content Freshness Signals */}
+      <meta httpEquiv="last-modified" content={metaValues.lastModified} />
+      <meta name="revised" content={metaValues.lastModified} />
+
+      {/* Geographic Meta Tags */}
+      <meta name="geo.region" content={`US-${siteConfig.address.state}`} />
+      <meta name="geo.placename" content={siteConfig.serviceAreas.state} />
+      <meta name="geo.position" content={`${siteConfig.geo.iowaCenter.latitude};${siteConfig.geo.iowaCenter.longitude}`} />
+      <meta name="ICBM" content={`${siteConfig.geo.iowaCenter.latitude}, ${siteConfig.geo.iowaCenter.longitude}`} />
+
+      {/* Local Business Meta */}
+      <meta name="business:contact_data:locality" content={siteConfig.address.city} />
+      <meta name="business:contact_data:region" content={siteConfig.address.state} />
+      <meta name="business:contact_data:country_name" content={siteConfig.address.countryFullName} />
+      <meta name="business:contact_data:phone_number" content={siteConfig.business.phone} />
+      <meta name="business:contact_data:email" content={siteConfig.business.email} />
+
+      {/* Additional SEO optimizations */}
+      <meta name="format-detection" content="telephone=yes" />
+      <meta name="theme-color" content="#1e40af" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content={siteConfig.name} />
+
       {/* Structured Data */}
       <script type="application/ld+json">
-        {JSON.stringify(finalSchema)}
+        {JSON.stringify(structuredData)}
       </script>
     </Helmet>
   )
 }
 
-export default SEO 
+export default SEO
