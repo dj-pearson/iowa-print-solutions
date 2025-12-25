@@ -6,6 +6,7 @@ import TestimonialCard from '../components/TestimonialCard'
 import SEO from '../components/SEO'
 import IowaBusinessFAQSchema from '../components/IowaBusinessFAQSchema'
 import OrganizationSchema from '../components/OrganizationSchema'
+import StructuredData from '../components/StructuredData'
 import { SmartCTA, ExitIntentModal, SocialProofBanner } from '../components/PerformanceComponents'
 // import { useEngagementTracking, PhoneTracker } from '../components/AnalyticsComponents'
 import { Printer, Settings, BarChart3, Shield, Users, Award, ArrowRight, Wrench } from 'lucide-react'
@@ -170,6 +171,7 @@ const Home = () => {
       />
       <OrganizationSchema />
       <IowaBusinessFAQSchema />
+      <StructuredData type="home" />
 
       <div className="min-h-screen">
         <Hero />
