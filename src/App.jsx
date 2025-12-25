@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
 import { AnalyticsProvider } from './components/AnalyticsProvider'
 import Navbar from './components/Navbar'
-import Breadcrumb from './components/Breadcrumb'
+import Breadcrumbs from './components/Breadcrumbs'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import SearchResults from './pages/SearchResults'
@@ -90,7 +90,7 @@ const AppContent = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <Breadcrumb />
+      <Breadcrumbs />
       <main>
         <Routes>
             <Route path="/" element={<Home />} />

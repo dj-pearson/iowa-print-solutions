@@ -13,15 +13,48 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: mode === 'development', // Only enable sourcemaps in development
-    minify: 'terser', // Switch to terser for cache-busting
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+      },
+    },
     rollupOptions: {
       output: {
-        // Force new asset names with timestamp
-        entryFileNames: 'assets/app-[hash]-' + Date.now() + '.js',
-        chunkFileNames: 'assets/chunk-[hash]-' + Date.now() + '.js',
-        assetFileNames: 'assets/[name]-[hash]-' + Date.now() + '.[ext]'
-      }
-    }
+        // Code splitting configuration for better caching
+        manualChunks: {
+          // Vendor chunks
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-ui': ['framer-motion', 'lucide-react'],
+          'vendor-seo': ['react-helmet'],
+        },
+        // Asset naming with cache busting
+        entryFileNames: 'assets/app-[hash].js',
+        chunkFileNames: (chunkInfo) => {
+          // Keep vendor chunks with stable names for caching
+          if (chunkInfo.name.startsWith('vendor-')) {
+            return `assets/${chunkInfo.name}-[hash].js`
+          }
+          return 'assets/chunk-[hash].js'
+        },
+        assetFileNames: (assetInfo) => {
+          // Group assets by type
+          if (/\.(css)$/.test(assetInfo.name)) {
+            return 'assets/styles/[name]-[hash][extname]'
+          }
+          if (/\.(woff2?|ttf|eot|otf)$/.test(assetInfo.name)) {
+            return 'assets/fonts/[name]-[hash][extname]'
+          }
+          if (/\.(png|jpe?g|gif|svg|webp|ico)$/.test(assetInfo.name)) {
+            return 'assets/images/[name]-[hash][extname]'
+          }
+          return 'assets/[name]-[hash][extname]'
+        },
+      },
+    },
+    // Chunk size warnings
+    chunkSizeWarningLimit: 500,
   },
   define: {
     'process.env.NODE_ENV': JSON.stringify(mode || 'production'),
@@ -34,5 +67,9 @@ export default defineConfig(({ mode }) => ({
   preview: {
     port: 4173,
     open: false
-  }
+  },
+  // Performance optimizations
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', 'lucide-react'],
+  },
 }))
