@@ -19,10 +19,30 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
+    <!-- Critical Font Preloading - Load Inter font early for faster text rendering -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+
     <!-- SEO Meta Tags -->
     <title>Secure Iowa Copier Software | PaperCut, uniFLOW & PrinterLogic Security Solutions</title>
     <meta name="description" content="Protect your Iowa business from copier security breaches. Expert PaperCut, uniFLOW & PrinterLogic implementation. Prevent printer data leaks, ensure HIPAA compliance for Des Moines, Cedar Rapids, Iowa City businesses." />
     <meta name="keywords" content="Iowa copier software, copier security Iowa, secure MFP software, printer security Iowa, PaperCut Iowa, uniFLOW Iowa, PrinterLogic Iowa, prevent printer data breach, HIPAA printing Iowa" />
+
+    <!-- SEO Crawler Hints - Help search engines understand the SPA -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://iowaprintsolutions.com" />
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Iowa Print Solutions" />
+    <meta property="og:title" content="Secure Iowa Copier Software | PaperCut, uniFLOW & PrinterLogic" />
+    <meta property="og:description" content="Protect your Iowa business from copier security breaches. Expert print management solutions." />
+    <meta property="og:url" content="https://iowaprintsolutions.com" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iowa Print Solutions - Secure Print Management" />
+    <meta name="twitter:description" content="Expert PaperCut, uniFLOW & PrinterLogic solutions for Iowa businesses." />
 
     <!-- Structured Data for SoftwareApplication -->
     <script type="application/ld+json">
@@ -52,9 +72,73 @@
       }
     }
     </script>
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Iowa Print Solutions",
+      "url": "https://iowaprintsolutions.com",
+      "logo": "https://iowaprintsolutions.com/IPSLogo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-515-237-2352",
+        "contactType": "sales",
+        "areaServed": "US-IA",
+        "availableLanguage": "English"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Des Moines",
+        "addressRegion": "IA",
+        "addressCountry": "US"
+      },
+      "sameAs": []
+    }
+    </script>
+
+    <!-- Inline Critical CSS for Initial Load (prevents flash of unstyled content) -->
+    <style>
+      /* Critical CSS for initial page load */
+      body {
+        margin: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #f9fafb;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      /* Loading spinner for initial app load */
+      .initial-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f9fafb;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #e5e7eb;
+        border-top-color: #2563eb;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Initial loading state visible before React hydrates -->
+      <div class="initial-loader" aria-label="Loading Iowa Print Solutions">
+        <div class="spinner"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
