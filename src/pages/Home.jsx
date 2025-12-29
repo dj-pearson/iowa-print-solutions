@@ -177,34 +177,34 @@ const Home = () => {
         <Hero />
 
         {/* Security-Focused Hero Message */}
-        <section className="bg-red-50 py-12 border-b-4 border-red-600">
+        <section className="bg-red-50 py-8 md:py-12 border-b-4 border-red-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center"
             >
-              <div className="flex justify-center mb-4">
-                <Shield className="h-16 w-16 text-red-600" />
+              <div className="flex justify-center mb-3 md:mb-4">
+                <Shield className="h-12 w-12 md:h-16 md:w-16 text-red-600" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
                 Is Your Iowa Business at Risk? Unsecured Copiers Are a Data Breach Waiting to Happen
               </h2>
-              <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-6">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto mb-4 md:mb-6">
                 Your office copiers and multifunction printers store sensitive data that hackers can access. Without proper copier security software like PaperCut, uniFLOW, or PrinterLogic, you're exposing confidential client information, employee data, and financial records.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-600">
-                  <p className="text-4xl font-bold text-red-600 mb-2">60%</p>
-                  <p className="text-gray-700 font-semibold">Of data breaches involve unsecured printers and copiers</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-8 max-w-4xl mx-auto">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md border-l-4 border-red-600">
+                  <p className="text-2xl md:text-4xl font-bold text-red-600 mb-1 md:mb-2">60%</p>
+                  <p className="text-sm md:text-base text-gray-700 font-semibold">Of data breaches involve unsecured printers and copiers</p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-600">
-                  <p className="text-4xl font-bold text-red-600 mb-2">$4.45M</p>
-                  <p className="text-gray-700 font-semibold">Average cost of a data breach for businesses in 2024</p>
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md border-l-4 border-red-600">
+                  <p className="text-2xl md:text-4xl font-bold text-red-600 mb-1 md:mb-2">$4.45M</p>
+                  <p className="text-sm md:text-base text-gray-700 font-semibold">Average cost of a data breach for businesses in 2024</p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-600">
-                  <p className="text-4xl font-bold text-red-600 mb-2">HIPAA</p>
-                  <p className="text-gray-700 font-semibold">Iowa healthcare faces severe penalties for unsecured printing</p>
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md border-l-4 border-red-600">
+                  <p className="text-2xl md:text-4xl font-bold text-red-600 mb-1 md:mb-2">HIPAA</p>
+                  <p className="text-sm md:text-base text-gray-700 font-semibold">Iowa healthcare faces severe penalties for unsecured printing</p>
                 </div>
               </div>
             </motion.div>
@@ -212,21 +212,21 @@ const Home = () => {
         </section>
 
         {/* Why Iowa Businesses Need Copier Security Software */}
-        <section className="bg-white py-16">
+        <section className="bg-white py-10 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                 Why Every Iowa Company Needs Secure Copier Software Solutions
               </h2>
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto mb-6 md:mb-8">
                 Infomax Office Systems serves as Iowa's premier copier security partner, specializing in PaperCut MF, Canon uniFLOW, and PrinterLogic implementations across Des Moines, Cedar Rapids, Iowa City, Davenport, and statewide. Our certified experts help Iowa businesses including healthcare systems like UnityPoint Health and Mercy Medical, educational institutions such as Iowa State University and University of Iowa, major corporations like Principal Financial and HyVee, and government agencies prevent data breaches, ensure compliance, and secure their multifunction printers and copiers.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8 md:mt-12">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -284,20 +284,20 @@ const Home = () => {
         </section>
 
         {/* Iowa Print Solutions Overview - GEO Optimized */}
-        <section className="bg-gray-50 py-16">
+        <section className="bg-gray-50 py-10 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">
                 Iowa's Leading Copier Security Software Provider Since 1958
               </h2>
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto mb-6 md:mb-8">
                 With over 65 years serving Iowa businesses, Infomax Office Systems provides enterprise-grade copier and printer security solutions. We implement PaperCut MF, Canon uniFLOW, and PrinterLogic software to protect your sensitive data, ensure regulatory compliance, and give you complete control over your multifunction printers and copiers.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
                 <div className="text-center">
                   <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-blue-600">65+</span>
@@ -325,17 +325,17 @@ const Home = () => {
         </section>
 
         {/* Print Management ROI & Statistics - GEO Optimized */}
-        <section className="bg-white py-16">
+        <section className="bg-white py-10 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
                 Print Management ROI Data for Iowa Businesses (2025)
               </h2>
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto">
                 Based on actual implementations across 500+ Iowa organizations including healthcare systems, K-12 schools, universities, and enterprises
               </p>
             </motion.div>
@@ -462,39 +462,39 @@ const Home = () => {
             </div>
 
             {/* Key Statistics Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md">
-                <div className="text-4xl font-bold text-blue-600 mb-2">$18,000</div>
-                <div className="text-gray-900 font-semibold mb-1">Average Annual Savings</div>
-                <div className="text-sm text-gray-600">Per Iowa organization (100-500 users)</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 md:p-6 rounded-xl shadow-md">
+                <div className="text-2xl md:text-4xl font-bold text-blue-600 mb-1 md:mb-2">$18,000</div>
+                <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Average Annual Savings</div>
+                <div className="text-xs md:text-sm text-gray-600">Per Iowa organization (100-500 users)</div>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md">
-                <div className="text-4xl font-bold text-green-600 mb-2">2-4 weeks</div>
-                <div className="text-gray-900 font-semibold mb-1">Typical Implementation</div>
-                <div className="text-sm text-gray-600">From kickoff to full deployment</div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 md:p-6 rounded-xl shadow-md">
+                <div className="text-2xl md:text-4xl font-bold text-green-600 mb-1 md:mb-2">2-4 weeks</div>
+                <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Typical Implementation</div>
+                <div className="text-xs md:text-sm text-gray-600">From kickoff to full deployment</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md">
-                <div className="text-4xl font-bold text-purple-600 mb-2">92%</div>
-                <div className="text-gray-900 font-semibold mb-1">Security Risk Reduction</div>
-                <div className="text-sm text-gray-600">With secure print release enabled</div>
+              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 md:p-6 rounded-xl shadow-md">
+                <div className="text-2xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">92%</div>
+                <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Security Risk Reduction</div>
+                <div className="text-xs md:text-sm text-gray-600">With secure print release enabled</div>
               </div>
-              <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl shadow-md">
-                <div className="text-4xl font-bold text-orange-600 mb-2">500+</div>
-                <div className="text-gray-900 font-semibold mb-1">Iowa Organizations</div>
-                <div className="text-sm text-gray-600">Served by Infomax Office Systems</div>
+              <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-4 md:p-6 rounded-xl shadow-md">
+                <div className="text-2xl md:text-4xl font-bold text-orange-600 mb-1 md:mb-2">500+</div>
+                <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Iowa Organizations</div>
+                <div className="text-xs md:text-sm text-gray-600">Served by Infomax Office Systems</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Iowa-Specific Service Areas */}
-        <section className="bg-blue-50 py-16">
+        <section className="bg-blue-50 py-10 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
                 Serving All of Iowa's Print Management Needs
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-6 md:mb-8">
                 From major metropolitan areas to rural Iowa communities, we provide comprehensive print management solutions statewide.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
@@ -546,17 +546,17 @@ const Home = () => {
         </section>
 
         {/* Stats Section with SEO-optimized content */}
-        <section className="bg-gray-50 py-16">
+        <section className="bg-gray-50 py-10 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
                 Iowa Print Solutions Information Hub
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
                 Comprehensive resources about PaperCut, Uniflow, and PrinterLogic solutions. Connect with Infomax Office Systems for professional implementation services throughout Iowa.
               </p>
             </motion.div>
@@ -582,17 +582,17 @@ const Home = () => {
         </section>
 
         {/* Resources Section with enhanced SEO content */}
-        <section className="py-16 bg-white">
+        <section className="py-10 md:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
                 Expert Iowa Print Management Resources & Insights
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
                 Stay informed with comprehensive guides on print management solutions for Iowa organizations. From PaperCut implementation to Uniflow security and PrinterLogic serverless printing.
               </p>
             </motion.div>
@@ -760,17 +760,17 @@ const Home = () => {
         </section>
 
         {/* Testimonials Section with local SEO focus */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-10 md:py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
                 Iowa Organizations Trust Infomax Office Systems
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-base md:text-lg lg:text-xl text-gray-600">
                 See what Iowa clients across Des Moines, Cedar Rapids, Iowa City, and statewide are saying about Infomax Office Systems print management services and implementations.
               </p>
             </motion.div>

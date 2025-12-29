@@ -309,19 +309,33 @@ const Navbar = () => {
                     {item.name}
                   </Link>
                   
-                  {/* Mobile submenu items for key pages */}
+                  {/* Mobile submenu items for key pages - expanded for better navigation */}
                   {item.megaMenu && (
-                    <div className="ml-4 mt-2 space-y-1">
-                      {item.megaMenu.sections[0].items.slice(0, 3).map((subItem, index) => (
-                        <Link
-                          key={index}
-                          to={subItem.path}
-                          onClick={() => setIsOpen(false)}
-                          className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md"
-                        >
-                          {subItem.name}
-                        </Link>
+                    <div className="ml-4 mt-2 space-y-1 pb-2">
+                      {item.megaMenu.sections.slice(0, 2).map((section, sectionIdx) => (
+                        <div key={sectionIdx} className={sectionIdx > 0 ? 'mt-3 pt-2 border-t border-gray-100' : ''}>
+                          <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                            {section.title}
+                          </p>
+                          {section.items.slice(0, 3).map((subItem, index) => (
+                            <Link
+                              key={index}
+                              to={subItem.path}
+                              onClick={() => setIsOpen(false)}
+                              className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md"
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
+                        </div>
                       ))}
+                      <Link
+                        to={item.path}
+                        onClick={() => setIsOpen(false)}
+                        className="block px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-md mt-2"
+                      >
+                        View All {item.name} →
+                      </Link>
                     </div>
                   )}
                 </div>

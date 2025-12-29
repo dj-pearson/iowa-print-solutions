@@ -132,18 +132,18 @@ const PrintCostCalculator = () => {
         <Breadcrumbs items={breadcrumbItems} className="bg-gray-50 py-4" />
 
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
+        <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-10 md:py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Calculator className="h-16 w-16 mx-auto mb-6" />
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <Calculator className="h-12 w-12 md:h-16 md:w-16 mx-auto mb-4 md:mb-6" />
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
                 Print Cost Calculator
               </h1>
-              <p className="text-xl mb-8 opacity-90">
+              <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 opacity-90">
                 Discover how much your Iowa business can save with professional print management. 
                 Get instant ROI analysis and personalized recommendations.
               </p>
@@ -151,18 +151,18 @@ const PrintCostCalculator = () => {
           </div>
         </section>
 
-        <section className="py-16">
+        <section className="py-10 md:py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
               
               {/* Calculator Form */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-gray-50 p-8 rounded-lg"
+                className="bg-gray-50 p-5 sm:p-8 rounded-lg"
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 md:mb-6">
                   Calculate Your Potential Savings
                 </h2>
                 
@@ -259,23 +259,23 @@ const PrintCostCalculator = () => {
                 ) : (
                   <div className="space-y-6">
                     {/* Current Costs */}
-                    <div className="bg-red-50 p-6 rounded-lg border border-red-200">
-                      <h3 className="text-lg font-bold text-red-800 mb-4">Current Print Costs</h3>
-                      <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-red-50 p-4 md:p-6 rounded-lg border border-red-200">
+                      <h3 className="text-base md:text-lg font-bold text-red-800 mb-3 md:mb-4">Current Print Costs</h3>
+                      <div className="grid grid-cols-2 gap-3 md:gap-4">
                         <div>
-                          <p className="text-sm text-gray-600">Monthly</p>
-                          <p className="text-2xl font-bold text-red-700">${results.currentMonthlyCost}</p>
+                          <p className="text-xs md:text-sm text-gray-600">Monthly</p>
+                          <p className="text-xl md:text-2xl font-bold text-red-700">${results.currentMonthlyCost}</p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-600">Yearly</p>
-                          <p className="text-2xl font-bold text-red-700">${results.currentYearlyCost}</p>
+                          <p className="text-xs md:text-sm text-gray-600">Yearly</p>
+                          <p className="text-xl md:text-2xl font-bold text-red-700">${results.currentYearlyCost}</p>
                         </div>
                       </div>
                     </div>
 
                     {/* Potential Savings */}
-                    <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-                      <h3 className="text-lg font-bold text-green-800 mb-4">Potential Annual Savings</h3>
+                    <div className="bg-green-50 p-4 md:p-6 rounded-lg border border-green-200">
+                      <h3 className="text-base md:text-lg font-bold text-green-800 mb-3 md:mb-4">Potential Annual Savings</h3>
                       <div className="space-y-3">
                         <div className="flex justify-between">
                           <span className="text-gray-700">Waste Reduction:</span>
@@ -293,8 +293,8 @@ const PrintCostCalculator = () => {
                     </div>
 
                     {/* ROI Analysis */}
-                    <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                      <h3 className="text-lg font-bold text-blue-800 mb-4">Investment & ROI</h3>
+                    <div className="bg-blue-50 p-4 md:p-6 rounded-lg border border-blue-200">
+                      <h3 className="text-base md:text-lg font-bold text-blue-800 mb-3 md:mb-4">Investment & ROI</h3>
                       <div className="space-y-3">
                         <div className="flex justify-between">
                           <span className="text-gray-700">Implementation:</span>
@@ -317,9 +317,9 @@ const PrintCostCalculator = () => {
                     </div>
 
                     {/* Summary Stats */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h3 className="font-bold text-gray-900 mb-3">Your Organization Summary:</h3>
-                      <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
+                      <h3 className="font-bold text-gray-900 mb-3 text-sm md:text-base">Your Organization Summary:</h3>
+                      <div className="grid grid-cols-2 gap-3 md:gap-4 text-xs md:text-sm">
                         <div>
                           <span className="text-gray-600">Employees:</span>
                           <span className="ml-2 font-medium">{results.employees}</span>
@@ -408,18 +408,18 @@ const PrintCostCalculator = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-10 md:py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
                 Why Iowa Businesses Choose Professional Print Management
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                 Real benefits experienced by hundreds of Iowa organizations across all industries
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
               {[
                 {
                   icon: <TrendingDown className="h-8 w-8" />,
@@ -455,16 +455,16 @@ const PrintCostCalculator = () => {
         </section>
 
         {/* Next Steps */}
-        <section className="py-16 bg-blue-600 text-white">
+        <section className="py-10 md:py-16 bg-blue-600 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6">
               Ready to Start Saving on Print Costs?
             </h2>
-            <p className="text-xl mb-8 opacity-90">
+            <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 opacity-90">
               Get a personalized implementation plan and detailed ROI analysis from our Iowa print management experts.
             </p>
             
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="grid sm:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
               {[
                 'Free consultation and site assessment',
                 'Detailed savings analysis and timeline',
