@@ -121,7 +121,7 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
   const isNavbar = variant === 'navbar'
 
   return (
-    <div className={`relative ${isNavbar ? 'w-full max-w-xs' : 'w-full'}`}>
+    <div className={`relative ${isNavbar ? 'w-full max-w-[85vw] sm:max-w-xs' : 'w-full'}`}>
       <div className="relative">
         <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 ${isNavbar ? 'h-4 w-4' : 'h-5 w-5'}`} />
         <input
@@ -161,7 +161,7 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.15 }}
             className={`absolute z-50 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden ${
-              isNavbar ? 'top-full mt-2 w-96 right-0' : 'top-full mt-2 w-full'
+              isNavbar ? 'top-full mt-2 w-[90vw] sm:w-80 md:w-96 right-0 left-0 sm:left-auto mx-auto sm:mx-0' : 'top-full mt-2 w-full'
             }`}
           >
             <div className="max-h-96 overflow-y-auto">
@@ -226,7 +226,7 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             className={`absolute z-50 bg-white rounded-lg shadow-xl border border-gray-200 p-4 ${
-              isNavbar ? 'top-full mt-2 w-80 right-0' : 'top-full mt-2 w-full'
+              isNavbar ? 'top-full mt-2 w-[90vw] sm:w-80 right-0 left-0 sm:left-auto mx-auto sm:mx-0' : 'top-full mt-2 w-full'
             }`}
           >
             <p className="text-sm text-gray-500 text-center">
