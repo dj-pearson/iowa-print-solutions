@@ -125,6 +125,9 @@ const CouncilBluffsPrintManagement = lazy(() => import('./pages/locations/Counci
 const IowaHealthcarePrintSolutions = lazy(() => import('./pages/industries/IowaHealthcarePrintSolutions'))
 const IowaEducationPrintSolutions = lazy(() => import('./pages/industries/IowaEducationPrintSolutions'))
 
+// Error Pages
+const NotFound = lazy(() => import('./pages/NotFound'))
+
 // ============================================================================
 // APP CONTENT COMPONENT
 // ============================================================================
@@ -248,6 +251,9 @@ const AppContent = () => {
             {/* Industry Pages */}
             <Route path="/industries/iowa-healthcare-print-solutions" element={<IowaHealthcarePrintSolutions />} />
             <Route path="/industries/iowa-education-print-solutions" element={<IowaEducationPrintSolutions />} />
+
+            {/* 404 Catch-all Route - Must be last */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
