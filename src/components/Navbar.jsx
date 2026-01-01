@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown, MapPin, Users, Calculator, Download, ArrowRight, Search } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -371,4 +371,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default memo(Navbar)
