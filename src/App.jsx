@@ -6,6 +6,7 @@ import SkipLink from './components/SkipLink'
 import Navbar from './components/Navbar'
 import Breadcrumbs from './components/Breadcrumbs'
 import Footer from './components/Footer'
+import BackToTopButton from './components/BackToTopButton'
 import { PageLoadingFallback } from './components/PageLoadingFallback'
 
 // ============================================================================
@@ -260,6 +261,7 @@ const AppContent = () => {
         </Suspense>
       </main>
       <Footer />
+      <BackToTopButton />
     </div>
   )
 }
