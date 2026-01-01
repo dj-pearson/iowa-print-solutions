@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
 import { AnalyticsProvider } from './components/AnalyticsProvider'
+import SkipLink from './components/SkipLink'
 import Navbar from './components/Navbar'
 import Breadcrumbs from './components/Breadcrumbs'
 import Footer from './components/Footer'
@@ -134,9 +135,10 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 const AppContent = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SkipLink />
       <Navbar />
       <Breadcrumbs />
-      <main>
+      <main id="main-content" tabIndex="-1" className="outline-none">
         {/* Suspense boundary wraps all lazy-loaded routes for code splitting */}
         <Suspense fallback={<PageLoadingFallback />}>
           <Routes>
