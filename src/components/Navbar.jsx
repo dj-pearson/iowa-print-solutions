@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown, MapPin, Users, Calculator, Download, ArrowRight, Search } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -8,6 +8,19 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
   const location = useLocation()
+
+  // Close mobile menu on Escape key press
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        if (isOpen) setIsOpen(false)
+        if (activeDropdown) setActiveDropdown(null)
+      }
+    }
+
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [isOpen, activeDropdown])
 
   const navItems = [
     { name: 'Home', path: '/' },
