@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Phone, Mail, Download, Calculator } from 'lucide-react'
 
@@ -51,29 +51,43 @@ const ProgressBar = ({ progress, className = '' }) => {
 const SmartCTA = ({ pageType, location }) => {
   const [isVisible, setIsVisible] = useState(false)
   const [hasScrolled, setHasScrolled] = useState(false)
+  const lastScrollTime = useRef(0)
+  const hasScrolledRef = useRef(false)
+
+  // Keep ref in sync with state for use in throttled callback
+  useEffect(() => {
+    hasScrolledRef.current = hasScrolled
+  }, [hasScrolled])
 
   useEffect(() => {
     const handleScroll = () => {
+      // Throttle scroll handler to run at most once per 100ms
+      const now = Date.now()
+      if (now - lastScrollTime.current < 100) return
+      lastScrollTime.current = now
+
       const scrollPosition = window.scrollY
       const windowHeight = window.innerHeight
       const documentHeight = document.documentElement.scrollHeight
-      
+
       // Show CTA when user has scrolled 50% of the page
       if (scrollPosition > windowHeight * 0.5) {
-        setHasScrolled(true)
+        if (!hasScrolledRef.current) {
+          setHasScrolled(true)
+        }
       }
-      
+
       // Hide CTA when user reaches footer (90% of page)
       if (scrollPosition > documentHeight * 0.9) {
         setIsVisible(false)
-      } else if (hasScrolled) {
+      } else if (hasScrolledRef.current) {
         setIsVisible(true)
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [hasScrolled])
+  }, [])
 
   const getCTAContent = () => {
     switch (pageType) {

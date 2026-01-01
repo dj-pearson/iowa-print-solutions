@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef, useCallback } from 'react'
 import { trackScrollDepth, trackTimeOnPage } from '../utils/analytics'
 import { getPageType } from '../utils/analyticsConfig'
 
@@ -6,73 +6,77 @@ import { getPageType } from '../utils/analyticsConfig'
 export const useEngagementTracking = () => {
   const [scrollDepth, setScrollDepth] = useState(0)
   const [timeOnPage, setTimeOnPage] = useState(0)
-  const [hasTracked25, setHasTracked25] = useState(false)
-  const [hasTracked50, setHasTracked50] = useState(false)
-  const [hasTracked75, setHasTracked75] = useState(false)
-  const [hasTracked100, setHasTracked100] = useState(false)
+  const lastScrollTime = useRef(0)
+  const milestonesRef = useRef({ 25: false, 50: false, 75: false, 100: false })
 
   useEffect(() => {
     const startTime = Date.now()
-    
-    // Track scroll depth
+
+    // Track scroll depth with throttling
     const handleScroll = () => {
+      // Throttle scroll handler to run at most once per 100ms
+      const now = Date.now()
+      if (now - lastScrollTime.current < 100) return
+      lastScrollTime.current = now
+
       const windowHeight = window.innerHeight
       const documentHeight = document.documentElement.scrollHeight - windowHeight
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const scrollPercent = Math.round((scrollTop / documentHeight) * 100)
-      
+
       setScrollDepth(scrollPercent)
-      
-      // Track milestone scroll depths
-      if (scrollPercent >= 25 && !hasTracked25) {
+
+      // Track milestone scroll depths using ref to avoid dependency issues
+      const milestones = milestonesRef.current
+      if (scrollPercent >= 25 && !milestones[25]) {
         trackScrollDepth(25)
-        setHasTracked25(true)
+        milestones[25] = true
       }
-      if (scrollPercent >= 50 && !hasTracked50) {
+      if (scrollPercent >= 50 && !milestones[50]) {
         trackScrollDepth(50)
-        setHasTracked50(true)
+        milestones[50] = true
       }
-      if (scrollPercent >= 75 && !hasTracked75) {
+      if (scrollPercent >= 75 && !milestones[75]) {
         trackScrollDepth(75)
-        setHasTracked75(true)
+        milestones[75] = true
       }
-      if (scrollPercent >= 100 && !hasTracked100) {
+      if (scrollPercent >= 100 && !milestones[100]) {
         trackScrollDepth(100)
-        setHasTracked100(true)
+        milestones[100] = true
       }
     }
-    
+
     // Track time on page
     const trackTime = () => {
       const currentTime = (Date.now() - startTime) / 1000
       setTimeOnPage(currentTime)
     }
-    
+
     const timeInterval = setInterval(trackTime, 5000) // Track every 5 seconds
-    
-    window.addEventListener('scroll', handleScroll)
-    
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
     // Track time when user leaves page
     const handleBeforeUnload = () => {
       const finalTime = (Date.now() - startTime) / 1000
       trackTimeOnPage(finalTime, window.location.pathname)
     }
-    
+
     window.addEventListener('beforeunload', handleBeforeUnload)
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('beforeunload', handleBeforeUnload)
       clearInterval(timeInterval)
-      
+
       // Track final time on page
       const finalTime = (Date.now() - startTime) / 1000
       if (finalTime > 10) { // Only track if user stayed more than 10 seconds
         trackTimeOnPage(finalTime, window.location.pathname)
       }
     }
-  }, [hasTracked25, hasTracked50, hasTracked75, hasTracked100])
-  
+  }, [])
+
   return { scrollDepth, timeOnPage }
 }
 
