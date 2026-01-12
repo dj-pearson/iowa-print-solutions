@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react'
+import React, { useState, useEffect, useRef, useCallback, memo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown, MapPin, Users, Calculator, Download, ArrowRight, Search } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -8,19 +8,70 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
   const location = useLocation()
+  const megaMenuRef = useRef(null)
+  const triggerButtonRef = useRef(null)
+
+  // Focus trap for mega menu accessibility
+  const handleMegaMenuKeyDown = useCallback((e) => {
+    if (!megaMenuRef.current || !activeDropdown) return
+
+    const focusableElements = megaMenuRef.current.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )
+    const firstElement = focusableElements[0]
+    const lastElement = focusableElements[focusableElements.length - 1]
+
+    // Tab key - trap focus within menu
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        // Shift+Tab: if on first element, go to last
+        if (document.activeElement === firstElement) {
+          e.preventDefault()
+          lastElement?.focus()
+        }
+      } else {
+        // Tab: if on last element, go to first
+        if (document.activeElement === lastElement) {
+          e.preventDefault()
+          firstElement?.focus()
+        }
+      }
+    }
+  }, [activeDropdown])
 
   // Close mobile menu on Escape key press
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
         if (isOpen) setIsOpen(false)
-        if (activeDropdown) setActiveDropdown(null)
+        if (activeDropdown) {
+          setActiveDropdown(null)
+          // Return focus to trigger button
+          triggerButtonRef.current?.focus()
+        }
       }
     }
 
     window.addEventListener('keydown', handleEscape)
     return () => window.removeEventListener('keydown', handleEscape)
   }, [isOpen, activeDropdown])
+
+  // Add focus trap event listener when mega menu is open
+  useEffect(() => {
+    if (activeDropdown && megaMenuRef.current) {
+      megaMenuRef.current.addEventListener('keydown', handleMegaMenuKeyDown)
+      // Focus first focusable element in mega menu
+      const firstFocusable = megaMenuRef.current.querySelector(
+        'a[href], button:not([disabled])'
+      )
+      setTimeout(() => firstFocusable?.focus(), 50)
+    }
+    return () => {
+      if (megaMenuRef.current) {
+        megaMenuRef.current.removeEventListener('keydown', handleMegaMenuKeyDown)
+      }
+    }
+  }, [activeDropdown, handleMegaMenuKeyDown])
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -170,10 +221,11 @@ const Navbar = () => {
               >
                 {item.megaMenu ? (
                   <button
+                    ref={activeDropdown === item.name ? triggerButtonRef : null}
                     aria-expanded={activeDropdown === item.name}
                     aria-controls={`megamenu-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                     aria-haspopup="true"
-                    className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                       isActive(item)
                         ? 'text-blue-600 bg-blue-50'
                         : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
@@ -200,6 +252,7 @@ const Navbar = () => {
                 <AnimatePresence>
                   {item.megaMenu && activeDropdown === item.name && (
                     <motion.div
+                      ref={megaMenuRef}
                       id={`megamenu-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                       role="menu"
                       aria-label={`${item.name} submenu`}
