@@ -276,10 +276,12 @@ const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
+                    role="alert"
+                    aria-live="assertive"
                     className="bg-green-50 border border-green-200 rounded-md p-4 mb-6"
                   >
                     <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <CheckCircle className="h-5 w-5 text-green-500" aria-hidden="true" />
                       <div>
                         <h3 className="text-sm font-medium text-green-800">
                           Message sent successfully!
@@ -297,10 +299,12 @@ const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
+                    role="alert"
+                    aria-live="assertive"
                     className="bg-red-50 border border-red-200 rounded-md p-4 mb-6"
                   >
                     <div className="flex items-center space-x-3">
-                      <AlertCircle className="h-5 w-5 text-red-500" />
+                      <AlertCircle className="h-5 w-5 text-red-500" aria-hidden="true" />
                       <div>
                         <h3 className="text-sm font-medium text-red-800">
                           Failed to send message
