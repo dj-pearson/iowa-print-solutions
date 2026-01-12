@@ -170,14 +170,18 @@ const Navbar = () => {
               >
                 {item.megaMenu ? (
                   <button
+                    aria-expanded={activeDropdown === item.name}
+                    aria-controls={`megamenu-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    aria-haspopup="true"
                     className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       isActive(item)
                         ? 'text-blue-600 bg-blue-50'
                         : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                     }`}
+                    onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
                   >
                     {item.name}
-                    <ChevronDown className="ml-1 h-4 w-4" />
+                    <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''}`} aria-hidden="true" />
                   </button>
                 ) : (
                   <Link
@@ -196,6 +200,9 @@ const Navbar = () => {
                 <AnimatePresence>
                   {item.megaMenu && activeDropdown === item.name && (
                     <motion.div
+                      id={`megamenu-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      role="menu"
+                      aria-label={`${item.name} submenu`}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
@@ -210,11 +217,12 @@ const Navbar = () => {
                               <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
                                 {section.title}
                               </h3>
-                              <ul className="space-y-3">
+                              <ul className="space-y-3" role="none">
                                 {section.items.map((subItem, subIndex) => (
-                                  <li key={subIndex}>
+                                  <li key={subIndex} role="none">
                                     <Link
                                       to={subItem.path}
+                                      role="menuitem"
                                       className="group block p-2 -m-2 rounded-lg hover:bg-gray-50 transition-colors"
                                       onClick={() => setActiveDropdown(null)}
                                     >
@@ -224,7 +232,7 @@ const Navbar = () => {
                                             <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
                                               {subItem.name}
                                             </span>
-                                            <ArrowRight className="ml-1 h-3 w-3 text-gray-400 group-hover:text-blue-500 opacity-0 group-hover:opacity-100 transition-all" />
+                                            <ArrowRight className="ml-1 h-3 w-3 text-gray-400 group-hover:text-blue-500 opacity-0 group-hover:opacity-100 transition-all" aria-hidden="true" />
                                           </div>
                                           <p className="text-xs text-gray-500 mt-1">
                                             {subItem.description}
@@ -285,9 +293,12 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-600 p-2"
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label={isOpen ? 'Close main menu' : 'Open main menu'}
+              className="text-gray-700 hover:text-blue-600 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -297,6 +308,9 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
+            role="navigation"
+            aria-label="Mobile navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
