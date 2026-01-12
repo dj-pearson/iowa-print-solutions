@@ -43,6 +43,9 @@ const AIOptimizedFAQ = ({ faqs, title = "Frequently Asked Questions", className 
             >
               <button
                 onClick={() => toggleFAQ(index)}
+                aria-expanded={activeIndex === index}
+                aria-controls={`faq-answer-${index}`}
+                id={`faq-question-${index}`}
                 className="w-full px-6 py-4 text-left hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset transition-colors"
               >
                 <div className="flex justify-between items-center">
@@ -50,9 +53,9 @@ const AIOptimizedFAQ = ({ faqs, title = "Frequently Asked Questions", className 
                     {faq.question}
                   </h3>
                   {activeIndex === index ? (
-                    <ChevronUp className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                    <ChevronUp className="h-5 w-5 text-blue-600 flex-shrink-0" aria-hidden="true" />
                   ) : (
-                    <ChevronDown className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                    <ChevronDown className="h-5 w-5 text-gray-400 flex-shrink-0" aria-hidden="true" />
                   )}
                 </div>
               </button>
@@ -60,6 +63,9 @@ const AIOptimizedFAQ = ({ faqs, title = "Frequently Asked Questions", className 
               <AnimatePresence>
                 {activeIndex === index && (
                   <motion.div
+                    id={`faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-question-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}

@@ -120,13 +120,23 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
 
   const isNavbar = variant === 'navbar'
 
+  const searchId = `search-${variant}`
+  const resultsId = `${searchId}-results`
+
   return (
-    <div className={`relative ${isNavbar ? 'w-full max-w-[85vw] sm:max-w-xs' : 'w-full'}`}>
+    <div className={`relative ${isNavbar ? 'w-full max-w-[85vw] sm:max-w-xs' : 'w-full'}`} role="search">
       <div className="relative">
-        <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 ${isNavbar ? 'h-4 w-4' : 'h-5 w-5'}`} />
+        <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 ${isNavbar ? 'h-4 w-4' : 'h-5 w-5'}`} aria-hidden="true" />
         <input
           ref={inputRef}
-          type="text"
+          type="search"
+          id={searchId}
+          role="combobox"
+          aria-expanded={isOpen && results.length > 0}
+          aria-controls={resultsId}
+          aria-autocomplete="list"
+          aria-activedescendant={selectedIndex >= 0 ? `${searchId}-result-${selectedIndex}` : undefined}
+          aria-label="Search site content"
           placeholder="Search resources, blog posts..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -144,9 +154,10 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
               setIsOpen(false)
               inputRef.current?.focus()
             }}
+            aria-label="Clear search"
             className={`absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 ${isNavbar ? 'p-0.5' : 'p-1'}`}
           >
-            <X className={isNavbar ? 'h-3 w-3' : 'h-4 w-4'} />
+            <X className={isNavbar ? 'h-3 w-3' : 'h-4 w-4'} aria-hidden="true" />
           </button>
         )}
       </div>
@@ -156,6 +167,9 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
         {isOpen && results.length > 0 && (
           <motion.div
             ref={resultsRef}
+            id={resultsId}
+            role="listbox"
+            aria-label="Search results"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -164,7 +178,7 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
               isNavbar ? 'top-full mt-2 w-[90vw] sm:w-80 md:w-96 right-0 left-0 sm:left-auto mx-auto sm:mx-0' : 'top-full mt-2 w-full'
             }`}
           >
-            <div className="max-h-96 overflow-y-auto">
+            <div className="max-h-96 overflow-y-auto" aria-live="polite" aria-atomic="false">
               {results.map((result, index) => {
                 const Icon = typeIcons[result.type] || FileText
                 const isSelected = index === selectedIndex
@@ -172,6 +186,9 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
                 return (
                   <button
                     key={result.id}
+                    id={`${searchId}-result-${index}`}
+                    role="option"
+                    aria-selected={isSelected}
                     onClick={() => handleResultClick(result.path)}
                     className={`w-full text-left px-4 py-3 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors ${
                       isSelected ? 'bg-blue-50' : ''
@@ -184,7 +201,7 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
                         result.type === 'location' ? 'bg-purple-100 text-purple-600' :
                         result.type === 'tool' ? 'bg-orange-100 text-orange-600' :
                         'bg-gray-100 text-gray-600'
-                      }`}>
+                      }`} aria-hidden="true">
                         <Icon className="h-4 w-4" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -212,7 +229,7 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
               className="w-full px-4 py-3 bg-gray-50 border-t border-gray-200 text-sm font-medium text-blue-600 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
             >
               View all results for "{query}"
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </button>
           </motion.div>
         )}
@@ -222,6 +239,8 @@ const SearchBar = ({ variant = 'navbar', onClose }) => {
       <AnimatePresence>
         {isOpen && query.trim().length >= 2 && results.length === 0 && (
           <motion.div
+            role="status"
+            aria-live="polite"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

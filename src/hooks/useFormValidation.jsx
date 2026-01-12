@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 
 // Validation rules
 const validators = {
@@ -179,21 +179,39 @@ export const useFormValidation = (initialValues, validationRules) => {
   }
 }
 
-// FormField component for consistent styling
-export const FormField = ({ label, name, error, required, children }) => (
-  <div>
-    {label && (
-      <label htmlFor={name} className="block text-sm font-medium text-gray-700 mb-2">
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
-    )}
-    {children}
-    {error && (
-      <p className="mt-1 text-sm text-red-600" role="alert">
-        {error}
-      </p>
-    )}
-  </div>
-)
+// FormField component for consistent styling with accessibility support
+export const FormField = ({ label, name, error, required, children }) => {
+  const errorId = `${name}-error`
+
+  // Clone children to add aria-describedby and aria-invalid attributes
+  const enhancedChildren = React.Children.map(children, child => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, {
+        'aria-describedby': error ? errorId : undefined,
+        'aria-invalid': error ? 'true' : undefined,
+        'aria-required': required ? 'true' : undefined
+      })
+    }
+    return child
+  })
+
+  return (
+    <div>
+      {label && (
+        <label htmlFor={name} className="block text-sm font-medium text-gray-700 mb-2">
+          {label} {required && <span className="text-red-500" aria-hidden="true">*</span>}
+          {required && <span className="sr-only">(required)</span>}
+        </label>
+      )}
+      {enhancedChildren}
+      {error && (
+        <p id={errorId} className="mt-1 text-sm text-red-600 flex items-center gap-1" role="alert">
+          <span aria-hidden="true">⚠</span>
+          {error}
+        </p>
+      )}
+    </div>
+  )
+}
 
 export default useFormValidation

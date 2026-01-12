@@ -1,5 +1,5 @@
-import React, { Suspense, lazy } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React, { Suspense, lazy, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
 import { AnalyticsProvider } from './components/AnalyticsProvider'
 import SkipLink from './components/SkipLink'
@@ -26,6 +26,7 @@ const Tools = lazy(() => import('./pages/Tools'))
 const Locations = lazy(() => import('./pages/Locations'))
 const Blog = lazy(() => import('./pages/Blog'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
+const AccessibilityStatement = lazy(() => import('./pages/AccessibilityStatement'))
 const PrintManagementComparison = lazy(() => import('./pages/PrintManagementComparison'))
 const PrintCostCalculator = lazy(() => import('./pages/PrintCostCalculator'))
 const ResourceLibrary = lazy(() => import('./pages/ResourceLibrary'))
@@ -131,11 +132,44 @@ const IowaEducationPrintSolutions = lazy(() => import('./pages/industries/IowaEd
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 // ============================================================================
+// ROUTE CHANGE FOCUS MANAGER (Accessibility)
+// ============================================================================
+const RouteChangeHandler = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    // Focus the main content on route change for accessibility
+    const mainContent = document.getElementById('main-content')
+    if (mainContent) {
+      // Small delay to ensure content is rendered
+      setTimeout(() => {
+        mainContent.focus()
+        // Announce page change to screen readers
+        const pageTitle = document.title || 'Page loaded'
+        const announcement = document.createElement('div')
+        announcement.setAttribute('role', 'status')
+        announcement.setAttribute('aria-live', 'polite')
+        announcement.setAttribute('aria-atomic', 'true')
+        announcement.className = 'sr-only'
+        announcement.textContent = `Navigated to ${pageTitle}`
+        document.body.appendChild(announcement)
+        setTimeout(() => announcement.remove(), 1000)
+      }, 100)
+    }
+    // Scroll to top on route change
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
+  return null
+}
+
+// ============================================================================
 // APP CONTENT COMPONENT
 // ============================================================================
 const AppContent = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <RouteChangeHandler />
       <SkipLink />
       <Navbar />
       <Breadcrumbs />
@@ -154,6 +188,7 @@ const AppContent = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/locations" element={<Locations />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/accessibility" element={<AccessibilityStatement />} />
             <Route path="/print-management-comparison" element={<PrintManagementComparison />} />
             <Route path="/print-cost-calculator" element={<PrintCostCalculator />} />
             <Route path="/resource-library" element={<ResourceLibrary />} />
