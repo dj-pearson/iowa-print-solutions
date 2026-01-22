@@ -209,6 +209,7 @@ const UniflowSecurePrintRelease = () => {
                 className="border border-white text-white hover:bg-white hover:text-emerald-600 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Schedule Security Demo
+                <span className="sr-only"> (opens in new window)</span>
               </a>
             </div>
           </motion.div>

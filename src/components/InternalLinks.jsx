@@ -32,6 +32,7 @@ export const SmartLink = ({
       >
         {children}
         <ExternalLink className="w-3 h-3" />
+        <span className="sr-only"> (opens in new window)</span>
       </a>
     )
   }

@@ -463,6 +463,7 @@ const PrintManagementSoftwareComparison = () => {
                 >
                   <Users className="h-4 w-4 mr-2" />
                   Get Personalized Recommendation
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
                 <Link
                   to="/contact"

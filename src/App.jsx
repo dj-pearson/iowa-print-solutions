@@ -171,7 +171,9 @@ const AppContent = () => {
     <div className="min-h-screen bg-gray-50">
       <RouteChangeHandler />
       <SkipLink />
-      <Navbar />
+      <header role="banner">
+        <Navbar />
+      </header>
       <Breadcrumbs />
       <main id="main-content" tabIndex="-1" className="outline-none">
         {/* Suspense boundary wraps all lazy-loaded routes for code splitting */}

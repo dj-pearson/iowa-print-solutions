@@ -152,8 +152,8 @@ const PaperCutMF250Iowa = () => {
         }}
       />
 
-      <div className="min-h-screen bg-gray-50">
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <article className="min-h-screen bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Breadcrumbs items={breadcrumbItems} className="mb-6" />
           
           <motion.header
@@ -533,6 +533,7 @@ const PaperCutMF250Iowa = () => {
                   >
                     Schedule Upgrade Consultation
                     <ArrowRight className="h-4 w-4 ml-2" />
+                    <span className="sr-only"> (opens in new window)</span>
                   </a>
                   <a
                     href="tel:5152372352"
@@ -609,8 +610,8 @@ const PaperCutMF250Iowa = () => {
             
             <ContentRating />
           </motion.div>
-        </article>
-      </div>
+        </div>
+      </article>
     </>
   )
 }

@@ -53,6 +53,7 @@ const Hero = () => {
               >
                 <span>Book Consultation with Infomax</span>
                 <ArrowRight className="h-4 w-4" />
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"

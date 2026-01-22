@@ -251,6 +251,7 @@ const PrinterLogicSelfServiceInstallation = () => {
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Book Self-Service Demo
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"
@@ -580,6 +581,7 @@ const PrinterLogicSelfServiceInstallation = () => {
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Book Self-Service Demo
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"

@@ -205,6 +205,7 @@ const IowaCityPrintSolutions = () => {
                 >
                   Schedule Iowa City Consultation
                   <ArrowRight className="h-4 w-4 ml-2" />
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
               </motion.div>
             </div>
@@ -335,6 +336,7 @@ const IowaCityPrintSolutions = () => {
               >
                 Get Specialized Assessment
                 <ArrowRight className="h-4 w-4 ml-2" />
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"

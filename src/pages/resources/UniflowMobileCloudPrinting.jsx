@@ -288,6 +288,7 @@ const UniflowMobileCloudPrinting = () => {
                 className="border border-white text-white hover:bg-white hover:text-cyan-600 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Schedule Cloud Integration
+                <span className="sr-only"> (opens in new window)</span>
               </a>
             </div>
           </motion.div>

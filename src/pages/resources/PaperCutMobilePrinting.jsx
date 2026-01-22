@@ -206,6 +206,7 @@ const PaperCutMobilePrinting = () => {
                 className="border border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Schedule Mobile Demo
+                <span className="sr-only"> (opens in new window)</span>
               </a>
             </div>
           </motion.div>

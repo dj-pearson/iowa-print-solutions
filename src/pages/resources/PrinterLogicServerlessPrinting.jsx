@@ -182,6 +182,7 @@ const PrinterLogicServerlessPrinting = () => {
                 className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Book Serverless Printing Consultation
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"
@@ -451,6 +452,7 @@ const PrinterLogicServerlessPrinting = () => {
                 className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Book Serverless Assessment
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"

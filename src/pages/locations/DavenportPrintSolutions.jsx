@@ -100,6 +100,7 @@ const DavenportPrintSolutions = () => {
                 >
                   <Mail className="h-4 w-4" />
                   <span>Schedule Consultation</span>
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
               </div>
             </motion.div>

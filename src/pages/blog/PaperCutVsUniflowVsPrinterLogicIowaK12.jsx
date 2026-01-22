@@ -305,7 +305,7 @@ const PaperCutVsUniflowVsPrinterLogicIowaK12 = () => {
         }}
       />
 
-      <div className="min-h-screen bg-white">
+      <article className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -833,7 +833,7 @@ const PaperCutVsUniflowVsPrinterLogicIowaK12 = () => {
             <ContentRating />
           </motion.div>
         </article>
-      </div>
+      </article>
     </>
   )
 }
