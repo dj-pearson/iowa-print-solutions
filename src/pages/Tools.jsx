@@ -855,6 +855,7 @@ const Tools = () => {
                 className="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors"
               >
                 Schedule Free Assessment
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"

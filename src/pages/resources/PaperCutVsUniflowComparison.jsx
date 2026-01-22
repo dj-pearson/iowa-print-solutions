@@ -355,6 +355,7 @@ const PaperCutVsUniflow = () => {
                 >
                   <Users className="h-4 w-4 mr-2" />
                   Schedule Expert Consultation
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
                 <Link
                   to="/contact"

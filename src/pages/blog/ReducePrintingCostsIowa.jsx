@@ -238,7 +238,7 @@ const ReducePrintingCostsIowa = () => {
         }}
       />
       
-      <div className="min-h-screen bg-gray-50">
+      <article className="min-h-screen bg-gray-50">
         <section className="bg-gradient-to-br from-green-700 to-green-900 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumbs items={breadcrumbItems} className="mb-8 text-green-200" />
@@ -272,6 +272,7 @@ const ReducePrintingCostsIowa = () => {
                   className="border border-white text-white hover:bg-white hover:text-green-700 px-8 py-3 rounded-md font-medium transition-colors"
                 >
                   Schedule Savings Consultation
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
               </div>
             </motion.div>
@@ -551,7 +552,7 @@ const ReducePrintingCostsIowa = () => {
             </motion.div>
           </div>
         </section>
-      </div>
+      </article>
     </>
   )
 }

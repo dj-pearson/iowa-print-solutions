@@ -726,6 +726,7 @@ const Home = () => {
                   >
                     Consult with Iowa Experts
                     <ArrowRight className="h-4 w-4 ml-1" />
+                    <span className="sr-only"> (opens in new window)</span>
                   </a>
                 </div>
               </motion.article>

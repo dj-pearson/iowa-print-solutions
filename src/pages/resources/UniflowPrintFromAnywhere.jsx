@@ -222,6 +222,7 @@ const UniflowPrintFromAnywhere = () => {
                 className="border border-white text-white hover:bg-white hover:text-teal-600 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Schedule Consultation
+                <span className="sr-only"> (opens in new window)</span>
               </a>
             </div>
           </motion.div>
@@ -429,6 +430,7 @@ const UniflowPrintFromAnywhere = () => {
                 className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Book Print Solutions Consultation
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"

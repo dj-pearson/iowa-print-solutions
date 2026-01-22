@@ -241,7 +241,7 @@ export const ExternalLinkTracker = ({ href, label, className, children }) => {
   }
   
   return (
-    <a 
+    <a
       href={href}
       className={className}
       onClick={handleExternalClick}
@@ -249,6 +249,7 @@ export const ExternalLinkTracker = ({ href, label, className, children }) => {
       rel="noopener noreferrer"
     >
       {children}
+      <span className="sr-only"> (opens in new window)</span>
     </a>
   )
 }

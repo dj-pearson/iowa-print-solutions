@@ -255,6 +255,7 @@ const PrinterLogicSecureReleasePrinting = () => {
                 className="bg-white text-red-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Book Security Assessment
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"
@@ -578,6 +579,7 @@ const PrinterLogicSecureReleasePrinting = () => {
                 className="bg-white text-red-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Book Security Assessment
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"

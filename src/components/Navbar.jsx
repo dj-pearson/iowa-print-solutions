@@ -238,6 +238,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.path}
+                    aria-current={isActive(item) ? 'page' : undefined}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       isActive(item)
                         ? 'text-blue-600 bg-blue-50'
@@ -380,6 +381,7 @@ const Navbar = () => {
                   <Link
                     to={item.path}
                     onClick={() => setIsOpen(false)}
+                    aria-current={isActive(item) ? 'page' : undefined}
                     className={`block px-3 py-3 rounded-md text-base font-medium ${
                       isActive(item)
                         ? 'text-blue-600 bg-blue-50'

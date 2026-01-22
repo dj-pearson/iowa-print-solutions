@@ -107,6 +107,7 @@ const UniflowService = () => {
                 className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Book Infomax Consultation
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"
@@ -181,6 +182,7 @@ const UniflowService = () => {
                 >
                   <span>Book Infomax Consultation</span>
                   <ArrowRight className="h-4 w-4" />
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
               </div>
             </motion.div>
@@ -290,6 +292,7 @@ const UniflowService = () => {
                 className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Visit Infomax Office Systems
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="https://calendly.com/pearsondan/30min"
@@ -298,6 +301,7 @@ const UniflowService = () => {
                 className="border border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Schedule Consultation
+                <span className="sr-only"> (opens in new window)</span>
               </a>
             </div>
           </motion.div>

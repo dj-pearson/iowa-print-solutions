@@ -116,6 +116,7 @@ const PaperCutService = () => {
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Book Infomax Consultation
+                <span className="sr-only"> (opens in new window)</span>
               </a>
               <a
                 href="tel:5152372352"
@@ -190,6 +191,7 @@ const PaperCutService = () => {
                 >
                   <span>Book Infomax Consultation</span>
                   <ArrowRight className="h-4 w-4" />
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
               </div>
             </motion.div>
@@ -309,6 +311,7 @@ const PaperCutService = () => {
                 className="border border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-md font-medium transition-colors"
               >
                 Schedule Assessment
+                <span className="sr-only"> (opens in new window)</span>
               </a>
             </div>
           </motion.div>

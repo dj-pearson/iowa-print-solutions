@@ -182,7 +182,7 @@ const PaperCutHealthcareIowa = () => {
         }}
       />
       
-      <div className="min-h-screen bg-gray-50">
+      <article className="min-h-screen bg-gray-50">
         <section className="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumbs items={breadcrumbItems} className="mb-8 text-blue-200" />
@@ -216,6 +216,7 @@ const PaperCutHealthcareIowa = () => {
                   className="border border-white text-white hover:bg-white hover:text-blue-700 px-8 py-3 rounded-md font-medium transition-colors"
                 >
                   Schedule HIPAA Consultation with Iowa Experts
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
               </div>
             </motion.div>
@@ -452,7 +453,7 @@ const PaperCutHealthcareIowa = () => {
             </motion.div>
           </div>
         </section>
-      </div>
+      </article>
     </>
   )
 }

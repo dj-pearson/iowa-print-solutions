@@ -153,7 +153,7 @@ const Uniflow2025Updates = () => {
         }}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+      <article className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white overflow-hidden">
           <div className="absolute inset-0 bg-black opacity-10"></div>
@@ -195,6 +195,7 @@ const Uniflow2025Updates = () => {
                   className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center"
                 >
                   Contact Infomax Office Systems
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
               </div>
             </div>
@@ -585,6 +586,7 @@ const Uniflow2025Updates = () => {
                   className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center"
                 >
                   Visit Infomax Office Systems
+                  <span className="sr-only"> (opens in new window)</span>
                 </a>
               </div>
             </motion.div>
@@ -606,7 +608,7 @@ const Uniflow2025Updates = () => {
             </motion.div>
           </div>
         </section>
-      </div>
+      </article>
     </>
   )
 }
