@@ -20,6 +20,78 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      id: 'papercut-mf-26-k12-iowa-2026',
+      title: 'PaperCut MF 26 for Iowa K-12 Schools: 2026 Upgrade Guide',
+      excerpt: 'PaperCut MF 26 brings hardened SSO with Entra ID and Clever, native multi-school analytics, ARM64 support, and FERPA-aligned audit trails. Here is what Iowa districts need to know before summer rollout.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-04-22',
+      readTime: '9 min read',
+      category: 'Education',
+      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=250&fit=crop',
+      slug: 'papercut-mf-26-k12-iowa-2026',
+      featured: true
+    },
+    {
+      id: 'uniflow-2026-higher-education-iowa',
+      title: 'Uniflow 2026 for Iowa Higher Education: What Universities Need to Know',
+      excerpt: 'Canon\'s Uniflow 2026 release expands uniFLOW Online, adds grant-code chargebacks, AI capture, and zero-trust authentication aligned to Iowa Board of Regents cybersecurity directives.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-04-15',
+      readTime: '10 min read',
+      category: 'Education',
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop',
+      slug: 'uniflow-2026-higher-education-iowa',
+      featured: true
+    },
+    {
+      id: 'papercut-mf-26-healthcare-iowa-2026',
+      title: 'PaperCut MF 26 for Iowa Healthcare: HIPAA, Epic, and Secure Release',
+      excerpt: 'How PaperCut MF 26 strengthens HIPAA-compliant printing for Iowa hospitals, clinics, and pharmacies - tamper-evident audit trails, PHI redaction hooks, FIDO2 release, and resilient Site Server architecture.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-04-08',
+      readTime: '10 min read',
+      category: 'Healthcare',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=250&fit=crop',
+      slug: 'papercut-mf-26-healthcare-iowa-2026',
+      featured: true
+    },
+    {
+      id: 'uniflow-2026-clinics-hospitals-iowa',
+      title: 'Uniflow 2026 for Iowa Clinics & Hospitals: AI Capture and HIPAA-Ready Cloud',
+      excerpt: 'Practical guide to Uniflow 2026 for Iowa healthcare - AI document capture, HIPAA-aligned cloud tenancy, edge release stations, and closed-loop ePHI audit trails.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-04-01',
+      readTime: '11 min read',
+      category: 'Healthcare',
+      image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&h=250&fit=crop',
+      slug: 'uniflow-2026-clinics-hospitals-iowa',
+      featured: true
+    },
+    {
+      id: 'papercut-mf-26-medium-business-iowa',
+      title: 'PaperCut MF 26 for Mid-Sized Iowa Businesses: Cost, Security & Hybrid Work',
+      excerpt: 'A practical PaperCut MF 26 guide for mid-sized Iowa businesses (50-500 employees) - hybrid cloud topology, modern auth, built-in cost and sustainability dashboards, and Advanced Scanning at standard pricing.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-03-25',
+      readTime: '9 min read',
+      category: 'Product Updates',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop',
+      slug: 'papercut-mf-26-medium-business-iowa',
+      featured: true
+    },
+    {
+      id: 'uniflow-2026-medium-business-iowa',
+      title: 'Uniflow 2026 for Mid-Sized Iowa Businesses: AI Capture and Cloud-First Print',
+      excerpt: 'A practical Uniflow 2026 guide for mid-sized Iowa businesses - AI document capture, uniFLOW Online tiers, zero-trust authentication, and out-of-box cost and sustainability dashboards.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-03-18',
+      readTime: '11 min read',
+      category: 'Product Updates',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=250&fit=crop',
+      slug: 'uniflow-2026-medium-business-iowa',
+      featured: true
+    },
+    {
       id: 'ai-print-management-iowa-2025',
       title: 'AI Print Management Iowa 2025: The Intelligence Revolution',
       excerpt: 'Discover how artificial intelligence transforms print management in Iowa. Explore PaperCut Hive AI, predictive analytics, automated optimization, and machine learning for intelligent printing solutions.',
