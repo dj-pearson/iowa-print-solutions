@@ -20,6 +20,78 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      id: 'k12-cybersecurity-print-iowa-2026',
+      title: 'K-12 Cybersecurity & Print: 2026 Guidance for Iowa Districts',
+      excerpt: 'Aging print servers, unprotected scan-to-email, shared MFP logins, and unpatched firmware. A practical 2026 print security playbook for Iowa K-12 IT directors.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-05-01',
+      readTime: '9 min read',
+      category: 'Education',
+      image: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?w=400&h=250&fit=crop',
+      slug: 'k12-cybersecurity-print-iowa-2026',
+      featured: true
+    },
+    {
+      id: 'higher-ed-sustainability-print-iowa-2026',
+      title: 'Higher Ed Sustainability & Print Reporting: 2026 Guide for Iowa Universities',
+      excerpt: 'Practical ESG and Scope 3 print reporting for Iowa universities and colleges - duplex defaults, pull printing, per-department dashboards, and Board of Regents alignment.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-04-28',
+      readTime: '10 min read',
+      category: 'Education',
+      image: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=400&h=250&fit=crop',
+      slug: 'higher-ed-sustainability-print-iowa-2026',
+      featured: true
+    },
+    {
+      id: 'dental-specialty-hipaa-print-iowa',
+      title: 'HIPAA-Compliant Print for Iowa Dental & Specialty Clinics',
+      excerpt: 'A practical HIPAA print guide for Iowa dental, optometry, orthopedic, and behavioral health clinics - secure release without a full IT team, EHR integration, and resilient front-desk workflows.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-04-12',
+      readTime: '9 min read',
+      category: 'Healthcare',
+      image: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=400&h=250&fit=crop',
+      slug: 'dental-specialty-hipaa-print-iowa',
+      featured: true
+    },
+    {
+      id: 'pharmacy-340b-dea-print-iowa',
+      title: 'Iowa Pharmacy Print Compliance: 340B, DEA, and HIPAA in 2026',
+      excerpt: 'A 2026 print compliance guide for Iowa hospital, retail, and specialty pharmacies - DEA recordkeeping, 340B documentation, HIPAA at the counter, and Board of Pharmacy inspection readiness.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-04-05',
+      readTime: '10 min read',
+      category: 'Healthcare',
+      image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=250&fit=crop',
+      slug: 'pharmacy-340b-dea-print-iowa',
+      featured: true
+    },
+    {
+      id: 'microsoft-universal-print-v2-iowa-2026',
+      title: 'Microsoft Universal Print v2 in Iowa: When to Use It vs. PaperCut or Uniflow',
+      excerpt: 'A practical 2026 guide for Iowa IT leaders evaluating Universal Print v2 - what it does well, what it still cannot do, and when to layer PaperCut or Uniflow on top.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-03-30',
+      readTime: '11 min read',
+      category: 'Comparison',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop',
+      slug: 'microsoft-universal-print-v2-iowa-2026',
+      featured: true
+    },
+    {
+      id: 'printerlogic-vasion-2026-iowa',
+      title: 'PrinterLogic / Vasion 2026 for Iowa Businesses: What Is New and Who It Fits',
+      excerpt: 'A 2026 review of PrinterLogic (now Vasion) for Iowa businesses - new SaaS architecture, identity and audit upgrades, Vasion Automate integration, and how it compares to PaperCut and Uniflow.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-03-22',
+      readTime: '10 min read',
+      category: 'Product Updates',
+      image: 'https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=400&h=250&fit=crop',
+      slug: 'printerlogic-vasion-2026-iowa',
+      featured: true
+    },
+    {
       id: 'papercut-mf-26-k12-iowa-2026',
       title: 'PaperCut MF 26 for Iowa K-12 Schools: 2026 Upgrade Guide',
       excerpt: 'PaperCut MF 26 brings hardened SSO with Entra ID and Clever, native multi-school analytics, ARM64 support, and FERPA-aligned audit trails. Here is what Iowa districts need to know before summer rollout.',

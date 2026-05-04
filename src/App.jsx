@@ -118,6 +118,14 @@ const Uniflow2026HealthcareIowa = lazy(() => import('./pages/blog/Uniflow2026Hea
 const PaperCutMF26MidMarketIowa = lazy(() => import('./pages/blog/PaperCutMF26MidMarketIowa'))
 const Uniflow2026MidMarketIowa = lazy(() => import('./pages/blog/Uniflow2026MidMarketIowa'))
 
+// Blog Pages - 2026 Industry Topics (cybersecurity, sustainability, compliance, platforms)
+const K12CybersecurityPrintIowa2026 = lazy(() => import('./pages/blog/K12CybersecurityPrintIowa2026'))
+const HigherEdSustainabilityPrintIowa2026 = lazy(() => import('./pages/blog/HigherEdSustainabilityPrintIowa2026'))
+const DentalSpecialtyHIPAAPrintIowa = lazy(() => import('./pages/blog/DentalSpecialtyHIPAAPrintIowa'))
+const PharmacyCompliancePrintIowa = lazy(() => import('./pages/blog/PharmacyCompliancePrintIowa'))
+const UniversalPrintV2Iowa2026 = lazy(() => import('./pages/blog/UniversalPrintV2Iowa2026'))
+const Vasion2026Iowa = lazy(() => import('./pages/blog/Vasion2026Iowa'))
+
 // Location Pages
 const DesMoinesPrintSolutions = lazy(() => import('./pages/locations/DesMoinesPrintSolutions'))
 const CedarRapidsPrintSolutions = lazy(() => import('./pages/locations/CedarRapidsPrintSolutions'))
@@ -289,6 +297,14 @@ const AppContent = () => {
             <Route path="/blog/uniflow-2026-clinics-hospitals-iowa" element={<Uniflow2026HealthcareIowa />} />
             <Route path="/blog/papercut-mf-26-medium-business-iowa" element={<PaperCutMF26MidMarketIowa />} />
             <Route path="/blog/uniflow-2026-medium-business-iowa" element={<Uniflow2026MidMarketIowa />} />
+
+            {/* Blog Pages - 2026 Industry Topics */}
+            <Route path="/blog/k12-cybersecurity-print-iowa-2026" element={<K12CybersecurityPrintIowa2026 />} />
+            <Route path="/blog/higher-ed-sustainability-print-iowa-2026" element={<HigherEdSustainabilityPrintIowa2026 />} />
+            <Route path="/blog/dental-specialty-hipaa-print-iowa" element={<DentalSpecialtyHIPAAPrintIowa />} />
+            <Route path="/blog/pharmacy-340b-dea-print-iowa" element={<PharmacyCompliancePrintIowa />} />
+            <Route path="/blog/microsoft-universal-print-v2-iowa-2026" element={<UniversalPrintV2Iowa2026 />} />
+            <Route path="/blog/printerlogic-vasion-2026-iowa" element={<Vasion2026Iowa />} />
 
             {/* Location Pages */}
             <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
