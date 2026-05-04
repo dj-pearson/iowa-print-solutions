@@ -110,6 +110,22 @@ const AIPrintManagementIowa2025 = lazy(() => import('./pages/blog/AIPrintManagem
 const MobilePrintingSolutionsIowa2025 = lazy(() => import('./pages/blog/MobilePrintingSolutionsIowa2025'))
 const CloudPrintingSolutionsIowa2025 = lazy(() => import('./pages/blog/CloudPrintingSolutionsIowa2025'))
 
+// Blog Pages - 2026 PaperCut MF 26 & Uniflow 2026 Industry Updates
+const PaperCutMF26K12Iowa = lazy(() => import('./pages/blog/PaperCutMF26K12Iowa'))
+const Uniflow2026HigherEdIowa = lazy(() => import('./pages/blog/Uniflow2026HigherEdIowa'))
+const PaperCutMF26HealthcareIowa = lazy(() => import('./pages/blog/PaperCutMF26HealthcareIowa'))
+const Uniflow2026HealthcareIowa = lazy(() => import('./pages/blog/Uniflow2026HealthcareIowa'))
+const PaperCutMF26MidMarketIowa = lazy(() => import('./pages/blog/PaperCutMF26MidMarketIowa'))
+const Uniflow2026MidMarketIowa = lazy(() => import('./pages/blog/Uniflow2026MidMarketIowa'))
+
+// Blog Pages - 2026 Industry Topics (cybersecurity, sustainability, compliance, platforms)
+const K12CybersecurityPrintIowa2026 = lazy(() => import('./pages/blog/K12CybersecurityPrintIowa2026'))
+const HigherEdSustainabilityPrintIowa2026 = lazy(() => import('./pages/blog/HigherEdSustainabilityPrintIowa2026'))
+const DentalSpecialtyHIPAAPrintIowa = lazy(() => import('./pages/blog/DentalSpecialtyHIPAAPrintIowa'))
+const PharmacyCompliancePrintIowa = lazy(() => import('./pages/blog/PharmacyCompliancePrintIowa'))
+const UniversalPrintV2Iowa2026 = lazy(() => import('./pages/blog/UniversalPrintV2Iowa2026'))
+const Vasion2026Iowa = lazy(() => import('./pages/blog/Vasion2026Iowa'))
+
 // Location Pages
 const DesMoinesPrintSolutions = lazy(() => import('./pages/locations/DesMoinesPrintSolutions'))
 const CedarRapidsPrintSolutions = lazy(() => import('./pages/locations/CedarRapidsPrintSolutions'))
@@ -273,6 +289,22 @@ const AppContent = () => {
             <Route path="/blog/ai-print-management-iowa-2025" element={<AIPrintManagementIowa2025 />} />
             <Route path="/blog/mobile-printing-solutions-iowa-2025" element={<MobilePrintingSolutionsIowa2025 />} />
             <Route path="/blog/cloud-printing-solutions-iowa-2025" element={<CloudPrintingSolutionsIowa2025 />} />
+
+            {/* Blog Pages - 2026 PaperCut MF 26 & Uniflow 2026 Industry Updates */}
+            <Route path="/blog/papercut-mf-26-k12-iowa-2026" element={<PaperCutMF26K12Iowa />} />
+            <Route path="/blog/uniflow-2026-higher-education-iowa" element={<Uniflow2026HigherEdIowa />} />
+            <Route path="/blog/papercut-mf-26-healthcare-iowa-2026" element={<PaperCutMF26HealthcareIowa />} />
+            <Route path="/blog/uniflow-2026-clinics-hospitals-iowa" element={<Uniflow2026HealthcareIowa />} />
+            <Route path="/blog/papercut-mf-26-medium-business-iowa" element={<PaperCutMF26MidMarketIowa />} />
+            <Route path="/blog/uniflow-2026-medium-business-iowa" element={<Uniflow2026MidMarketIowa />} />
+
+            {/* Blog Pages - 2026 Industry Topics */}
+            <Route path="/blog/k12-cybersecurity-print-iowa-2026" element={<K12CybersecurityPrintIowa2026 />} />
+            <Route path="/blog/higher-ed-sustainability-print-iowa-2026" element={<HigherEdSustainabilityPrintIowa2026 />} />
+            <Route path="/blog/dental-specialty-hipaa-print-iowa" element={<DentalSpecialtyHIPAAPrintIowa />} />
+            <Route path="/blog/pharmacy-340b-dea-print-iowa" element={<PharmacyCompliancePrintIowa />} />
+            <Route path="/blog/microsoft-universal-print-v2-iowa-2026" element={<UniversalPrintV2Iowa2026 />} />
+            <Route path="/blog/printerlogic-vasion-2026-iowa" element={<Vasion2026Iowa />} />
 
             {/* Location Pages */}
             <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
