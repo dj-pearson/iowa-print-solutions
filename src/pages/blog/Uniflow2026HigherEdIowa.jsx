@@ -87,7 +87,7 @@ const Uniflow2026HigherEdIowa = () => {
   ]
 
   const migrationPhases = [
-    { phase: 'Discovery', action: 'Inventory current Uniflow version, devices, and integrations (SIS, ECM, finance)' },
+    { phase: 'Discovery', action: 'Inventory current uniFLOW version, devices, and integrations (SIS, ECM, finance)' },
     { phase: 'Design', action: 'Map cost centers, grant codes, and quota tiers for the new chargeback model' },
     { phase: 'Pilot', action: 'Deploy in one college or building with SSO, quotas, and your scan destinations before expanding' },
     { phase: 'Rollout', action: 'Stage campus-wide migration over a semester break with parallel run windows' },
@@ -262,7 +262,7 @@ const Uniflow2026HigherEdIowa = () => {
               <div className="text-center">
                 <h2 className="text-3xl font-bold mb-4">Plan Your Iowa Campus uniFLOW Migration</h2>
                 <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                  Infomax Office Systems supports Uniflow deployments at Iowa universities, community colleges, and private institutions. We&apos;ll map your existing environment to the 2026 architecture and stage a migration that fits your academic calendar.
+                  Infomax Office Systems supports uniFLOW deployments at Iowa universities, community colleges, and private institutions. We&apos;ll map your existing environment to the 2026 architecture and stage a migration that fits your academic calendar.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="https://www.infomaxoffice.com/contact" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
@@ -281,10 +281,10 @@ const Uniflow2026HigherEdIowa = () => {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
               <div className="mb-4 md:mb-0">
                 <p className="text-sm text-gray-500">Published by <strong>Iowa Print Solutions Team</strong> on July 30, 2026</p>
-                <p className="text-sm text-gray-500">Higher-ed Uniflow specialists serving Iowa colleges and universities</p>
+                <p className="text-sm text-gray-500">Higher-ed uniFLOW specialists serving Iowa colleges and universities</p>
               </div>
               <div className="flex space-x-4">
-                <a href="/blog/uniflow-university-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">Uniflow for Iowa Universities →</a>
+                <a href="/blog/uniflow-university-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">uniFLOW for Iowa Universities →</a>
               </div>
             </div>
             <ContentRating />

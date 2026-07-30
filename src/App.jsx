@@ -41,7 +41,7 @@ const PaperCutSecurePrintRelease = lazy(() => import('./pages/resources/PaperCut
 const PaperCutFollowMePrint = lazy(() => import('./pages/resources/PaperCutFollowMePrint'))
 const PaperCutMobilityPrint = lazy(() => import('./pages/resources/PaperCutMobilityPrint'))
 
-// Resource Pages - Uniflow
+// Resource Pages - uniFLOW
 const UniflowPlatformOverview = lazy(() => import('./pages/resources/UniflowPlatformOverview'))
 const UniflowSecurePrintRelease = lazy(() => import('./pages/resources/UniflowSecurePrintRelease'))
 const UniflowCostTracking = lazy(() => import('./pages/resources/UniflowCostTracking'))
@@ -110,7 +110,7 @@ const AIPrintManagementIowa2025 = lazy(() => import('./pages/blog/AIPrintManagem
 const MobilePrintingSolutionsIowa2025 = lazy(() => import('./pages/blog/MobilePrintingSolutionsIowa2025'))
 const CloudPrintingSolutionsIowa2025 = lazy(() => import('./pages/blog/CloudPrintingSolutionsIowa2025'))
 
-// Blog Pages - 2026 PaperCut MF 26 & Uniflow 2026 Industry Updates
+// Blog Pages - 2026 PaperCut MF 26 & uniFLOW 2026 Industry Updates
 const PaperCutMF26K12Iowa = lazy(() => import('./pages/blog/PaperCutMF26K12Iowa'))
 const Uniflow2026HigherEdIowa = lazy(() => import('./pages/blog/Uniflow2026HigherEdIowa'))
 const PaperCutMF26HealthcareIowa = lazy(() => import('./pages/blog/PaperCutMF26HealthcareIowa'))
@@ -221,7 +221,7 @@ const AppContent = () => {
             <Route path="/resources/papercut-follow-me-print" element={<PaperCutFollowMePrint />} />
             <Route path="/resources/papercut-mobility-print" element={<PaperCutMobilityPrint />} />
 
-            {/* Resource Pages - Uniflow */}
+            {/* Resource Pages - uniFLOW */}
             <Route path="/resources/uniflow-platform-overview" element={<UniflowPlatformOverview />} />
             <Route path="/resources/uniflow-secure-print-release" element={<UniflowSecurePrintRelease />} />
             <Route path="/resources/uniflow-cost-tracking" element={<UniflowCostTracking />} />
@@ -290,7 +290,7 @@ const AppContent = () => {
             <Route path="/blog/mobile-printing-solutions-iowa-2025" element={<MobilePrintingSolutionsIowa2025 />} />
             <Route path="/blog/cloud-printing-solutions-iowa-2025" element={<CloudPrintingSolutionsIowa2025 />} />
 
-            {/* Blog Pages - 2026 PaperCut MF 26 & Uniflow 2026 Industry Updates */}
+            {/* Blog Pages - 2026 PaperCut MF 26 & uniFLOW 2026 Industry Updates */}
             <Route path="/blog/papercut-mf-26-k12-iowa-2026" element={<PaperCutMF26K12Iowa />} />
             <Route path="/blog/uniflow-2026-higher-education-iowa" element={<Uniflow2026HigherEdIowa />} />
             <Route path="/blog/papercut-mf-26-healthcare-iowa-2026" element={<PaperCutMF26HealthcareIowa />} />

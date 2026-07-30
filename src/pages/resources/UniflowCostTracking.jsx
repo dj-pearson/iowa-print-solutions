@@ -130,7 +130,7 @@ const UniflowCostTracking = () => {
       business: 'Iowa Hospital System',
       employees: '1,200 staff',
       challenge: 'Uncontrolled printing costs across multiple departments',
-      solution: 'Implemented Uniflow cost tracking with department budgets',
+      solution: 'Implemented uniFLOW cost tracking with department budgets',
       results: {
         cost_reduction: '32%',
         monthly_savings: '$4,800',
@@ -152,7 +152,7 @@ const UniflowCostTracking = () => {
       business: 'Iowa Manufacturing Company',
       employees: '450 employees',
       challenge: 'High printing costs and no visibility into usage patterns',
-      solution: 'Full Uniflow implementation with detailed analytics',
+      solution: 'Full uniFLOW implementation with detailed analytics',
       results: {
         cost_reduction: '28%',
         monthly_savings: '$3,400',
@@ -177,7 +177,7 @@ const UniflowCostTracking = () => {
       phase: 'System Configuration',
       duration: '2-3 weeks',
       activities: [
-        'Uniflow server setup',
+        'uniFLOW server setup',
         'Cost tracking configuration',
         'Budget and policy setup',
         'Report template creation',
@@ -246,10 +246,10 @@ const UniflowCostTracking = () => {
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              Uniflow Cost Tracking & Management for Iowa Organizations
+              uniFLOW Cost Tracking & Management for Iowa Organizations
             </h1>
             <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-              Gain complete visibility and control over your print costs with Uniflow's comprehensive cost tracking solution. Advanced analytics, budget management, and automated reporting for Iowa businesses.
+              Gain complete visibility and control over your print costs with uniFLOW's comprehensive cost tracking solution. Advanced analytics, budget management, and automated reporting for Iowa businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -283,7 +283,7 @@ const UniflowCostTracking = () => {
               Comprehensive Cost Tracking Capabilities
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uniflow provides detailed visibility into all aspects of your print environment costs, enabling data-driven decisions and significant savings.
+              uniFLOW provides detailed visibility into all aspects of your print environment costs, enabling data-driven decisions and significant savings.
             </p>
           </motion.div>
 
@@ -408,7 +408,7 @@ const UniflowCostTracking = () => {
               Real Iowa Business Success Stories
             </h2>
             <p className="text-xl text-gray-600">
-              See how Uniflow cost tracking has delivered measurable results for Iowa organizations.
+              See how uniFLOW cost tracking has delivered measurable results for Iowa organizations.
             </p>
           </motion.div>
 
@@ -507,7 +507,7 @@ const UniflowCostTracking = () => {
               Ready to Take Control of Your Iowa Organization's Print Costs?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Implement comprehensive cost tracking and achieve significant savings with Uniflow's advanced analytics platform.
+              Implement comprehensive cost tracking and achieve significant savings with uniFLOW's advanced analytics platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

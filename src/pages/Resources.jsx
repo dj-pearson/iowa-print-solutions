@@ -92,10 +92,10 @@ const Resources = () => {
     },
     {
       id: 'uniflow-platform-overview',
-      title: 'Uniflow: Integrated Print, Scan & Device Management Platform',
-      description: 'Discover how Uniflow\'s single integrated platform revolutionizes document workflows for Iowa organizations. Comprehensive print management, intelligent scanning, and centralized device control.',
+      title: 'uniFLOW: Integrated Print, Scan & Device Management Platform',
+      description: 'Discover how uniFLOW\'s single integrated platform revolutionizes document workflows for Iowa organizations. Comprehensive print management, intelligent scanning, and centralized device control.',
       category: 'Implementation',
-      tags: ['Uniflow'],
+      tags: ['uniFLOW'],
       readTime: '11 min read',
       icon: Layers,
       color: 'indigo',
@@ -104,10 +104,10 @@ const Resources = () => {
     },
     {
       id: 'uniflow-secure-print-release',
-      title: 'Uniflow Secure Print Release for Iowa Organizations',
-      description: 'Protect sensitive documents and ensure compliance with Uniflow\'s comprehensive secure print release solution. Advanced authentication, complete monitoring, and seamless integration.',
+      title: 'uniFLOW Secure Print Release for Iowa Organizations',
+      description: 'Protect sensitive documents and ensure compliance with uniFLOW\'s comprehensive secure print release solution. Advanced authentication, complete monitoring, and seamless integration.',
       category: 'Security',
-      tags: ['Uniflow'],
+      tags: ['uniFLOW'],
       readTime: '10 min read',
       icon: Shield,
       color: 'emerald',
@@ -116,10 +116,10 @@ const Resources = () => {
     },
     {
       id: 'uniflow-cost-tracking',
-      title: 'Uniflow Cost Tracking & Management for Iowa Organizations',
-      description: 'Gain complete visibility and control over your print costs with Uniflow\'s comprehensive cost tracking solution. Advanced analytics, budget management, and automated reporting.',
+      title: 'uniFLOW Cost Tracking & Management for Iowa Organizations',
+      description: 'Gain complete visibility and control over your print costs with uniFLOW\'s comprehensive cost tracking solution. Advanced analytics, budget management, and automated reporting.',
       category: 'Cost Savings',
-      tags: ['Uniflow'],
+      tags: ['uniFLOW'],
       readTime: '13 min read',
       icon: DollarSign,
       color: 'amber',
@@ -128,10 +128,10 @@ const Resources = () => {
     },
     {
       id: 'uniflow-print-from-anywhere',
-      title: 'Uniflow Print from Anywhere Solutions for Iowa Organizations',
-      description: 'Enable location-independent printing with Uniflow\'s comprehensive remote printing solutions. Secure, flexible, and seamless printing for distributed workforces and multiple locations.',
+      title: 'uniFLOW Print from Anywhere Solutions for Iowa Organizations',
+      description: 'Enable location-independent printing with uniFLOW\'s comprehensive remote printing solutions. Secure, flexible, and seamless printing for distributed workforces and multiple locations.',
       category: 'Remote Printing',
-      tags: ['Uniflow'],
+      tags: ['uniFLOW'],
       readTime: '12 min read',
       icon: MapPin,
       color: 'teal',
@@ -140,10 +140,10 @@ const Resources = () => {
     },
     {
       id: 'uniflow-mobile-cloud-printing',
-      title: 'Uniflow Mobile & Cloud Printing for Iowa Organizations',
-      description: 'Transform your printing infrastructure with Uniflow\'s comprehensive mobile and cloud printing solutions. Seamless integration with popular cloud platforms and native mobile apps.',
+      title: 'uniFLOW Mobile & Cloud Printing for Iowa Organizations',
+      description: 'Transform your printing infrastructure with uniFLOW\'s comprehensive mobile and cloud printing solutions. Seamless integration with popular cloud platforms and native mobile apps.',
       category: 'Mobile Solutions',
-      tags: ['Uniflow'],
+      tags: ['uniFLOW'],
       readTime: '11 min read',
       icon: Cloud,
       color: 'cyan',
@@ -152,10 +152,10 @@ const Resources = () => {
     },
     {
       id: 'uniflow-flexible-access-control',
-      title: 'Uniflow Flexible Access Control for Iowa Organizations',
-      description: 'Implement sophisticated access control and user management with Uniflow\'s flexible security framework. Role-based permissions, multi-factor authentication, and comprehensive compliance.',
+      title: 'uniFLOW Flexible Access Control for Iowa Organizations',
+      description: 'Implement sophisticated access control and user management with uniFLOW\'s flexible security framework. Role-based permissions, multi-factor authentication, and comprehensive compliance.',
       category: 'Security',
-      tags: ['Uniflow'],
+      tags: ['uniFLOW'],
       readTime: '14 min read',
       icon: UserCheck,
       color: 'violet',
@@ -201,7 +201,7 @@ const Resources = () => {
   ]
 
   const categories = ['All', 'Implementation', 'Cost Savings', 'Mobile Solutions', 'Security', 'Remote Printing']
-  const products = ['All Products', 'PaperCut', 'Uniflow', 'PrinterLogic']
+  const products = ['All Products', 'PaperCut', 'uniFLOW', 'PrinterLogic']
   
   const [selectedCategory, setSelectedCategory] = React.useState('All')
   const [selectedProduct, setSelectedProduct] = React.useState('All Products')
@@ -231,9 +231,9 @@ const Resources = () => {
   return (
     <>
       <SEO 
-        title="Iowa Print Management Resources & Guides | PaperCut, Uniflow & PrinterLogic"
-        description="Comprehensive print management resources for Iowa businesses. Implementation guides, best practices, cost savings strategies, and expert insights for PaperCut MF, Uniflow, and PrinterLogic solutions."
-        keywords="Iowa print management resources, PaperCut implementation guide Iowa, Uniflow best practices Iowa, PrinterLogic setup guide, print management guides Iowa, document management resources Iowa, print cost reduction strategies"
+        title="Iowa Print Management Resources & Guides | PaperCut, uniFLOW & PrinterLogic"
+        description="Comprehensive print management resources for Iowa businesses. Implementation guides, best practices, cost savings strategies, and expert insights for PaperCut MF, uniFLOW, and PrinterLogic solutions."
+        keywords="Iowa print management resources, PaperCut implementation guide Iowa, uniFLOW best practices Iowa, PrinterLogic setup guide, print management guides Iowa, document management resources Iowa, print cost reduction strategies"
         canonicalUrl="https://iowaprintsolutions.com/resources"
         schemaType="CollectionPage"
         additionalSchema={seoSchema}
@@ -257,7 +257,7 @@ const Resources = () => {
               Print Management Resources
             </h1>
             <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-              Comprehensive guides, best practices, and implementation resources for PaperCut, Uniflow, and PrinterLogic solutions in Iowa. Learn from real-world case studies and expert insights.
+              Comprehensive guides, best practices, and implementation resources for PaperCut, uniFLOW, and PrinterLogic solutions in Iowa. Learn from real-world case studies and expert insights.
             </p>
           </motion.div>
         </div>

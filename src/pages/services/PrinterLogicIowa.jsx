@@ -193,8 +193,8 @@ const PrinterLogicIowa = () => {
   return (
     <>
       <SEO 
-        title="PrinterLogic Support in Iowa | Serverless Print Management"
-        description="Expert PrinterLogic implementation in Iowa. Eliminate print servers, reduce IT costs & improve reliability. Serving Des Moines, Cedar Rapids & statewide."
+        title="Vasion Print (formerly PrinterLogic) in Iowa | Serverless Print Management"
+        description="Expert Vasion Print (formerly PrinterLogic) implementation in Iowa. Eliminate print servers, reduce IT costs and improve reliability. Serving Des Moines, Cedar Rapids and statewide."
         keywords="PrinterLogic Iowa, serverless printing Iowa, eliminate print servers Iowa, PrinterLogic implementation Iowa, print server replacement Iowa"
         canonicalUrl="https://iowaprintsolutions.com/services/printerlogic-iowa"
         schemaType="Service"
@@ -203,7 +203,7 @@ const PrinterLogicIowa = () => {
       
       <ServiceSchema 
         serviceName="PrinterLogic Serverless Print Management"
-        description="Professional PrinterLogic implementation and support for Iowa businesses eliminating traditional print servers. Serverless architecture reduces IT costs, improves reliability, and simplifies print management across multiple locations."
+        description="Professional Vasion Print (formerly PrinterLogic) implementation and support for Iowa businesses eliminating traditional print servers. Serverless architecture reduces IT costs, improves reliability, and simplifies print management across multiple locations."
         serviceType="Serverless Print Management Service"
         offers={[
           {
@@ -240,12 +240,16 @@ const PrinterLogicIowa = () => {
                 </div>
               </div>
               <h1 className="text-5xl font-bold mb-6">
-                PrinterLogic Support in Iowa
+                Vasion Print (formerly PrinterLogic) Support in Iowa
               </h1>
               <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-                Expert PrinterLogic implementation and support across Iowa. Eliminate print servers, 
-                reduce IT complexity, and improve printing reliability for organizations throughout 
+                Expert Vasion Print implementation and support across Iowa. Eliminate print servers,
+                reduce IT complexity, and improve printing reliability for organizations throughout
                 Des Moines, Cedar Rapids, Iowa City, and statewide.
+              </p>
+              <p className="text-sm max-w-3xl mx-auto opacity-80">
+                Vasion renamed PrinterLogic to Vasion Print in September 2024. Both names refer to
+                the same serverless print management product, and we support it under either name.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -548,8 +552,8 @@ const PrinterLogicIowa = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <AIOptimizedFAQ 
               faqs={printerLogicFAQ}
-              title="PrinterLogic Iowa - Frequently Asked Questions"
-              description="Get answers to common questions about PrinterLogic implementation and support in Iowa."
+              title="Vasion Print (formerly PrinterLogic) Iowa - Frequently Asked Questions"
+              description="Get answers to common questions about Vasion Print (formerly PrinterLogic) implementation and support in Iowa."
             />
           </div>
         </section>

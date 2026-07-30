@@ -37,9 +37,9 @@ const DesMoinesPrintSolutions = () => {
   return (
     <>
       <SEO 
-        title="Des Moines Print Management Solutions | PaperCut, Uniflow & PrinterLogic Iowa"
-        description="Leading print management solutions in Des Moines, Iowa. Expert PaperCut, Uniflow, and PrinterLogic implementation for Des Moines businesses, healthcare, and government. Serving West Des Moines, Ankeny, Urbandale, and metro area."
-        keywords="Des Moines print management, print solutions Des Moines Iowa, PaperCut Des Moines, Uniflow Des Moines, PrinterLogic Des Moines, West Des Moines printing, Ankeny print management, Urbandale document solutions"
+        title="Des Moines Print Management Solutions | PaperCut, uniFLOW & PrinterLogic Iowa"
+        description="Leading print management solutions in Des Moines, Iowa. Expert PaperCut, uniFLOW, and PrinterLogic implementation for Des Moines businesses, healthcare, and government. Serving West Des Moines, Ankeny, Urbandale, and metro area."
+        keywords="Des Moines print management, print solutions Des Moines Iowa, PaperCut Des Moines, uniFLOW Des Moines, PrinterLogic Des Moines, West Des Moines printing, Ankeny print management, Urbandale document solutions"
         canonicalUrl="https://iowaprintsolutions.com/locations/des-moines"
         schemaType="LocalBusiness"
       />
@@ -62,7 +62,7 @@ const DesMoinesPrintSolutions = () => {
                 Des Moines Print Management Solutions
               </h1>
               <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-                Since 1958, Infomax Office Systems has been Des Moines' premier print management provider. We serve the greater Des Moines metro area including West Des Moines, Ankeny, Urbandale, Johnston, and Clive with expert PaperCut, Uniflow, and PrinterLogic implementations.
+                Since 1958, Infomax Office Systems has been Des Moines' premier print management provider. We serve the greater Des Moines metro area including West Des Moines, Ankeny, Urbandale, Johnston, and Clive with expert PaperCut, uniFLOW, and PrinterLogic implementations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

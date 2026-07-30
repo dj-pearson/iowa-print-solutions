@@ -264,7 +264,7 @@ const Uniflow2026HealthcareIowa = () => {
               <div className="text-center">
                 <h2 className="text-3xl font-bold mb-4">Plan Your Iowa Healthcare uniFLOW Migration</h2>
                 <p className="text-xl text-red-100 mb-8 max-w-3xl mx-auto">
-                  Infomax Office Systems supports Uniflow at hospitals, clinics, and long-term care across Iowa. We&apos;ll walk your environment, line up an AI-capture pilot, and stage a migration that respects clinical schedules.
+                  Infomax Office Systems supports uniFLOW at hospitals, clinics, and long-term care across Iowa. We&apos;ll walk your environment, line up an AI-capture pilot, and stage a migration that respects clinical schedules.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="https://www.infomaxoffice.com/contact" target="_blank" rel="noopener noreferrer" className="bg-white text-red-600 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
@@ -283,10 +283,10 @@ const Uniflow2026HealthcareIowa = () => {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
               <div className="mb-4 md:mb-0">
                 <p className="text-sm text-gray-500">Published by <strong>Iowa Print Solutions Team</strong> on July 30, 2026</p>
-                <p className="text-sm text-gray-500">Uniflow specialists for Iowa hospitals and clinics</p>
+                <p className="text-sm text-gray-500">uniFLOW specialists for Iowa hospitals and clinics</p>
               </div>
               <div className="flex space-x-4">
-                <a href="/blog/uniflow-medical-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">Uniflow for Iowa Medical Practices →</a>
+                <a href="/blog/uniflow-medical-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">uniFLOW for Iowa Medical Practices →</a>
               </div>
             </div>
             <ContentRating />

@@ -13,7 +13,7 @@ const StructuredData = ({ type = 'default', pageData = {} }) => {
     name: 'Iowa Print Solutions',
     url: 'https://iowaprintsolutions.com',
     logo: 'https://iowaprintsolutions.com/IPSLogo.png',
-    description: 'Expert print management software and services across Iowa, specializing in PaperCut, Uniflow, and PrinterLogic solutions for businesses, schools, and healthcare organizations.',
+    description: 'Expert print management software and services across Iowa, specializing in PaperCut, uniFLOW, and PrinterLogic solutions for businesses, schools, and healthcare organizations.',
     sameAs: [
       'https://iowaprintsolutions.com'
     ],
@@ -88,7 +88,7 @@ const StructuredData = ({ type = 'default', pageData = {} }) => {
       '@type': 'State',
       name: 'Iowa'
     },
-    description: 'Leading provider of print management software and services across Iowa, offering PaperCut, Uniflow, and PrinterLogic solutions for businesses, educational institutions, and healthcare organizations.',
+    description: 'Leading provider of print management software and services across Iowa, offering PaperCut, uniFLOW, and PrinterLogic solutions for businesses, educational institutions, and healthcare organizations.',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Print Management Solutions',
@@ -105,7 +105,7 @@ const StructuredData = ({ type = 'default', pageData = {} }) => {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Uniflow Print Solutions',
+            name: 'uniFLOW Print Solutions',
             description: 'Enterprise print management with advanced security and tracking'
           }
         },

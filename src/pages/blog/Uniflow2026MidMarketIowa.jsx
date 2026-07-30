@@ -263,7 +263,7 @@ const Uniflow2026MidMarketIowa = () => {
                 ))}
               </div>
               <p className="text-sm text-gray-500 mt-4">
-                Most mid-sized Iowa businesses are well-served by either product. The right choice usually comes down to your existing device fleet (Canon-heavy = Uniflow advantage), and how much document capture automation you need.
+                Most mid-sized Iowa businesses are well-served by either product. The right choice usually comes down to your existing device fleet (Canon-heavy = uniFLOW advantage), and how much document capture automation you need.
               </p>
             </div>
           </motion.section>
@@ -292,7 +292,7 @@ const Uniflow2026MidMarketIowa = () => {
               <div className="text-center">
                 <h2 className="text-3xl font-bold mb-4">Plan Your Iowa Mid-Sized uniFLOW Move</h2>
                 <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                  Infomax Office Systems supports Uniflow at mid-sized Iowa businesses across professional services, manufacturing, financial services, and multi-site operations. We&apos;ll help you decide on cloud vs. on-prem and stage a clean migration.
+                  Infomax Office Systems supports uniFLOW at mid-sized Iowa businesses across professional services, manufacturing, financial services, and multi-site operations. We&apos;ll help you decide on cloud vs. on-prem and stage a clean migration.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="https://www.infomaxoffice.com/contact" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
@@ -311,10 +311,10 @@ const Uniflow2026MidMarketIowa = () => {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
               <div className="mb-4 md:mb-0">
                 <p className="text-sm text-gray-500">Published by <strong>Iowa Print Solutions Team</strong> on July 30, 2026</p>
-                <p className="text-sm text-gray-500">Trusted Uniflow partner for mid-sized Iowa businesses</p>
+                <p className="text-sm text-gray-500">Trusted uniFLOW partner for mid-sized Iowa businesses</p>
               </div>
               <div className="flex space-x-4">
-                <a href="/blog/papercut-vs-uniflow-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">PaperCut vs. Uniflow Comparison →</a>
+                <a href="/blog/papercut-vs-uniflow-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">PaperCut vs. uniFLOW Comparison →</a>
               </div>
             </div>
             <ContentRating />

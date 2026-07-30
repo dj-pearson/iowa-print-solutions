@@ -69,8 +69,8 @@ const Blog = () => {
     },
     {
       id: 'microsoft-universal-print-v2-iowa-2026',
-      title: 'Microsoft Universal Print v2 in Iowa: When to Use It vs. PaperCut or Uniflow',
-      excerpt: 'A practical 2026 guide for Iowa IT leaders evaluating Universal Print v2 - what it does well, what it still cannot do, and when to layer PaperCut or Uniflow on top.',
+      title: 'Microsoft Universal Print v2 in Iowa: When to Use It vs. PaperCut or uniFLOW',
+      excerpt: 'A practical 2026 guide for Iowa IT leaders evaluating Universal Print v2 - what it does well, what it still cannot do, and when to layer PaperCut or uniFLOW on top.',
       author: 'Iowa Print Solutions Team',
       date: '2026-03-30',
       readTime: '11 min read',
@@ -82,7 +82,7 @@ const Blog = () => {
     {
       id: 'printerlogic-vasion-2026-iowa',
       title: 'PrinterLogic / Vasion 2026 for Iowa Businesses: What Is New and Who It Fits',
-      excerpt: 'A 2026 review of PrinterLogic (now Vasion) for Iowa businesses - new SaaS architecture, identity and audit upgrades, Vasion Automate integration, and how it compares to PaperCut and Uniflow.',
+      excerpt: 'A 2026 review of PrinterLogic (now Vasion) for Iowa businesses - new SaaS architecture, identity and audit upgrades, Vasion Automate integration, and how it compares to PaperCut and uniFLOW.',
       author: 'Iowa Print Solutions Team',
       date: '2026-03-22',
       readTime: '10 min read',
@@ -178,7 +178,7 @@ const Blog = () => {
     {
       id: 'mobile-printing-solutions-iowa-2025',
       title: 'Mobile Printing Solutions Iowa 2025: Complete BYOD Guide',
-      excerpt: 'Comprehensive guide to mobile printing for Iowa businesses. Compare PaperCut Mobility Print, Uniflow Mobile, and PrinterLogic for seamless BYOD environments with enterprise security.',
+      excerpt: 'Comprehensive guide to mobile printing for Iowa businesses. Compare PaperCut Mobility Print, uniFLOW Mobile, and PrinterLogic for seamless BYOD environments with enterprise security.',
       author: 'Iowa Print Solutions Team',
       date: '2025-10-14',
       readTime: '16 min read',
@@ -190,7 +190,7 @@ const Blog = () => {
     {
       id: 'print-management-software-roi-iowa',
       title: 'Print Management Software ROI Iowa: Calculate Your Returns',
-      excerpt: 'Calculate ROI for print management software in Iowa. Real case studies, cost savings analysis, and ROI calculator for PaperCut, Uniflow, and PrinterLogic implementations.',
+      excerpt: 'Calculate ROI for print management software in Iowa. Real case studies, cost savings analysis, and ROI calculator for PaperCut, uniFLOW, and PrinterLogic implementations.',
       author: 'Iowa Print Solutions Team',
       date: '2025-10-14',
       readTime: '14 min read',
@@ -262,7 +262,7 @@ const Blog = () => {
     {
       id: 'small-business-print-management-iowa',
       title: 'Small Business Print Management in Iowa: SMB Solutions Comparison',
-      excerpt: 'Complete guide to print management solutions for Iowa small businesses. Compare PaperCut, Uniflow, and PrinterLogic for SMB cost savings and efficiency across Des Moines, Cedar Rapids, and statewide.',
+      excerpt: 'Complete guide to print management solutions for Iowa small businesses. Compare PaperCut, uniFLOW, and PrinterLogic for SMB cost savings and efficiency across Des Moines, Cedar Rapids, and statewide.',
       author: 'Iowa Print Solutions Team',
       date: '2025-08-27',
       readTime: '15 min read',
@@ -329,8 +329,8 @@ const Blog = () => {
     },
     {
       id: 'uniflow-medical-iowa',
-      title: 'Uniflow Medical Print Security for Iowa Healthcare',
-      excerpt: 'Advanced medical document security with Uniflow. Patient data protection, secure workflows, and compliance automation.',
+      title: 'uniFLOW Medical Print Security for Iowa Healthcare',
+      excerpt: 'Advanced medical document security with uniFLOW. Patient data protection, secure workflows, and compliance automation.',
       author: 'Dan Pearson',
       date: '2024-01-14',
       readTime: '11 min read',
@@ -362,8 +362,8 @@ const Blog = () => {
     },
     {
       id: 'uniflow-university-iowa',
-      title: 'Uniflow University Solutions for Iowa Higher Education',
-      excerpt: 'Transform your Iowa university with Uniflow\'s advanced academic document workflows. FERPA compliance and administrative automation.',
+      title: 'uniFLOW University Solutions for Iowa Higher Education',
+      excerpt: 'Transform your Iowa university with uniFLOW\'s advanced academic document workflows. FERPA compliance and administrative automation.',
       author: 'Dan Pearson',
       date: '2024-01-17',
       readTime: '14 min read',
@@ -462,7 +462,7 @@ const Blog = () => {
     {
       id: 'print-management-des-moines',
       title: 'Professional Print Management for Des Moines',
-      excerpt: 'Expert print management services for Des Moines businesses. PaperCut, Uniflow & PrinterLogic implementation serving Iowa\'s capital city since 1958.',
+      excerpt: 'Expert print management services for Des Moines businesses. PaperCut, uniFLOW & PrinterLogic implementation serving Iowa\'s capital city since 1958.',
       author: 'Dan Pearson',
       date: '2024-02-01',
       readTime: '13 min read',
@@ -507,8 +507,8 @@ const Blog = () => {
     <div className="min-h-screen bg-gray-50">
       <SEO 
         title="Iowa Print Management Blog - Latest News & Updates"
-        description="Stay updated with the latest print management news, PaperCut updates, Uniflow features, and PrinterLogic developments for Iowa organizations."
-        keywords="Iowa print management blog, PaperCut news, Uniflow updates, PrinterLogic articles, print security news Iowa, document management blog"
+        description="Stay updated with the latest print management news, PaperCut updates, uniFLOW features, and PrinterLogic developments for Iowa organizations."
+        keywords="Iowa print management blog, PaperCut news, uniFLOW updates, PrinterLogic articles, print security news Iowa, document management blog"
         canonicalUrl="https://iowaprintsolutions.com/blog"
         schemaType="Blog"
       />
@@ -527,7 +527,7 @@ const Blog = () => {
               Iowa Print Management Blog
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Stay informed with the latest updates, best practices, and insights for PaperCut, Uniflow, and PrinterLogic implementations in Iowa.
+              Stay informed with the latest updates, best practices, and insights for PaperCut, uniFLOW, and PrinterLogic implementations in Iowa.
             </p>
           </motion.div>
         </div>

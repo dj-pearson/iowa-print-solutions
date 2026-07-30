@@ -27,7 +27,7 @@ const DavenportPrintSolutions = () => {
   const seoSchema = {
     '@type': 'LocalBusiness',
     'name': 'Infomax Office Systems - Davenport Print Solutions',
-    'description': 'Professional print management services for Davenport and Quad Cities businesses. PaperCut, Uniflow, and PrinterLogic implementation by Iowa\'s trusted provider.',
+    'description': 'Professional print management services for Davenport and Quad Cities businesses. PaperCut, uniFLOW, and PrinterLogic implementation by Iowa\'s trusted provider.',
     'areaServed': {
       '@type': 'City',
       'name': 'Davenport',
@@ -54,7 +54,7 @@ const DavenportPrintSolutions = () => {
     <>
       <SEO 
         title="Davenport Print Solutions | Quad Cities Print Management | Infomax Office Systems"
-        description="Professional print management services for Davenport and Quad Cities businesses. PaperCut MF, Uniflow, and PrinterLogic implementation for Genesis Health System, ALCOA, John Deere, and St. Ambrose University. Expert Iowa solutions."
+        description="Professional print management services for Davenport and Quad Cities businesses. PaperCut MF, uniFLOW, and PrinterLogic implementation for Genesis Health System, ALCOA, John Deere, and St. Ambrose University. Expert Iowa solutions."
         keywords="Davenport print management, Quad Cities print solutions, Genesis Health System printing, ALCOA print management, John Deere document solutions, St. Ambrose University printing, Bettendorf print services, Scott County print management, Iowa print solutions Davenport"
         canonicalUrl="https://iowaprintsolutions.com/locations/davenport"
         schemaType="LocalBusiness"
@@ -82,7 +82,7 @@ const DavenportPrintSolutions = () => {
                 Davenport Print Management Solutions
               </h1>
               <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-                Professional print management services for Davenport and the entire Quad Cities region. Serving Genesis Health System, ALCOA, John Deere, St. Ambrose University, and businesses throughout Scott County with expert PaperCut MF, Uniflow, and PrinterLogic implementations.
+                Professional print management services for Davenport and the entire Quad Cities region. Serving Genesis Health System, ALCOA, John Deere, St. Ambrose University, and businesses throughout Scott County with expert PaperCut MF, uniFLOW, and PrinterLogic implementations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

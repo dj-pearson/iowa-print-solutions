@@ -72,12 +72,13 @@ export const siteConfig = {
   seo: {
     titleSuffix: ' | Iowa Print Solutions',
     defaultTitle: 'Iowa Print Solutions - Leading Print Management Solutions in Iowa',
-    defaultDescription: "Iowa's premier resource for print management solutions. Expert information on PaperCut, Uniflow, and PrinterLogic implementations. Connect with Infomax Office Systems for professional services.",
+    defaultDescription: "Iowa's premier resource for print management software. Expert guidance on PaperCut MF, Canon uniFLOW, and Vasion Print (formerly PrinterLogic) implementations. Connect with Infomax Office Systems for professional services.",
     defaultKeywords: [
       'Iowa print solutions',
       'print management Iowa',
       'PaperCut Iowa',
-      'Uniflow Iowa',
+      'uniFLOW Iowa',
+      'Vasion Print Iowa',
       'PrinterLogic Iowa',
       'Infomax Office Systems',
       'print security',
@@ -127,9 +128,14 @@ export const siteConfig = {
     },
     {
       id: 'printerlogic',
-      name: 'PrinterLogic',
-      fullName: 'PrinterLogic Serverless Printing',
-      description: 'Cloud-based serverless print management eliminating print servers with direct IP printing',
+      // Vasion renamed PrinterLogic to Vasion Print in September 2024. Buyers
+      // still search the old name heavily, so copy names both. The URL keeps
+      // the /printerlogic-iowa path deliberately - it holds existing rankings
+      // and changing it would trade them for nothing.
+      name: 'Vasion Print',
+      formerName: 'PrinterLogic',
+      fullName: 'Vasion Print (formerly PrinterLogic)',
+      description: 'Serverless print management eliminating print servers with centrally managed direct IP printing',
       category: 'Print Management Software',
       path: '/services/printerlogic-iowa',
     },
@@ -226,6 +232,7 @@ export const siteConfig = {
   expertise: [
     'PaperCut MF',
     'uniFLOW',
+    'Vasion Print',
     'PrinterLogic',
     'Print Management',
     'HIPAA Compliance',

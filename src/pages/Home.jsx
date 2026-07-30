@@ -54,7 +54,7 @@ const Home = () => {
       name: 'Lisa Martinez',
       company: 'Iowa Professional Services Firm',
       location: 'Iowa City, IA',
-      testimonial: 'Uniflow has revolutionized our document workflows. The security features give us peace of mind, and the cost savings exceeded expectations.',
+      testimonial: 'uniFLOW has revolutionized our document workflows. The security features give us peace of mind, and the cost savings exceeded expectations.',
       rating: 5
     }
   ]
@@ -162,7 +162,7 @@ const Home = () => {
       <SEO
         title="Iowa Print Management Solutions 2025 | PaperCut, uniFLOW & PrinterLogic - Reduce Costs 30-40%"
         description="Iowa's #1 print management resource since 1958. Comprehensive guides on PaperCut, uniFLOW & PrinterLogic implementation. Reduce printing costs 30-40%, ensure HIPAA compliance, secure MFPs. Serving Des Moines, Cedar Rapids, Iowa City statewide. Connect with certified experts at Infomax Office Systems (515) 237-2352."
-        keywords="Iowa print management 2025, PaperCut Iowa cost reduction, Uniflow Iowa security, PrinterLogic Iowa serverless, HIPAA compliant printing Iowa, secure print release Iowa, reduce printing costs Iowa, MFP security Iowa, copier software Iowa, Infomax Office Systems, Des Moines print management, Cedar Rapids document solutions, Iowa City print security, print cost calculator Iowa"
+        keywords="Iowa print management 2025, PaperCut Iowa cost reduction, uniFLOW Iowa security, PrinterLogic Iowa serverless, HIPAA compliant printing Iowa, secure print release Iowa, reduce printing costs Iowa, MFP security Iowa, copier software Iowa, Infomax Office Systems, Des Moines print management, Cedar Rapids document solutions, Iowa City print security, print cost calculator Iowa"
         canonicalUrl="https://iowaprintsolutions.com"
         schemaType="WebSite"
         additionalSchema={seoSchema}
@@ -557,7 +557,7 @@ const Home = () => {
                 Iowa Print Solutions Information Hub
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive resources about PaperCut, Uniflow, and PrinterLogic solutions. Connect with Infomax Office Systems for professional implementation services throughout Iowa.
+                Comprehensive resources about PaperCut, uniFLOW, and PrinterLogic solutions. Connect with Infomax Office Systems for professional implementation services throughout Iowa.
               </p>
             </motion.div>
 
@@ -593,7 +593,7 @@ const Home = () => {
                 Expert Iowa Print Management Resources & Insights
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Stay informed with comprehensive guides on print management solutions for Iowa organizations. From PaperCut implementation to Uniflow security and PrinterLogic serverless printing.
+                Stay informed with comprehensive guides on print management solutions for Iowa organizations. From PaperCut implementation to uniFLOW security and PrinterLogic serverless printing.
               </p>
             </motion.div>
 
@@ -635,16 +635,16 @@ const Home = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Uniflow Document Workflow Optimization for Iowa Businesses
+                    uniFLOW Document Workflow Optimization for Iowa Businesses
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Maximize your Uniflow investment with advanced workflow automation and security features. Tailored solutions for Iowa healthcare, education, and professional services organizations.
+                    Maximize your uniFLOW investment with advanced workflow automation and security features. Tailored solutions for Iowa healthcare, education, and professional services organizations.
                   </p>
                   <Link
                     to="/resources/uniflow-platform-overview"
                     className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
                   >
-                    Explore Uniflow Solutions
+                    Explore uniFLOW Solutions
                     <ArrowRight className="h-4 w-4 ml-1" />
                   </Link>
                 </div>

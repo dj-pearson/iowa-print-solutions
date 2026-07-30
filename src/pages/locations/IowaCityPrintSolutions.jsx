@@ -15,7 +15,7 @@ const IowaCityPrintSolutions = () => {
 
   const services = [
     'PaperCut MF Implementation & Support',
-    'Canon Uniflow Document Solutions',
+    'Canon uniFLOW Document Solutions',
     'PrinterLogic Serverless Printing',
     'HIPAA-Compliant Print Security',
     'Educational Print Management',
@@ -59,7 +59,7 @@ const IowaCityPrintSolutions = () => {
       name: 'Michael Thompson',
       company: 'Iowa City Community School District',
       location: 'Iowa City, IA',
-      testimonial: 'Infomax Office Systems provided outstanding service for our district-wide Uniflow deployment. Great support and training.',
+      testimonial: 'Infomax Office Systems provided outstanding service for our district-wide uniFLOW deployment. Great support and training.',
       rating: 5
     }
   ]
@@ -68,8 +68,8 @@ const IowaCityPrintSolutions = () => {
     <>
       <SEO 
         title="Iowa City Print Solutions - University & Healthcare Print Management"
-        description="Expert print management solutions in Iowa City, Iowa. Specialized PaperCut, Uniflow, and PrinterLogic services for University of Iowa, UIHC, and Johnson County businesses since 1958."
-        keywords="Iowa City print management, University of Iowa printing, UIHC print solutions, PaperCut Iowa City, Uniflow Iowa City, PrinterLogic Iowa City, Johnson County printing, Coralville print management"
+        description="Expert print management solutions in Iowa City, Iowa. Specialized PaperCut, uniFLOW, and PrinterLogic services for University of Iowa, UIHC, and Johnson County businesses since 1958."
+        keywords="Iowa City print management, University of Iowa printing, UIHC print solutions, PaperCut Iowa City, uniFLOW Iowa City, PrinterLogic Iowa City, Johnson County printing, Coralville print management"
         canonicalUrl="https://iowaprintsolutions.com/locations/iowa-city"
         schemaType="LocalBusiness"
       />
@@ -93,7 +93,7 @@ const IowaCityPrintSolutions = () => {
               </h1>
               <p className="text-xl mb-8 max-w-3xl mx-auto">
                 Serving the University of Iowa, UIHC, and Johnson County with specialized print management 
-                solutions since 1958. Expert PaperCut, Uniflow, and PrinterLogic implementation.
+                solutions since 1958. Expert PaperCut, uniFLOW, and PrinterLogic implementation.
               </p>
             </motion.div>
           </div>

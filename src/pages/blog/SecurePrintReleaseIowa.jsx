@@ -76,7 +76,7 @@ const SecurePrintReleaseIowa = () => {
       organization: 'Des Moines Law Firm',
       industry: 'Legal Services',
       challenge: 'Confidential client documents frequently left unattended at printers',
-      solution: 'Uniflow secure release with PIN authentication and automatic deletion',
+      solution: 'uniFLOW secure release with PIN authentication and automatic deletion',
       results: {
         security_improvement: 'Complete elimination of document exposure incidents',
         productivity: '20% improvement in document handling efficiency',

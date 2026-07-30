@@ -15,7 +15,7 @@ const CedarRapidsPrintSolutions = () => {
 
   const services = [
     'PaperCut MF Implementation & Support',
-    'Canon Uniflow Document Solutions',
+    'Canon uniFLOW Document Solutions',
     'PrinterLogic Serverless Printing',
     'Managed Print Services (MPS)',
     'Print Security & Compliance',
@@ -59,7 +59,7 @@ const CedarRapidsPrintSolutions = () => {
       name: 'Robert Johnson',
       company: 'Cedar Rapids Manufacturing',
       location: 'Cedar Rapids, IA',
-      testimonial: 'The Uniflow solution has streamlined our document workflows across multiple departments. Excellent support from the Iowa team.',
+      testimonial: 'The uniFLOW solution has streamlined our document workflows across multiple departments. Excellent support from the Iowa team.',
       rating: 5
     }
   ]
@@ -67,9 +67,9 @@ const CedarRapidsPrintSolutions = () => {
   return (
     <>
       <SEO 
-        title="Cedar Rapids Print Solutions - PaperCut, Uniflow & PrinterLogic Services"
-        description="Leading print management solutions in Cedar Rapids, Iowa. Expert PaperCut, Uniflow, and PrinterLogic implementation for healthcare, education, and business. Serving Eastern Iowa since 1958."
-        keywords="Cedar Rapids print management, print solutions Cedar Rapids Iowa, PaperCut Cedar Rapids, Uniflow Cedar Rapids, PrinterLogic Cedar Rapids, Marion printing, Hiawatha print management, Eastern Iowa document solutions"
+        title="Cedar Rapids Print Solutions - PaperCut, uniFLOW & PrinterLogic Services"
+        description="Leading print management solutions in Cedar Rapids, Iowa. Expert PaperCut, uniFLOW, and PrinterLogic implementation for healthcare, education, and business. Serving Eastern Iowa since 1958."
+        keywords="Cedar Rapids print management, print solutions Cedar Rapids Iowa, PaperCut Cedar Rapids, uniFLOW Cedar Rapids, PrinterLogic Cedar Rapids, Marion printing, Hiawatha print management, Eastern Iowa document solutions"
         canonicalUrl="https://iowaprintsolutions.com/locations/cedar-rapids"
         schemaType="LocalBusiness"
       />
@@ -92,7 +92,7 @@ const CedarRapidsPrintSolutions = () => {
                 Cedar Rapids Print Management Solutions
               </h1>
               <p className="text-xl mb-8 max-w-3xl mx-auto">
-                Serving Eastern Iowa's print management needs since 1958. Expert PaperCut, Uniflow, 
+                Serving Eastern Iowa's print management needs since 1958. Expert PaperCut, uniFLOW, 
                 and PrinterLogic implementation for Cedar Rapids businesses, healthcare, and educational institutions.
               </p>
             </motion.div>

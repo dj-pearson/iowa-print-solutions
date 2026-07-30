@@ -108,7 +108,7 @@ const UniflowMobileCloudPrinting = () => {
       description: 'Print documents directly from mobile email applications',
       steps: [
         'Receive email with document attachment',
-        'Open attachment in Uniflow mobile app',
+        'Open attachment in uniFLOW mobile app',
         'Select printer from available devices',
         'Configure print settings and options',
         'Release print job at chosen printer'
@@ -118,7 +118,7 @@ const UniflowMobileCloudPrinting = () => {
       workflow: 'Cloud Document Printing',
       description: 'Access and print documents stored in cloud platforms',
       steps: [
-        'Open Uniflow mobile app',
+        'Open uniFLOW mobile app',
         'Navigate to connected cloud storage',
         'Browse and select document to print',
         'Choose printer and print settings',
@@ -269,10 +269,10 @@ const UniflowMobileCloudPrinting = () => {
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              Uniflow Mobile & Cloud Printing for Iowa Organizations
+              uniFLOW Mobile & Cloud Printing for Iowa Organizations
             </h1>
             <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-              Transform your printing infrastructure with Uniflow's comprehensive mobile and cloud printing solutions. Seamless integration with popular cloud platforms and native mobile apps for enhanced productivity.
+              Transform your printing infrastructure with uniFLOW's comprehensive mobile and cloud printing solutions. Seamless integration with popular cloud platforms and native mobile apps for enhanced productivity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -306,7 +306,7 @@ const UniflowMobileCloudPrinting = () => {
               Mobile & Cloud Printing Capabilities
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uniflow provides comprehensive mobile and cloud printing solutions that integrate seamlessly with your existing technology stack.
+              uniFLOW provides comprehensive mobile and cloud printing solutions that integrate seamlessly with your existing technology stack.
             </p>
           </motion.div>
 

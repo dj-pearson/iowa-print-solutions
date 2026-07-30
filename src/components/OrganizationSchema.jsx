@@ -6,7 +6,7 @@ const OrganizationSchema = () => {
     "@type": "Organization",
     "name": "Iowa Print Solutions (Infomax Office Systems)",
     "alternateName": "Infomax Office Systems",
-    "description": "Iowa's premier print management solutions provider specializing in PaperCut, uniFLOW, and PrinterLogic implementations. Serving Iowa businesses since 1958 with expert print security, cost control, and workflow optimization.",
+    "description": "Iowa's premier print management solutions provider specializing in PaperCut MF, Canon uniFLOW, and Vasion Print (formerly PrinterLogic) implementations. Serving Iowa businesses since 1958 with expert print security, cost control, and workflow optimization.",
     "url": "https://iowaprintsolutions.com",
     "logo": {
       "@type": "ImageObject",
@@ -101,7 +101,7 @@ const OrganizationSchema = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "PrinterLogic Serverless Printing",
+            "name": "Vasion Print (formerly PrinterLogic) Serverless Printing",
             "description": "Modern serverless print management eliminating print servers with cloud-based architecture and mobile printing"
           }
         },

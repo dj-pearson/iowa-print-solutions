@@ -70,9 +70,9 @@ const UniflowSecurePrintRelease = () => {
     {
       step: '2',
       title: 'System Configuration',
-      description: 'Configure Uniflow servers and integrate with your existing Iowa infrastructure.',
+      description: 'Configure uniFLOW servers and integrate with your existing Iowa infrastructure.',
       details: [
-        'Install Uniflow print servers',
+        'Install uniFLOW print servers',
         'Configure Active Directory integration',
         'Set up authentication methods',
         'Implement security policies'
@@ -190,10 +190,10 @@ const UniflowSecurePrintRelease = () => {
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              Uniflow Secure Print Release for Iowa Organizations
+              uniFLOW Secure Print Release for Iowa Organizations
             </h1>
             <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-              Protect sensitive documents and ensure compliance with Uniflow's comprehensive secure print release solution. Advanced authentication, complete monitoring, and seamless integration for Iowa businesses.
+              Protect sensitive documents and ensure compliance with uniFLOW's comprehensive secure print release solution. Advanced authentication, complete monitoring, and seamless integration for Iowa businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -227,7 +227,7 @@ const UniflowSecurePrintRelease = () => {
               Comprehensive Security Features
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uniflow provides enterprise-grade security features to protect your Iowa organization's sensitive documents at every step.
+              uniFLOW provides enterprise-grade security features to protect your Iowa organization's sensitive documents at every step.
             </p>
           </motion.div>
 
@@ -363,7 +363,7 @@ const UniflowSecurePrintRelease = () => {
               Compliance & Regulatory Requirements
             </h2>
             <p className="text-xl text-gray-600">
-              How Uniflow helps Iowa organizations meet industry-specific compliance requirements.
+              How uniFLOW helps Iowa organizations meet industry-specific compliance requirements.
             </p>
           </motion.div>
 
@@ -386,7 +386,7 @@ const UniflowSecurePrintRelease = () => {
                     <p className="text-sm text-gray-700">{compliance.requirements}</p>
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-2">Uniflow Solution</h4>
+                    <h4 className="font-medium text-gray-900 mb-2">uniFLOW Solution</h4>
                     <p className="text-sm text-gray-700">{compliance.uniflow_solution}</p>
                   </div>
                 </div>
@@ -407,7 +407,7 @@ const UniflowSecurePrintRelease = () => {
               Secure Your Iowa Organization's Print Environment
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Implement enterprise-grade print security with Uniflow's comprehensive secure release solution.
+              Implement enterprise-grade print security with uniFLOW's comprehensive secure release solution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

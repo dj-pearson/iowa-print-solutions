@@ -14,7 +14,7 @@
  * than a 90-file hunt.
  *
  * Historical note: earlier versions of this site published forward-looking
- * feature claims for PaperCut MF 26 and "Uniflow 2026" that did not match
+ * feature claims for PaperCut MF 26 and "uniFLOW 2026" that did not match
  * what the vendors shipped. This file exists to prevent that recurring.
  * ============================================================================
  */
@@ -108,7 +108,8 @@ export const papercut = {
 export const uniflow = {
   id: 'uniflow',
   // Canon/NT-ware brand casing is lowercase "uni" + uppercase "FLOW".
-  // Never write "Uniflow" or "UniFlow" in customer-facing copy.
+  // Do not use any other capitalisation in customer-facing copy - entity
+  // matching in search and AI answers keys off the exact brand string.
   brand: 'uniFLOW',
   name: 'uniFLOW Online',
   vendor: 'Canon / NT-ware',

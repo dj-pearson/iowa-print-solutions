@@ -22,11 +22,11 @@ const Services = () => {
     },
     {
       question: 'Is print management HIPAA compliant for Iowa healthcare organizations?',
-      answer: 'Yes, all major print management solutions (PaperCut MF, Uniflow, PrinterLogic) offer HIPAA-compliant features including document encryption, secure user authentication, comprehensive audit trails, and secure print release. Iowa healthcare organizations like UI Hospitals and Mercy Medical rely on these solutions to protect patient information and maintain compliance.'
+      answer: 'Yes, all major print management solutions (PaperCut MF, uniFLOW, PrinterLogic) offer HIPAA-compliant features including document encryption, secure user authentication, comprehensive audit trails, and secure print release. Iowa healthcare organizations like UI Hospitals and Mercy Medical rely on these solutions to protect patient information and maintain compliance.'
     },
     {
-      question: 'What is the difference between PaperCut, Uniflow, and PrinterLogic?',
-      answer: 'PaperCut MF excels at cost tracking and user accountability, Canon Uniflow specializes in advanced document workflows and security, while PrinterLogic eliminates print servers entirely. Most Iowa businesses choose PaperCut for comprehensive print management, healthcare organizations prefer Uniflow for advanced security, and companies wanting to eliminate servers choose PrinterLogic.'
+      question: 'What is the difference between PaperCut, uniFLOW, and PrinterLogic?',
+      answer: 'PaperCut MF excels at cost tracking and user accountability, Canon uniFLOW specializes in advanced document workflows and security, while PrinterLogic eliminates print servers entirely. Most Iowa businesses choose PaperCut for comprehensive print management, healthcare organizations prefer uniFLOW for advanced security, and companies wanting to eliminate servers choose PrinterLogic.'
     },
     {
       question: 'Do you provide ongoing support after implementation?',
@@ -52,7 +52,7 @@ const Services = () => {
     },
     {
       icon: Settings,
-      title: 'Uniflow Document Management Solutions',
+      title: 'uniFLOW Document Management Solutions',
       description: 'Advanced document workflow automation and security solutions through Infomax Office Systems. Streamline processes and enhance security for Iowa businesses.',
       link: '/services/uniflow',
       iowaLink: '/services/uniflow-iowa',
@@ -151,7 +151,7 @@ const Services = () => {
           '@type': 'Offer',
           'itemOffered': {
             '@type': 'Service', 
-            'name': 'Uniflow Solutions',
+            'name': 'uniFLOW Solutions',
             'description': 'Document workflow automation and security solutions'
           }
         },
@@ -172,7 +172,7 @@ const Services = () => {
       <SEO
         title="Iowa Print Management Services 2025 | PaperCut, uniFLOW & PrinterLogic Implementation - From $3,000"
         description="Professional print management services in Iowa. Expert PaperCut MF ($3K-$15K), uniFLOW ($5K-$20K), PrinterLogic ($4K-$18K) implementation. 2-6 week deployment, 30-40% cost reduction. Serving 500+ Iowa organizations. Call Infomax Office Systems (515) 237-2352 for free consultation."
-        keywords="Iowa print management services 2025, PaperCut implementation Iowa cost, Uniflow services Iowa pricing, PrinterLogic setup Iowa, managed print services Des Moines, print solutions Cedar Rapids, document management Iowa City, print security services Iowa, HIPAA compliant printing Iowa, Infomax Office Systems services, print management ROI Iowa"
+        keywords="Iowa print management services 2025, PaperCut implementation Iowa cost, uniFLOW services Iowa pricing, PrinterLogic setup Iowa, managed print services Des Moines, print solutions Cedar Rapids, document management Iowa City, print security services Iowa, HIPAA compliant printing Iowa, Infomax Office Systems services, print management ROI Iowa"
         canonicalUrl="https://iowaprintsolutions.com/services"
         schemaType="Service"
         additionalSchema={seoSchema}
@@ -376,7 +376,7 @@ const Services = () => {
                 Ready to Implement Professional Print Solutions?
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Contact Infomax Office Systems for professional print management implementation and discover how we can optimize your Iowa organization&apos;s printing environment with expert PaperCut, Uniflow, and PrinterLogic services.
+                Contact Infomax Office Systems for professional print management implementation and discover how we can optimize your Iowa organization&apos;s printing environment with expert PaperCut, uniFLOW, and PrinterLogic services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

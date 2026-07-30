@@ -93,7 +93,7 @@ const UniflowUniversityIowa = () => {
   const iowaUniversityImplementations = [
     {
       university: 'Iowa State University',
-      implementation: 'Enterprise Uniflow deployment serving 30,000+ students and faculty across engineering, agriculture, and liberal arts colleges',
+      implementation: 'Enterprise uniFLOW deployment serving 30,000+ students and faculty across engineering, agriculture, and liberal arts colleges',
       challenges: 'Managing diverse document workflows across specialized research departments',
       results: [
         'Unified document management across all colleges',
@@ -104,7 +104,7 @@ const UniflowUniversityIowa = () => {
     },
     {
       university: 'University of Iowa',
-      implementation: 'Comprehensive Uniflow solution for academic and medical campus operations',
+      implementation: 'Comprehensive uniFLOW solution for academic and medical campus operations',
       challenges: 'Integrating academic and healthcare document workflows in a complex multi-campus environment',
       results: [
         'Seamless integration between academic and medical workflows',
@@ -115,7 +115,7 @@ const UniflowUniversityIowa = () => {
     },
     {
       university: 'University of Northern Iowa',
-      implementation: 'Uniflow deployment focused on education and liberal arts document workflows',
+      implementation: 'uniFLOW deployment focused on education and liberal arts document workflows',
       challenges: 'Streamlining student services and academic department processes',
       results: [
         'Improved student experience and service delivery',
@@ -204,20 +204,20 @@ const UniflowUniversityIowa = () => {
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Uniflow University Iowa' }
+    { label: 'uniFLOW University Iowa' }
   ]
 
   return (
     <>
       <SEO 
-        title="Uniflow University Solutions for Iowa Higher Education | Academic Document Workflows"
-        description="Transform your Iowa university with Uniflow's advanced academic document workflows. FERPA compliance, research management, and administrative automation for higher education."
-        keywords="Uniflow university Iowa, academic document workflows, FERPA compliance, Iowa State University, University of Iowa, higher education automation"
+        title="uniFLOW University Solutions for Iowa Higher Education | Academic Document Workflows"
+        description="Transform your Iowa university with uniFLOW's advanced academic document workflows. FERPA compliance, research management, and administrative automation for higher education."
+        keywords="uniFLOW university Iowa, academic document workflows, FERPA compliance, Iowa State University, University of Iowa, higher education automation"
         canonicalUrl="https://iowaprintsolutions.com/blog/uniflow-university-iowa"
         schemaType="Article"
         additionalSchema={{
           '@type': 'Article',
-          'headline': 'Uniflow University Solutions for Iowa Higher Education - Academic Document Workflows',
+          'headline': 'uniFLOW University Solutions for Iowa Higher Education - Academic Document Workflows',
           'author': {
             '@type': 'Organization',
             'name': 'Infomax Office Systems',
@@ -275,10 +275,10 @@ const UniflowUniversityIowa = () => {
                 </div>
               </div>
               <h1 className="text-5xl font-bold mb-6">
-                Uniflow University Solutions for Iowa Higher Education
+                uniFLOW University Solutions for Iowa Higher Education
               </h1>
               <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-                Revolutionize academic document workflows at Iowa universities with Uniflow's comprehensive platform. From student records management to research administration, enhance efficiency while ensuring FERPA compliance and academic excellence.
+                Revolutionize academic document workflows at Iowa universities with uniFLOW's comprehensive platform. From student records management to research administration, enhance efficiency while ensuring FERPA compliance and academic excellence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -312,7 +312,7 @@ const UniflowUniversityIowa = () => {
                 Advanced University-Specific Features
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Uniflow's higher education platform is specifically designed to meet the complex needs of Iowa universities and academic institutions.
+                uniFLOW's higher education platform is specifically designed to meet the complex needs of Iowa universities and academic institutions.
               </p>
             </motion.div>
 
@@ -414,7 +414,7 @@ const UniflowUniversityIowa = () => {
                 Iowa University Success Stories
               </h2>
               <p className="text-xl text-gray-600">
-                How Iowa's leading universities have transformed their operations with Uniflow implementation.
+                How Iowa's leading universities have transformed their operations with uniFLOW implementation.
               </p>
             </motion.div>
 
@@ -464,7 +464,7 @@ const UniflowUniversityIowa = () => {
                 Department-Specific Solutions
               </h2>
               <p className="text-xl text-gray-600">
-                Tailored Uniflow implementations for different university departments and their unique workflows.
+                Tailored uniFLOW implementations for different university departments and their unique workflows.
               </p>
             </motion.div>
 
@@ -512,7 +512,7 @@ const UniflowUniversityIowa = () => {
                 University Compliance & Security
               </h2>
               <p className="text-xl text-gray-600">
-                How Uniflow ensures compliance with federal, state, and institutional requirements for Iowa universities.
+                How uniFLOW ensures compliance with federal, state, and institutional requirements for Iowa universities.
               </p>
             </motion.div>
 
@@ -535,7 +535,7 @@ const UniflowUniversityIowa = () => {
                       <p className="text-sm text-gray-700">{compliance.description}</p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900 mb-2">Uniflow Solution</h4>
+                      <h4 className="font-medium text-gray-900 mb-2">uniFLOW Solution</h4>
                       <p className="text-sm text-green-700">{compliance.uniflow_solution}</p>
                     </div>
                   </div>
@@ -623,10 +623,10 @@ const UniflowUniversityIowa = () => {
               className="text-white"
             >
               <h2 className="text-3xl font-bold mb-4">
-                Revolutionize Your Iowa University with Uniflow
+                Revolutionize Your Iowa University with uniFLOW
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Join Iowa State University, University of Iowa, and other leading institutions that have transformed their academic operations with Uniflow's comprehensive platform.
+                Join Iowa State University, University of Iowa, and other leading institutions that have transformed their academic operations with uniFLOW's comprehensive platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

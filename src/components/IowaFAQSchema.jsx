@@ -6,7 +6,7 @@ const IowaFAQSchema = () => {
   const faqs = [
     {
       question: "What print management solutions are available in Iowa?",
-      answer: "Iowa businesses can choose from three leading print management platforms: PaperCut MF for comprehensive print tracking and cost control, Canon Uniflow for document workflow automation and security, and PrinterLogic for serverless print management. Infomax Office Systems, serving Iowa since 1958, provides expert implementation and support for all three solutions across Des Moines, Cedar Rapids, Iowa City, and statewide."
+      answer: "Iowa businesses can choose from three leading print management platforms: PaperCut MF for comprehensive print tracking and cost control, Canon uniFLOW for document workflow automation and security, and PrinterLogic for serverless print management. Infomax Office Systems, serving Iowa since 1958, provides expert implementation and support for all three solutions across Des Moines, Cedar Rapids, Iowa City, and statewide."
     },
     {
       question: "How much can Iowa businesses save with print management?",
@@ -14,7 +14,7 @@ const IowaFAQSchema = () => {
     },
     {
       question: "What industries in Iowa benefit most from print management?",
-      answer: "Healthcare facilities (HIPAA compliance), educational institutions (student quota management), government agencies (cost accountability), financial services (document security), and manufacturing companies across Iowa all benefit significantly from print management solutions. Each industry has specific requirements that PaperCut, Uniflow, and PrinterLogic address effectively."
+      answer: "Healthcare facilities (HIPAA compliance), educational institutions (student quota management), government agencies (cost accountability), financial services (document security), and manufacturing companies across Iowa all benefit significantly from print management solutions. Each industry has specific requirements that PaperCut, uniFLOW, and PrinterLogic address effectively."
     },
     {
       question: "Is print management suitable for small Iowa businesses?",
