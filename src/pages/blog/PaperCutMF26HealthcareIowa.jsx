@@ -4,6 +4,7 @@ import { Calendar, User, ArrowRight, CheckCircle, Heart, Shield, FileText, Lock,
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import ContentRating from '../../components/ContentRating'
+import VerifiedReleaseFacts from '../../components/VerifiedReleaseFacts'
 
 const PaperCutMF26HealthcareIowa = () => {
   const breadcrumbItems = [
@@ -12,30 +13,59 @@ const PaperCutMF26HealthcareIowa = () => {
     { label: 'PaperCut MF 26 Healthcare Iowa', path: '/blog/papercut-mf-26-healthcare-iowa-2026' }
   ]
 
+  // Only verified MF 26.0 changes belong in this array - see
+  // src/config/products.js. Long-standing PaperCut capabilities that Iowa
+  // healthcare relies on are listed separately below, so readers can tell the
+  // difference between "new in 26.0" and "already available".
   const newFeatures = [
     {
-      icon: Lock,
-      title: 'Stronger HIPAA Audit Trail',
-      description: 'MF 26 expands tamper-evident logging to cover scan jobs, copy jobs, and release events, with native syslog/TLS forwarding.',
-      iowaImpact: 'Iowa hospitals and clinics can hand over a complete print/scan audit to compliance auditors in minutes instead of days.'
-    },
-    {
-      icon: FileText,
-      title: 'Advanced Scanning with PHI Redaction Hooks',
-      description: 'Validated metadata fields and integration hooks for AI redaction services tag and protect PHI at the device.',
-      iowaImpact: 'Iowa health systems integrating with Epic or Cerner can route scanned forms to the correct chart automatically while masking SSNs.'
-    },
-    {
       icon: Shield,
-      title: 'FIDO2 + Smart-Card Release',
-      description: 'Native FIDO2 support sits alongside the existing badge readers for passwordless, phishing-resistant release.',
-      iowaImpact: 'Iowa nursing units replace shared station passwords with tap-to-release while still satisfying joint commission requirements.'
+      title: 'Native SAML 2.0 single sign-on',
+      description: 'PaperCut MF 26.0 acts as a SAML 2.0 Service Provider, so print authenticates against the identity provider the health system already runs. Okta, Microsoft Entra ID, PingFederate, and JumpCloud are named as supported IdPs.',
+      iowaImpact: 'Iowa hospitals consolidating clinical application access under one IdP can bring the print and MFP fleet into the same identity governance instead of maintaining a separate print user list.'
+    },
+    {
+      icon: Lock,
+      title: 'Unified user sessions',
+      description: 'Centralized authentication carries one sign-in across the User Client, Print Deploy, and the web interfaces rather than prompting separately at each.',
+      iowaImpact: 'Fewer credential prompts on shared clinical workstations, which is where password-sharing habits usually start.'
     },
     {
       icon: Activity,
-      title: 'Resilient Site Server Architecture',
-      description: 'Improvements to Site Server failover keep secure release working even if WAN to the data center fails.',
-      iowaImpact: 'Critical-access hospitals across rural Iowa keep printing labels and discharge paperwork during network outages.'
+      title: 'Automatic end-of-life device protection',
+      description: 'Upgrading to 26.0 automatically disables device types that have reached end of life, preventing unmaintainable hardware from remaining in the environment.',
+      iowaImpact: 'Important for Iowa health systems with long device replacement cycles: audit your fleet before the upgrade window so a clinical-area MFP does not stop working unannounced.'
+    },
+    {
+      icon: FileText,
+      title: 'Rebuilt Ricoh embedded application',
+      description: 'The Ricoh embedded application has been rebuilt on Ricoh SmartSDK-V2 for supported Ricoh devices.',
+      iowaImpact: 'Iowa clinics running Ricoh MFPs should plan to validate the new embedded app in a non-clinical area before rolling it to patient-facing floors.'
+    }
+  ]
+
+  // Real, generally-available PaperCut capabilities - not new in 26.0.
+  // These are what actually carry an Iowa HIPAA print program day to day.
+  const establishedCapabilities = [
+    {
+      title: 'Secure print release',
+      description: 'Jobs are held until the user authenticates at the device, so PHI is never sitting unattended in an output tray.'
+    },
+    {
+      title: 'Card and badge authentication',
+      description: 'Existing proximity badge readers release jobs at the MFP, which is faster than typing credentials on a device panel between patients.'
+    },
+    {
+      title: 'Automatic deletion of unclaimed jobs',
+      description: 'Unreleased jobs are purged after a configurable window, limiting how long any PHI-bearing document can sit in a queue.'
+    },
+    {
+      title: 'Per-user and per-device logging',
+      description: 'Print, copy, and scan activity is attributed to a user account, which is the evidence trail HIPAA audits ask for.'
+    },
+    {
+      title: 'Site Servers for resilience',
+      description: 'Site Servers keep authentication and release working at a remote site when the link back to the primary server is down - relevant for Iowa critical-access hospitals.'
     }
   ]
 
@@ -45,8 +75,8 @@ const PaperCutMF26HealthcareIowa = () => {
       icon: Hospital,
       organization: 'Multi-site systems across Des Moines & Cedar Rapids',
       challenge: 'Securing print across hundreds of devices and dozens of departments under one HIPAA program',
-      solution: 'MF 26 secure release with FIDO2 + Epic integration for chart-aware metadata',
-      benefit: 'Single auditable platform, fewer help-desk tickets, and faster credentialing for traveling clinicians'
+      solution: 'Badge-based secure release across the fleet, with MF 26.0 SAML SSO tying print access to the same identity provider as clinical applications',
+      benefit: 'One auditable platform and one identity source, instead of a print user directory that drifts out of sync with HR and clinical onboarding'
     },
     {
       sector: 'Critical-Access Hospitals',
@@ -75,32 +105,33 @@ const PaperCutMF26HealthcareIowa = () => {
   ]
 
   const upgradeChecklist = [
+    { phase: 'EOL device audit', action: 'Identify any end-of-life device types in clinical areas before upgrading, because 26.0 disables them automatically' },
     { phase: 'Inventory', action: 'Catalog every device with PHI exposure - clinical, billing, admissions, lab' },
-    { phase: 'BAA Review', action: 'Confirm Business Associate Agreements cover MF 26 cloud components if used' },
-    { phase: 'Pilot Unit', action: 'Pilot in one nursing unit with FIDO2 + tap-to-release before broader rollout' },
-    { phase: 'Audit Sync', action: 'Wire MF 26 syslog into your SIEM (Sentinel, Splunk, or Graylog) and validate logs' },
-    { phase: 'Train', action: 'Run a 15-minute refresher with floor staff on the new release flow' }
+    { phase: 'BAA Review', action: 'Confirm Business Associate Agreements cover any cloud components in your deployment' },
+    { phase: 'IdP Registration', action: 'Register PaperCut MF as a SAML 2.0 Service Provider in your identity provider and confirm group mapping' },
+    { phase: 'Pilot Unit', action: 'Pilot SSO plus badge release in one nursing unit, and validate the Ricoh embedded app if you run Ricoh devices' },
+    { phase: 'Train', action: 'Run a short refresher with floor staff, particularly if you enable the new dark mode on device panels' }
   ]
 
   return (
     <>
       <SEO
-        title="PaperCut MF 26 for Iowa Healthcare: HIPAA, Epic, and Secure Release in 2026"
-        description="See how PaperCut MF 26 strengthens HIPAA-compliant printing for Iowa hospitals, clinics, and pharmacies - tamper-evident audit trails, PHI redaction hooks, FIDO2 release, and resilient Site Server architecture."
-        keywords="PaperCut MF 26 healthcare Iowa, HIPAA printing Iowa 2026, Iowa hospital print management, secure print release Iowa healthcare, PaperCut Epic Iowa, critical access hospital printing Iowa, PHI redaction printing"
+        title="PaperCut MF 26.0 for Iowa Healthcare: What Changed and What to Check First"
+        description="PaperCut MF 26.0 for Iowa hospitals and clinics: native SAML 2.0 SSO, unified sessions, a rebuilt Ricoh embedded app, and the end-of-life device audit to run before you upgrade a clinical fleet."
+        keywords="PaperCut MF 26 healthcare Iowa, PaperCut MF 26.0, PaperCut SAML SSO healthcare, HIPAA printing Iowa, Iowa hospital print management, secure print release Iowa healthcare, critical access hospital printing Iowa"
         canonicalUrl="https://iowaprintsolutions.com/blog/papercut-mf-26-healthcare-iowa-2026"
         schemaType="Article"
         additionalSchema={{
           '@type': 'Article',
-          'headline': 'PaperCut MF 26 for Iowa Healthcare: HIPAA, Epic, and Secure Release in 2026',
+          'headline': 'PaperCut MF 26.0 for Iowa Healthcare: What Changed and What to Check First',
           'author': { '@type': 'Organization', 'name': 'Infomax Office Systems', 'url': 'https://www.infomaxoffice.com' },
           'publisher': {
             '@type': 'Organization',
             'name': 'Iowa Print Solutions',
             'logo': { '@type': 'ImageObject', 'url': 'https://iowaprintsolutions.com/logo.png' }
           },
-          'datePublished': '2026-04-08',
-          'dateModified': '2026-05-04',
+          'datePublished': '2026-07-30',
+          'dateModified': '2026-07-30',
           'articleSection': 'Healthcare',
           'about': [
             { '@type': 'Thing', 'name': 'PaperCut MF' },
@@ -117,7 +148,7 @@ const PaperCutMF26HealthcareIowa = () => {
           <motion.header initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
             <div className="flex items-center text-sm text-gray-500 mb-4">
               <Calendar className="h-4 w-4 mr-2" />
-              <time dateTime="2026-04-08">April 8, 2026</time>
+              <time dateTime="2026-07-30">July 30, 2026</time>
               <span className="mx-2">•</span>
               <User className="h-4 w-4 mr-2" />
               <span>Iowa Print Solutions Team</span>
@@ -126,11 +157,11 @@ const PaperCutMF26HealthcareIowa = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              PaperCut MF 26 for Iowa Healthcare: HIPAA, Epic, and Secure Release in 2026
+              PaperCut MF 26.0 for Iowa Healthcare: What Changed and What to Check First
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              MF 26 is the most healthcare-relevant PaperCut release in years. Stronger audit trails, PHI redaction hooks, FIDO2 release, and a more resilient Site Server architecture all line up with what Iowa hospitals, clinics, and pharmacies are facing right now.
+              PaperCut MF 26.0 shipped on July 8, 2026. For Iowa healthcare the headline is identity, not clinical features: print can now authenticate through the same SAML identity provider as the rest of your application stack. The item that needs planning is the opposite of a feature - 26.0 automatically disables end-of-life device types when you upgrade.
             </p>
           </motion.header>
 
@@ -140,14 +171,16 @@ const PaperCutMF26HealthcareIowa = () => {
               <div>
                 <h3 className="text-lg font-semibold text-red-900 mb-2">Why Iowa healthcare leaders should care</h3>
                 <p className="text-red-800">
-                  HHS enforcement is up. Cyber-insurance carriers are tightening MFA requirements. And ransomware events at peer Midwest health systems have made boards much more interested in the print and scan attack surface. MF 26 directly addresses all three.
+                  Cyber-insurance carriers have tightened identity requirements, and print has often been the system left outside single sign-on. The SAML 2.0 support in MF 26.0 is what closes that specific gap. The rest of a HIPAA print program - secure release, badge authentication, purge of unclaimed jobs, per-user logging - is long-standing PaperCut functionality, covered further down.
                 </p>
               </div>
             </div>
           </motion.div>
 
           <motion.section initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">What is new in MF 26 for Healthcare</h2>
+            <VerifiedReleaseFacts productId="papercut" />
+
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">What MF 26.0 Means for Iowa Healthcare IT</h2>
             <div className="space-y-8">
               {newFeatures.map((feature, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-lg p-6">
@@ -188,7 +221,7 @@ const PaperCutMF26HealthcareIowa = () => {
                       <p className="text-gray-600 text-sm">{scenario.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900 mb-1">MF 26 Solution</h4>
+                      <h4 className="font-medium text-gray-900 mb-1">Approach</h4>
                       <p className="text-gray-600 text-sm">{scenario.solution}</p>
                     </div>
                     <div className="bg-green-50 p-3 rounded-lg">
@@ -221,22 +254,32 @@ const PaperCutMF26HealthcareIowa = () => {
           </motion.section>
 
           <motion.section initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Cyber-Insurance &amp; Compliance Alignment</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Where PaperCut Fits an Iowa HIPAA Print Program</h2>
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <p className="text-gray-600 mb-4">MF 26 helps Iowa hospitals and clinics meet several specific items that 2026 cyber-insurance renewals are flagging:</p>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start"><CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1" /><span className="text-sm">Phishing-resistant MFA on shared clinical workstations (FIDO2)</span></li>
-                <li className="flex items-start"><CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1" /><span className="text-sm">Tamper-evident logs for every printed/scanned PHI document</span></li>
-                <li className="flex items-start"><CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1" /><span className="text-sm">Automatic purge of unclaimed jobs to limit lateral PHI exposure</span></li>
-                <li className="flex items-start"><CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1" /><span className="text-sm">Encrypted transit and at-rest spool with FIPS-compliant ciphers</span></li>
-              </ul>
+              <p className="text-gray-600 mb-6">
+                These capabilities are not new in 26.0 - they are the established PaperCut features that do the actual compliance work. We list them separately because vendor release coverage tends to blur the two, and knowing which is which matters when you are writing a remediation plan.
+              </p>
+              <dl className="space-y-4">
+                {establishedCapabilities.map((cap) => (
+                  <div key={cap.title} className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true" />
+                    <div>
+                      <dt className="font-semibold text-gray-900 text-sm">{cap.title}</dt>
+                      <dd className="text-gray-600 text-sm mt-0.5">{cap.description}</dd>
+                    </div>
+                  </div>
+                ))}
+              </dl>
+              <p className="text-gray-500 text-sm mt-6 pt-6 border-t border-gray-200">
+                Scope note: PaperCut controls and logs printing, copying, and scanning. It is one control in a HIPAA program, not a substitute for one. Confirm how it maps to your own risk analysis with your compliance officer.
+              </p>
             </div>
           </motion.section>
 
           <motion.section initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }} className="mb-12">
             <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-lg text-white p-8">
               <div className="text-center">
-                <h2 className="text-3xl font-bold mb-4">Plan Your Iowa Healthcare PaperCut MF 26 Upgrade</h2>
+                <h2 className="text-3xl font-bold mb-4">Plan Your Iowa Healthcare PaperCut MF 26.0 Upgrade</h2>
                 <p className="text-xl text-red-100 mb-8 max-w-3xl mx-auto">
                   Infomax Office Systems has supported HIPAA-compliant print deployments at Iowa hospitals, specialty clinics, and rural critical-access facilities for years. We&apos;ll plan an upgrade that fits your compliance program and your clinical schedule.
                 </p>
@@ -256,7 +299,7 @@ const PaperCutMF26HealthcareIowa = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.0 }} className="border-t border-gray-200 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
               <div className="mb-4 md:mb-0">
-                <p className="text-sm text-gray-500">Published by <strong>Iowa Print Solutions Team</strong> on April 8, 2026</p>
+                <p className="text-sm text-gray-500">Published by <strong>Iowa Print Solutions Team</strong> on July 30, 2026</p>
                 <p className="text-sm text-gray-500">HIPAA-aligned print management for Iowa healthcare</p>
               </div>
               <div className="flex space-x-4">
