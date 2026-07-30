@@ -1,68 +1,135 @@
+# robots.txt - iowaprintsolutions.com
+#
+# ===========================================================================
+# CRITICAL: DO NOT DISALLOW /assets/, *.js, OR *.css
+# ===========================================================================
+# This site is a client-side React single-page app. dist/index.html ships an
+# empty <div id="root"> - every page's content, headings, links, and meta tags
+# are produced by the JavaScript bundle in /assets/.
+#
+# A previous version of this file contained:
+#     Disallow: /assets/
+#     Disallow: /*.js$
+#     Disallow: /*.css$
+#
+# That forbade crawlers from fetching the only files that render the site, so
+# any crawler respecting robots.txt saw a blank page on every URL. Blocking
+# render-critical resources on a client-rendered site is self-inflicted
+# deindexing. Google's own guidance is explicit that JS and CSS needed for
+# rendering must remain crawlable.
+#
+# If bundle size or crawl budget ever becomes a concern, the answer is
+# pre-rendering or SSR - never blocking the bundle.
+# ===========================================================================
 
 User-agent: *
 Allow: /
 
-# Sitemaps
 Sitemap: https://iowaprintsolutions.com/sitemap.xml
 
-# Encourage crawling of main content
-Allow: /
-Allow: /about
-Allow: /services
-Allow: /resources
-Allow: /blog
-Allow: /tools
-Allow: /contact
-Allow: /locations
-Allow: /services/*
-Allow: /resources/*
-Allow: /blog/*
-Allow: /locations/*
-
-# Disallow crawling of build files and assets
-Disallow: /assets/
-Disallow: /*.js$
-Disallow: /*.css$
-Disallow: /*.map$
-Disallow: /node_modules/
-
-# Allow specific file types that may be useful
-Allow: /*.pdf$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.png$
-Allow: /*.gif$
-Allow: /*.svg$
-
-# Crawl-delay to be respectful
-Crawl-delay: 1
-
-# Specific bot instructions
+# ---------------------------------------------------------------------------
+# Traditional search engines
+#
+# No Crawl-delay directives. Google ignores Crawl-delay entirely, and Bing
+# honours it - so the only thing the old "Crawl-delay: 1" achieved was slowing
+# Bing down for no benefit. Crawl rate is better managed in Search Console or
+# Bing Webmaster Tools if it is ever actually a problem.
+# ---------------------------------------------------------------------------
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
-# AI Search Engine Crawlers
-User-agent: PerplexityBot
+User-agent: DuckDuckBot
 Allow: /
-Crawl-delay: 1
+
+User-agent: Applebot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# AI search and answer engines
+#
+# These are allowed deliberately. Being the cited source when someone asks an
+# assistant about print management software in Iowa is a primary goal for this
+# site, and a crawler that cannot read a page cannot cite it.
+#
+# Note that training crawlers and search crawlers are SEPARATE user agents per
+# vendor. To stay citable in AI answers while opting out of model training,
+# block the training agent and keep the search agent allowed - do not block a
+# whole vendor. The split below keeps that choice available.
+#
+# "Claude-Web" was removed: it is a retired user agent, replaced by ClaudeBot
+# for crawling and Claude-SearchBot / Claude-User for retrieval.
+# ---------------------------------------------------------------------------
+
+# --- Retrieval / answer-time crawlers (keep allowed to remain citable) ---
+User-agent: OAI-SearchBot
+Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
-Crawl-delay: 1
 
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+# --- Training / dataset crawlers ---
+# Allowed: presence in model weights helps brand and product recall in
+# assistant answers even when no live citation occurs. Switch any of these to
+# "Disallow: /" to opt out of training without losing AI-search citations.
 User-agent: GPTBot
 Allow: /
-Crawl-delay: 1
 
-User-agent: Cohere-AI
+User-agent: ClaudeBot
 Allow: /
-Crawl-delay: 1
 
-User-agent: Claude-Web
+User-agent: anthropic-ai
 Allow: /
-Crawl-delay: 1
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Paths with no search value
+# ---------------------------------------------------------------------------
+# Internal diagnostic pages
+Disallow: /analytics-test
+Disallow: /debug-assets.html
+Disallow: /debug-20250826.html
+Disallow: /test-deploy.txt
+
+# Search results are thin and parameterised - not useful in an index
+Disallow: /search

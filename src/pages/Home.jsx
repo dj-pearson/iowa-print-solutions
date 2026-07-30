@@ -333,10 +333,28 @@ const Home = () => {
               className="text-center mb-12"
             >
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
-                Print Management ROI Data for Iowa Businesses (2025)
+                What Print Management Typically Changes
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto">
-                Based on actual implementations across 500+ Iowa organizations including healthcare systems, K-12 schools, universities, and enterprises
+                Illustrative before-and-after ranges for a mid-sized Iowa organization moving from
+                uncontrolled printing to a managed platform.
+              </p>
+              {/*
+                These figures are planning-grade illustrations, not measured
+                results. This block previously presented them as "ROI Data ...
+                based on actual implementations across 500+ Iowa organizations",
+                which implied a dataset that is not published anywhere and could
+                not be substantiated on request.
+
+                Replace with real numbers whenever a customer agrees to be cited,
+                with the scope stated (industry, user count, timeframe). Cited
+                specifics outperform round unsourced percentages both with
+                buyers and with AI answer engines.
+              */}
+              <p className="text-sm text-gray-500 max-w-3xl mx-auto mt-4">
+                Ranges vary considerably by fleet size, current device mix, and how much
+                uncontrolled colour printing exists today. We scope expected savings against
+                your own print data during an assessment rather than quoting an average.
               </p>
             </motion.div>
 
@@ -358,11 +376,18 @@ const Home = () => {
                     <td className="px-6 py-4 text-gray-700">$27,000/year</td>
                     <td className="px-6 py-4 font-semibold text-green-600">40% Reduction</td>
                   </tr>
+                  {/*
+                    Replaced a "60% vulnerable -> 5% risk = 92% Risk Reduction"
+                    row. Breach risk is not measurable to that precision, and
+                    quantifying it that way invites a challenge the site cannot
+                    answer. The control it describes is real, so it is now stated
+                    as a control rather than as a percentage.
+                  */}
                   <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 font-medium text-gray-900">Data Breach Risk</td>
-                    <td className="px-6 py-4 text-gray-700">High (60% vulnerable)</td>
-                    <td className="px-6 py-4 text-gray-700">Low (5% risk)</td>
-                    <td className="px-6 py-4 font-semibold text-green-600">92% Risk Reduction</td>
+                    <td className="px-6 py-4 font-medium text-gray-900">Documents left in output trays</td>
+                    <td className="px-6 py-4 text-gray-700">Routine, with no record of who printed what</td>
+                    <td className="px-6 py-4 text-gray-700">Held until the user authenticates at the device</td>
+                    <td className="px-6 py-4 font-semibold text-green-600">Secure release + per-user audit trail</td>
                   </tr>
                   <tr className="hover:bg-gray-50">
                     <td className="px-6 py-4 font-medium text-gray-900">IT Admin Time</td>
@@ -473,10 +498,11 @@ const Home = () => {
                 <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Typical Implementation</div>
                 <div className="text-xs md:text-sm text-gray-600">From kickoff to full deployment</div>
               </div>
+              {/* Was "92% Security Risk Reduction" - an unsourced figure. */}
               <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 md:p-6 rounded-xl shadow-md">
-                <div className="text-2xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">92%</div>
-                <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Security Risk Reduction</div>
-                <div className="text-xs md:text-sm text-gray-600">With secure print release enabled</div>
+                <div className="text-2xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">Zero</div>
+                <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Unclaimed pages left on trays</div>
+                <div className="text-xs md:text-sm text-gray-600">Secure release holds jobs until you are at the device</div>
               </div>
               <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-4 md:p-6 rounded-xl shadow-md">
                 <div className="text-2xl md:text-4xl font-bold text-orange-600 mb-1 md:mb-2">500+</div>
