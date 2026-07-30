@@ -191,10 +191,6 @@ const IowaEducationPrintSolutions = () => {
             description: "Budget management, usage reporting, and cost reduction strategies for educational institutions"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.9",
-          reviewCount: "67"
-        }}
       />
 
       <div className="min-h-screen bg-white">
@@ -561,7 +557,7 @@ const IowaEducationPrintSolutions = () => {
                   Call Education Specialists
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

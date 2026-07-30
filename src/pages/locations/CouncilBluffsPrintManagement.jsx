@@ -133,16 +133,6 @@ const CouncilBluffsPrintManagement = () => {
             description: "Secure technical documentation and quality control printing for Council Bluffs industrial facilities"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.8",
-          reviewCount: "26"
-        }}
-        review={{
-          ratingValue: "5",
-          author: "Patricia Williams, Logistics Operations Manager",
-          reviewBody: "Iowa Print Solutions perfectly understands our cross-state operations. Their PrinterLogic implementation unified our Council Bluffs and Omaha printing while eliminating server maintenance headaches.",
-          datePublished: "2024-01-28"
-        }}
       />
       
       <FAQSchema faqs={councilBluffsFAQ} />
@@ -174,7 +164,7 @@ const CouncilBluffsPrintManagement = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-orange-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -350,7 +340,7 @@ const CouncilBluffsPrintManagement = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-red-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

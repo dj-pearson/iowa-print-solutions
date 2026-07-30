@@ -6,8 +6,9 @@ const SoftwareProductSchema = ({
   description = "Enterprise print management and security software",
   category = "SecurityApplication",
   price,
-  ratingValue = "4.8",
-  reviewCount = "127",
+  // Real version string, e.g. "26.0". Omitted from schema when not supplied -
+  // this used to hardcode the literal string "Latest", which is meaningless.
+  softwareVersion,
   features = []
 }) => {
   const schema = {
@@ -17,7 +18,7 @@ const SoftwareProductSchema = ({
     'applicationCategory': category,
     'description': description,
     'operatingSystem': 'Windows, macOS, Linux',
-    'softwareVersion': 'Latest',
+    ...(softwareVersion && { 'softwareVersion': softwareVersion }),
     'offers': price ? {
       '@type': 'Offer',
       'price': price,
@@ -38,13 +39,9 @@ const SoftwareProductSchema = ({
         'url': 'https://iowaprintsolutions.com'
       }
     },
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': ratingValue,
-      'reviewCount': reviewCount,
-      'bestRating': '5',
-      'worstRating': '1'
-    },
+    // No aggregateRating: this component describes third-party vendor
+    // software, so any rating here would be Iowa Print Solutions inventing
+    // ratings for someone else's product. See OrganizationSchema.jsx.
     'featureList': features.length > 0 ? features.join(', ') : [
       'Secure Print Release',
       'User Authentication',
@@ -63,7 +60,7 @@ const SoftwareProductSchema = ({
       'name': 'Infomax Office Systems',
       'url': 'https://iowaprintsolutions.com',
       'telephone': '515-237-2352',
-      'email': 'gfleschinfomaxoffice@gmail.com',
+      'email': 'DPearson@InfomaxOffice.com',
       'address': {
         '@type': 'PostalAddress',
         'addressRegion': 'IA',

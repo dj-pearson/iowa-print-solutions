@@ -117,7 +117,7 @@ const DavenportPrintManagement = () => {
     'alternateName': 'Davenport Print Management Solutions',
     'description': 'Expert print management services in Davenport, Iowa and the Quad Cities. Specializing in multi-state operations, manufacturing, and healthcare since 1958.',
     'telephone': '515-237-2352',
-    'email': 'gfleschinfomaxoffice@gmail.com',
+    'email': 'DPearson@InfomaxOffice.com',
     'url': 'https://iowaprintsolutions.com/locations/davenport-print-management',
     'address': {
       '@type': 'PostalAddress',
@@ -201,7 +201,7 @@ const DavenportPrintManagement = () => {
                   Call Davenport: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-green-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -430,7 +430,7 @@ const DavenportPrintManagement = () => {
                   Call Quad Cities Team: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-green-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

@@ -19,7 +19,7 @@ export const siteConfig = {
     foundingDate: '1958',
     phone: '+1-515-237-2352',
     phoneDisplay: '(515) 237-2352',
-    email: 'gfleschinfomaxoffice@gmail.com',
+    email: 'DPearson@InfomaxOffice.com',
     website: 'https://www.infomaxoffice.com',
     priceRange: '$$',
   },
@@ -46,11 +46,18 @@ export const siteConfig = {
     }
   },
 
-  // Social profiles
+  // Social profiles. These feed schema.org `sameAs`, so every entry must be a
+  // real, live profile URL - a placeholder here tells search engines the
+  // business is associated with a page that does not exist.
+  //
+  // TODO: add the real Google Business Profile URL. The previous value was a
+  // dummy CID (cid=12345678901234567890) and has been removed. Get the real
+  // one from the Google Business Profile dashboard ("Share your Business
+  // Profile"), then add it back as `googleMaps`. It is the single highest-value
+  // sameAs link for local search.
   social: {
     facebook: 'https://www.facebook.com/infomaxofficesystems',
     linkedin: 'https://www.linkedin.com/company/infomax-office-systems',
-    googleMaps: 'https://maps.google.com/maps?cid=12345678901234567890',
   },
 
   // Business hours
@@ -203,13 +210,17 @@ export const siteConfig = {
     organization: 'Iowa Print Solutions',
   },
 
-  // Ratings/Reviews aggregation
-  ratings: {
-    aggregateRating: 4.8,
-    reviewCount: 150,
-    bestRating: 5,
-    worstRating: 1,
-  },
+  // Ratings/Reviews aggregation - INTENTIONALLY REMOVED.
+  //
+  // This previously held an invented 4.8 / 150-review aggregate that was
+  // emitted as schema.org AggregateRating on most pages, alongside per-page
+  // review counts that were also made up. Google's review snippet guidelines
+  // prohibit self-serving review markup and require rated reviews to be
+  // genuinely collected and visible on the page, so this was a manual-action
+  // risk as well as untrue.
+  //
+  // To reinstate: collect real reviews (Google Business Profile), display them
+  // on the page, and emit markup that matches what visitors actually see.
 
   // Expertise areas (for schema.org knowsAbout)
   expertise: [

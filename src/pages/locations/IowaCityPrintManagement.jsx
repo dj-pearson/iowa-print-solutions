@@ -117,7 +117,7 @@ const IowaCityPrintManagement = () => {
     'alternateName': 'Iowa City Print Management Solutions',
     'description': 'Expert print management services in Iowa City, Iowa. Specializing in University of Iowa, healthcare, and professional services since 1958.',
     'telephone': '515-237-2352',
-    'email': 'gfleschinfomaxoffice@gmail.com',
+    'email': 'DPearson@InfomaxOffice.com',
     'url': 'https://iowaprintsolutions.com/locations/iowa-city-print-management',
     'address': {
       '@type': 'PostalAddress',
@@ -201,7 +201,7 @@ const IowaCityPrintManagement = () => {
                   Call Iowa City: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-yellow-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -437,7 +437,7 @@ const IowaCityPrintManagement = () => {
                   Call Iowa City Team: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-yellow-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

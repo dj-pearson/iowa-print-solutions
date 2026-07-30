@@ -219,16 +219,6 @@ const PrinterLogicIowa = () => {
             description: "Complete removal of traditional print server infrastructure with modern serverless solution"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.7",
-          reviewCount: "28"
-        }}
-        review={{
-          ratingValue: "5",
-          author: "Tom Richards, IT Manager",
-          reviewBody: "PrinterLogic eliminated our print server headaches completely. Iowa Print Solutions' expertise made the transition seamless and our IT team can now focus on strategic initiatives instead of print server maintenance.",
-          datePublished: "2024-01-25"
-        }}
       />
       
       <FAQSchema faqs={printerLogicFAQ} />
@@ -266,7 +256,7 @@ const PrinterLogicIowa = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-purple-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -588,7 +578,7 @@ const PrinterLogicIowa = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-purple-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

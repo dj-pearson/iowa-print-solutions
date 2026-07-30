@@ -203,16 +203,6 @@ const PaperCutIowa = () => {
             description: "Secure print release configuration with badge readers, PIN codes, and mobile app integration"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.8",
-          reviewCount: "47"
-        }}
-        review={{
-          ratingValue: "5",
-          author: "Sarah Johnson, IT Director",
-          reviewBody: "Iowa Print Solutions transformed our school district's printing chaos into an organized, cost-effective system. PaperCut implementation was flawless and their ongoing support is exceptional.",
-          datePublished: "2024-01-15"
-        }}
       />
       
       <FAQSchema faqs={paperCutFAQ} />
@@ -223,8 +213,6 @@ const PaperCutIowa = () => {
         productName="PaperCut MF - Iowa Copier Security Software"
         description="Enterprise copier and printer security software for Iowa businesses. Prevent data breaches, ensure HIPAA compliance, and secure your multifunction printers with user authentication, secure print release, and comprehensive audit trails."
         category="SecurityApplication"
-        ratingValue="4.9"
-        reviewCount="156"
         features={[
           'Secure Print Release',
           'User Authentication (Badge, PIN, Mobile)',
@@ -274,7 +262,7 @@ const PaperCutIowa = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -550,7 +538,7 @@ const PaperCutIowa = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

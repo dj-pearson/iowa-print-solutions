@@ -133,16 +133,6 @@ const SiouxCityPrintManagement = () => {
             description: "HIPAA-compliant printing and secure document workflows for Sioux City medical facilities"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.7",
-          reviewCount: "23"
-        }}
-        review={{
-          ratingValue: "5",
-          author: "Lisa Chen, Agribusiness Operations Manager",
-          reviewBody: "Iowa Print Solutions understands agriculture technology needs perfectly. Their PaperCut implementation secured our grain trading documents while streamlining our seasonal reporting processes.",
-          datePublished: "2024-01-22"
-        }}
       />
       
       <FAQSchema faqs={siouxCityFAQ} />
@@ -174,7 +164,7 @@ const SiouxCityPrintManagement = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -350,7 +340,7 @@ const SiouxCityPrintManagement = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

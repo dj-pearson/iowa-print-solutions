@@ -135,10 +135,6 @@ const IowaHealthcarePrintSolutions = () => {
             description: "Encrypted workflows for patient records, prescriptions, insurance forms, and medical documentation"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.9",
-          reviewCount: "73"
-        }}
       />
 
       <div className="min-h-screen bg-white">
@@ -169,7 +165,7 @@ const IowaHealthcarePrintSolutions = () => {
                   Call Healthcare Team
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -459,7 +455,7 @@ const IowaHealthcarePrintSolutions = () => {
                   Call Healthcare Specialists
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

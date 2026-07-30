@@ -125,28 +125,8 @@ const LocalBusinessSchema = () => {
         }
       ]
     },
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.8',
-      'bestRating': '5',
-      'worstRating': '1',
-      'ratingCount': '47'
-    },
-    'review': [
-      {
-        '@type': 'Review',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5'
-        },
-        'author': {
-          '@type': 'Person',
-          'name': 'Sarah Johnson'
-        },
-        'reviewBody': 'Excellent PaperCut implementation at our Iowa healthcare facility. Professional service and ongoing support.'
-      }
-    ]
+    // No aggregateRating / review markup - see OrganizationSchema.jsx for why.
+    // Ratings must come from real, on-page, independently collected reviews.
   }
 
   return (

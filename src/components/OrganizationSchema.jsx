@@ -16,7 +16,7 @@ const OrganizationSchema = () => {
       "@type": "ContactPoint",
       "telephone": "+1-515-237-2352",
       "contactType": "customer service",
-      "email": "gfleschinfomaxoffice@gmail.com",
+      "email": "DPearson@InfomaxOffice.com",
       "areaServed": "IA",
       "availableLanguage": "English"
     },
@@ -123,52 +123,26 @@ const OrganizationSchema = () => {
         }
       ]
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Sarah Johnson"
-        },
-        "reviewBody": "Outstanding PaperCut implementation at our Iowa healthcare facility. The team's expertise in HIPAA compliance and ongoing support has been exceptional.",
-        "datePublished": "2024-01-15"
-      },
-      {
-        "@type": "Review", 
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Mark Thompson"
-        },
-        "reviewBody": "Iowa Print Solutions transformed our manufacturing print infrastructure. Their PrinterLogic implementation eliminated our server headaches and reduced costs significantly.",
-        "datePublished": "2024-01-18"
-      }
-    ],
+    // NOTE: No aggregateRating or review markup here, deliberately.
+    //
+    // This block previously emitted a hardcoded 4.8/150 rating plus two
+    // Review entries attributed to invented people. Google's review snippet
+    // guidelines prohibit self-serving review markup and require that rated
+    // reviews be genuinely collected and visible on the page, so that markup
+    // was both untrue and a manual-action risk.
+    //
+    // To add ratings back: collect real reviews (Google Business Profile is
+    // the natural source), display them on the page, and emit markup that
+    // matches what a visitor can actually see.
     "sameAs": [
       "https://www.facebook.com/infomaxofficesystems",
-      "https://www.linkedin.com/company/infomax-office-systems",
-      "https://maps.google.com/maps?cid=12345678901234567890"
+      "https://www.linkedin.com/company/infomax-office-systems"
     ],
     "knowsAbout": [
       "PaperCut MF",
       "uniFLOW",
-      "PrinterLogic", 
+      "Vasion Print",
+      "PrinterLogic",
       "Print Management",
       "HIPAA Compliance",
       "Secure Printing",

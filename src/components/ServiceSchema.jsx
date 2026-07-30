@@ -24,7 +24,7 @@ const ServiceSchema = ({
         "addressRegion": "IA",
         "addressCountry": "US"
       },
-      "telephone": "(515) 555-PRINT",
+      "telephone": "+1-515-237-2352",
       "url": "https://iowaprintsolutions.com"
     },
     "serviceType": serviceType,

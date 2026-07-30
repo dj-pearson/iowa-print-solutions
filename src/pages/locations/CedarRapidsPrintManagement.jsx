@@ -116,7 +116,7 @@ const CedarRapidsPrintManagement = () => {
     'alternateName': 'Cedar Rapids Print Management Solutions',
     'description': 'Expert print management services in Cedar Rapids, Iowa. Specializing in aerospace, manufacturing, and healthcare solutions since 1958.',
     'telephone': '515-237-2352',
-    'email': 'gfleschinfomaxoffice@gmail.com',
+    'email': 'DPearson@InfomaxOffice.com',
     'url': 'https://iowaprintsolutions.com/locations/cedar-rapids-print-management',
     'address': {
       '@type': 'PostalAddress',
@@ -200,7 +200,7 @@ const CedarRapidsPrintManagement = () => {
                   Call Cedar Rapids: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-red-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -447,7 +447,7 @@ const CedarRapidsPrintManagement = () => {
                   Call Cedar Rapids Team: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-red-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

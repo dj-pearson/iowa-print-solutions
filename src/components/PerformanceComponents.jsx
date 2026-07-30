@@ -96,7 +96,7 @@ const SmartCTA = ({ pageType, location }) => {
           title: 'Get HIPAA-Compliant Print Solutions',
           subtitle: 'Free healthcare print assessment',
           primaryCTA: 'Schedule HIPAA Assessment',
-          primaryAction: 'mailto:gfleschinfomaxoffice@gmail.com?subject=HIPAA Print Assessment',
+          primaryAction: 'mailto:DPearson@InfomaxOffice.com?subject=HIPAA Print Assessment',
           secondaryCTA: 'Call Healthcare Team',
           secondaryAction: 'tel:(515) 237-2352',
           icon: <Phone className="h-5 w-5" />
@@ -116,7 +116,7 @@ const SmartCTA = ({ pageType, location }) => {
           title: 'Get Expert Implementation Guidance',
           subtitle: 'Turn your savings into reality',
           primaryCTA: 'Schedule Consultation',
-          primaryAction: 'mailto:gfleschinfomaxoffice@gmail.com',
+          primaryAction: 'mailto:DPearson@InfomaxOffice.com',
           secondaryCTA: 'Call (515) 237-2352',
           secondaryAction: 'tel:(515) 237-2352',
           icon: <Phone className="h-5 w-5" />
@@ -126,7 +126,7 @@ const SmartCTA = ({ pageType, location }) => {
           title: 'Ready to Choose the Right Solution?',
           subtitle: 'Get personalized recommendations',
           primaryCTA: 'Free Consultation',
-          primaryAction: 'mailto:gfleschinfomaxoffice@gmail.com',
+          primaryAction: 'mailto:DPearson@InfomaxOffice.com',
           secondaryCTA: 'Calculate ROI',
           secondaryAction: '/print-cost-calculator',
           icon: <Calculator className="h-5 w-5" />
@@ -136,7 +136,7 @@ const SmartCTA = ({ pageType, location }) => {
           title: 'Get Expert Print Management Guidance',
           subtitle: 'Free consultation & assessment',
           primaryCTA: 'Schedule Assessment',
-          primaryAction: 'mailto:gfleschinfomaxoffice@gmail.com',
+          primaryAction: 'mailto:DPearson@InfomaxOffice.com',
           secondaryCTA: 'Call (515) 237-2352',
           secondaryAction: 'tel:(515) 237-2352',
           icon: <Phone className="h-5 w-5" />

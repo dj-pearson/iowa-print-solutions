@@ -158,7 +158,7 @@ const Contact = () => {
       'alternateName': 'Iowa Print Solutions',
       'description': 'Expert print management solutions for Iowa businesses since 1958',
       'telephone': '515-237-2352',
-      'email': 'gfleschinfomaxoffice@gmail.com',
+      'email': 'DPearson@InfomaxOffice.com',
       'url': 'https://iowaprintsolutions.com',
       'address': {
         '@type': 'PostalAddress',

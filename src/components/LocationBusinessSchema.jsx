@@ -4,7 +4,7 @@ const LocationBusinessSchema = ({
   locationName,
   description,
   address,
-  telephone = "(515) 555-PRINT",
+  telephone = "+1-515-237-2352",
   url = "https://iowaprintsolutions.com",
   openingHours = [
     "Mo-Fr 08:00-17:00"

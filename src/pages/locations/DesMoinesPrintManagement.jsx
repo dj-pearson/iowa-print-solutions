@@ -112,7 +112,7 @@ const DesMoinesPrintManagement = () => {
     'alternateName': 'Des Moines Print Management Solutions',
     'description': 'Leading print management services in Des Moines, Iowa. Expert PaperCut, uniFLOW, and PrinterLogic implementation since 1958.',
     'telephone': '515-237-2352',
-    'email': 'gfleschinfomaxoffice@gmail.com',
+    'email': 'DPearson@InfomaxOffice.com',
     'url': 'https://iowaprintsolutions.com/locations/des-moines-print-management',
     'address': {
       '@type': 'PostalAddress',
@@ -187,16 +187,6 @@ const DesMoinesPrintManagement = () => {
             description: "Modern serverless print management for Des Moines multi-location businesses"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.9",
-          reviewCount: "52"
-        }}
-        review={{
-          ratingValue: "5",
-          author: "Jennifer Martinez, Insurance Operations Manager",
-          reviewBody: "Iowa Print Solutions revolutionized our Des Moines office printing workflows. Their PaperCut implementation saved us thousands annually while improving security and efficiency.",
-          datePublished: "2024-01-10"
-        }}
       />
       
       <FAQSchema faqs={desMoinesFAQ} />
@@ -240,7 +230,7 @@ const DesMoinesPrintManagement = () => {
                   </PhoneTracker>
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -711,7 +701,7 @@ const DesMoinesPrintManagement = () => {
                   </PhoneTracker>
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
