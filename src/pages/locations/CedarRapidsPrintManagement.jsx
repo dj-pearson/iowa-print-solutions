@@ -9,7 +9,7 @@ const CedarRapidsPrintManagement = () => {
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Locations', href: '/locations' },
-    { label: 'Cedar Rapids Print Management', href: '/locations/cedar-rapids-print-management' }
+    { label: 'Cedar Rapids Print Management', href: '/locations/cedar-rapids' }
   ]
 
   const cedarRapidsFAQ = [
@@ -117,7 +117,7 @@ const CedarRapidsPrintManagement = () => {
     'description': 'Expert print management services in Cedar Rapids, Iowa. Specializing in aerospace, manufacturing, and healthcare solutions since 1958.',
     'telephone': '515-237-2352',
     'email': 'DPearson@InfomaxOffice.com',
-    'url': 'https://iowaprintsolutions.com/locations/cedar-rapids-print-management',
+    'url': 'https://iowaprintsolutions.com/locations/cedar-rapids',
     'address': {
       '@type': 'PostalAddress',
       'addressLocality': 'Cedar Rapids',
@@ -162,7 +162,7 @@ const CedarRapidsPrintManagement = () => {
         title="Cedar Rapids Print Management | Manufacturing & Aerospace Solutions"
         description="Expert print management for Cedar Rapids aerospace, manufacturing & healthcare. ITAR compliance, secure workflows. Serving Collins Aerospace & Cedar Rapids metro."
         keywords="Cedar Rapids print management, aerospace printing Cedar Rapids, manufacturing document control, Collins Aerospace printing, Mercy Medical print solutions"
-        canonicalUrl="https://iowaprintsolutions.com/locations/cedar-rapids-print-management"
+        canonicalUrl="https://iowaprintsolutions.com/locations/cedar-rapids"
         schemaType="LocalBusiness"
         additionalSchema={seoSchema}
       />

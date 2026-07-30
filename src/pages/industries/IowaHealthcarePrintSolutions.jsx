@@ -62,19 +62,19 @@ const IowaHealthcarePrintSolutions = () => {
       city: 'Des Moines',
       facilities: 'UnityPoint Health, MercyOne, Iowa Methodist',
       specialties: 'Large hospital systems, medical campuses',
-      link: '/locations/des-moines-print-management'
+      link: '/locations/des-moines'
     },
     {
       city: 'Iowa City', 
       facilities: 'UIHC, Mercy Iowa City, UI Children\'s Hospital',
       specialties: 'Academic medical center, research facilities',
-      link: '/locations/iowa-city-print-management'
+      link: '/locations/iowa-city'
     },
     {
       city: 'Cedar Rapids',
       facilities: 'UnityPoint St. Luke\'s, Mercy Medical',
       specialties: 'Regional medical centers, specialty clinics',
-      link: '/locations/cedar-rapids-print-management'
+      link: '/locations/cedar-rapids'
     }
   ]
 

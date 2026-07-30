@@ -16,14 +16,14 @@ const DesMoinesPrintManagement = () => {
   // const { addInteraction, addPageView } = useLeadScoring()
   
   React.useEffect(() => {
-    // addPageView('/locations/des-moines-print-management', 'Des Moines Print Management')
+    // addPageView('/locations/des-moines', 'Des Moines Print Management')
     trackLocationPageView('Des Moines')
   }, [])
 
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Locations', href: '/locations' },
-    { label: 'Des Moines Print Management', href: '/locations/des-moines-print-management' }
+    { label: 'Des Moines Print Management', href: '/locations/des-moines' }
   ]
 
   const desMoinesFAQ = [
@@ -113,7 +113,7 @@ const DesMoinesPrintManagement = () => {
     'description': 'Leading print management services in Des Moines, Iowa. Expert PaperCut, uniFLOW, and PrinterLogic implementation since 1958.',
     'telephone': '515-237-2352',
     'email': 'DPearson@InfomaxOffice.com',
-    'url': 'https://iowaprintsolutions.com/locations/des-moines-print-management',
+    'url': 'https://iowaprintsolutions.com/locations/des-moines',
     'address': {
       '@type': 'PostalAddress',
       'addressLocality': 'Des Moines',
@@ -158,7 +158,7 @@ const DesMoinesPrintManagement = () => {
         title="Des Moines Print Management 2025 | PaperCut & uniFLOW Services - 150+ Local Clients Since 1958"
         description="Des Moines print management experts. PaperCut ($3K-$15K), uniFLOW ($5K-$20K), PrinterLogic implementation. 150+ Des Moines clients, 2-hour response time. Serving West Des Moines, Ankeny, Urbandale, Waukee. Call Infomax Office Systems (515) 237-2352. Insurance, government, healthcare specialists."
         keywords="Des Moines print management 2025, PaperCut Des Moines IA, uniFLOW Des Moines, PrinterLogic Des Moines, West Des Moines printing services, Ankeny print management, Urbandale document solutions, Des Moines metro print services, insurance print management Des Moines, government print solutions Iowa"
-        canonicalUrl="https://iowaprintsolutions.com/locations/des-moines-print-management"
+        canonicalUrl="https://iowaprintsolutions.com/locations/des-moines"
         schemaType="LocalBusiness"
         additionalSchema={seoSchema}
       />
@@ -606,13 +606,13 @@ const DesMoinesPrintManagement = () => {
               {[
                 {
                   city: "Cedar Rapids",
-                  href: "/locations/cedar-rapids-print-management",
+                  href: "/locations/cedar-rapids",
                   description: "Manufacturing & healthcare print solutions",
                   industries: "Medical • Manufacturing • Professional"
                 },
                 {
                   city: "Iowa City", 
-                  href: "/locations/iowa-city-print-management",
+                  href: "/locations/iowa-city",
                   description: "University & healthcare specialization",
                   industries: "University • Healthcare • Research"
                 },
@@ -624,7 +624,7 @@ const DesMoinesPrintManagement = () => {
                 },
                 {
                   city: "Davenport",
-                  href: "/locations/davenport-print-management",
+                  href: "/locations/davenport",
                   description: "Quad Cities business solutions",
                   industries: "Healthcare • Manufacturing • Logistics"
                 },

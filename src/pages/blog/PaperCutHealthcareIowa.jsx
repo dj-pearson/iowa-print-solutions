@@ -405,9 +405,9 @@ const PaperCutHealthcareIowa = () => {
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-800">Healthcare Locations:</h4>
                   <ul className="space-y-2 text-sm">
-                    <li><Link to="/locations/des-moines-print-management" className="text-blue-600 hover:text-blue-700">📍 Des Moines Medical Centers</Link></li>
-                    <li><Link to="/locations/cedar-rapids-print-management" className="text-blue-600 hover:text-blue-700">📍 Cedar Rapids Healthcare</Link></li>
-                    <li><Link to="/locations/iowa-city-print-management" className="text-blue-600 hover:text-blue-700">📍 Iowa City Medical</Link></li>
+                    <li><Link to="/locations/des-moines" className="text-blue-600 hover:text-blue-700">📍 Des Moines Medical Centers</Link></li>
+                    <li><Link to="/locations/cedar-rapids" className="text-blue-600 hover:text-blue-700">📍 Cedar Rapids Healthcare</Link></li>
+                    <li><Link to="/locations/iowa-city" className="text-blue-600 hover:text-blue-700">📍 Iowa City Medical</Link></li>
                   </ul>
                 </div>
                 <div className="space-y-3">

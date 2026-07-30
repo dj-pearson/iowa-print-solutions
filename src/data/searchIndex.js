@@ -340,7 +340,7 @@ export const searchIndex = [
     description: 'Expert print management services for Des Moines businesses. PaperCut, uniFLOW & PrinterLogic implementation.',
     keywords: ['Des Moines', 'capital city', 'central Iowa', 'metro', 'downtown'],
     category: 'Des Moines Metro',
-    path: '/locations/des-moines-print-management'
+    path: '/locations/des-moines'
   },
   {
     id: 'cedar-rapids',
@@ -349,7 +349,7 @@ export const searchIndex = [
     description: 'Print management services for Cedar Rapids manufacturing and healthcare organizations.',
     keywords: ['Cedar Rapids', 'eastern Iowa', 'manufacturing', 'Linn County'],
     category: 'Eastern Iowa',
-    path: '/locations/cedar-rapids-print-management'
+    path: '/locations/cedar-rapids'
   },
   {
     id: 'iowa-city',
@@ -358,7 +358,7 @@ export const searchIndex = [
     description: 'Print management for Iowa City university and medical center environments.',
     keywords: ['Iowa City', 'University of Iowa', 'UIHC', 'medical center', 'academic'],
     category: 'Eastern Iowa',
-    path: '/locations/iowa-city-print-management'
+    path: '/locations/iowa-city'
   },
   {
     id: 'davenport',
@@ -367,7 +367,7 @@ export const searchIndex = [
     description: 'Print management services for Davenport and the Quad Cities region.',
     keywords: ['Davenport', 'Quad Cities', 'Mississippi River', 'Illinois border'],
     category: 'Quad Cities',
-    path: '/locations/davenport-print-management'
+    path: '/locations/davenport'
   },
   {
     id: 'waterloo-cedar-falls',

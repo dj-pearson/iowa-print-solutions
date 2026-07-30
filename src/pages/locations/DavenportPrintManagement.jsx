@@ -9,7 +9,7 @@ const DavenportPrintManagement = () => {
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Locations', href: '/locations' },
-    { label: 'Davenport Print Management', href: '/locations/davenport-print-management' }
+    { label: 'Davenport Print Management', href: '/locations/davenport' }
   ]
 
   const davenportFAQ = [
@@ -118,7 +118,7 @@ const DavenportPrintManagement = () => {
     'description': 'Expert print management services in Davenport, Iowa and the Quad Cities. Specializing in multi-state operations, manufacturing, and healthcare since 1958.',
     'telephone': '515-237-2352',
     'email': 'DPearson@InfomaxOffice.com',
-    'url': 'https://iowaprintsolutions.com/locations/davenport-print-management',
+    'url': 'https://iowaprintsolutions.com/locations/davenport',
     'address': {
       '@type': 'PostalAddress',
       'addressLocality': 'Davenport',
@@ -163,7 +163,7 @@ const DavenportPrintManagement = () => {
         title="Davenport Print Management | Quad Cities Multi-State Solutions"
         description="Expert print management for Davenport & Quad Cities. Multi-state operations, manufacturing & healthcare solutions. Genesis Health System & regional businesses trust us."
         keywords="Davenport print management, Quad Cities printing, multi-state print solutions, Genesis Health System printing, Davenport manufacturing print control"
-        canonicalUrl="https://iowaprintsolutions.com/locations/davenport-print-management"
+        canonicalUrl="https://iowaprintsolutions.com/locations/davenport"
         schemaType="LocalBusiness"
         additionalSchema={seoSchema}
       />

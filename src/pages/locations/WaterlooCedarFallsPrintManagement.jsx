@@ -338,13 +338,13 @@ const WaterlooCedarFallsPrintManagement = () => {
               {[
                 {
                   city: "Des Moines",
-                  href: "/locations/des-moines-print-management",
+                  href: "/locations/des-moines",
                   description: "Capital city print solutions",
                   specialties: "Insurance • Government • Healthcare"
                 },
                 {
                   city: "Cedar Rapids",
-                  href: "/locations/cedar-rapids-print-management",
+                  href: "/locations/cedar-rapids",
                   description: "Manufacturing hub expertise", 
                   specialties: "Manufacturing • Medical • Tech"
                 },
@@ -362,7 +362,7 @@ const WaterlooCedarFallsPrintManagement = () => {
                 },
                 {
                   city: "Iowa City",
-                  href: "/locations/iowa-city-print-management", 
+                  href: "/locations/iowa-city", 
                   description: "University & healthcare",
                   specialties: "University • Healthcare • Research"
                 },

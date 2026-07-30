@@ -127,10 +127,6 @@ const UniversalPrintV2Iowa2026 = lazy(() => import('./pages/blog/UniversalPrintV
 const Vasion2026Iowa = lazy(() => import('./pages/blog/Vasion2026Iowa'))
 
 // Location Pages
-const DesMoinesPrintSolutions = lazy(() => import('./pages/locations/DesMoinesPrintSolutions'))
-const CedarRapidsPrintSolutions = lazy(() => import('./pages/locations/CedarRapidsPrintSolutions'))
-const IowaCityPrintSolutions = lazy(() => import('./pages/locations/IowaCityPrintSolutions'))
-const DavenportPrintSolutions = lazy(() => import('./pages/locations/DavenportPrintSolutions'))
 const DesMoinesPrintManagement = lazy(() => import('./pages/locations/DesMoinesPrintManagement'))
 const CedarRapidsPrintManagement = lazy(() => import('./pages/locations/CedarRapidsPrintManagement'))
 const IowaCityPrintManagement = lazy(() => import('./pages/locations/IowaCityPrintManagement'))
@@ -306,15 +302,29 @@ const AppContent = () => {
             <Route path="/blog/microsoft-universal-print-v2-iowa-2026" element={<UniversalPrintV2Iowa2026 />} />
             <Route path="/blog/printerlogic-vasion-2026-iowa" element={<Vasion2026Iowa />} />
 
-            {/* Location Pages */}
-            <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
-            <Route path="/locations/des-moines-print-management" element={<DesMoinesPrintManagement />} />
-            <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintSolutions />} />
-            <Route path="/locations/cedar-rapids-print-management" element={<CedarRapidsPrintManagement />} />
-            <Route path="/locations/iowa-city" element={<IowaCityPrintSolutions />} />
-            <Route path="/locations/iowa-city-print-management" element={<IowaCityPrintManagement />} />
-            <Route path="/locations/davenport" element={<DavenportPrintSolutions />} />
-            <Route path="/locations/davenport-print-management" element={<DavenportPrintManagement />} />
+            {/*
+              Location Pages - one page per city.
+
+              Des Moines, Cedar Rapids, Iowa City, and Davenport each used to
+              have TWO pages competing for the same intent: a thin page at
+              /locations/{city} and a richer one at
+              /locations/{city}-print-management. They cannibalized each other.
+
+              The richer *PrintManagement component now serves the clean
+              /locations/{city} URL, which matches the `slug` values in
+              src/config/site.js. The old -print-management paths are 301'd in
+              public/_redirects, so do NOT re-add routes for them here - a
+              client-side route would shadow the redirect.
+
+              The remaining four cities still live at -print-management URLs.
+              Migrating them is a URL change with no cannibalization to fix, so
+              it was left out of this pass deliberately. See
+              docs/SEO-GEO-STRATEGY.md before changing them.
+            */}
+            <Route path="/locations/des-moines" element={<DesMoinesPrintManagement />} />
+            <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintManagement />} />
+            <Route path="/locations/iowa-city" element={<IowaCityPrintManagement />} />
+            <Route path="/locations/davenport" element={<DavenportPrintManagement />} />
             <Route path="/locations/waterloo-cedar-falls-print-management" element={<WaterlooCedarFallsPrintManagement />} />
             <Route path="/locations/sioux-city-print-management" element={<SiouxCityPrintManagement />} />
             <Route path="/locations/dubuque-print-management" element={<DubuquePrintManagement />} />

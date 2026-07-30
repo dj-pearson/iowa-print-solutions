@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, User, ArrowRight, CheckCircle, Zap, Shield, TrendingUp, FileText, Users, GraduationCap, BookOpen, Lock } from 'lucide-react'
+import { Calendar, User, ArrowRight, CheckCircle, Zap, Shield, Users, GraduationCap, BookOpen, Lock } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import ContentRating from '../../components/ContentRating'

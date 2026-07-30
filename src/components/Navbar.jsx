@@ -149,10 +149,10 @@ const Navbar = () => {
           {
             title: 'Major Cities',
             items: [
-              { name: 'Des Moines', path: '/locations/des-moines-print-management', description: 'Capital city solutions' },
-              { name: 'Cedar Rapids', path: '/locations/cedar-rapids-print-management', description: 'Manufacturing & healthcare' },
-              { name: 'Iowa City', path: '/locations/iowa-city-print-management', description: 'University & medical center' },
-              { name: 'Davenport', path: '/locations/davenport-print-management', description: 'Quad Cities solutions' }
+              { name: 'Des Moines', path: '/locations/des-moines', description: 'Capital city solutions' },
+              { name: 'Cedar Rapids', path: '/locations/cedar-rapids', description: 'Manufacturing & healthcare' },
+              { name: 'Iowa City', path: '/locations/iowa-city', description: 'University & medical center' },
+              { name: 'Davenport', path: '/locations/davenport', description: 'Quad Cities solutions' }
             ]
           },
           {

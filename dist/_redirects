@@ -3,10 +3,29 @@
 /IPSLogo.png /IPSLogo.png 200
 /robots.txt /robots.txt 200
 /sitemap.xml /sitemap.xml 200
+/llms.txt /llms.txt 200
 /test-deploy.txt /test-deploy.txt 200
 
 # Assets directory - serve directly
 /assets/* /assets/:splat 200
+
+# ---------------------------------------------------------------------------
+# Canonical location URLs (301)
+#
+# Des Moines, Cedar Rapids, Iowa City, and Davenport each had two pages
+# competing for the same search intent: a thin page at /locations/{city} and a
+# richer one at /locations/{city}-print-management. The richer page now serves
+# the clean /locations/{city} URL, and the old path 301s here so link equity
+# consolidates onto one page instead of being split between two.
+#
+# These MUST stay above the SPA catch-all below, which would otherwise return
+# 200 for them and defeat the redirect. There are deliberately no React Router
+# routes for the old paths - a client-side route would shadow these rules.
+# ---------------------------------------------------------------------------
+/locations/des-moines-print-management /locations/des-moines 301
+/locations/cedar-rapids-print-management /locations/cedar-rapids 301
+/locations/iowa-city-print-management /locations/iowa-city 301
+/locations/davenport-print-management /locations/davenport 301
 
 # SPA fallback - redirect all non-static paths to index.html for client-side routing
 # This works with React Router for handling 404s and client-side navigation

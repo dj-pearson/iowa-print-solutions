@@ -782,8 +782,8 @@ const PaperCutVsUniflowVsPrinterLogicIowaK12 = () => {
               <div className="space-y-3">
                 <h4 className="font-semibold text-gray-800">Location Pages:</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link to="/locations/des-moines-print-management" className="text-blue-600 hover:text-blue-700">📍 Des Moines Print Management</Link></li>
-                  <li><Link to="/locations/cedar-rapids-print-management" className="text-blue-600 hover:text-blue-700">📍 Cedar Rapids K-12 Solutions</Link></li>
+                  <li><Link to="/locations/des-moines" className="text-blue-600 hover:text-blue-700">📍 Des Moines Print Management</Link></li>
+                  <li><Link to="/locations/cedar-rapids" className="text-blue-600 hover:text-blue-700">📍 Cedar Rapids K-12 Solutions</Link></li>
                   <li><Link to="/locations/waterloo-cedar-falls-print-management" className="text-blue-600 hover:text-blue-700">📍 UNI & Cedar Valley Schools</Link></li>
                 </ul>
               </div>
