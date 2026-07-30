@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 import ServiceCard from '../components/ServiceCard'
-import TestimonialCard from '../components/TestimonialCard'
 import SEO from '../components/SEO'
 import IowaBusinessFAQSchema from '../components/IowaBusinessFAQSchema'
 import OrganizationSchema from '../components/OrganizationSchema'
@@ -35,27 +34,32 @@ const Home = () => {
     { icon: Shield, number: '100%', label: 'Security Focused' }
   ]
 
-  const testimonials = [
+  // NOTE: A `testimonials` array used to live here containing three invented
+  // customers ("Sarah Johnson", "Mike Chen", "Lisa Martinez") at invented
+  // organizations, each with a 5-star rating and quoted savings figures. They
+  // were rendered to visitors as real customer quotes.
+  //
+  // Fabricated social proof is a serious credibility risk for a site whose
+  // entire proposition is expertise, and a prospect who asks for a reference
+  // finds out immediately. Removed rather than rewritten.
+  //
+  // TO REINSTATE: get written permission from real customers, use their real
+  // name, title, and organization, and keep the approval on file. Real
+  // references also unlock legitimate review markup - see
+  // docs/SEO-GEO-STRATEGY.md. The TestimonialCard component is unchanged and
+  // ready for real content.
+  const whatWeDo = [
     {
-      name: 'Sarah Johnson',
-      company: 'Iowa Healthcare Organization',
-      location: 'Des Moines, IA',
-      testimonial: 'Working with Infomax Office Systems transformed our printing infrastructure. We reduced costs by 35% and improved efficiency dramatically.',
-      rating: 5
+      title: 'Three platforms, compared honestly',
+      description: 'PaperCut MF, Canon uniFLOW, and Vasion Print. We implement all three, which means we can tell you when one is the wrong fit instead of selling you the only thing we carry.'
     },
     {
-      name: 'Mike Chen',
-      company: 'Central Iowa School District',
-      location: 'Cedar Rapids, IA',
-      testimonial: 'The PaperCut implementation through Infomax was seamless. Their Iowa-based support team is incredibly responsive and knowledgeable.',
-      rating: 5
+      title: 'Iowa-based implementation and support',
+      description: 'Infomax Office Systems has operated in Des Moines since 1958. Support calls reach people in Iowa who can be on site, across all 99 counties.'
     },
     {
-      name: 'Lisa Martinez',
-      company: 'Iowa Professional Services Firm',
-      location: 'Iowa City, IA',
-      testimonial: 'Uniflow has revolutionized our document workflows. The security features give us peace of mind, and the cost savings exceeded expectations.',
-      rating: 5
+      title: 'Compliance-aware deployments',
+      description: 'HIPAA-aligned print controls for healthcare and FERPA-aligned controls for education, scoped against your existing identity provider and device fleet rather than a template.'
     }
   ]
 
@@ -75,7 +79,7 @@ const Home = () => {
       'description': 'Leading provider of print management solutions in Iowa since 1958. Expert PaperCut, uniFLOW, and PrinterLogic implementation and support.',
       'foundingDate': '1958',
       'telephone': '515-237-2352',
-      'email': 'gfleschinfomaxoffice@gmail.com',
+      'email': 'DPearson@InfomaxOffice.com',
       'url': 'https://iowaprintsolutions.com',
       'logo': 'https://iowaprintsolutions.com/logo.png',
       'image': 'https://iowaprintsolutions.com/logo.png',
@@ -162,7 +166,7 @@ const Home = () => {
       <SEO
         title="Iowa Print Management Solutions 2025 | PaperCut, uniFLOW & PrinterLogic - Reduce Costs 30-40%"
         description="Iowa's #1 print management resource since 1958. Comprehensive guides on PaperCut, uniFLOW & PrinterLogic implementation. Reduce printing costs 30-40%, ensure HIPAA compliance, secure MFPs. Serving Des Moines, Cedar Rapids, Iowa City statewide. Connect with certified experts at Infomax Office Systems (515) 237-2352."
-        keywords="Iowa print management 2025, PaperCut Iowa cost reduction, Uniflow Iowa security, PrinterLogic Iowa serverless, HIPAA compliant printing Iowa, secure print release Iowa, reduce printing costs Iowa, MFP security Iowa, copier software Iowa, Infomax Office Systems, Des Moines print management, Cedar Rapids document solutions, Iowa City print security, print cost calculator Iowa"
+        keywords="Iowa print management 2025, PaperCut Iowa cost reduction, uniFLOW Iowa security, PrinterLogic Iowa serverless, HIPAA compliant printing Iowa, secure print release Iowa, reduce printing costs Iowa, MFP security Iowa, copier software Iowa, Infomax Office Systems, Des Moines print management, Cedar Rapids document solutions, Iowa City print security, print cost calculator Iowa"
         canonicalUrl="https://iowaprintsolutions.com"
         schemaType="WebSite"
         additionalSchema={seoSchema}
@@ -333,10 +337,28 @@ const Home = () => {
               className="text-center mb-12"
             >
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
-                Print Management ROI Data for Iowa Businesses (2025)
+                What Print Management Typically Changes
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto">
-                Based on actual implementations across 500+ Iowa organizations including healthcare systems, K-12 schools, universities, and enterprises
+                Illustrative before-and-after ranges for a mid-sized Iowa organization moving from
+                uncontrolled printing to a managed platform.
+              </p>
+              {/*
+                These figures are planning-grade illustrations, not measured
+                results. This block previously presented them as "ROI Data ...
+                based on actual implementations across 500+ Iowa organizations",
+                which implied a dataset that is not published anywhere and could
+                not be substantiated on request.
+
+                Replace with real numbers whenever a customer agrees to be cited,
+                with the scope stated (industry, user count, timeframe). Cited
+                specifics outperform round unsourced percentages both with
+                buyers and with AI answer engines.
+              */}
+              <p className="text-sm text-gray-500 max-w-3xl mx-auto mt-4">
+                Ranges vary considerably by fleet size, current device mix, and how much
+                uncontrolled colour printing exists today. We scope expected savings against
+                your own print data during an assessment rather than quoting an average.
               </p>
             </motion.div>
 
@@ -358,11 +380,18 @@ const Home = () => {
                     <td className="px-6 py-4 text-gray-700">$27,000/year</td>
                     <td className="px-6 py-4 font-semibold text-green-600">40% Reduction</td>
                   </tr>
+                  {/*
+                    Replaced a "60% vulnerable -> 5% risk = 92% Risk Reduction"
+                    row. Breach risk is not measurable to that precision, and
+                    quantifying it that way invites a challenge the site cannot
+                    answer. The control it describes is real, so it is now stated
+                    as a control rather than as a percentage.
+                  */}
                   <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 font-medium text-gray-900">Data Breach Risk</td>
-                    <td className="px-6 py-4 text-gray-700">High (60% vulnerable)</td>
-                    <td className="px-6 py-4 text-gray-700">Low (5% risk)</td>
-                    <td className="px-6 py-4 font-semibold text-green-600">92% Risk Reduction</td>
+                    <td className="px-6 py-4 font-medium text-gray-900">Documents left in output trays</td>
+                    <td className="px-6 py-4 text-gray-700">Routine, with no record of who printed what</td>
+                    <td className="px-6 py-4 text-gray-700">Held until the user authenticates at the device</td>
+                    <td className="px-6 py-4 font-semibold text-green-600">Secure release + per-user audit trail</td>
                   </tr>
                   <tr className="hover:bg-gray-50">
                     <td className="px-6 py-4 font-medium text-gray-900">IT Admin Time</td>
@@ -473,10 +502,11 @@ const Home = () => {
                 <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Typical Implementation</div>
                 <div className="text-xs md:text-sm text-gray-600">From kickoff to full deployment</div>
               </div>
+              {/* Was "92% Security Risk Reduction" - an unsourced figure. */}
               <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 md:p-6 rounded-xl shadow-md">
-                <div className="text-2xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">92%</div>
-                <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Security Risk Reduction</div>
-                <div className="text-xs md:text-sm text-gray-600">With secure print release enabled</div>
+                <div className="text-2xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">Zero</div>
+                <div className="text-sm md:text-base text-gray-900 font-semibold mb-1">Unclaimed pages left on trays</div>
+                <div className="text-xs md:text-sm text-gray-600">Secure release holds jobs until you are at the device</div>
               </div>
               <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-4 md:p-6 rounded-xl shadow-md">
                 <div className="text-2xl md:text-4xl font-bold text-orange-600 mb-1 md:mb-2">500+</div>
@@ -557,7 +587,7 @@ const Home = () => {
                 Iowa Print Solutions Information Hub
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive resources about PaperCut, Uniflow, and PrinterLogic solutions. Connect with Infomax Office Systems for professional implementation services throughout Iowa.
+                Comprehensive resources about PaperCut, uniFLOW, and PrinterLogic solutions. Connect with Infomax Office Systems for professional implementation services throughout Iowa.
               </p>
             </motion.div>
 
@@ -593,7 +623,7 @@ const Home = () => {
                 Expert Iowa Print Management Resources & Insights
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Stay informed with comprehensive guides on print management solutions for Iowa organizations. From PaperCut implementation to Uniflow security and PrinterLogic serverless printing.
+                Stay informed with comprehensive guides on print management solutions for Iowa organizations. From PaperCut implementation to uniFLOW security and PrinterLogic serverless printing.
               </p>
             </motion.div>
 
@@ -635,16 +665,16 @@ const Home = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Uniflow Document Workflow Optimization for Iowa Businesses
+                    uniFLOW Document Workflow Optimization for Iowa Businesses
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Maximize your Uniflow investment with advanced workflow automation and security features. Tailored solutions for Iowa healthcare, education, and professional services organizations.
+                    Maximize your uniFLOW investment with advanced workflow automation and security features. Tailored solutions for Iowa healthcare, education, and professional services organizations.
                   </p>
                   <Link
                     to="/resources/uniflow-platform-overview"
                     className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
                   >
-                    Explore Uniflow Solutions
+                    Explore uniFLOW Solutions
                     <ArrowRight className="h-4 w-4 ml-1" />
                   </Link>
                 </div>
@@ -769,34 +799,51 @@ const Home = () => {
               className="text-center mb-12"
             >
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
-                Iowa Organizations Trust Infomax Office Systems
+                Why Iowa Organizations Work With Infomax Office Systems
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-gray-600">
-                See what Iowa clients across Des Moines, Cedar Rapids, Iowa City, and statewide are saying about Infomax Office Systems print management services and implementations.
+                Vendor-neutral print management across Des Moines, Cedar Rapids, Iowa City, and
+                statewide - from a dealer that has been in Iowa since 1958.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard key={index} {...testimonial} delay={index * 0.1} />
+              {whatWeDo.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg shadow-md p-6"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Performance Components */}
-        <SocialProofBanner 
-          message="Join 200+ Iowa businesses saving 30% on printing costs"
+        {/*
+          Both messages below previously carried unverified figures - "Join 200+
+          Iowa businesses saving 30% on printing costs" and "Iowa businesses save
+          an average of $2,400 annually". Neither had a source, and both invited
+          a question the site could not answer. Replaced with the offer itself,
+          which is what the CTA is actually for.
+        */}
+        <SocialProofBanner
+          message="Serving Iowa organizations from Des Moines since 1958"
           cta="Get Your Free Assessment"
           ctaLink="/contact"
         />
-        
-        <ExitIntentModal 
+
+        <ExitIntentModal
           isOpen={showExitIntent}
           onClose={() => setShowExitIntent(false)}
-          title="Wait! Don't Miss Out on Print Savings"
-          message="Iowa businesses save an average of $2,400 annually with our print management solutions. Get your free cost analysis before you leave!"
-          ctaText="Get Free Analysis"
+          title="Before you go - see your own numbers"
+          message="Estimate what your organization currently spends on printing, and what a managed platform would change, using your own device and volume figures."
+          ctaText="Open the Cost Calculator"
           ctaLink="/print-cost-calculator"
         />
       </div>

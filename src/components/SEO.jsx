@@ -59,10 +59,16 @@ const SEO = ({
       ? (ogImage.startsWith('http') ? ogImage : `${siteConfig.url}${ogImage}`)
       : `${siteConfig.url}${siteConfig.defaultOgImage}`
 
-    // Dates for freshness signals
-    const now = new Date().toISOString()
-    const lastModified = dateModified || now
-    const published = datePublished || lastModified
+    // Dates: only ever report dates we actually know.
+    //
+    // These used to default to `new Date().toISOString()`, which made every
+    // page claim it had been modified at the moment it was rendered. That is a
+    // fabricated freshness signal - search engines discount it, and it
+    // devalues the dates on pages that genuinely were updated. Pages that
+    // don't pass dates now emit no date meta at all, which is the honest and
+    // more effective answer.
+    const published = datePublished || null
+    const lastModified = dateModified || datePublished || null
 
     return {
       fullTitle,
@@ -106,8 +112,8 @@ const SEO = ({
         headline: title,
         description: metaValues.metaDescription,
         url: metaValues.canonical || siteConfig.url,
-        datePublished: metaValues.published,
-        dateModified: metaValues.lastModified,
+        ...(metaValues.published && { datePublished: metaValues.published }),
+        ...(metaValues.lastModified && { dateModified: metaValues.lastModified }),
         author: {
           '@type': 'Person',
           name: author || siteConfig.defaultAuthor.name,
@@ -188,19 +194,19 @@ const SEO = ({
       <meta name="twitter:image" content={metaValues.ogImageUrl} />
       <meta name="twitter:image:alt" content={title || siteConfig.name} />
 
-      {/* Article-specific meta tags */}
+      {/* Article-specific meta tags - only emitted when real dates are supplied */}
       {(schemaType === 'Article' || ogType === 'article') && (
         <>
-          <meta property="article:published_time" content={metaValues.published} />
-          <meta property="article:modified_time" content={metaValues.lastModified} />
+          {metaValues.published && (
+            <meta property="article:published_time" content={metaValues.published} />
+          )}
+          {metaValues.lastModified && (
+            <meta property="article:modified_time" content={metaValues.lastModified} />
+          )}
           <meta property="article:author" content={author || siteConfig.defaultAuthor.name} />
           {category && <meta property="article:section" content={category} />}
         </>
       )}
-
-      {/* Content Freshness Signals */}
-      <meta httpEquiv="last-modified" content={metaValues.lastModified} />
-      <meta name="revised" content={metaValues.lastModified} />
 
       {/* Geographic Meta Tags */}
       <meta name="geo.region" content={`US-${siteConfig.address.state}`} />

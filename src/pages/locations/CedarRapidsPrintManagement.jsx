@@ -9,7 +9,7 @@ const CedarRapidsPrintManagement = () => {
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Locations', href: '/locations' },
-    { label: 'Cedar Rapids Print Management', href: '/locations/cedar-rapids-print-management' }
+    { label: 'Cedar Rapids Print Management', href: '/locations/cedar-rapids' }
   ]
 
   const cedarRapidsFAQ = [
@@ -116,8 +116,8 @@ const CedarRapidsPrintManagement = () => {
     'alternateName': 'Cedar Rapids Print Management Solutions',
     'description': 'Expert print management services in Cedar Rapids, Iowa. Specializing in aerospace, manufacturing, and healthcare solutions since 1958.',
     'telephone': '515-237-2352',
-    'email': 'gfleschinfomaxoffice@gmail.com',
-    'url': 'https://iowaprintsolutions.com/locations/cedar-rapids-print-management',
+    'email': 'DPearson@InfomaxOffice.com',
+    'url': 'https://iowaprintsolutions.com/locations/cedar-rapids',
     'address': {
       '@type': 'PostalAddress',
       'addressLocality': 'Cedar Rapids',
@@ -162,7 +162,7 @@ const CedarRapidsPrintManagement = () => {
         title="Cedar Rapids Print Management | Manufacturing & Aerospace Solutions"
         description="Expert print management for Cedar Rapids aerospace, manufacturing & healthcare. ITAR compliance, secure workflows. Serving Collins Aerospace & Cedar Rapids metro."
         keywords="Cedar Rapids print management, aerospace printing Cedar Rapids, manufacturing document control, Collins Aerospace printing, Mercy Medical print solutions"
-        canonicalUrl="https://iowaprintsolutions.com/locations/cedar-rapids-print-management"
+        canonicalUrl="https://iowaprintsolutions.com/locations/cedar-rapids"
         schemaType="LocalBusiness"
         additionalSchema={seoSchema}
       />
@@ -200,7 +200,7 @@ const CedarRapidsPrintManagement = () => {
                   Call Cedar Rapids: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-red-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -447,7 +447,7 @@ const CedarRapidsPrintManagement = () => {
                   Call Cedar Rapids Team: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-red-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

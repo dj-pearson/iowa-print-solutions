@@ -137,8 +137,8 @@ const UniflowPlatformOverview = () => {
 
   const seoSchema = {
     '@type': 'TechArticle',
-    'headline': 'Canon Uniflow Platform Complete Overview for Iowa Organizations',
-    'description': 'Comprehensive guide to Canon Uniflow platform features, capabilities, and implementation for Iowa businesses.',
+    'headline': 'Canon uniFLOW Platform Complete Overview for Iowa Organizations',
+    'description': 'Comprehensive guide to Canon uniFLOW platform features, capabilities, and implementation for Iowa businesses.',
     'author': {
       '@type': 'Organization',
       'name': 'Iowa Print Solutions'
@@ -152,9 +152,9 @@ const UniflowPlatformOverview = () => {
   return (
     <>
       <SEO 
-        title="Canon Uniflow Platform Overview | Complete Features Guide Iowa"
-        description="Complete Canon Uniflow platform overview for Iowa businesses. Learn about advanced document management, secure printing, mobile solutions, and workflow automation features and capabilities."
-        keywords="Canon Uniflow platform Iowa, Uniflow features Iowa, document management Iowa, secure printing Iowa, workflow automation Iowa, mobile printing Iowa, Uniflow capabilities Iowa"
+        title="Canon uniFLOW Platform Overview | Complete Features Guide Iowa"
+        description="Complete Canon uniFLOW platform overview for Iowa businesses. Learn about advanced document management, secure printing, mobile solutions, and workflow automation features and capabilities."
+        keywords="Canon uniFLOW platform Iowa, uniFLOW features Iowa, document management Iowa, secure printing Iowa, workflow automation Iowa, mobile printing Iowa, uniFLOW capabilities Iowa"
         canonicalUrl="https://iowaprintsolutions.com/resources/uniflow-platform-overview"
         schemaType="TechArticle"
         additionalSchema={seoSchema}
@@ -164,7 +164,7 @@ const UniflowPlatformOverview = () => {
         items={[
           { label: 'Home', href: '/' },
           { label: 'Resources', href: '/resources' },
-          { label: 'Uniflow Platform Overview' }
+          { label: 'uniFLOW Platform Overview' }
         ]}
       />
       
@@ -182,17 +182,17 @@ const UniflowPlatformOverview = () => {
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              Uniflow: Integrated Print, Scan & Device Management Platform
+              uniFLOW: Integrated Print, Scan & Device Management Platform
             </h1>
             <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-              Discover how Uniflow's single integrated platform revolutionizes document workflows for Iowa organizations. Comprehensive print management, intelligent scanning, and centralized device control in one powerful solution.
+              Discover how uniFLOW's single integrated platform revolutionizes document workflows for Iowa organizations. Comprehensive print management, intelligent scanning, and centralized device control in one powerful solution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
                 className="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Get Uniflow Demo
+                Get uniFLOW Demo
               </Link>
               <a
                 href="https://calendly.com/pearsondan/30min"
@@ -219,7 +219,7 @@ const UniflowPlatformOverview = () => {
               Complete Platform Capabilities
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uniflow integrates print management, scan workflows, and device monitoring into a single, powerful platform designed for Iowa businesses.
+              uniFLOW integrates print management, scan workflows, and device monitoring into a single, powerful platform designed for Iowa businesses.
             </p>
           </motion.div>
 
@@ -297,7 +297,7 @@ const UniflowPlatformOverview = () => {
               Real-World Workflow Examples
             </h2>
             <p className="text-xl text-gray-600">
-              See how Uniflow transforms common business processes in Iowa organizations.
+              See how uniFLOW transforms common business processes in Iowa organizations.
             </p>
           </motion.div>
 
@@ -336,7 +336,7 @@ const UniflowPlatformOverview = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Uniflow Solutions by Industry
+              uniFLOW Solutions by Industry
             </h2>
             <p className="text-xl text-gray-600">
               Tailored implementations for different Iowa business sectors.
@@ -372,7 +372,7 @@ const UniflowPlatformOverview = () => {
             className="text-white"
           >
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Transform Your Iowa Organization with Uniflow?
+              Ready to Transform Your Iowa Organization with uniFLOW?
             </h2>
             <p className="text-xl mb-8 opacity-90">
               Discover how a single integrated platform can revolutionize your print, scan, and device management operations.
@@ -382,7 +382,7 @@ const UniflowPlatformOverview = () => {
                 to="/contact"
                 className="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors"
               >
-                Get Uniflow Quote
+                Get uniFLOW Quote
               </Link>
               <a
                 href="tel:5152372352"

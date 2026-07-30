@@ -5,7 +5,6 @@ import { Heart, Shield, Users, FileText, CheckCircle, ArrowRight, Lock, BarChart
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import ServiceCard from '../../components/ServiceCard'
-import TestimonialCard from '../../components/TestimonialCard'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
 import LocalBusinessSchema from '../../components/LocalBusinessSchema'
 
@@ -62,36 +61,32 @@ const IowaHealthcarePrintSolutions = () => {
       city: 'Des Moines',
       facilities: 'UnityPoint Health, MercyOne, Iowa Methodist',
       specialties: 'Large hospital systems, medical campuses',
-      link: '/locations/des-moines-print-management'
+      link: '/locations/des-moines'
     },
     {
       city: 'Iowa City', 
       facilities: 'UIHC, Mercy Iowa City, UI Children\'s Hospital',
       specialties: 'Academic medical center, research facilities',
-      link: '/locations/iowa-city-print-management'
+      link: '/locations/iowa-city'
     },
     {
       city: 'Cedar Rapids',
       facilities: 'UnityPoint St. Luke\'s, Mercy Medical',
       specialties: 'Regional medical centers, specialty clinics',
-      link: '/locations/cedar-rapids-print-management'
+      link: '/locations/cedar-rapids'
     }
   ]
 
-  const testimonials = [
-    {
-      name: 'Dr. Sarah Johnson',
-      role: 'Chief Medical Officer, Iowa Regional Medical Center',
-      content: 'The secure print solutions from Iowa Print Solutions have transformed our patient privacy protocols. HIPAA compliance is now seamless across all departments.',
-      rating: 5
-    },
-    {
-      name: 'Mark Stevens',
-      role: 'IT Director, Des Moines Medical Group',
-      content: 'Their understanding of healthcare workflows and EHR integration saved us months of implementation time. Patient record security has never been stronger.',
-      rating: 5
-    }
-  ]
+  // NOTE: A `testimonials` array was removed from here. It contained invented
+  // quotes attributed to named individuals - including staff at real, named
+  // institutions - each with a 5-star rating and quoted savings figures, and
+  // rendered to visitors as genuine customer feedback.
+  //
+  // Putting words in the mouth of a fictional employee of a real organization is
+  // not a gray area. Removed rather than rewritten.
+  //
+  // TO REINSTATE: real names, real titles, written permission on file. See
+  // docs/SEO-GEO-STRATEGY.md. TestimonialCard is unchanged and ready.
 
   const complianceFeatures = [
     'PHI Protection with encrypted print queues',
@@ -135,10 +130,6 @@ const IowaHealthcarePrintSolutions = () => {
             description: "Encrypted workflows for patient records, prescriptions, insurance forms, and medical documentation"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.9",
-          reviewCount: "73"
-        }}
       />
 
       <div className="min-h-screen bg-white">
@@ -169,7 +160,7 @@ const IowaHealthcarePrintSolutions = () => {
                   Call Healthcare Team
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -353,30 +344,7 @@ const IowaHealthcarePrintSolutions = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Trusted by Iowa Healthcare Professionals
-              </h2>
-              <p className="text-lg text-gray-600">
-                See what healthcare leaders across Iowa say about our solutions
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard key={index} {...testimonial} />
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Testimonials section removed - see note above the removed testimonials array. */}
 
         {/* FAQ Section */}
         <section className="py-16 bg-gray-50">
@@ -459,7 +427,7 @@ const IowaHealthcarePrintSolutions = () => {
                   Call Healthcare Specialists
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

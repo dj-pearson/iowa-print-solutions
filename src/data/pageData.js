@@ -8,7 +8,7 @@ import { siteConfig, getCanonicalUrl } from '../config/site'
 // Location page configurations
 export const locationPages = [
   {
-    slug: 'des-moines-print-management',
+    slug: 'des-moines',
     city: 'Des Moines',
     region: 'Central Iowa',
     isCapital: true,
@@ -27,7 +27,7 @@ export const locationPages = [
     },
   },
   {
-    slug: 'cedar-rapids-print-management',
+    slug: 'cedar-rapids',
     city: 'Cedar Rapids',
     region: 'Eastern Iowa',
     population: '135,000+',
@@ -45,7 +45,7 @@ export const locationPages = [
     },
   },
   {
-    slug: 'iowa-city-print-management',
+    slug: 'iowa-city',
     city: 'Iowa City',
     region: 'Eastern Iowa',
     population: '75,000+',
@@ -63,7 +63,7 @@ export const locationPages = [
     },
   },
   {
-    slug: 'davenport-print-management',
+    slug: 'davenport',
     city: 'Davenport',
     region: 'Quad Cities',
     population: '100,000+',

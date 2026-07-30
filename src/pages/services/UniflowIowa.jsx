@@ -188,8 +188,6 @@ const UniflowIowa = () => {
         productName="Canon uniFLOW - Iowa Healthcare Copier Security Software"
         description="Enterprise-grade copier and document workflow security software for Iowa healthcare, legal, and financial organizations. HIPAA-compliant document handling, advanced user authentication, secure print release, and comprehensive audit trails for multifunction printers."
         category="SecurityApplication"
-        ratingValue="4.9"
-        reviewCount="98"
         features={[
           'HIPAA-Compliant Document Handling',
           'Advanced User Authentication',
@@ -220,16 +218,6 @@ const UniflowIowa = () => {
             description: "Custom document workflow development to automate business processes and improve efficiency"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.9",
-          reviewCount: "32"
-        }}
-        review={{
-          ratingValue: "5",
-          author: "Dr. Michael Chen, Healthcare Administrator",
-          reviewBody: "uniFLOW implementation by Iowa Print Solutions revolutionized our medical practice workflows. HIPAA compliance is seamless and our document security is now bulletproof.",
-          datePublished: "2024-01-20"
-        }}
       />
       
       <FAQSchema faqs={uniflowFAQ} />
@@ -271,7 +259,7 @@ const UniflowIowa = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-red-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -560,7 +548,7 @@ const UniflowIowa = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-red-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

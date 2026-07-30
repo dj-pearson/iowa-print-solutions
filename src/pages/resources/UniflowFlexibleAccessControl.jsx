@@ -296,10 +296,10 @@ const UniflowFlexibleAccessControl = () => {
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              Uniflow Flexible Access Control for Iowa Organizations
+              uniFLOW Flexible Access Control for Iowa Organizations
             </h1>
             <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-              Implement sophisticated access control and user management with Uniflow's flexible security framework. Role-based permissions, multi-factor authentication, and comprehensive compliance capabilities for Iowa businesses.
+              Implement sophisticated access control and user management with uniFLOW's flexible security framework. Role-based permissions, multi-factor authentication, and comprehensive compliance capabilities for Iowa businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -333,7 +333,7 @@ const UniflowFlexibleAccessControl = () => {
               Advanced Access Control Features
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uniflow provides enterprise-grade access control capabilities that adapt to your organization's security requirements and business needs.
+              uniFLOW provides enterprise-grade access control capabilities that adapt to your organization's security requirements and business needs.
             </p>
           </motion.div>
 
@@ -616,7 +616,7 @@ const UniflowFlexibleAccessControl = () => {
                     <p className="text-sm text-gray-700">{compliance.requirements}</p>
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-2">Uniflow Support</h4>
+                    <h4 className="font-medium text-gray-900 mb-2">uniFLOW Support</h4>
                     <p className="text-sm text-gray-700">{compliance.uniflow_support}</p>
                   </div>
                 </div>
@@ -637,7 +637,7 @@ const UniflowFlexibleAccessControl = () => {
               Implement Advanced Access Control for Your Iowa Organization
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Secure your printing infrastructure with Uniflow's comprehensive access control and user management capabilities.
+              Secure your printing infrastructure with uniFLOW's comprehensive access control and user management capabilities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

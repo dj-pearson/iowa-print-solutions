@@ -70,8 +70,8 @@ const PrintManagementDesMoines = () => {
     <>
       <SEO 
         title="Print Management Des Moines | Professional Print Solutions Iowa Capital"
-        description="Expert print management services for Des Moines businesses including Principal Financial, Wells Fargo, Allied Insurance, and Polk County. PaperCut, Uniflow & PrinterLogic implementation serving downtown, West Des Moines, Ankeny, Urbandale & surrounding central Iowa areas since 1958."
-        keywords="print management Des Moines, Des Moines print solutions, managed print services Des Moines Iowa, PaperCut Des Moines implementation, Uniflow Des Moines, PrinterLogic Des Moines, West Des Moines print management, Ankeny print services, Urbandale print solutions, downtown Des Moines printing, Polk County print management, central Iowa printing solutions"
+        description="Expert print management services for Des Moines businesses including Principal Financial, Wells Fargo, Allied Insurance, and Polk County. PaperCut, uniFLOW & PrinterLogic implementation serving downtown, West Des Moines, Ankeny, Urbandale & surrounding central Iowa areas since 1958."
+        keywords="print management Des Moines, Des Moines print solutions, managed print services Des Moines Iowa, PaperCut Des Moines implementation, uniFLOW Des Moines, PrinterLogic Des Moines, West Des Moines print management, Ankeny print services, Urbandale print solutions, downtown Des Moines printing, Polk County print management, central Iowa printing solutions"
         canonicalUrl="https://iowaprintsolutions.com/blog/print-management-des-moines"
         schemaType="Article"
         additionalSchema={{
@@ -152,7 +152,7 @@ const PrintManagementDesMoines = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -336,7 +336,7 @@ const PrintManagementDesMoines = () => {
                   </div>
                 </div>
                 <p className="text-sm text-gray-600">
-                  Uniflow implementation with automated policy processing workflows, 
+                  uniFLOW implementation with automated policy processing workflows, 
                   dramatically improving claims handling efficiency.
                 </p>
               </motion.div>
@@ -471,7 +471,7 @@ const PrintManagementDesMoines = () => {
                   Call (515) 237-2352
                 </motion.a>
                 <motion.a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 bg-blue-700 text-white font-bold rounded-lg hover:bg-blue-800 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

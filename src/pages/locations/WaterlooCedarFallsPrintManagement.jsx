@@ -134,16 +134,6 @@ const WaterlooCedarFallsPrintManagement = () => {
             description: "HIPAA-compliant printing and document workflows for Cedar Falls medical facilities"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.8",
-          reviewCount: "31"
-        }}
-        review={{
-          ratingValue: "5",
-          author: "Mark Thompson, Manufacturing IT Director",
-          reviewBody: "Iowa Print Solutions transformed our Waterloo manufacturing print infrastructure. Their PaperCut implementation secured our technical documents while reducing costs by thousands annually.",
-          datePublished: "2024-01-18"
-        }}
       />
       
       <FAQSchema faqs={waterlooFAQ} />
@@ -175,7 +165,7 @@ const WaterlooCedarFallsPrintManagement = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -348,13 +338,13 @@ const WaterlooCedarFallsPrintManagement = () => {
               {[
                 {
                   city: "Des Moines",
-                  href: "/locations/des-moines-print-management",
+                  href: "/locations/des-moines",
                   description: "Capital city print solutions",
                   specialties: "Insurance • Government • Healthcare"
                 },
                 {
                   city: "Cedar Rapids",
-                  href: "/locations/cedar-rapids-print-management",
+                  href: "/locations/cedar-rapids",
                   description: "Manufacturing hub expertise", 
                   specialties: "Manufacturing • Medical • Tech"
                 },
@@ -372,7 +362,7 @@ const WaterlooCedarFallsPrintManagement = () => {
                 },
                 {
                   city: "Iowa City",
-                  href: "/locations/iowa-city-print-management", 
+                  href: "/locations/iowa-city", 
                   description: "University & healthcare",
                   specialties: "University • Healthcare • Research"
                 },
@@ -431,7 +421,7 @@ const WaterlooCedarFallsPrintManagement = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

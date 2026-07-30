@@ -137,7 +137,7 @@ const DocumentManagementIowa = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -435,7 +435,7 @@ const DocumentManagementIowa = () => {
                   Call (515) 237-2352
                 </motion.a>
                 <motion.a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 bg-purple-700 text-white font-bold rounded-lg hover:bg-purple-800 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

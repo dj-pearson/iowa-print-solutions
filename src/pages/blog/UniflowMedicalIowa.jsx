@@ -151,20 +151,20 @@ const UniflowMedicalIowa = () => {
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Uniflow Medical Print Security Iowa' }
+    { label: 'uniFLOW Medical Print Security Iowa' }
   ]
 
   return (
     <>
       <SEO 
-        title="Uniflow Medical Print Security for Iowa Healthcare | Advanced Document Workflows"
-        description="Discover Uniflow's advanced medical print security solutions for Iowa healthcare facilities. HIPAA-compliant workflows, PHI protection, and medical device integration."
-        keywords="Uniflow medical print security Iowa, healthcare document workflows, HIPAA compliance, PHI protection, medical imaging Iowa, healthcare automation"
+        title="uniFLOW Medical Print Security for Iowa Healthcare | Advanced Document Workflows"
+        description="Discover uniFLOW's advanced medical print security solutions for Iowa healthcare facilities. HIPAA-compliant workflows, PHI protection, and medical device integration."
+        keywords="uniFLOW medical print security Iowa, healthcare document workflows, HIPAA compliance, PHI protection, medical imaging Iowa, healthcare automation"
         canonicalUrl="https://iowaprintsolutions.com/blog/uniflow-medical-iowa"
         schemaType="Article"
         additionalSchema={{
           '@type': 'Article',
-          'headline': 'Uniflow Medical Print Security for Iowa Healthcare - Advanced Document Workflows',
+          'headline': 'uniFLOW Medical Print Security for Iowa Healthcare - Advanced Document Workflows',
           'author': {
             '@type': 'Organization',
             'name': 'Infomax Office Systems',
@@ -221,10 +221,10 @@ const UniflowMedicalIowa = () => {
                 </div>
               </div>
               <h1 className="text-5xl font-bold mb-6">
-                Uniflow Medical Print Security for Iowa Healthcare
+                uniFLOW Medical Print Security for Iowa Healthcare
               </h1>
               <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-                Transform your Iowa healthcare facility's document workflows with Uniflow's advanced medical print security platform. From patient chart processing to medical imaging workflows, ensure HIPAA compliance while improving operational efficiency.
+                Transform your Iowa healthcare facility's document workflows with uniFLOW's advanced medical print security platform. From patient chart processing to medical imaging workflows, ensure HIPAA compliance while improving operational efficiency.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -258,7 +258,7 @@ const UniflowMedicalIowa = () => {
                 Advanced Medical Security Features
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Uniflow's healthcare-specific security features are designed to meet the unique requirements of Iowa medical facilities while ensuring comprehensive PHI protection.
+                uniFLOW's healthcare-specific security features are designed to meet the unique requirements of Iowa medical facilities while ensuring comprehensive PHI protection.
               </p>
             </motion.div>
 
@@ -355,10 +355,10 @@ const UniflowMedicalIowa = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Iowa Healthcare Facilities Using Uniflow
+                Iowa Healthcare Facilities Using uniFLOW
               </h2>
               <p className="text-xl text-gray-600">
-                How Iowa medical organizations leverage Uniflow for enhanced security and operational efficiency.
+                How Iowa medical organizations leverage uniFLOW for enhanced security and operational efficiency.
               </p>
             </motion.div>
 
@@ -394,7 +394,7 @@ const UniflowMedicalIowa = () => {
                 Healthcare Compliance Standards
               </h2>
               <p className="text-xl text-gray-600">
-                How Uniflow meets and exceeds healthcare compliance requirements for Iowa medical facilities.
+                How uniFLOW meets and exceeds healthcare compliance requirements for Iowa medical facilities.
               </p>
             </motion.div>
 
@@ -417,7 +417,7 @@ const UniflowMedicalIowa = () => {
                       <p className="text-sm text-gray-700">{compliance.requirement}</p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900 mb-2">Uniflow Solution</h4>
+                      <h4 className="font-medium text-gray-900 mb-2">uniFLOW Solution</h4>
                       <p className="text-sm text-green-700">{compliance.uniflow_solution}</p>
                     </div>
                   </div>
@@ -435,7 +435,7 @@ const UniflowMedicalIowa = () => {
                 animate={{ opacity: 1, x: 0 }}
               >
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Why Iowa Healthcare Chooses Uniflow Medical Security
+                  Why Iowa Healthcare Chooses uniFLOW Medical Security
                 </h2>
                 <div className="space-y-4">
                   {implementationBenefits.map((benefit, index) => (
@@ -505,10 +505,10 @@ const UniflowMedicalIowa = () => {
               className="text-white"
             >
               <h2 className="text-3xl font-bold mb-4">
-                Transform Your Iowa Healthcare Facility with Uniflow Medical Security
+                Transform Your Iowa Healthcare Facility with uniFLOW Medical Security
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Join Iowa healthcare leaders who have enhanced patient care and achieved compliance with Uniflow's advanced medical document workflows.
+                Join Iowa healthcare leaders who have enhanced patient care and achieved compliance with uniFLOW's advanced medical document workflows.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

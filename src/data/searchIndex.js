@@ -17,8 +17,8 @@ export const searchIndex = [
     id: 'mobile-printing-solutions-iowa-2025',
     type: 'blog',
     title: 'Mobile Printing Solutions Iowa 2025: Complete BYOD Guide',
-    description: 'Comprehensive guide to mobile printing for Iowa businesses. Compare PaperCut Mobility Print, Uniflow Mobile, and PrinterLogic for seamless BYOD environments.',
-    keywords: ['mobile printing', 'BYOD', 'PaperCut Mobility Print', 'Uniflow Mobile', 'smartphone', 'tablet', 'wireless printing'],
+    description: 'Comprehensive guide to mobile printing for Iowa businesses. Compare PaperCut Mobility Print, uniFLOW Mobile, and PrinterLogic for seamless BYOD environments.',
+    keywords: ['mobile printing', 'BYOD', 'PaperCut Mobility Print', 'uniFLOW Mobile', 'smartphone', 'tablet', 'wireless printing'],
     category: 'Mobile Technology',
     path: '/blog/mobile-printing-solutions-iowa-2025',
     date: '2025-10-14'
@@ -27,7 +27,7 @@ export const searchIndex = [
     id: 'print-management-software-roi-iowa',
     type: 'blog',
     title: 'Print Management Software ROI Iowa: Calculate Your Returns',
-    description: 'Calculate ROI for print management software in Iowa. Real case studies, cost savings analysis, and ROI calculator for PaperCut, Uniflow, and PrinterLogic.',
+    description: 'Calculate ROI for print management software in Iowa. Real case studies, cost savings analysis, and ROI calculator for PaperCut, uniFLOW, and PrinterLogic.',
     keywords: ['ROI', 'return on investment', 'cost savings', 'calculator', 'business case', 'financial analysis'],
     category: 'ROI & Analysis',
     path: '/blog/print-management-software-roi-iowa',
@@ -146,9 +146,9 @@ export const searchIndex = [
   {
     id: 'uniflow-medical-iowa',
     type: 'blog',
-    title: 'Uniflow Medical Print Security for Iowa Healthcare',
-    description: 'Advanced medical document security with Uniflow. Patient data protection and compliance automation.',
-    keywords: ['Uniflow', 'medical', 'healthcare', 'security', 'Canon', 'patient data'],
+    title: 'uniFLOW Medical Print Security for Iowa Healthcare',
+    description: 'Advanced medical document security with uniFLOW. Patient data protection and compliance automation.',
+    keywords: ['uniFLOW', 'medical', 'healthcare', 'security', 'Canon', 'patient data'],
     category: 'Healthcare',
     path: '/blog/uniflow-medical-iowa',
     date: '2024-01-14'
@@ -176,8 +176,8 @@ export const searchIndex = [
   {
     id: 'uniflow-university-iowa',
     type: 'blog',
-    title: 'Uniflow University Solutions for Iowa Higher Education',
-    description: "Transform your Iowa university with Uniflow's advanced academic document workflows.",
+    title: 'uniFLOW University Solutions for Iowa Higher Education',
+    description: "Transform your Iowa university with uniFLOW's advanced academic document workflows.",
     keywords: ['university', 'higher education', 'college', 'academic', 'FERPA', 'students'],
     category: 'Education',
     path: '/blog/uniflow-university-iowa',
@@ -340,7 +340,7 @@ export const searchIndex = [
     description: 'Expert print management services for Des Moines businesses. PaperCut, uniFLOW & PrinterLogic implementation.',
     keywords: ['Des Moines', 'capital city', 'central Iowa', 'metro', 'downtown'],
     category: 'Des Moines Metro',
-    path: '/locations/des-moines-print-management'
+    path: '/locations/des-moines'
   },
   {
     id: 'cedar-rapids',
@@ -349,7 +349,7 @@ export const searchIndex = [
     description: 'Print management services for Cedar Rapids manufacturing and healthcare organizations.',
     keywords: ['Cedar Rapids', 'eastern Iowa', 'manufacturing', 'Linn County'],
     category: 'Eastern Iowa',
-    path: '/locations/cedar-rapids-print-management'
+    path: '/locations/cedar-rapids'
   },
   {
     id: 'iowa-city',
@@ -358,7 +358,7 @@ export const searchIndex = [
     description: 'Print management for Iowa City university and medical center environments.',
     keywords: ['Iowa City', 'University of Iowa', 'UIHC', 'medical center', 'academic'],
     category: 'Eastern Iowa',
-    path: '/locations/iowa-city-print-management'
+    path: '/locations/iowa-city'
   },
   {
     id: 'davenport',
@@ -367,7 +367,7 @@ export const searchIndex = [
     description: 'Print management services for Davenport and the Quad Cities region.',
     keywords: ['Davenport', 'Quad Cities', 'Mississippi River', 'Illinois border'],
     category: 'Quad Cities',
-    path: '/locations/davenport-print-management'
+    path: '/locations/davenport'
   },
   {
     id: 'waterloo-cedar-falls',

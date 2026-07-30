@@ -69,8 +69,8 @@ const Blog = () => {
     },
     {
       id: 'microsoft-universal-print-v2-iowa-2026',
-      title: 'Microsoft Universal Print v2 in Iowa: When to Use It vs. PaperCut or Uniflow',
-      excerpt: 'A practical 2026 guide for Iowa IT leaders evaluating Universal Print v2 - what it does well, what it still cannot do, and when to layer PaperCut or Uniflow on top.',
+      title: 'Microsoft Universal Print v2 in Iowa: When to Use It vs. PaperCut or uniFLOW',
+      excerpt: 'A practical 2026 guide for Iowa IT leaders evaluating Universal Print v2 - what it does well, what it still cannot do, and when to layer PaperCut or uniFLOW on top.',
       author: 'Iowa Print Solutions Team',
       date: '2026-03-30',
       readTime: '11 min read',
@@ -82,7 +82,7 @@ const Blog = () => {
     {
       id: 'printerlogic-vasion-2026-iowa',
       title: 'PrinterLogic / Vasion 2026 for Iowa Businesses: What Is New and Who It Fits',
-      excerpt: 'A 2026 review of PrinterLogic (now Vasion) for Iowa businesses - new SaaS architecture, identity and audit upgrades, Vasion Automate integration, and how it compares to PaperCut and Uniflow.',
+      excerpt: 'A 2026 review of PrinterLogic (now Vasion) for Iowa businesses - new SaaS architecture, identity and audit upgrades, Vasion Automate integration, and how it compares to PaperCut and uniFLOW.',
       author: 'Iowa Print Solutions Team',
       date: '2026-03-22',
       readTime: '10 min read',
@@ -93,10 +93,10 @@ const Blog = () => {
     },
     {
       id: 'papercut-mf-26-k12-iowa-2026',
-      title: 'PaperCut MF 26 for Iowa K-12 Schools: 2026 Upgrade Guide',
-      excerpt: 'PaperCut MF 26 brings hardened SSO with Entra ID and Clever, native multi-school analytics, ARM64 support, and FERPA-aligned audit trails. Here is what Iowa districts need to know before summer rollout.',
+      title: 'PaperCut MF 26.0 for Iowa K-12 Schools: SSO and Summer Upgrade Guide',
+      excerpt: 'What PaperCut MF 26.0 actually changed for Iowa K-12 districts: native SAML 2.0 SSO, unified sessions, ARM64-aware Print Deploy, and the end-of-life device check to run before a summer upgrade window.',
       author: 'Iowa Print Solutions Team',
-      date: '2026-04-22',
+      date: '2026-07-30',
       readTime: '9 min read',
       category: 'Education',
       image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=250&fit=crop',
@@ -105,10 +105,10 @@ const Blog = () => {
     },
     {
       id: 'uniflow-2026-higher-education-iowa',
-      title: 'Uniflow 2026 for Iowa Higher Education: What Universities Need to Know',
-      excerpt: 'Canon\'s Uniflow 2026 release expands uniFLOW Online, adds grant-code chargebacks, AI capture, and zero-trust authentication aligned to Iowa Board of Regents cybersecurity directives.',
+      title: 'uniFLOW Online 2026 for Iowa Higher Education: Fleet Updates and Access Control',
+      excerpt: 'What uniFLOW Online 2026.1 and 2026.2 changed for Iowa campuses: automated MEAP applet updates, term-friendly update strategies, and device access policies applied by device group.',
       author: 'Iowa Print Solutions Team',
-      date: '2026-04-15',
+      date: '2026-07-30',
       readTime: '10 min read',
       category: 'Education',
       image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop',
@@ -117,10 +117,10 @@ const Blog = () => {
     },
     {
       id: 'papercut-mf-26-healthcare-iowa-2026',
-      title: 'PaperCut MF 26 for Iowa Healthcare: HIPAA, Epic, and Secure Release',
-      excerpt: 'How PaperCut MF 26 strengthens HIPAA-compliant printing for Iowa hospitals, clinics, and pharmacies - tamper-evident audit trails, PHI redaction hooks, FIDO2 release, and resilient Site Server architecture.',
+      title: 'PaperCut MF 26.0 for Iowa Healthcare: What Changed and What to Check First',
+      excerpt: 'PaperCut MF 26.0 for Iowa hospitals and clinics: native SAML 2.0 SSO, unified sessions, a rebuilt Ricoh embedded app, and the end-of-life device audit to run before you upgrade a clinical fleet.',
       author: 'Iowa Print Solutions Team',
-      date: '2026-04-08',
+      date: '2026-07-30',
       readTime: '10 min read',
       category: 'Healthcare',
       image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=250&fit=crop',
@@ -129,10 +129,10 @@ const Blog = () => {
     },
     {
       id: 'uniflow-2026-clinics-hospitals-iowa',
-      title: 'Uniflow 2026 for Iowa Clinics & Hospitals: AI Capture and HIPAA-Ready Cloud',
-      excerpt: 'Practical guide to Uniflow 2026 for Iowa healthcare - AI document capture, HIPAA-aligned cloud tenancy, edge release stations, and closed-loop ePHI audit trails.',
+      title: 'uniFLOW Online 2026 for Iowa Clinics & Hospitals: Fleet Updates and Device Access Control',
+      excerpt: 'What uniFLOW Online 2026.1 and 2026.2 changed for Iowa clinics and hospitals: automated MEAP applet updates, change-control-friendly update strategies, and finer device access control.',
       author: 'Iowa Print Solutions Team',
-      date: '2026-04-01',
+      date: '2026-07-30',
       readTime: '11 min read',
       category: 'Healthcare',
       image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&h=250&fit=crop',
@@ -141,10 +141,10 @@ const Blog = () => {
     },
     {
       id: 'papercut-mf-26-medium-business-iowa',
-      title: 'PaperCut MF 26 for Mid-Sized Iowa Businesses: Cost, Security & Hybrid Work',
-      excerpt: 'A practical PaperCut MF 26 guide for mid-sized Iowa businesses (50-500 employees) - hybrid cloud topology, modern auth, built-in cost and sustainability dashboards, and Advanced Scanning at standard pricing.',
+      title: 'PaperCut MF 26.0 for Mid-Sized Iowa Businesses: SSO, ARM64 & Upgrade Planning',
+      excerpt: 'What PaperCut MF 26.0 actually changed for mid-sized Iowa businesses: native SAML 2.0 SSO, unified user sessions, ARM64-aware Print Deploy, and the end-of-life device check to run before you upgrade.',
       author: 'Iowa Print Solutions Team',
-      date: '2026-03-25',
+      date: '2026-07-30',
       readTime: '9 min read',
       category: 'Product Updates',
       image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop',
@@ -153,10 +153,10 @@ const Blog = () => {
     },
     {
       id: 'uniflow-2026-medium-business-iowa',
-      title: 'Uniflow 2026 for Mid-Sized Iowa Businesses: AI Capture and Cloud-First Print',
-      excerpt: 'A practical Uniflow 2026 guide for mid-sized Iowa businesses - AI document capture, uniFLOW Online tiers, zero-trust authentication, and out-of-box cost and sustainability dashboards.',
+      title: 'uniFLOW Online 2026.2 for Mid-Sized Iowa Businesses: Fleet Management and Access Control',
+      excerpt: 'What uniFLOW Online 2026.1 and 2026.2 changed for mid-sized Iowa businesses: automated MEAP applet updates, flexible update strategies, Device Application Policy, and finer device access control.',
       author: 'Iowa Print Solutions Team',
-      date: '2026-03-18',
+      date: '2026-07-30',
       readTime: '11 min read',
       category: 'Product Updates',
       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=250&fit=crop',
@@ -178,7 +178,7 @@ const Blog = () => {
     {
       id: 'mobile-printing-solutions-iowa-2025',
       title: 'Mobile Printing Solutions Iowa 2025: Complete BYOD Guide',
-      excerpt: 'Comprehensive guide to mobile printing for Iowa businesses. Compare PaperCut Mobility Print, Uniflow Mobile, and PrinterLogic for seamless BYOD environments with enterprise security.',
+      excerpt: 'Comprehensive guide to mobile printing for Iowa businesses. Compare PaperCut Mobility Print, uniFLOW Mobile, and PrinterLogic for seamless BYOD environments with enterprise security.',
       author: 'Iowa Print Solutions Team',
       date: '2025-10-14',
       readTime: '16 min read',
@@ -190,7 +190,7 @@ const Blog = () => {
     {
       id: 'print-management-software-roi-iowa',
       title: 'Print Management Software ROI Iowa: Calculate Your Returns',
-      excerpt: 'Calculate ROI for print management software in Iowa. Real case studies, cost savings analysis, and ROI calculator for PaperCut, Uniflow, and PrinterLogic implementations.',
+      excerpt: 'Calculate ROI for print management software in Iowa. Real case studies, cost savings analysis, and ROI calculator for PaperCut, uniFLOW, and PrinterLogic implementations.',
       author: 'Iowa Print Solutions Team',
       date: '2025-10-14',
       readTime: '14 min read',
@@ -262,7 +262,7 @@ const Blog = () => {
     {
       id: 'small-business-print-management-iowa',
       title: 'Small Business Print Management in Iowa: SMB Solutions Comparison',
-      excerpt: 'Complete guide to print management solutions for Iowa small businesses. Compare PaperCut, Uniflow, and PrinterLogic for SMB cost savings and efficiency across Des Moines, Cedar Rapids, and statewide.',
+      excerpt: 'Complete guide to print management solutions for Iowa small businesses. Compare PaperCut, uniFLOW, and PrinterLogic for SMB cost savings and efficiency across Des Moines, Cedar Rapids, and statewide.',
       author: 'Iowa Print Solutions Team',
       date: '2025-08-27',
       readTime: '15 min read',
@@ -329,8 +329,8 @@ const Blog = () => {
     },
     {
       id: 'uniflow-medical-iowa',
-      title: 'Uniflow Medical Print Security for Iowa Healthcare',
-      excerpt: 'Advanced medical document security with Uniflow. Patient data protection, secure workflows, and compliance automation.',
+      title: 'uniFLOW Medical Print Security for Iowa Healthcare',
+      excerpt: 'Advanced medical document security with uniFLOW. Patient data protection, secure workflows, and compliance automation.',
       author: 'Dan Pearson',
       date: '2024-01-14',
       readTime: '11 min read',
@@ -362,8 +362,8 @@ const Blog = () => {
     },
     {
       id: 'uniflow-university-iowa',
-      title: 'Uniflow University Solutions for Iowa Higher Education',
-      excerpt: 'Transform your Iowa university with Uniflow\'s advanced academic document workflows. FERPA compliance and administrative automation.',
+      title: 'uniFLOW University Solutions for Iowa Higher Education',
+      excerpt: 'Transform your Iowa university with uniFLOW\'s advanced academic document workflows. FERPA compliance and administrative automation.',
       author: 'Dan Pearson',
       date: '2024-01-17',
       readTime: '14 min read',
@@ -462,7 +462,7 @@ const Blog = () => {
     {
       id: 'print-management-des-moines',
       title: 'Professional Print Management for Des Moines',
-      excerpt: 'Expert print management services for Des Moines businesses. PaperCut, Uniflow & PrinterLogic implementation serving Iowa\'s capital city since 1958.',
+      excerpt: 'Expert print management services for Des Moines businesses. PaperCut, uniFLOW & PrinterLogic implementation serving Iowa\'s capital city since 1958.',
       author: 'Dan Pearson',
       date: '2024-02-01',
       readTime: '13 min read',
@@ -507,8 +507,8 @@ const Blog = () => {
     <div className="min-h-screen bg-gray-50">
       <SEO 
         title="Iowa Print Management Blog - Latest News & Updates"
-        description="Stay updated with the latest print management news, PaperCut updates, Uniflow features, and PrinterLogic developments for Iowa organizations."
-        keywords="Iowa print management blog, PaperCut news, Uniflow updates, PrinterLogic articles, print security news Iowa, document management blog"
+        description="Stay updated with the latest print management news, PaperCut updates, uniFLOW features, and PrinterLogic developments for Iowa organizations."
+        keywords="Iowa print management blog, PaperCut news, uniFLOW updates, PrinterLogic articles, print security news Iowa, document management blog"
         canonicalUrl="https://iowaprintsolutions.com/blog"
         schemaType="Blog"
       />
@@ -527,7 +527,7 @@ const Blog = () => {
               Iowa Print Management Blog
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Stay informed with the latest updates, best practices, and insights for PaperCut, Uniflow, and PrinterLogic implementations in Iowa.
+              Stay informed with the latest updates, best practices, and insights for PaperCut, uniFLOW, and PrinterLogic implementations in Iowa.
             </p>
           </motion.div>
         </div>

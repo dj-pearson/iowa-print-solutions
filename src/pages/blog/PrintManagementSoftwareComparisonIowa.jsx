@@ -29,7 +29,7 @@ const PrintManagementSoftwareComparisonIowa = () => {
       rating: 5
     },
     {
-      name: 'Canon Uniflow',
+      name: 'Canon uniFLOW',
       category: 'Workflow Automation Focus',
       strengths: [
         'Advanced document workflow automation',
@@ -186,7 +186,7 @@ const PrintManagementSoftwareComparisonIowa = () => {
       <SEO
         title="Print Management Software Comparison 2025 | PaperCut vs uniFLOW vs PrinterLogic Iowa - Pricing, Features & ROI"
         description="Complete 2025 comparison: PaperCut ($3K-$15K), uniFLOW ($5K-$20K), PrinterLogic ($4K-$18K) for Iowa. Compare features, pricing, implementation times (2-6 weeks), ROI data. 6 solutions evaluated. Expert guidance from Infomax Office Systems (515) 237-2352."
-        keywords="print management software comparison Iowa 2025, PaperCut vs Uniflow vs PrinterLogic, print software pricing Iowa, Iowa print solutions comparison, print management ROI, SafeCom Equitrac comparison Iowa, best print management software Iowa, print software evaluation guide"
+        keywords="print management software comparison Iowa 2025, PaperCut vs uniFLOW vs PrinterLogic, print software pricing Iowa, Iowa print solutions comparison, print management ROI, SafeCom Equitrac comparison Iowa, best print management software Iowa, print software evaluation guide"
         canonicalUrl="https://iowaprintsolutions.com/blog/print-management-software-comparison-iowa"
         schemaType="Article"
         additionalSchema={{
@@ -263,7 +263,7 @@ const PrintManagementSoftwareComparisonIowa = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -695,7 +695,7 @@ const PrintManagementSoftwareComparisonIowa = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-blue-600">Alternative:</p>
-                    <p className="text-sm text-gray-700">Uniflow - If workflow automation needed</p>
+                    <p className="text-sm text-gray-700">uniFLOW - If workflow automation needed</p>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-600">Key Benefits:</p>
@@ -733,7 +733,7 @@ const PrintManagementSoftwareComparisonIowa = () => {
                   Call (515) 237-2352
                 </motion.a>
                 <motion.a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 bg-blue-700 text-white font-bold rounded-lg hover:bg-blue-800 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

@@ -11,7 +11,7 @@ const IowaBusinessFAQSchema = () => {
         'name': 'What print management solutions are available for Iowa businesses?',
         'acceptedAnswer': {
           '@type': 'Answer',
-          'text': 'Iowa businesses can access professional PaperCut MF, Canon Uniflow, and PrinterLogic solutions through Infomax Office Systems. These solutions include secure print release, cost tracking, mobile printing, and comprehensive document management for organizations in Des Moines, Cedar Rapids, Iowa City, and statewide.'
+          'text': 'Iowa businesses can access professional PaperCut MF, Canon uniFLOW, and PrinterLogic solutions through Infomax Office Systems. These solutions include secure print release, cost tracking, mobile printing, and comprehensive document management for organizations in Des Moines, Cedar Rapids, Iowa City, and statewide.'
         }
       },
       {
@@ -51,7 +51,7 @@ const IowaBusinessFAQSchema = () => {
         'name': 'Are print management solutions HIPAA compliant for Iowa healthcare?',
         'acceptedAnswer': {
           '@type': 'Answer',
-          'text': 'Yes, PaperCut MF, Uniflow, and PrinterLogic all offer HIPAA-compliant features essential for Iowa healthcare organizations. This includes document encryption, secure user authentication, comprehensive audit trails, and secure print release features used by UI Hospitals, Mercy Medical, and other Iowa healthcare facilities.'
+          'text': 'Yes, PaperCut MF, uniFLOW, and PrinterLogic all offer HIPAA-compliant features essential for Iowa healthcare organizations. This includes document encryption, secure user authentication, comprehensive audit trails, and secure print release features used by UI Hospitals, Mercy Medical, and other Iowa healthcare facilities.'
         }
       },
       {

@@ -133,16 +133,6 @@ const DubuquePrintManagement = () => {
             description: "Campus-wide print management for University of Dubuque and regional educational institutions"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.9",
-          reviewCount: "35"
-        }}
-        review={{
-          ratingValue: "5",
-          author: "Robert Wilson, Manufacturing IT Manager",
-          reviewBody: "Iowa Print Solutions' expertise in manufacturing environments is unmatched. Their PaperCut implementation secured our technical documents while dramatically reducing our printing costs.",
-          datePublished: "2024-01-12"
-        }}
       />
       
       <FAQSchema faqs={dubuqueFAQ} />
@@ -174,7 +164,7 @@ const DubuquePrintManagement = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -350,7 +340,7 @@ const DubuquePrintManagement = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

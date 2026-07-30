@@ -55,7 +55,7 @@ const PrintManagementSoftwareROIIowa = () => {
     {
       company: 'Cedar Rapids School District',
       size: '1,200 users',
-      solution: 'Uniflow Online',
+      solution: 'uniFLOW Online',
       implementation: '$40,000',
       annualSavings: '$120,000',
       roiPeriod: '4 months',
@@ -108,11 +108,11 @@ const PrintManagementSoftwareROIIowa = () => {
       <article className="min-h-screen bg-gray-50">
         <SEO 
           title="Print Management Software ROI Iowa: Calculate Your Returns"
-          description="Calculate the ROI of print management software for Iowa businesses. Real case studies, cost savings analysis, and ROI calculator for PaperCut, Uniflow, and PrinterLogic."
+          description="Calculate the ROI of print management software for Iowa businesses. Real case studies, cost savings analysis, and ROI calculator for PaperCut, uniFLOW, and PrinterLogic."
           keywords={[
             'print management ROI Iowa',
             'PaperCut ROI calculator',
-            'Uniflow cost savings',
+            'uniFLOW cost savings',
             'PrinterLogic ROI Iowa',
             'print software investment',
             'cost reduction printing Iowa',

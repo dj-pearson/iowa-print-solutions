@@ -337,7 +337,7 @@ const PaperCutVsUniflowVsPrinterLogicIowaK12 = () => {
                   Call Iowa School Experts: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -745,7 +745,7 @@ const PaperCutVsUniflowVsPrinterLogicIowaK12 = () => {
                   Call Iowa School Experts: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -782,8 +782,8 @@ const PaperCutVsUniflowVsPrinterLogicIowaK12 = () => {
               <div className="space-y-3">
                 <h4 className="font-semibold text-gray-800">Location Pages:</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link to="/locations/des-moines-print-management" className="text-blue-600 hover:text-blue-700">📍 Des Moines Print Management</Link></li>
-                  <li><Link to="/locations/cedar-rapids-print-management" className="text-blue-600 hover:text-blue-700">📍 Cedar Rapids K-12 Solutions</Link></li>
+                  <li><Link to="/locations/des-moines" className="text-blue-600 hover:text-blue-700">📍 Des Moines Print Management</Link></li>
+                  <li><Link to="/locations/cedar-rapids" className="text-blue-600 hover:text-blue-700">📍 Cedar Rapids K-12 Solutions</Link></li>
                   <li><Link to="/locations/waterloo-cedar-falls-print-management" className="text-blue-600 hover:text-blue-700">📍 UNI & Cedar Valley Schools</Link></li>
                 </ul>
               </div>

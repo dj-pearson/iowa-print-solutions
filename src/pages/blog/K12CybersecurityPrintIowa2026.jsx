@@ -45,7 +45,7 @@ const K12CybersecurityPrintIowa2026 = () => {
       icon: BookOpen,
       organization: 'Des Moines, Cedar Rapids, Davenport, Sioux City',
       challenge: 'Standardizing print security policy across 30+ buildings with mixed device fleets',
-      solution: 'Centralized PaperCut MF or Uniflow with badge release plus SIEM-forwarded audit logs',
+      solution: 'Centralized PaperCut MF or uniFLOW with badge release plus SIEM-forwarded audit logs',
       benefit: 'One auditable print policy enforced at every building, ready for state and federal reviews'
     },
     {

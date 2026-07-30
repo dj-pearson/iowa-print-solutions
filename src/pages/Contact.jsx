@@ -87,7 +87,7 @@ const Contact = () => {
 
   const services = [
     'PaperCut Implementation',
-    'Uniflow Solutions',
+    'uniFLOW Solutions',
     'PrinterLogic Setup',
     'Print Security',
     'Cost Optimization',
@@ -158,7 +158,7 @@ const Contact = () => {
       'alternateName': 'Iowa Print Solutions',
       'description': 'Expert print management solutions for Iowa businesses since 1958',
       'telephone': '515-237-2352',
-      'email': 'gfleschinfomaxoffice@gmail.com',
+      'email': 'DPearson@InfomaxOffice.com',
       'url': 'https://iowaprintsolutions.com',
       'address': {
         '@type': 'PostalAddress',
@@ -481,7 +481,7 @@ const Contact = () => {
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Certified in PaperCut, Uniflow & PrinterLogic</span>
+                    <span>Certified in PaperCut, uniFLOW & PrinterLogic</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />

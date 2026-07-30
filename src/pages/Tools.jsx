@@ -146,7 +146,7 @@ const Tools = () => {
       id: 'cost',
       title: 'Print Cost Savings Calculator',
       icon: DollarSign,
-      description: 'Calculate potential savings with print management solutions like PaperCut and Uniflow',
+      description: 'Calculate potential savings with print management solutions like PaperCut and uniFLOW',
       longDescription: 'Analyze your current printing costs including color vs black & white ratios, paper expenses, and maintenance fees. Discover how much your Iowa organization can save annually with professional print management implementation.',
       benefits: ['Reduce printing costs by 15-30%', 'Identify waste patterns', 'Budget planning assistance', 'ROI projections']
     },
@@ -155,7 +155,7 @@ const Tools = () => {
       title: 'Print Management ROI Calculator',
       icon: TrendingDown,
       description: 'Determine payback period and return on investment for print management solutions',
-      longDescription: 'Calculate the exact return on investment and payback timeline for implementing PaperCut, Uniflow, or PrinterLogic solutions in your Iowa business. Factor in implementation costs, licensing, and projected savings.',
+      longDescription: 'Calculate the exact return on investment and payback timeline for implementing PaperCut, uniFLOW, or PrinterLogic solutions in your Iowa business. Factor in implementation costs, licensing, and projected savings.',
       benefits: ['Accurate payback calculations', '3-year ROI projections', 'Net savings analysis', 'Investment justification']
     },
     {
@@ -187,7 +187,7 @@ const Tools = () => {
     },
     {
       question: 'Which print management solution is best for my Iowa business?',
-      answer: 'The best solution depends on your specific needs. PaperCut excels in education and healthcare, Uniflow is ideal for complex workflows, and PrinterLogic works well for organizations wanting to eliminate print servers.'
+      answer: 'The best solution depends on your specific needs. PaperCut excels in education and healthcare, uniFLOW is ideal for complex workflows, and PrinterLogic works well for organizations wanting to eliminate print servers.'
     },
     {
       question: 'Do these tools work for both small and large Iowa organizations?',
@@ -216,8 +216,8 @@ const Tools = () => {
     <div className="min-h-screen bg-gray-50">
       <SEO 
         title="Free Print Management Calculators & Tools for Iowa Businesses | Cost Savings Analysis"
-        description="Professional print management calculators for Iowa organizations. Calculate cost savings, ROI, fleet optimization, and environmental impact with PaperCut, Uniflow, and PrinterLogic solutions. Free tools from Infomax Office Systems."
-        keywords="print management calculator Iowa, cost savings calculator, ROI calculator Iowa, printer fleet optimization, paper usage calculator, PaperCut calculator, Uniflow cost analysis, PrinterLogic ROI, Iowa print solutions tools, document management calculator, copier cost analysis Iowa"
+        description="Professional print management calculators for Iowa organizations. Calculate cost savings, ROI, fleet optimization, and environmental impact with PaperCut, uniFLOW, and PrinterLogic solutions. Free tools from Infomax Office Systems."
+        keywords="print management calculator Iowa, cost savings calculator, ROI calculator Iowa, printer fleet optimization, paper usage calculator, PaperCut calculator, uniFLOW cost analysis, PrinterLogic ROI, Iowa print solutions tools, document management calculator, copier cost analysis Iowa"
         canonicalUrl="https://iowaprintsolutions.com/tools"
         schemaType="WebApplication"
         additionalSchema={{
@@ -259,7 +259,7 @@ const Tools = () => {
               Free Print Management Calculators for Iowa Businesses
             </h1>
             <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-              Professional-grade calculators and analysis tools to help Iowa organizations optimize their print environment, reduce costs, and improve efficiency. Calculate potential savings with PaperCut, Uniflow, and PrinterLogic solutions.
+              Professional-grade calculators and analysis tools to help Iowa organizations optimize their print environment, reduce costs, and improve efficiency. Calculate potential savings with PaperCut, uniFLOW, and PrinterLogic solutions.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto mt-8">
               {toolBenefits.map((benefit, index) => (
@@ -845,7 +845,7 @@ const Tools = () => {
               Ready to Implement Print Management in Your Iowa Organization?
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Use these calculator results to justify your print management investment. Contact Infomax Office Systems for professional implementation of PaperCut, Uniflow, or PrinterLogic solutions across Iowa.
+              Use these calculator results to justify your print management investment. Contact Infomax Office Systems for professional implementation of PaperCut, uniFLOW, or PrinterLogic solutions across Iowa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

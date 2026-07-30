@@ -58,7 +58,7 @@ const UniflowService = () => {
 
   const seoSchema = {
     '@type': 'Service',
-    'serviceType': 'Canon Uniflow Implementation',
+    'serviceType': 'Canon uniFLOW Implementation',
     'provider': {
       '@type': 'Organization',
       'name': 'Infomax Office Systems'
@@ -72,9 +72,9 @@ const UniflowService = () => {
   return (
     <>
       <SEO 
-        title="Canon Uniflow Implementation Services Iowa | Document Management Solutions"
-        description="Professional Canon Uniflow implementation services for Iowa businesses. Complete document workflow automation, secure printing, and mobile solutions. Contact Infomax Office Systems for expert setup."
-        keywords="Canon Uniflow implementation Iowa, document workflow automation Iowa, secure printing Iowa, mobile printing solutions Iowa, document management Iowa, Uniflow services Iowa"
+        title="Canon uniFLOW Implementation Services Iowa | Document Management Solutions"
+        description="Professional Canon uniFLOW implementation services for Iowa businesses. Complete document workflow automation, secure printing, and mobile solutions. Contact Infomax Office Systems for expert setup."
+        keywords="Canon uniFLOW implementation Iowa, document workflow automation Iowa, secure printing Iowa, mobile printing solutions Iowa, document management Iowa, uniFLOW services Iowa"
         canonicalUrl="https://iowaprintsolutions.com/services/uniflow"
         schemaType="Service"
         additionalSchema={seoSchema}
@@ -94,10 +94,10 @@ const UniflowService = () => {
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              Uniflow Document Solution Information
+              uniFLOW Document Solution Information
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Learn about advanced Uniflow solutions for Iowa organizations. For professional implementation through Infomax Office Systems, streamline your document workflows, automate processes, and enhance security.
+              Learn about advanced uniFLOW solutions for Iowa organizations. For professional implementation through Infomax Office Systems, streamline your document workflows, automate processes, and enhance security.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -163,7 +163,7 @@ const UniflowService = () => {
               animate={{ opacity: 1, x: 0 }}
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Why Choose Uniflow for Your Iowa Organization
+                Why Choose uniFLOW for Your Iowa Organization
               </h2>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -215,7 +215,7 @@ const UniflowService = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Uniflow Integration Capabilities
+              uniFLOW Integration Capabilities
             </h2>
             <p className="text-xl text-gray-600">
               Seamlessly connect with your existing business systems and applications.
@@ -282,7 +282,7 @@ const UniflowService = () => {
               Ready to Automate Your Document Workflows?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Transform your Iowa organization's document processes with our expert Uniflow implementation and optimization services.
+              Transform your Iowa organization's document processes with our expert uniFLOW implementation and optimization services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

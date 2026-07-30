@@ -9,7 +9,7 @@ const IowaCityPrintManagement = () => {
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Locations', href: '/locations' },
-    { label: 'Iowa City Print Management', href: '/locations/iowa-city-print-management' }
+    { label: 'Iowa City Print Management', href: '/locations/iowa-city' }
   ]
 
   const iowaCityFAQ = [
@@ -117,8 +117,8 @@ const IowaCityPrintManagement = () => {
     'alternateName': 'Iowa City Print Management Solutions',
     'description': 'Expert print management services in Iowa City, Iowa. Specializing in University of Iowa, healthcare, and professional services since 1958.',
     'telephone': '515-237-2352',
-    'email': 'gfleschinfomaxoffice@gmail.com',
-    'url': 'https://iowaprintsolutions.com/locations/iowa-city-print-management',
+    'email': 'DPearson@InfomaxOffice.com',
+    'url': 'https://iowaprintsolutions.com/locations/iowa-city',
     'address': {
       '@type': 'PostalAddress',
       'addressLocality': 'Iowa City',
@@ -163,7 +163,7 @@ const IowaCityPrintManagement = () => {
         title="Iowa City Print Management | University & Healthcare Solutions"
         description="Expert print management for Iowa City. University of Iowa, UI Hospitals & legal firms trust our HIPAA/FERPA compliant solutions. Serving Coralville & Johnson County."
         keywords="Iowa City print management, University of Iowa printing, UI Hospitals print solutions, HIPAA compliant printing Iowa City, FERPA compliance Iowa"
-        canonicalUrl="https://iowaprintsolutions.com/locations/iowa-city-print-management"
+        canonicalUrl="https://iowaprintsolutions.com/locations/iowa-city"
         schemaType="LocalBusiness"
         additionalSchema={seoSchema}
       />
@@ -201,7 +201,7 @@ const IowaCityPrintManagement = () => {
                   Call Iowa City: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-yellow-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -437,7 +437,7 @@ const IowaCityPrintManagement = () => {
                   Call Iowa City Team: (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-yellow-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

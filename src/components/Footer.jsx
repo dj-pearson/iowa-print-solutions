@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="font-bold text-xl">Iowa Print Solutions</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
-              Iowa's #1 resource for print management solutions since 1958. Professional PaperCut MF, Canon Uniflow, and PrinterLogic implementation through Infomax Office Systems - serving Des Moines, Cedar Rapids, Iowa City, Davenport, and all 99 Iowa counties.
+              Iowa's #1 resource for print management solutions since 1958. Professional PaperCut MF, Canon uniFLOW, and PrinterLogic implementation through Infomax Office Systems - serving Des Moines, Cedar Rapids, Iowa City, Davenport, and all 99 Iowa counties.
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-gray-300">

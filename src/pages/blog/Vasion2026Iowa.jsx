@@ -70,7 +70,7 @@ const Vasion2026Iowa = () => {
       organization: 'Iowa clinics with low PHI exposure on a budget',
       challenge: 'Eliminating print servers without sacrificing audit trail',
       solution: 'PrinterLogic with audit logging and badge-based release where needed',
-      benefit: 'Lower TCO than full PaperCut/Uniflow when secure release is the only must-have'
+      benefit: 'Lower TCO than full PaperCut/uniFLOW when secure release is the only must-have'
     }
   ]
 
@@ -86,14 +86,14 @@ const Vasion2026Iowa = () => {
     'You need true pull printing with biometric or smart-card release at every device',
     'You need detailed cost-center chargeback that your finance team will actually trust',
     'You require AI-driven document capture into Epic, Workday, or NetSuite',
-    'You operate in heavily regulated environments where PaperCut MF or Uniflow is the standard'
+    'You operate in heavily regulated environments where PaperCut MF or uniFLOW is the standard'
   ]
 
   return (
     <>
       <SEO
         title="PrinterLogic / Vasion 2026 for Iowa Businesses: What Is New and Who It Fits"
-        description="A practical 2026 review of PrinterLogic (now Vasion) for Iowa businesses - new SaaS architecture, identity and audit upgrades, Vasion Automate integration, and where it fits compared to PaperCut and Uniflow."
+        description="A practical 2026 review of PrinterLogic (now Vasion) for Iowa businesses - new SaaS architecture, identity and audit upgrades, Vasion Automate integration, and where it fits compared to PaperCut and uniFLOW."
         keywords="PrinterLogic Iowa 2026, Vasion Iowa, Iowa serverless printing, Iowa print server elimination, PrinterLogic vs PaperCut Iowa, Vasion Automate Iowa, Iowa SaaS printing"
         canonicalUrl="https://iowaprintsolutions.com/blog/printerlogic-vasion-2026-iowa"
         schemaType="Article"
@@ -223,7 +223,7 @@ const Vasion2026Iowa = () => {
                 ))}
               </ul>
               <p className="text-sm text-gray-500 mt-4">
-                For those scenarios, Iowa businesses are typically better served by PaperCut MF 26 or Uniflow 2026.
+                For those scenarios, Iowa businesses are typically better served by PaperCut MF 26 or uniFLOW 2026.
               </p>
             </div>
           </motion.section>
@@ -233,7 +233,7 @@ const Vasion2026Iowa = () => {
               <div className="text-center">
                 <h2 className="text-3xl font-bold mb-4">Should Your Iowa Business Move to Vasion?</h2>
                 <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                  Infomax Office Systems works with Iowa businesses across PrinterLogic, PaperCut, and Uniflow. We will help you decide whether the 2026 Vasion release is the right move for your environment.
+                  Infomax Office Systems works with Iowa businesses across PrinterLogic, PaperCut, and uniFLOW. We will help you decide whether the 2026 Vasion release is the right move for your environment.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="https://www.infomaxoffice.com/contact" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors inline-flex items-center justify-center">

@@ -81,7 +81,7 @@ const Locations = () => {
     <>
       <SEO 
         title="Iowa Print Solutions Locations - Statewide Print Management Services"
-        description="Infomax Office Systems serves all of Iowa with expert print management solutions. Local service in Des Moines, Cedar Rapids, Iowa City, and statewide support for PaperCut, Uniflow, and PrinterLogic."
+        description="Infomax Office Systems serves all of Iowa with expert print management solutions. Local service in Des Moines, Cedar Rapids, Iowa City, and statewide support for PaperCut, uniFLOW, and PrinterLogic."
         keywords="Iowa print solutions locations, Des Moines print management, Cedar Rapids printing services, Iowa City print solutions, Iowa statewide print support, Infomax Office Systems locations"
         canonicalUrl="https://iowaprintsolutions.com/locations"
         schemaType="CollectionPage"

@@ -5,7 +5,6 @@ import { GraduationCap, Users, Shield, DollarSign, CheckCircle, ArrowRight, Book
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import ServiceCard from '../../components/ServiceCard'
-import TestimonialCard from '../../components/TestimonialCard'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
 import LocalBusinessSchema from '../../components/LocalBusinessSchema'
 
@@ -84,20 +83,16 @@ const IowaEducationPrintSolutions = () => {
     }
   ]
 
-  const testimonials = [
-    {
-      name: 'Jennifer Martinez',
-      role: 'IT Director, Cedar Falls Community Schools',
-      content: 'The PaperCut implementation transformed our printing culture. Students learned responsibility while we cut costs by 55%. The Iowa Print Solutions team made the rollout seamless across all our buildings.',
-      rating: 5
-    },
-    {
-      name: 'Dr. Robert Chen',
-      role: 'Technology Coordinator, Iowa State University',
-      content: 'Managing printing across a 36,000-student campus seemed impossible until we implemented their solution. The integration with our existing systems and the ongoing support has been exceptional.',
-      rating: 5
-    }
-  ]
+  // NOTE: A `testimonials` array was removed from here. It contained invented
+  // quotes attributed to named individuals - including staff at real, named
+  // institutions - each with a 5-star rating and quoted savings figures, and
+  // rendered to visitors as genuine customer feedback.
+  //
+  // Putting words in the mouth of a fictional employee of a real organization is
+  // not a gray area. Removed rather than rewritten.
+  //
+  // TO REINSTATE: real names, real titles, written permission on file. See
+  // docs/SEO-GEO-STRATEGY.md. TestimonialCard is unchanged and ready.
 
   const educationFeatures = [
     {
@@ -191,10 +186,6 @@ const IowaEducationPrintSolutions = () => {
             description: "Budget management, usage reporting, and cost reduction strategies for educational institutions"
           }
         ]}
-        aggregateRating={{
-          ratingValue: "4.9",
-          reviewCount: "67"
-        }}
       />
 
       <div className="min-h-screen bg-white">
@@ -423,30 +414,7 @@ const IowaEducationPrintSolutions = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                What Iowa Educators Say
-              </h2>
-              <p className="text-lg text-gray-600">
-                Feedback from IT directors, principals, and administrators across Iowa
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard key={index} {...testimonial} />
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Testimonials section removed - see note above the removed testimonials array. */}
 
         {/* FAQ Section */}
         <section className="py-16 bg-white">
@@ -561,7 +529,7 @@ const IowaEducationPrintSolutions = () => {
                   Call Education Specialists
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />

@@ -418,7 +418,7 @@ const ResourceLibrary = () => {
                 Call (515) 237-2352
               </a>
               <a
-                href="mailto:gfleschinfomaxoffice@gmail.com"
+                href="mailto:DPearson@InfomaxOffice.com"
                 className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
               >
                 <Mail className="h-5 w-5 mr-2" />

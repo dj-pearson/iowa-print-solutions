@@ -181,7 +181,7 @@ const ReducePrintingCostsIowa = () => {
       best_for: 'Organizations seeking detailed cost control and user accountability'
     },
     {
-      solution: 'Uniflow Cost Management',
+      solution: 'uniFLOW Cost Management',
       key_features: [
         'Advanced workflow-based cost tracking',
         'Project and client-based billing',

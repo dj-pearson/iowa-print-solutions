@@ -116,7 +116,7 @@ const PaperCutVsAlternativesIowa = () => {
       <SEO 
         title="PaperCut vs Alternatives Iowa | Print Management Software Comparison"
         description="Comprehensive comparison of PaperCut vs other print management solutions for Iowa organizations. Features, costs, and implementation guidance for informed decision-making."
-        keywords="PaperCut vs alternatives Iowa, print management comparison, PaperCut vs Uniflow, PaperCut vs SafeCom, Iowa print software comparison, print management solutions comparison"
+        keywords="PaperCut vs alternatives Iowa, print management comparison, PaperCut vs uniFLOW, PaperCut vs SafeCom, Iowa print software comparison, print management solutions comparison"
         canonicalUrl="https://iowaprintsolutions.com/blog/papercut-vs-alternatives-iowa"
         schemaType="Article"
         additionalSchema={{
@@ -193,7 +193,7 @@ const PaperCutVsAlternativesIowa = () => {
                   Call (515) 237-2352
                 </a>
                 <a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-2" />
@@ -240,7 +240,7 @@ const PaperCutVsAlternativesIowa = () => {
                 transition={{ delay: 0.1 }}
                 className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6 text-center"
               >
-                <h3 className="text-xl font-bold text-blue-800 mb-2">Canon Uniflow</h3>
+                <h3 className="text-xl font-bold text-blue-800 mb-2">Canon uniFLOW</h3>
                 <p className="text-sm text-blue-600">Workflow-focused solution with document automation</p>
               </motion.div>
 
@@ -294,7 +294,7 @@ const PaperCutVsAlternativesIowa = () => {
                     <tr>
                       <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Feature</th>
                       <th className="px-6 py-4 text-center text-sm font-semibold text-green-800">PaperCut MF</th>
-                      <th className="px-6 py-4 text-center text-sm font-semibold text-blue-800">Canon Uniflow</th>
+                      <th className="px-6 py-4 text-center text-sm font-semibold text-blue-800">Canon uniFLOW</th>
                       <th className="px-6 py-4 text-center text-sm font-semibold text-gray-800">Follow-Me Print</th>
                       <th className="px-6 py-4 text-center text-sm font-semibold text-purple-800">SafeCom</th>
                     </tr>
@@ -470,7 +470,7 @@ const PaperCutVsAlternativesIowa = () => {
                 <div className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-blue-600" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Choose Uniflow If:</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Choose uniFLOW If:</h3>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start space-x-2">
                     <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
@@ -551,7 +551,7 @@ const PaperCutVsAlternativesIowa = () => {
                   Call (515) 237-2352
                 </motion.a>
                 <motion.a
-                  href="mailto:gfleschinfomaxoffice@gmail.com"
+                  href="mailto:DPearson@InfomaxOffice.com"
                   className="inline-flex items-center px-8 py-4 bg-green-700 text-white font-bold rounded-lg hover:bg-green-800 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

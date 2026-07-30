@@ -45,7 +45,7 @@ const HigherEdSustainabilityPrintIowa2026 = () => {
       icon: GraduationCap,
       organization: 'University of Iowa, Iowa State University',
       challenge: 'Reporting Scope 3 paper and energy impact for institutional ESG goals',
-      solution: 'Native PaperCut MF 26 / Uniflow 2026 sustainability dashboards exported to ESG platform',
+      solution: 'Native PaperCut MF 26 / uniFLOW 2026 sustainability dashboards exported to ESG platform',
       benefit: 'Auditable ESG reporting without bolt-on tools or manual spreadsheet roll-ups'
     },
     {
@@ -87,7 +87,7 @@ const HigherEdSustainabilityPrintIowa2026 = () => {
       <SEO
         title="Higher Ed Sustainability & Print Reporting: 2026 Guide for Iowa Universities"
         description="Practical sustainability and ESG print reporting guide for Iowa colleges and universities - duplex defaults, pull printing, per-department dashboards, and measurable carbon and paper-reduction goals."
-        keywords="Iowa university sustainability printing, higher ed ESG reporting Iowa, PaperCut sustainability dashboard, Uniflow ESG reporting, Iowa college print reduction, Board of Regents climate goals printing"
+        keywords="Iowa university sustainability printing, higher ed ESG reporting Iowa, PaperCut sustainability dashboard, uniFLOW ESG reporting, Iowa college print reduction, Board of Regents climate goals printing"
         canonicalUrl="https://iowaprintsolutions.com/blog/higher-ed-sustainability-print-iowa-2026"
         schemaType="Article"
         additionalSchema={{
@@ -240,7 +240,7 @@ const HigherEdSustainabilityPrintIowa2026 = () => {
                 <p className="text-sm text-gray-500">Sustainability print specialists for Iowa higher ed</p>
               </div>
               <div className="flex space-x-4">
-                <a href="/blog/uniflow-2026-higher-education-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">Uniflow 2026 for Iowa Higher Ed →</a>
+                <a href="/blog/uniflow-2026-higher-education-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">uniFLOW 2026 for Iowa Higher Ed →</a>
               </div>
             </div>
             <ContentRating />

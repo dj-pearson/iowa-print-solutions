@@ -8,7 +8,7 @@ const LocalBusinessSchema = () => {
     '@type': 'LocalBusiness',
     'name': 'Infomax Office Systems',
     'image': 'https://iowaprintsolutions.com/og-image.jpg',
-    'description': 'Iowa\'s leading print management solutions provider specializing in PaperCut, Uniflow, and PrinterLogic implementations since 1958.',
+    'description': 'Iowa\'s leading print management solutions provider specializing in PaperCut MF, Canon uniFLOW, and Vasion Print (formerly PrinterLogic) implementations since 1958.',
     'address': [
       {
         '@type': 'PostalAddress',
@@ -111,7 +111,7 @@ const LocalBusinessSchema = () => {
           '@type': 'Offer',
           'itemOffered': {
             '@type': 'Service',
-            'name': 'Uniflow Solutions',
+            'name': 'uniFLOW Solutions',
             'description': 'Document workflow automation and security'
           }
         },
@@ -119,34 +119,14 @@ const LocalBusinessSchema = () => {
           '@type': 'Offer',
           'itemOffered': {
             '@type': 'Service',
-            'name': 'PrinterLogic Services',
+            'name': 'Vasion Print (formerly PrinterLogic) Services',
             'description': 'Serverless printing infrastructure'
           }
         }
       ]
     },
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.8',
-      'bestRating': '5',
-      'worstRating': '1',
-      'ratingCount': '47'
-    },
-    'review': [
-      {
-        '@type': 'Review',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5'
-        },
-        'author': {
-          '@type': 'Person',
-          'name': 'Sarah Johnson'
-        },
-        'reviewBody': 'Excellent PaperCut implementation at our Iowa healthcare facility. Professional service and ongoing support.'
-      }
-    ]
+    // No aggregateRating / review markup - see OrganizationSchema.jsx for why.
+    // Ratings must come from real, on-page, independently collected reviews.
   }
 
   return (

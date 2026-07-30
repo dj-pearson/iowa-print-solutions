@@ -4,39 +4,51 @@ import { Calendar, User, ArrowRight, CheckCircle, Cloud, Shield, BarChart3, File
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import ContentRating from '../../components/ContentRating'
+import VerifiedReleaseFacts from '../../components/VerifiedReleaseFacts'
 
 const Uniflow2026HigherEdIowa = () => {
   const breadcrumbItems = [
     { label: 'Home', path: '/' },
     { label: 'Blog', path: '/blog' },
-    { label: 'Uniflow 2026 Higher Education', path: '/blog/uniflow-2026-higher-education-iowa' }
+    { label: 'uniFLOW Online 2026 Higher Education', path: '/blog/uniflow-2026-higher-education-iowa' }
   ]
 
+  // Verified uniFLOW Online 2026.1 / 2026.2 changes only - see
+  // src/config/products.js.
   const newCapabilities = [
     {
       icon: Cloud,
-      title: 'uniFLOW Online Expansion',
-      description: "Canon's 2026 release deepens uniFLOW Online with multi-region tenancy, expanded device coverage, and Microsoft Universal Print v2 integration.",
-      iowaImpact: 'Iowa universities running hybrid Microsoft + Canon environments can finally retire on-prem Uniflow servers without losing campus-wide accounting.'
+      title: 'Automated MEAP applet updates',
+      description: 'uniFLOW Online 2026.2 deploys MEAP applet updates automatically across compatible devices, keeping embedded device software current without per-device work.',
+      iowaImpact: 'A campus fleet spread across dozens of buildings stops needing a technician visit per device to apply embedded software updates.'
     },
     {
       icon: BarChart3,
-      title: 'Department & Grant-Code Cost Allocation',
-      description: 'New chargeback models support nested cost centers, grant codes, and student lab allocations with automated month-end exports.',
-      iowaImpact: 'Research-heavy Iowa universities can now bill federal grants accurately for printing without manual reconciliation.'
+      title: 'Flexible update strategies',
+      description: 'Administrators choose how quickly new applet versions deploy, so rollout follows institutional change-management requirements.',
+      iowaImpact: 'Lets campus IT hold updates until after finals or a term boundary rather than accepting them mid-semester.'
     },
     {
       icon: FileText,
-      title: 'AI-Assisted Capture & Routing',
-      description: 'Uniflow 2026 adds intelligent capture that classifies scanned documents and routes them to ECM, SharePoint, or Workday automatically.',
-      iowaImpact: 'Iowa registrar and bursar offices cut transcript and form processing times in half.'
+      title: 'Device Application Policy',
+      description: 'Introduced as an experimental extension in 2026.1, it brings centralized bulk MEAP application updates to MEAP-compatible imageRUNNER ADVANCE DX and imageFORCE devices.',
+      iowaImpact: 'Useful for the Canon portion of a mixed campus fleet. Verify your specific models are covered - the extension is documented as experimental.'
     },
     {
       icon: Shield,
-      title: 'Zero-Trust Print Architecture',
-      description: 'Updated authentication framework supports SAML 2.0, OIDC, and FIDO2 with continuous session validation.',
-      iowaImpact: 'Aligns with Iowa Board of Regents cybersecurity directives and helps universities meet rising cyber-insurance requirements.'
+      title: 'Enhanced device access control',
+      description: 'Device access policies give finer control over how users interact with connected devices, including assigning policy sets to device groups.',
+      iowaImpact: 'A device in an open student lab can carry different rules than one in a departmental office, managed by group rather than device by device.'
     }
+  ]
+
+  // Established uniFLOW capabilities - not new in the 2026 releases.
+  const establishedCapabilities = [
+    { title: 'Secure print release', description: 'Jobs are held until the user authenticates at the device, which is what keeps student and staff documents off open output trays.' },
+    { title: 'Cost allocation and chargeback', description: 'Print and copy activity is attributed to users, departments, or cost centers for internal billing.' },
+    { title: 'Student print quotas', description: 'Per-user allowances and top-up models for lab and library printing.' },
+    { title: 'Scan capture and routing', description: 'Scanned documents route to network folders, email, or document systems with metadata captured at the device.' },
+    { title: 'Mobile and guest printing', description: 'Students and visitors submit jobs without installing drivers.' }
   ]
 
   const iowaUseCases = [
@@ -45,7 +57,7 @@ const Uniflow2026HigherEdIowa = () => {
       icon: GraduationCap,
       organization: 'University of Iowa, Iowa State University',
       challenge: 'Allocating print costs across hundreds of departments, grants, and research labs',
-      solution: 'Uniflow 2026 nested cost centers with Workday Financials sync',
+      solution: 'uniFLOW cost centers mapped to departments and labs, with exports into the institution financial system',
       benefit: 'Accurate grant billing and audit-ready reporting for sponsored research administration'
     },
     {
@@ -69,37 +81,37 @@ const Uniflow2026HigherEdIowa = () => {
       icon: Globe,
       organization: 'DMACC, Kirkwood, Hawkeye, NICC',
       challenge: 'Multi-campus deployments with variable bandwidth across rural Iowa sites',
-      solution: 'Uniflow 2026 edge release stations with offline queue caching',
+      solution: 'uniFLOW secure release with local release capability at each site',
       benefit: 'Resilient release-printing even when WAN links to remote campuses go down'
     }
   ]
 
   const migrationPhases = [
-    { phase: 'Discovery', action: 'Inventory current Uniflow version, devices, and integrations (SIS, ECM, finance)' },
+    { phase: 'Discovery', action: 'Inventory current uniFLOW version, devices, and integrations (SIS, ECM, finance)' },
     { phase: 'Design', action: 'Map cost centers, grant codes, and quota tiers for the new chargeback model' },
-    { phase: 'Pilot', action: 'Deploy Uniflow 2026 in one college or building with full SSO and capture workflows' },
+    { phase: 'Pilot', action: 'Deploy in one college or building with SSO, quotas, and your scan destinations before expanding' },
     { phase: 'Rollout', action: 'Stage campus-wide migration over a semester break with parallel run windows' },
-    { phase: 'Optimize', action: 'Tune AI capture rules, refine dashboards, and decommission legacy print servers' }
+    { phase: 'Optimize', action: 'Refine scan destinations and quota models, enable automated MEAP updates, and decommission legacy print servers' }
   ]
 
   return (
     <>
       <SEO
-        title="Uniflow 2026 for Iowa Higher Education: What Universities Need to Know"
-        description="A practical guide to the Uniflow 2026 release for Iowa universities and community colleges - uniFLOW Online expansion, grant-code chargebacks, AI capture, and zero-trust print."
-        keywords="Uniflow 2026 Iowa, Iowa higher education printing, university print management Iowa, uniFLOW Online Iowa, Iowa community college printing, Iowa Board of Regents print security, Iowa university chargeback printing"
+        title="uniFLOW Online 2026 for Iowa Higher Education: Fleet Updates and Access Control"
+        description="What uniFLOW Online 2026.1 and 2026.2 changed for Iowa universities and community colleges: automated MEAP applet updates, term-friendly update strategies, and device access policies by device group."
+        keywords="uniFLOW Online 2026, uniFLOW Iowa, Canon uniFLOW higher education, Iowa higher education printing, university print management Iowa, Iowa community college printing, Iowa university chargeback printing"
         canonicalUrl="https://iowaprintsolutions.com/blog/uniflow-2026-higher-education-iowa"
         schemaType="Article"
         additionalSchema={{
           '@type': 'Article',
-          'headline': 'Uniflow 2026 for Iowa Higher Education: What Universities Need to Know',
+          'headline': 'uniFLOW Online 2026 for Iowa Higher Education: Fleet Updates and Access Control',
           'author': { '@type': 'Organization', 'name': 'Infomax Office Systems', 'url': 'https://www.infomaxoffice.com' },
           'publisher': {
             '@type': 'Organization',
             'name': 'Iowa Print Solutions',
             'logo': { '@type': 'ImageObject', 'url': 'https://iowaprintsolutions.com/logo.png' }
           },
-          'datePublished': '2026-04-15',
+          'datePublished': '2026-07-30',
           'dateModified': '2026-05-04',
           'articleSection': 'Education',
           'about': [
@@ -117,7 +129,7 @@ const Uniflow2026HigherEdIowa = () => {
           <motion.header initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
             <div className="flex items-center text-sm text-gray-500 mb-4">
               <Calendar className="h-4 w-4 mr-2" />
-              <time dateTime="2026-04-15">April 15, 2026</time>
+              <time dateTime="2026-07-30">July 30, 2026</time>
               <span className="mx-2">•</span>
               <User className="h-4 w-4 mr-2" />
               <span>Iowa Print Solutions Team</span>
@@ -126,11 +138,11 @@ const Uniflow2026HigherEdIowa = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Uniflow 2026 for Iowa Higher Education: What Universities Need to Know
+              uniFLOW Online 2026 for Iowa Higher Education: Fleet Updates and Access Control
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Canon&apos;s Uniflow 2026 release brings serious changes for Iowa colleges and universities - cloud-first architecture, smarter cost allocation for sponsored research, AI-driven capture, and zero-trust authentication aligned to Board of Regents cybersecurity directives.
+              Canon and NT-ware shipped uniFLOW Online 2026.1 in March 2026 and 2026.2 in May 2026. Both are fleet-management releases: automated updates for embedded device software, and finer control over who can do what at which device. For a campus running Canon hardware across many buildings, that is a real reduction in technician time.
             </p>
           </motion.header>
 
@@ -140,14 +152,16 @@ const Uniflow2026HigherEdIowa = () => {
               <div>
                 <h3 className="text-lg font-semibold text-blue-900 mb-2">Why this release matters for Iowa universities</h3>
                 <p className="text-blue-800">
-                  Iowa institutions are simultaneously consolidating data centers, tightening cybersecurity requirements after recent state directives, and leaning harder on Microsoft 365 and Workday. Uniflow 2026 is the first release that lines up cleanly with all three pressures.
+                  Campus print fleets are large, distributed, and hard to patch by hand, so embedded device software tends to drift out of date. That drift is exactly what the 2026 releases automate away, and it is the kind of finding that shows up in a security review.
                 </p>
               </div>
             </div>
           </motion.div>
 
           <motion.section initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">What is new in Uniflow 2026 for Higher Ed</h2>
+            <VerifiedReleaseFacts productId="uniflow" title="What actually shipped in uniFLOW Online 2026.1 and 2026.2" />
+
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">What the 2026 Releases Mean for Iowa Campus IT</h2>
             <div className="space-y-8">
               {newCapabilities.map((feature, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-lg p-6">
@@ -188,7 +202,7 @@ const Uniflow2026HigherEdIowa = () => {
                       <p className="text-gray-600 text-sm">{useCase.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900 mb-1">Uniflow 2026 Solution</h4>
+                      <h4 className="font-medium text-gray-900 mb-1">Approach</h4>
                       <p className="text-gray-600 text-sm">{useCase.solution}</p>
                     </div>
                     <div className="bg-green-50 p-3 rounded-lg">
@@ -221,24 +235,34 @@ const Uniflow2026HigherEdIowa = () => {
           </motion.section>
 
           <motion.section initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Compliance &amp; the Iowa Higher Ed Cyber Landscape</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">What uniFLOW Contributes on an Iowa Campus</h2>
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <p className="text-gray-600 mb-4">Iowa universities are navigating a tightening compliance environment. Uniflow 2026 helps in several ways:</p>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start"><CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1" /><span className="text-sm">FERPA-aligned audit logs with retention enforcement</span></li>
-                <li className="flex items-start"><CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1" /><span className="text-sm">HIPAA-ready workflows for academic medical centers and student health</span></li>
-                <li className="flex items-start"><CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1" /><span className="text-sm">PCI-DSS support for cashier and bursar terminals</span></li>
-                <li className="flex items-start"><CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1" /><span className="text-sm">Continuous authentication that satisfies cyber-insurance MFA mandates</span></li>
-              </ul>
+              <p className="text-gray-600 mb-6">
+                These are established uniFLOW capabilities rather than 2026 release items. They are what an institution actually buys the platform for.
+              </p>
+              <dl className="space-y-4">
+                {establishedCapabilities.map((cap) => (
+                  <div key={cap.title} className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true" />
+                    <div>
+                      <dt className="font-semibold text-gray-900 text-sm">{cap.title}</dt>
+                      <dd className="text-gray-600 text-sm mt-0.5">{cap.description}</dd>
+                    </div>
+                  </div>
+                ))}
+              </dl>
+              <p className="text-gray-500 text-sm mt-6 pt-6 border-t border-gray-200">
+                Scope note: print and scan controls support a FERPA or HIPAA program, they do not constitute compliance on their own. Integrations with campus financial or student systems depend on your environment and should be scoped against your own systems rather than assumed.
+              </p>
             </div>
           </motion.section>
 
           <motion.section initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }} className="mb-12">
             <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white p-8">
               <div className="text-center">
-                <h2 className="text-3xl font-bold mb-4">Plan Your Iowa Campus Uniflow 2026 Migration</h2>
+                <h2 className="text-3xl font-bold mb-4">Plan Your Iowa Campus uniFLOW Migration</h2>
                 <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                  Infomax Office Systems supports Uniflow deployments at Iowa universities, community colleges, and private institutions. We&apos;ll map your existing environment to the 2026 architecture and stage a migration that fits your academic calendar.
+                  Infomax Office Systems supports uniFLOW deployments at Iowa universities, community colleges, and private institutions. We&apos;ll map your existing environment to the 2026 architecture and stage a migration that fits your academic calendar.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="https://www.infomaxoffice.com/contact" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
@@ -256,11 +280,11 @@ const Uniflow2026HigherEdIowa = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.0 }} className="border-t border-gray-200 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
               <div className="mb-4 md:mb-0">
-                <p className="text-sm text-gray-500">Published by <strong>Iowa Print Solutions Team</strong> on April 15, 2026</p>
-                <p className="text-sm text-gray-500">Higher-ed Uniflow specialists serving Iowa colleges and universities</p>
+                <p className="text-sm text-gray-500">Published by <strong>Iowa Print Solutions Team</strong> on July 30, 2026</p>
+                <p className="text-sm text-gray-500">Higher-ed uniFLOW specialists serving Iowa colleges and universities</p>
               </div>
               <div className="flex space-x-4">
-                <a href="/blog/uniflow-university-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">Uniflow for Iowa Universities →</a>
+                <a href="/blog/uniflow-university-iowa" className="text-blue-600 hover:text-blue-700 text-sm font-medium">uniFLOW for Iowa Universities →</a>
               </div>
             </div>
             <ContentRating />

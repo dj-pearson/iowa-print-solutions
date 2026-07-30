@@ -41,7 +41,7 @@ const PaperCutSecurePrintRelease = lazy(() => import('./pages/resources/PaperCut
 const PaperCutFollowMePrint = lazy(() => import('./pages/resources/PaperCutFollowMePrint'))
 const PaperCutMobilityPrint = lazy(() => import('./pages/resources/PaperCutMobilityPrint'))
 
-// Resource Pages - Uniflow
+// Resource Pages - uniFLOW
 const UniflowPlatformOverview = lazy(() => import('./pages/resources/UniflowPlatformOverview'))
 const UniflowSecurePrintRelease = lazy(() => import('./pages/resources/UniflowSecurePrintRelease'))
 const UniflowCostTracking = lazy(() => import('./pages/resources/UniflowCostTracking'))
@@ -110,7 +110,7 @@ const AIPrintManagementIowa2025 = lazy(() => import('./pages/blog/AIPrintManagem
 const MobilePrintingSolutionsIowa2025 = lazy(() => import('./pages/blog/MobilePrintingSolutionsIowa2025'))
 const CloudPrintingSolutionsIowa2025 = lazy(() => import('./pages/blog/CloudPrintingSolutionsIowa2025'))
 
-// Blog Pages - 2026 PaperCut MF 26 & Uniflow 2026 Industry Updates
+// Blog Pages - 2026 PaperCut MF 26 & uniFLOW 2026 Industry Updates
 const PaperCutMF26K12Iowa = lazy(() => import('./pages/blog/PaperCutMF26K12Iowa'))
 const Uniflow2026HigherEdIowa = lazy(() => import('./pages/blog/Uniflow2026HigherEdIowa'))
 const PaperCutMF26HealthcareIowa = lazy(() => import('./pages/blog/PaperCutMF26HealthcareIowa'))
@@ -127,10 +127,6 @@ const UniversalPrintV2Iowa2026 = lazy(() => import('./pages/blog/UniversalPrintV
 const Vasion2026Iowa = lazy(() => import('./pages/blog/Vasion2026Iowa'))
 
 // Location Pages
-const DesMoinesPrintSolutions = lazy(() => import('./pages/locations/DesMoinesPrintSolutions'))
-const CedarRapidsPrintSolutions = lazy(() => import('./pages/locations/CedarRapidsPrintSolutions'))
-const IowaCityPrintSolutions = lazy(() => import('./pages/locations/IowaCityPrintSolutions'))
-const DavenportPrintSolutions = lazy(() => import('./pages/locations/DavenportPrintSolutions'))
 const DesMoinesPrintManagement = lazy(() => import('./pages/locations/DesMoinesPrintManagement'))
 const CedarRapidsPrintManagement = lazy(() => import('./pages/locations/CedarRapidsPrintManagement'))
 const IowaCityPrintManagement = lazy(() => import('./pages/locations/IowaCityPrintManagement'))
@@ -221,7 +217,7 @@ const AppContent = () => {
             <Route path="/resources/papercut-follow-me-print" element={<PaperCutFollowMePrint />} />
             <Route path="/resources/papercut-mobility-print" element={<PaperCutMobilityPrint />} />
 
-            {/* Resource Pages - Uniflow */}
+            {/* Resource Pages - uniFLOW */}
             <Route path="/resources/uniflow-platform-overview" element={<UniflowPlatformOverview />} />
             <Route path="/resources/uniflow-secure-print-release" element={<UniflowSecurePrintRelease />} />
             <Route path="/resources/uniflow-cost-tracking" element={<UniflowCostTracking />} />
@@ -290,7 +286,7 @@ const AppContent = () => {
             <Route path="/blog/mobile-printing-solutions-iowa-2025" element={<MobilePrintingSolutionsIowa2025 />} />
             <Route path="/blog/cloud-printing-solutions-iowa-2025" element={<CloudPrintingSolutionsIowa2025 />} />
 
-            {/* Blog Pages - 2026 PaperCut MF 26 & Uniflow 2026 Industry Updates */}
+            {/* Blog Pages - 2026 PaperCut MF 26 & uniFLOW 2026 Industry Updates */}
             <Route path="/blog/papercut-mf-26-k12-iowa-2026" element={<PaperCutMF26K12Iowa />} />
             <Route path="/blog/uniflow-2026-higher-education-iowa" element={<Uniflow2026HigherEdIowa />} />
             <Route path="/blog/papercut-mf-26-healthcare-iowa-2026" element={<PaperCutMF26HealthcareIowa />} />
@@ -306,15 +302,29 @@ const AppContent = () => {
             <Route path="/blog/microsoft-universal-print-v2-iowa-2026" element={<UniversalPrintV2Iowa2026 />} />
             <Route path="/blog/printerlogic-vasion-2026-iowa" element={<Vasion2026Iowa />} />
 
-            {/* Location Pages */}
-            <Route path="/locations/des-moines" element={<DesMoinesPrintSolutions />} />
-            <Route path="/locations/des-moines-print-management" element={<DesMoinesPrintManagement />} />
-            <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintSolutions />} />
-            <Route path="/locations/cedar-rapids-print-management" element={<CedarRapidsPrintManagement />} />
-            <Route path="/locations/iowa-city" element={<IowaCityPrintSolutions />} />
-            <Route path="/locations/iowa-city-print-management" element={<IowaCityPrintManagement />} />
-            <Route path="/locations/davenport" element={<DavenportPrintSolutions />} />
-            <Route path="/locations/davenport-print-management" element={<DavenportPrintManagement />} />
+            {/*
+              Location Pages - one page per city.
+
+              Des Moines, Cedar Rapids, Iowa City, and Davenport each used to
+              have TWO pages competing for the same intent: a thin page at
+              /locations/{city} and a richer one at
+              /locations/{city}-print-management. They cannibalized each other.
+
+              The richer *PrintManagement component now serves the clean
+              /locations/{city} URL, which matches the `slug` values in
+              src/config/site.js. The old -print-management paths are 301'd in
+              public/_redirects, so do NOT re-add routes for them here - a
+              client-side route would shadow the redirect.
+
+              The remaining four cities still live at -print-management URLs.
+              Migrating them is a URL change with no cannibalization to fix, so
+              it was left out of this pass deliberately. See
+              docs/SEO-GEO-STRATEGY.md before changing them.
+            */}
+            <Route path="/locations/des-moines" element={<DesMoinesPrintManagement />} />
+            <Route path="/locations/cedar-rapids" element={<CedarRapidsPrintManagement />} />
+            <Route path="/locations/iowa-city" element={<IowaCityPrintManagement />} />
+            <Route path="/locations/davenport" element={<DavenportPrintManagement />} />
             <Route path="/locations/waterloo-cedar-falls-print-management" element={<WaterlooCedarFallsPrintManagement />} />
             <Route path="/locations/sioux-city-print-management" element={<SiouxCityPrintManagement />} />
             <Route path="/locations/dubuque-print-management" element={<DubuquePrintManagement />} />

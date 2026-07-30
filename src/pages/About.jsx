@@ -9,15 +9,15 @@ const About = () => {
   const aboutFAQ = [
     {
       question: 'Why should Iowa businesses choose Infomax Office Systems for print management?',
-      answer: 'Infomax Office Systems is Iowa&apos;s most experienced print management provider, serving businesses since 1958 with over 65 years of local expertise. We are certified partners for all major platforms (PaperCut, Uniflow, PrinterLogic), provide dedicated Iowa-based support, and have successfully implemented solutions for hundreds of Iowa organizations including UnityPoint Health, Iowa State University, and Principal Financial.'
+      answer: 'Infomax Office Systems is Iowa&apos;s most experienced print management provider, serving businesses since 1958 with over 65 years of local expertise. We are certified partners for all major platforms (PaperCut, uniFLOW, PrinterLogic), provide dedicated Iowa-based support, and have successfully implemented solutions for hundreds of Iowa organizations including UnityPoint Health, Iowa State University, and Principal Financial.'
     },
     {
       question: 'What certifications does Infomax Office Systems have?',
-      answer: 'Infomax Office Systems holds all major industry certifications including PaperCut Certified Partner, Canon Uniflow Authorized Reseller, PrinterLogic Implementation Specialist, Canon Solutions America Partner, and Microsoft Partner Network Member. Our team has 15+ years of specialized experience in print management solutions for Iowa businesses.'
+      answer: 'Infomax Office Systems holds all major industry certifications including PaperCut Certified Partner, Canon uniFLOW Authorized Reseller, PrinterLogic Implementation Specialist, Canon Solutions America Partner, and Microsoft Partner Network Member. Our team has 15+ years of specialized experience in print management solutions for Iowa businesses.'
     },
     {
       question: 'How long has Infomax Office Systems been serving Iowa?',
-      answer: 'Infomax Office Systems has been serving Iowa businesses since 1958 - over 65 years of continuous service. We started with office equipment and evolved to become Iowa&apos;s leading print management solutions provider, adding PaperCut partnership in 2015, Uniflow capabilities in 2018, and PrinterLogic expertise in 2020.'
+      answer: 'Infomax Office Systems has been serving Iowa businesses since 1958 - over 65 years of continuous service. We started with office equipment and evolved to become Iowa&apos;s leading print management solutions provider, adding PaperCut partnership in 2015, uniFLOW capabilities in 2018, and PrinterLogic expertise in 2020.'
     },
     {
       question: 'Does Infomax Office Systems provide support throughout Iowa?',
@@ -37,7 +37,7 @@ const About = () => {
     {
       icon: Target,
       title: 'Expertise',
-      description: 'Deep knowledge in PaperCut, Uniflow, and PrinterLogic solutions with 15+ years of experience.'
+      description: 'Deep knowledge in PaperCut, uniFLOW, and PrinterLogic solutions with 15+ years of experience.'
     },
     {
       icon: Heart,
@@ -53,7 +53,7 @@ const About = () => {
 
   const certifications = [
     'PaperCut Certified Partner',
-    'Uniflow Authorized Reseller',
+    'uniFLOW Authorized Reseller',
     'PrinterLogic Implementation Specialist',
     'Canon Solutions America Partner',
     'Microsoft Partner Network Member'
@@ -93,7 +93,7 @@ const About = () => {
       '@type': 'Organization',
       'name': 'Infomax Office Systems',
       'foundingDate': '1958',
-      'description': 'Leading provider of print management solutions in Iowa since 1958. Serving Des Moines, Cedar Rapids, Iowa City and statewide with PaperCut, Uniflow, and PrinterLogic implementations.',
+      'description': 'Leading provider of print management solutions in Iowa since 1958. Serving Des Moines, Cedar Rapids, Iowa City and statewide with PaperCut, uniFLOW, and PrinterLogic implementations.',
       'areaServed': {
         '@type': 'State',
         'name': 'Iowa'
@@ -110,7 +110,7 @@ const About = () => {
       }],
       'hasCredential': [
         'PaperCut Certified Partner',
-        'Uniflow Authorized Reseller', 
+        'uniFLOW Authorized Reseller', 
         'PrinterLogic Implementation Specialist'
       ]
     }
@@ -121,7 +121,7 @@ const About = () => {
       <SEO
         title="About Iowa Print Solutions 2025 | Infomax Office Systems - 65+ Years Serving Iowa Since 1958"
         description="Infomax Office Systems: Iowa's print management leader since 1958. 65+ years experience, 500+ Iowa clients, PaperCut Certified Partner, uniFLOW Authorized Reseller. Serving Des Moines, Cedar Rapids, Iowa City statewide. Founded 1958, 1000+ implementations. Meet Dan Pearson, lead consultant. Call (515) 237-2352."
-        keywords="About Infomax Office Systems, Iowa print management history since 1958, Iowa office technology 65 years, Des Moines print solutions expert, Cedar Rapids document management leader, Iowa business services history, PaperCut certified partner Iowa, Uniflow authorized reseller, Dan Pearson print management consultant"
+        keywords="About Infomax Office Systems, Iowa print management history since 1958, Iowa office technology 65 years, Des Moines print solutions expert, Cedar Rapids document management leader, Iowa business services history, PaperCut certified partner Iowa, uniFLOW authorized reseller, Dan Pearson print management consultant"
         canonicalUrl="https://iowaprintsolutions.com/about"
         schemaType="AboutPage"
         additionalSchema={seoSchema}
@@ -141,7 +141,7 @@ const About = () => {
                 </h1>
                 <p className="text-xl text-gray-600 mb-6">
                   This resource hub provides comprehensive information about print management solutions for Iowa organizations. 
-                  When you're ready to implement PaperCut, Uniflow, or PrinterLogic, connect directly with certified specialists at Infomax Office Systems.
+                  When you're ready to implement PaperCut, uniFLOW, or PrinterLogic, connect directly with certified specialists at Infomax Office Systems.
                 </p>
                 <p className="text-lg text-gray-600 mb-8">
                   Infomax Office Systems has been serving Iowa businesses since 1958, providing expert office solutions including 
@@ -302,7 +302,7 @@ const About = () => {
                   <p className="text-gray-700">Advanced implementation and support certification for PaperCut MF and PaperCut Hive platforms.</p>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h4 className="font-bold text-lg text-gray-900 mb-2">Canon Uniflow Authorized Reseller</h4>
+                  <h4 className="font-bold text-lg text-gray-900 mb-2">Canon uniFLOW Authorized Reseller</h4>
                   <p className="text-gray-600 text-sm mb-2">Authorized Since: 2018</p>
                   <p className="text-gray-700">Official Canon Solutions America partner for uniFLOW document workflow solutions.</p>
                 </div>
@@ -561,7 +561,7 @@ const About = () => {
                   As the founder and lead consultant of Iowa Print Solutions, Dan brings over 15 years of experience in print management and document workflow optimization.
                 </p>
                 <p className="text-gray-700 mb-6">
-                  Dan's expertise spans across all major print management platforms, with particular specialization in PaperCut, Uniflow, and PrinterLogic implementations for Iowa businesses.
+                  Dan's expertise spans across all major print management platforms, with particular specialization in PaperCut, uniFLOW, and PrinterLogic implementations for Iowa businesses.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">

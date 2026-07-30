@@ -75,7 +75,7 @@ const UniflowPrintFromAnywhere = () => {
       description: 'Executive traveling between multiple office locations',
       workflow: [
         'Executive prints from laptop at any location',
-        'Uniflow identifies nearest available printer',
+        'uniFLOW identifies nearest available printer',
         'Authentication required at chosen device',
         'Document prints with executive privileges',
         'Usage tracked across all locations'
@@ -167,7 +167,7 @@ const UniflowPrintFromAnywhere = () => {
 
   const technologyComponents = [
     {
-      component: 'Uniflow Cloud Gateway',
+      component: 'uniFLOW Cloud Gateway',
       purpose: 'Secure connection between locations and cloud services',
       benefit: 'Enables printing from anywhere with internet access'
     },
@@ -203,10 +203,10 @@ const UniflowPrintFromAnywhere = () => {
               </div>
             </div>
             <h1 className="text-5xl font-bold mb-6">
-              Uniflow Print from Anywhere Solutions for Iowa Organizations
+              uniFLOW Print from Anywhere Solutions for Iowa Organizations
             </h1>
             <p className="text-xl mb-8 max-w-4xl mx-auto opacity-90">
-              Enable location-independent printing with Uniflow's comprehensive remote printing solutions. Secure, flexible, and seamless printing for Iowa businesses with distributed workforces and multiple locations.
+              Enable location-independent printing with uniFLOW's comprehensive remote printing solutions. Secure, flexible, and seamless printing for Iowa businesses with distributed workforces and multiple locations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -240,7 +240,7 @@ const UniflowPrintFromAnywhere = () => {
               Complete Print from Anywhere Capabilities
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uniflow enables secure, location-independent printing that supports modern work patterns and distributed teams.
+              uniFLOW enables secure, location-independent printing that supports modern work patterns and distributed teams.
             </p>
           </motion.div>
 
@@ -285,7 +285,7 @@ const UniflowPrintFromAnywhere = () => {
               Real-World Use Cases
             </h2>
             <p className="text-xl text-gray-600">
-              See how Uniflow's print from anywhere capabilities solve common Iowa business challenges.
+              See how uniFLOW's print from anywhere capabilities solve common Iowa business challenges.
             </p>
           </motion.div>
 
@@ -374,7 +374,7 @@ const UniflowPrintFromAnywhere = () => {
               Supported Location Types
             </h2>
             <p className="text-xl text-gray-600">
-              Uniflow adapts to every type of work environment your Iowa organization uses.
+              uniFLOW adapts to every type of work environment your Iowa organization uses.
             </p>
           </motion.div>
 
@@ -420,7 +420,7 @@ const UniflowPrintFromAnywhere = () => {
               Enable Print from Anywhere for Your Iowa Organization
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Transform your printing infrastructure to support modern work patterns with Uniflow's comprehensive remote printing solutions.
+              Transform your printing infrastructure to support modern work patterns with uniFLOW's comprehensive remote printing solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

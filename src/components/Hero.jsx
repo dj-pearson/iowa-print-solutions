@@ -26,7 +26,7 @@ const Hero = () => {
               </div>
             </div>
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 opacity-90">
-              Comprehensive information about PaperCut, Uniflow, and PrinterLogic solutions for Iowa organizations. Connect with certified specialists at Infomax Office Systems for professional implementation and support.
+              Comprehensive information about PaperCut, uniFLOW, and PrinterLogic solutions for Iowa organizations. Connect with certified specialists at Infomax Office Systems for professional implementation and support.
             </p>
             
             <div className="space-y-3 sm:space-y-4 mb-6 md:mb-8">
@@ -88,7 +88,7 @@ const Hero = () => {
                   <span className="font-medium">PaperCut MF Implementation</span>
                 </div>
                 <div className="bg-white/10 rounded-md p-3">
-                  <span className="font-medium">Uniflow Document Workflows</span>
+                  <span className="font-medium">uniFLOW Document Workflows</span>
                 </div>
                 <div className="bg-white/10 rounded-md p-3">
                   <span className="font-medium">PrinterLogic Serverless Printing</span>

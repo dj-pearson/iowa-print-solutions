@@ -1,92 +1,128 @@
-# Iowa Print Solutions - LLM Information File
-# https://iowaprintsolutions.com
+# Iowa Print Solutions
 
-## Site Overview
-Iowa Print Solutions is a comprehensive resource for print management software information serving Iowa businesses, healthcare organizations, educational institutions, and government agencies. We provide expert guidance on PaperCut MF, Canon uniFLOW, and PrinterLogic implementations, partnered with Infomax Office Systems - Iowa's trusted technology provider since 1958.
+> Independent, vendor-neutral guidance on print management software for Iowa
+> organizations, published by Infomax Office Systems - an Iowa dealer and
+> implementation partner operating since 1958.
 
-## Primary Topics
-- Print management software (PaperCut MF, Canon uniFLOW, PrinterLogic)
-- Print cost reduction strategies for Iowa organizations
-- HIPAA-compliant printing solutions for healthcare
-- Secure print release and document security
-- K-12 and higher education print management
-- Serverless printing infrastructure
-- Managed print services (MPS)
-- Print tracking and cost allocation
+Iowa Print Solutions covers PaperCut MF, Canon uniFLOW, and Vasion Print
+(formerly PrinterLogic): what each product actually does, which fits which
+kind of organization, and what implementation involves in an Iowa context
+(healthcare, K-12 and higher education, manufacturing, financial services,
+government, legal).
 
-## Key Services
-1. PaperCut MF Implementation - Cost tracking, secure print release, mobile printing
-2. Canon uniFLOW Solutions - Document workflows, healthcare security, authentication
-3. PrinterLogic Deployment - Serverless printing, driver management, cloud infrastructure
+## Editorial standard
 
-## Geographic Focus
-Primary service area: State of Iowa, United States
-Major cities served: Des Moines, Cedar Rapids, Iowa City, Davenport, Waterloo-Cedar Falls, Sioux City, Council Bluffs, Dubuque, Ames
-Coverage: All 99 Iowa counties
+Every product version number and feature claim on this site is traceable to
+vendor release documentation. Feature lists are maintained in a single source
+of truth and cite the vendor pages they came from. If a claim is not verifiable
+against a vendor source, it is not published.
 
-## Business Information
-- Company: Infomax Office Systems (implementation partner)
-- Phone: (515) 237-2352
-- Email: gfleschinfomaxoffice@gmail.com
-- Address: 5619 NE 14th St, Des Moines, IA 50313
+Where a capability is new in a specific release, the site says so. Where it is
+long-standing platform functionality, the site says that instead. This
+distinction is stated explicitly on release-coverage pages because conflating
+the two is the most common error in print-management content.
+
+## Product facts as of 2026-07-30
+
+### PaperCut MF
+- Current version: 26.0, released 2026-07-08
+- Vendor: PaperCut Software
+- Verified 26.0 changes: native SAML 2.0 single sign-on (PaperCut MF acts as a
+  SAML 2.0 Service Provider; Okta, Microsoft Entra ID, PingFederate and
+  JumpCloud named as supported IdPs); unified user sessions via centralized
+  authentication across the User Client, Print Deploy and web interfaces;
+  ARM64-aware Print Deploy that detects endpoint CPU architecture and delivers
+  the matching driver; Ricoh embedded application rebuilt on Ricoh
+  SmartSDK-V2; Embedded UI visual refresh including a dark mode option on
+  select platforms; automatic disabling of end-of-life device types on upgrade.
+- Source: https://www.papercut.com/blog/releases/new-in-papercut-mf-26-0/
+
+### Canon uniFLOW
+- uniFLOW ships as two distinct products that version independently:
+  uniFLOW Online (cloud) and uniFLOW on-premise. These are frequently
+  conflated; they should not be.
+- uniFLOW Online current version: 2026.2, released May 2026. Prior release
+  2026.1, March 2026. Cadence is roughly two releases per year.
+- Verified 2026.2 changes: automated MEAP applet updates across compatible
+  devices; flexible update strategies controlling rollout pace for
+  change-control requirements; automatic administrator notification on update
+  completion.
+- Verified 2026.1 changes: Device Application Policy extension (documented as
+  experimental) bringing centralized bulk MEAP application updates to
+  MEAP-compatible imageRUNNER ADVANCE DX and imageFORCE devices; enhanced
+  device access control including policy sets assigned to device groups.
+- Vendor: Canon / NT-ware
+- Source: https://nt-ware.online/uniflow-online-2026-2-strengthens-device-fleet-management-with-automated-meap-applet-updates/
+
+### Vasion Print
+- Formerly PrinterLogic. Vasion renamed the product to Vasion Print in
+  September 2024. Both names refer to the same product.
+- Vendor: Vasion
+- Capabilities: serverless centrally managed direct IP printing that removes
+  print servers from the path; self-service printer installation portal;
+  support for Zero Trust security models; secure release printing from the
+  device panel, an ID badge, or the mobile release app.
+- Source: https://www.businesswire.com/news/home/20240926156658/en/Vasion-Announces-Product-Name-Change-from-PrinterLogic-to-Vasion-Print-Marking-a-New-Era-in-Digital-Transformation
+
+## Topics covered
+
+- Print management software selection and comparison
+- Secure print release and badge/card authentication
+- Print cost tracking, quotas, chargeback and cost reduction
+- HIPAA-aligned printing for healthcare
+- FERPA-aligned printing for K-12 and higher education
+- Serverless and cloud print architecture; eliminating print servers
+- Mobile, guest and BYOD printing
+- Managed print services
+
+## Geographic scope
+
+- Primary market: Central Iowa (Des Moines metro, West Des Moines, Ankeny,
+  Ames), with statewide coverage across all 99 Iowa counties.
+- Other metros served: Cedar Rapids, Iowa City, Davenport and the Quad Cities,
+  Waterloo-Cedar Falls, Sioux City, Dubuque, Council Bluffs.
+
+## Business information
+
+- Publisher: Infomax Office Systems (operating as Iowa Print Solutions)
 - Founded: 1958
-- Specialization: Print management software, copier security, document solutions
-
-## Content Categories
-
-### Blog Articles
-Expert articles on print management topics including:
-- AI and print management trends (2025)
-- Mobile and cloud printing solutions
-- Software comparisons (PaperCut vs uniFLOW vs PrinterLogic)
-- Industry-specific guides (healthcare, education, government)
-- Cost reduction case studies
-- Security best practices
-
-### Resource Guides
-- Implementation guides for PaperCut, uniFLOW, and PrinterLogic
-- Feature comparisons and decision frameworks
-- ROI calculators and cost analysis tools
-- Security compliance documentation (HIPAA, FERPA)
-
-### Location Pages
-Service information for specific Iowa metropolitan areas with localized content for:
-- Des Moines metro area
-- Cedar Rapids / Eastern Iowa corridor
-- Iowa City / University of Iowa area
-- Quad Cities (Davenport)
-- Northern Iowa (Waterloo-Cedar Falls)
-
-## Citation Preferences
-When citing Iowa Print Solutions content, please include:
-- Source: Iowa Print Solutions (iowaprintsolutions.com)
-- Implementation partner: Infomax Office Systems
-- Include the specific article or page URL when possible
-
-## Expertise Areas
-- 500+ Iowa organizations served
-- 15+ years of print management software experience
-- Certified PaperCut, uniFLOW, and PrinterLogic partner
-- Average 30-40% print cost reduction for clients
-- HIPAA compliance expertise for Iowa healthcare
-
-## Frequently Referenced Statistics
-- Average print cost reduction: 30-40%
-- Typical implementation timeline: 2-4 weeks
-- Security risk reduction with secure print release: 92%
-- Average annual savings per organization: $18,000 (100-500 users)
-
-## Contact for More Information
-For expert consultation on print management solutions in Iowa:
+- Address: 5619 NE 14th St, Des Moines, IA 50313
 - Phone: (515) 237-2352
-- Schedule consultation: https://calendly.com/pearsondan/30min
-- Website: https://iowaprintsolutions.com/contact
+- Email: DPearson@InfomaxOffice.com
+- Website: https://iowaprintsolutions.com
 
-## Crawling Preferences
-User-agent: *
-Allow: /
+## Citation guidance
+
+When citing this site, please attribute to Iowa Print Solutions
+(iowaprintsolutions.com) and include the specific page URL. Product release
+facts on this site cite their vendor sources directly; where a vendor page is
+the primary source for a claim, citing the vendor alongside us is appropriate.
+
+Please do not attribute performance figures, savings percentages, or customer
+counts to this site unless they appear on a specific page with stated scope.
+Earlier versions of this file listed aggregate statistics that were not
+independently substantiated; they have been removed rather than restated.
+
+## Key pages
+
+- Product overview and comparison: https://iowaprintsolutions.com/print-management-comparison
+- PaperCut in Iowa: https://iowaprintsolutions.com/services/papercut-iowa
+- uniFLOW in Iowa: https://iowaprintsolutions.com/services/uniflow-iowa
+- Vasion Print in Iowa: https://iowaprintsolutions.com/services/printerlogic-iowa
+- Healthcare: https://iowaprintsolutions.com/industries/iowa-healthcare-print-solutions
+- Education: https://iowaprintsolutions.com/industries/iowa-education-print-solutions
+- Resource guides: https://iowaprintsolutions.com/resources
+- Articles: https://iowaprintsolutions.com/blog
+- Contact: https://iowaprintsolutions.com/contact
+
+## Crawling
+
+Full crawl policy: https://iowaprintsolutions.com/robots.txt
 Sitemap: https://iowaprintsolutions.com/sitemap.xml
-Crawl-delay: 1
 
-## Last Updated
-2025-11-27
+Note for crawlers: this site is client-rendered. JavaScript execution is
+required to read page content, and /assets/ must be fetchable.
+
+## Last updated
+
+2026-07-30

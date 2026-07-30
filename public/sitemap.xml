@@ -1,487 +1,529 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GENERATED FILE - do not edit by hand.
+  Regenerate with: npm run sitemap
+  Source of truth: the <Route> declarations in src/App.jsx
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
   <url>
     <loc>https://iowaprintsolutions.com/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/services</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://iowaprintsolutions.com/about</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/contact</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/tools</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://iowaprintsolutions.com/accessibility</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/blog</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/locations</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
-
-  <!-- Latest Blog Articles (2025) -->
   <url>
     <loc>https://iowaprintsolutions.com/blog/ai-print-management-iowa-2025</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/mobile-printing-solutions-iowa-2025</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/print-management-software-roi-iowa</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/blog/cloud-printing-solutions-iowa-2025</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/blog/papercut-vs-uniflow-vs-printerlogic-iowa-k12</loc>
-    <lastmod>2025-09-26</lastmod>
+    <loc>https://iowaprintsolutions.com/blog/dental-specialty-hipaa-print-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/papercut-hive-q4-2025-iowa</loc>
-    <lastmod>2025-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/reducing-printing-costs-iowa-schools</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/papercut-vs-uniflow-iowa</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/small-business-print-management-iowa</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/papercut-mf-25-iowa-benefits</loc>
-    <lastmod>2025-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/uniflow-2025-updates</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/papercut-mf-24-1-updates</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Service Pages -->
-  <url>
-    <loc>https://iowaprintsolutions.com/services/papercut</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/services/uniflow</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/services/papercut-iowa</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/services/uniflow-iowa</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/services/printerlogic-iowa</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Resource Pages -->
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/print-management-software-comparison</loc>
-    <lastmod>2025-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/papercut-vs-uniflow-comparison</loc>
-    <lastmod>2025-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/papercut-implementation-guide</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/papercut-cost-reduction</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/papercut-mobile-printing</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/papercut-security-practices</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/papercut-secure-print-release</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/papercut-follow-me-print</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/papercut-mobility-print</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/uniflow-platform-overview</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/uniflow-secure-print-release</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/uniflow-cost-tracking</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/uniflow-print-from-anywhere</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/uniflow-mobile-cloud-printing</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/uniflow-flexible-access-control</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/printerlogic-serverless-printing</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/printerlogic-self-service-installation</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resources/printerlogic-secure-release-printing</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Blog Posts -->
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/papercut-healthcare-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/hipaa-printing-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/uniflow-medical-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/papercut-education-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/school-district-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/uniflow-university-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/reduce-printing-costs-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/eliminate-print-servers-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/secure-print-release-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/papercut-cost-reduction-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/print-security-software-des-moines</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/document-security-printing-cedar-rapids</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/blog/managed-print-services-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/blog/document-management-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/blog/print-management-des-moines</loc>
-    <lastmod>2025-07-24</lastmod>
+    <loc>https://iowaprintsolutions.com/blog/document-security-printing-cedar-rapids</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/eliminate-print-servers-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/higher-ed-sustainability-print-iowa-2026</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/hipaa-printing-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/k12-cybersecurity-print-iowa-2026</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/managed-print-services-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/microsoft-universal-print-v2-iowa-2026</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/mobile-printing-solutions-iowa-2025</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-cost-reduction-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-education-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-healthcare-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-hive-q4-2025-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-mf-24-1-updates</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-mf-25-iowa-benefits</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-mf-26-healthcare-iowa-2026</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-mf-26-k12-iowa-2026</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-mf-26-medium-business-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/blog/papercut-vs-alternatives-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-vs-uniflow-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/papercut-vs-uniflow-vs-printerlogic-iowa-k12</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/pharmacy-340b-dea-print-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/print-management-des-moines</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/blog/print-management-software-comparison-iowa</loc>
-    <lastmod>2025-07-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/print-management-software-roi-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/print-security-software-des-moines</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/printerlogic-vasion-2026-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/reduce-printing-costs-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/reducing-printing-costs-iowa-schools</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/school-district-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/secure-print-release-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/small-business-print-management-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/uniflow-2025-updates</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/uniflow-2026-clinics-hospitals-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/uniflow-2026-higher-education-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/uniflow-2026-medium-business-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/uniflow-medical-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/blog/uniflow-university-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/contact</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <!-- Industry Pages -->
-  <url>
-    <loc>https://iowaprintsolutions.com/industries/iowa-healthcare-print-solutions</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/industries/iowa-education-print-solutions</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Tools & Utilities -->
-  <url>
-    <loc>https://iowaprintsolutions.com/print-management-comparison</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/print-cost-calculator</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://iowaprintsolutions.com/industries/iowa-healthcare-print-solutions</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/locations</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/resource-library</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://iowaprintsolutions.com/privacy-policy</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- Location Pages -->
-  <url>
-    <loc>https://iowaprintsolutions.com/locations/des-moines</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/locations/des-moines-print-management</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/locations/cedar-rapids</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/locations/cedar-rapids-print-management</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/locations/iowa-city</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iowaprintsolutions.com/locations/iowa-city-print-management</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://iowaprintsolutions.com/locations/council-bluffs-print-management</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/locations/davenport</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/locations/davenport-print-management</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://iowaprintsolutions.com/locations/des-moines</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/locations/dubuque-print-management</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/locations/iowa-city</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/locations/sioux-city-print-management</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iowaprintsolutions.com/locations/waterloo-cedar-falls-print-management</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/print-cost-calculator</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/locations/sioux-city-print-management</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://iowaprintsolutions.com/print-management-comparison</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/locations/dubuque-print-management</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://iowaprintsolutions.com/privacy-policy</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://iowaprintsolutions.com/locations/council-bluffs-print-management</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://iowaprintsolutions.com/resource-library</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/papercut-cost-reduction</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/papercut-follow-me-print</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/papercut-implementation-guide</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/papercut-mobile-printing</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/papercut-mobility-print</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/papercut-secure-print-release</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/papercut-security-practices</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/papercut-vs-uniflow-comparison</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/print-management-software-comparison</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/printerlogic-secure-release-printing</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/printerlogic-self-service-installation</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/printerlogic-serverless-printing</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/uniflow-cost-tracking</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/uniflow-flexible-access-control</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/uniflow-mobile-cloud-printing</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/uniflow-platform-overview</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/uniflow-print-from-anywhere</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/resources/uniflow-secure-print-release</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/services</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/services/papercut</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/services/papercut-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/services/printerlogic-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/services/uniflow</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/services/uniflow-iowa</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iowaprintsolutions.com/tools</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

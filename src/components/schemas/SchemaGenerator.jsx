@@ -69,14 +69,9 @@ const SchemaGenerator = ({ type = 'website', data = {}, includeOrganization = fa
           },
         })),
       },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: siteConfig.ratings.aggregateRating,
-        reviewCount: siteConfig.ratings.reviewCount,
-        bestRating: siteConfig.ratings.bestRating,
-        worstRating: siteConfig.ratings.worstRating,
-      },
-      sameAs: Object.values(siteConfig.social),
+      // No aggregateRating - ratings require real, on-page reviews.
+      // See OrganizationSchema.jsx for the full rationale.
+      sameAs: Object.values(siteConfig.social).filter(Boolean),
       knowsAbout: siteConfig.expertise,
     }
 
