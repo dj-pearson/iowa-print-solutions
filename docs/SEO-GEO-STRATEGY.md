@@ -97,6 +97,29 @@ reviews, display them on the page, and emit markup matching what a visitor can
 actually see. Real reviews are also a stronger local ranking signal than markup
 ever was.
 
+`index.html` additionally carried a `SoftwareApplication` block for a product
+called "Iowa Copier Security Solutions" that does not exist, with its own
+invented 4.8/127 rating and an `AggregateOffer` quoting $3–$8 pricing that
+appears nowhere on the site. Removed.
+
+### 2b. Fabricated customer testimonials shown to visitors
+
+Worse than the markup, because visitors saw it. The home page, both industry
+pages, and two location pages displayed invented testimonials — made-up names,
+5-star ratings, and quoted savings figures ("reduced costs by 35%", "cut costs
+by 55%").
+
+On the education page the quotes were attributed to named staff at **real,
+identifiable institutions** (Cedar Falls Community Schools, Iowa State
+University). That is not a gray area, and it is the kind of thing that ends a
+dealer relationship if the named institution notices.
+
+All removed, along with two unsourced conversion banners ("Join 200+ Iowa
+businesses saving 30% on printing costs", "Iowa businesses save an average of
+$2,400 annually"). The home page section is now a factual statement of what the
+business does. `TestimonialCard` is untouched and ready for real content —
+requiring real names, real titles, and written permission on file.
+
 ### 3. Product content described features the vendors never shipped
 
 Six posts covering "PaperCut MF 26" and "uniFLOW 2026" were written *before*

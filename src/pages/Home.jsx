@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 import ServiceCard from '../components/ServiceCard'
-import TestimonialCard from '../components/TestimonialCard'
 import SEO from '../components/SEO'
 import IowaBusinessFAQSchema from '../components/IowaBusinessFAQSchema'
 import OrganizationSchema from '../components/OrganizationSchema'
@@ -35,27 +34,32 @@ const Home = () => {
     { icon: Shield, number: '100%', label: 'Security Focused' }
   ]
 
-  const testimonials = [
+  // NOTE: A `testimonials` array used to live here containing three invented
+  // customers ("Sarah Johnson", "Mike Chen", "Lisa Martinez") at invented
+  // organizations, each with a 5-star rating and quoted savings figures. They
+  // were rendered to visitors as real customer quotes.
+  //
+  // Fabricated social proof is a serious credibility risk for a site whose
+  // entire proposition is expertise, and a prospect who asks for a reference
+  // finds out immediately. Removed rather than rewritten.
+  //
+  // TO REINSTATE: get written permission from real customers, use their real
+  // name, title, and organization, and keep the approval on file. Real
+  // references also unlock legitimate review markup - see
+  // docs/SEO-GEO-STRATEGY.md. The TestimonialCard component is unchanged and
+  // ready for real content.
+  const whatWeDo = [
     {
-      name: 'Sarah Johnson',
-      company: 'Iowa Healthcare Organization',
-      location: 'Des Moines, IA',
-      testimonial: 'Working with Infomax Office Systems transformed our printing infrastructure. We reduced costs by 35% and improved efficiency dramatically.',
-      rating: 5
+      title: 'Three platforms, compared honestly',
+      description: 'PaperCut MF, Canon uniFLOW, and Vasion Print. We implement all three, which means we can tell you when one is the wrong fit instead of selling you the only thing we carry.'
     },
     {
-      name: 'Mike Chen',
-      company: 'Central Iowa School District',
-      location: 'Cedar Rapids, IA',
-      testimonial: 'The PaperCut implementation through Infomax was seamless. Their Iowa-based support team is incredibly responsive and knowledgeable.',
-      rating: 5
+      title: 'Iowa-based implementation and support',
+      description: 'Infomax Office Systems has operated in Des Moines since 1958. Support calls reach people in Iowa who can be on site, across all 99 counties.'
     },
     {
-      name: 'Lisa Martinez',
-      company: 'Iowa Professional Services Firm',
-      location: 'Iowa City, IA',
-      testimonial: 'uniFLOW has revolutionized our document workflows. The security features give us peace of mind, and the cost savings exceeded expectations.',
-      rating: 5
+      title: 'Compliance-aware deployments',
+      description: 'HIPAA-aligned print controls for healthcare and FERPA-aligned controls for education, scoped against your existing identity provider and device fleet rather than a template.'
     }
   ]
 
@@ -795,34 +799,51 @@ const Home = () => {
               className="text-center mb-12"
             >
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
-                Iowa Organizations Trust Infomax Office Systems
+                Why Iowa Organizations Work With Infomax Office Systems
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-gray-600">
-                See what Iowa clients across Des Moines, Cedar Rapids, Iowa City, and statewide are saying about Infomax Office Systems print management services and implementations.
+                Vendor-neutral print management across Des Moines, Cedar Rapids, Iowa City, and
+                statewide - from a dealer that has been in Iowa since 1958.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard key={index} {...testimonial} delay={index * 0.1} />
+              {whatWeDo.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg shadow-md p-6"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Performance Components */}
-        <SocialProofBanner 
-          message="Join 200+ Iowa businesses saving 30% on printing costs"
+        {/*
+          Both messages below previously carried unverified figures - "Join 200+
+          Iowa businesses saving 30% on printing costs" and "Iowa businesses save
+          an average of $2,400 annually". Neither had a source, and both invited
+          a question the site could not answer. Replaced with the offer itself,
+          which is what the CTA is actually for.
+        */}
+        <SocialProofBanner
+          message="Serving Iowa organizations from Des Moines since 1958"
           cta="Get Your Free Assessment"
           ctaLink="/contact"
         />
-        
-        <ExitIntentModal 
+
+        <ExitIntentModal
           isOpen={showExitIntent}
           onClose={() => setShowExitIntent(false)}
-          title="Wait! Don't Miss Out on Print Savings"
-          message="Iowa businesses save an average of $2,400 annually with our print management solutions. Get your free cost analysis before you leave!"
-          ctaText="Get Free Analysis"
+          title="Before you go - see your own numbers"
+          message="Estimate what your organization currently spends on printing, and what a managed platform would change, using your own device and volume figures."
+          ctaText="Open the Cost Calculator"
           ctaLink="/print-cost-calculator"
         />
       </div>
