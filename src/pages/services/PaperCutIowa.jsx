@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Printer, Shield, Users, BarChart3, Clock, CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
+import SecurityAdvisoryBanner from '../../components/SecurityAdvisoryBanner'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
 import ServiceSchema from '../../components/ServiceSchema'
 import FAQSchema from '../../components/FAQSchema'
@@ -227,6 +228,10 @@ const PaperCutIowa = () => {
 
       <div className="min-h-screen bg-white">
         <Breadcrumbs items={breadcrumbItems} className="bg-gray-50 py-4" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <SecurityAdvisoryBanner advisoryId="papercut-aug-2026" />
+        </div>
 
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-16">

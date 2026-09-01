@@ -4,6 +4,46 @@
 export const searchIndex = [
   // Blog Posts
   {
+    id: 'papercut-emergency-patch-cve-2026-82078-iowa',
+    type: 'blog',
+    title: 'PaperCut Emergency Patch (CVE-2026-82078): What Iowa Organizations Should Do Now',
+    description: 'PaperCut NG and MF under active exploitation. Emergency Patch Release 3, a triage checklist, published indicators of compromise, and the Iowa sectors most exposed.',
+    keywords: ['PaperCut', 'emergency patch', 'CVE-2026-82078', 'CVE-2026-81578', 'zero day', 'security', 'vulnerability', 'print server security', 'incident response'],
+    category: 'Security',
+    path: '/blog/papercut-emergency-patch-cve-2026-82078-iowa',
+    date: '2026-09-01'
+  },
+  {
+    id: 'papercut-emergency-patch-iowa-schools',
+    type: 'blog',
+    title: 'PaperCut Emergency Patch for Iowa School Districts: A Week-Three Response Plan',
+    description: 'A day-one patching plan for Iowa K-12 districts running self-hosted PaperCut MF, covering change windows, shared services ownership, SSO validation, and student data obligations.',
+    keywords: ['PaperCut', 'K-12', 'school district', 'emergency patch', 'CVE-2026-82078', 'security', 'student data', 'Iowa schools'],
+    category: 'Education',
+    path: '/blog/papercut-emergency-patch-iowa-schools',
+    date: '2026-09-01'
+  },
+  {
+    id: 'papercut-zero-day-hipaa-iowa-healthcare',
+    type: 'blog',
+    title: 'The PaperCut Zero-Day and HIPAA: What Iowa Health Systems Have to Decide',
+    description: 'The HIPAA breach risk assessment applied to a compromised print server, what to preserve before patching, and how Iowa Code chapter 715C interacts with federal obligations.',
+    keywords: ['PaperCut', 'HIPAA', 'breach notification', 'healthcare', 'PHI', 'CVE-2026-82078', 'security', 'critical access hospital'],
+    category: 'Healthcare',
+    path: '/blog/papercut-zero-day-hipaa-iowa-healthcare',
+    date: '2026-09-01'
+  },
+  {
+    id: 'print-server-attack-surface-iowa-2026',
+    type: 'blog',
+    title: 'Self-Hosted, SaaS, or Serverless: What the PaperCut Zero-Day Says About Iowa Print Architecture',
+    description: 'Vendor-neutral comparison of self-hosted, SaaS, and serverless print management after the August 2026 PaperCut advisory, including uniFLOW Online 2026.2 device updates and Vasion Print.',
+    keywords: ['PaperCut', 'uniFLOW Online', 'Vasion Print', 'PrinterLogic', 'architecture', 'cloud', 'on-premise', 'serverless', 'print server security'],
+    category: 'Comparison',
+    path: '/blog/print-server-attack-surface-iowa-2026',
+    date: '2026-09-01'
+  },
+  {
     id: 'ai-print-management-iowa-2025',
     type: 'blog',
     title: 'AI Print Management Iowa 2025: The Intelligence Revolution',

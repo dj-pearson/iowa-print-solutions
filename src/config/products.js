@@ -20,7 +20,7 @@
  */
 
 /** Last time the facts in this file were checked against vendor sources. */
-export const FACTS_VERIFIED = '2026-07-30'
+export const FACTS_VERIFIED = '2026-09-01'
 
 export const papercut = {
   id: 'papercut',
@@ -263,6 +263,219 @@ export const vasion = {
   ],
 }
 
+/**
+ * Security advisories affecting products this site covers.
+ *
+ * Same rule as everything else in this file: nothing goes in without a
+ * citable vendor or government source. Severity and CVSS values are the
+ * vendor/NVD published figures, not our assessment.
+ *
+ * `status` is one of:
+ *   'active-exploitation' - confirmed in-the-wild exploitation
+ *   'patched'             - fix shipped, no known exploitation
+ */
+export const securityAdvisories = [
+  {
+    id: 'papercut-aug-2026',
+    productId: 'papercut',
+    severity: 'critical',
+    status: 'active-exploitation',
+    title: 'PaperCut NG/MF pre-authentication remote code execution',
+    disclosedDate: '2026-08-27',
+    disclosedDateDisplay: 'August 27, 2026',
+    firstExploitedDate: '2026-08-26',
+    firstExploitedDateDisplay: 'August 26, 2026',
+    summary:
+      'Two vulnerabilities in PaperCut NG and PaperCut MF can be chained by an unauthenticated attacker to run arbitrary code on the Application Server. Exploitation was observed in the wild before a patch existed.',
+    cves: [
+      {
+        id: 'CVE-2026-81578',
+        cvss: '8.8',
+        rating: 'High',
+        cwe: 'CWE-306: Missing authentication for critical function',
+        description:
+          'Improper access control in the PaperCut NG/MF web management interface lets an unauthenticated remote attacker reach configuration endpoints and change server settings.',
+      },
+      {
+        id: 'CVE-2026-82078',
+        cvss: '9.4',
+        rating: 'Critical',
+        cwe: 'CWE-470: Use of externally-controlled input to select classes or code',
+        description:
+          'The database connection utilities instantiate driver classes by name without validating them against an allowlist. An attacker who can change configuration can execute arbitrary Java bytecode as the PaperCut server process.',
+      },
+    ],
+    chainNote:
+      'CVE-2026-81578 supplies the unauthenticated configuration change that CVE-2026-82078 needs, so the pair together is pre-authentication remote code execution.',
+    affected:
+      'All versions of PaperCut NG and PaperCut MF released before the August 2026 emergency patches. Emergency patches exist for the v24, v25, and v26 branches. Installations on v23 or earlier must upgrade to a patched branch - no patch is being issued for them.',
+    notAffected: [
+      'PaperCut Hive',
+      'PaperCut Pocket',
+      'PaperCut Multiverse',
+      'Print Deploy',
+      'Mobility Print',
+      'Print Logger',
+    ],
+    /** Newest first. The current required patch is entry [0]. */
+    patches: [
+      {
+        label: 'Emergency Patch (Release 3)',
+        date: '2026-09-01',
+        dateDisplay: 'September 1, 2026',
+        branches: ['v24', 'v25', 'v26'],
+        note:
+          'Cumulative - it includes Releases 1 and 2, so it can be applied directly. Adds further hardening and fixes two regressions introduced by the earlier emergency builds: broken SAML login flows and lost support for legacy Microsoft SQL Server drivers used for external card lookup.',
+        current: true,
+      },
+      {
+        label: 'Emergency Patch (Release 2)',
+        date: '2026-08-28',
+        dateDisplay: 'August 28, 2026',
+        branches: ['v24', 'v25', 'v26'],
+        note:
+          'Issued after Huntress and watchTowr researchers found multiple bypasses of the first patch, plus a further authentication bypass. Superseded by Release 3.',
+        current: false,
+      },
+      {
+        label: 'Emergency Patch (Release 1)',
+        date: '2026-08-28',
+        dateDisplay: 'August 28, 2026',
+        branches: ['v24', 'v25', 'v26'],
+        note:
+          'The original out-of-cycle build for Windows, Linux, and macOS. Bypassable - superseded.',
+        current: false,
+      },
+    ],
+    mitigations: [
+      'Apply Emergency Patch Release 3. It supersedes both earlier emergency patches, and an install that stopped at Release 1 or 2 is not fully protected.',
+      'Restrict the Application Server web interface (default ports 9191 and 9192) to trusted internal ranges at the firewall. An internet-facing PaperCut admin interface has no legitimate reason to exist.',
+      'Treat any internet-exposed server that was unpatched between August 26 and the date you patched as potentially compromised, and run an incident response check rather than assuming the patch closed it.',
+    ],
+    /** Published indicators of compromise, from Huntress and Rapid7. */
+    indicators: [
+      {
+        where: 'Application Server logs',
+        what: 'The string "DB URL: jdbc:derby:memory:pwn", or errors reading "No suitable driver found for jdbc:no:x" and "DatabaseUtils - Database error looking up cardID: VALUES CAST".',
+      },
+      {
+        where: 'server/lib/ directory',
+        what: 'Unexpected .class files with short random names (Huntress reported examples such as Udydn.class and Moo97.class).',
+      },
+      {
+        where: 'server/data/content/',
+        what: 'Matching .out and .cmd files holding command output from discovery commands.',
+      },
+      {
+        where: 'server/logs/',
+        what: 'A server.log file that is missing, truncated, or has been deleted. Attackers cleaned up after themselves.',
+      },
+      {
+        where: 'Process tree',
+        what: 'Shells or discovery utilities (whoami, ver, tasklist) spawned as children of pc-app.exe.',
+      },
+    ],
+    kev: {
+      listed: true,
+      addedDate: '2026-08-31',
+      addedDateDisplay: 'August 31, 2026',
+      federalDeadline: '2026-09-14',
+      federalDeadlineDisplay: 'September 14, 2026',
+      note:
+        'CISA added both CVEs to the Known Exploited Vulnerabilities catalog. Federal civilian agencies must remediate by the BOD 22-01 deadline. State and local bodies are not bound by that date, but it is the reference many Iowa cyber-insurance carriers and auditors now cite.',
+    },
+    exposureNote:
+      'ShadowServer counted more than 1,000 internet-exposed PaperCut NG/MF instances, concentrated in North America and Europe.',
+    /**
+     * Where a reader goes to get the patch. Rendered as the primary action in
+     * SecurityAdvisoryDetail and SecurityAdvisoryBanner, not just as a citation,
+     * because the vendor bulletin is the authoritative and always-current source
+     * for the build numbers and download links.
+     */
+    bulletinUrl:
+      'https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/',
+    bulletinLabel: 'Open the PaperCut security bulletin and download the patch',
+    sources: [
+      {
+        label: 'PaperCut urgent security advisory (27 Aug 2026)',
+        url: 'https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/',
+      },
+      {
+        label: 'Huntress: PaperCut zero-day active exploitation and pre-auth RCE',
+        url: 'https://www.huntress.com/blog/papercut-actively-exploited',
+      },
+      {
+        label: 'Rapid7: PaperCut NG/MF critical zero-day exploited in the wild',
+        url: 'https://www.rapid7.com/blog/post/etr-papercut-ng-mf-critical-zero-day-exploited-in-the-wild/',
+      },
+      {
+        label: 'CISA Known Exploited Vulnerabilities catalog',
+        url: 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog',
+      },
+      {
+        label: 'BleepingComputer: PaperCut releases second emergency patch',
+        url: 'https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/',
+      },
+    ],
+  },
+  {
+    id: 'uniflow-ulm-2026',
+    productId: 'uniflow',
+    severity: 'medium',
+    status: 'patched',
+    title: 'uniFLOW Universal Login Manager information disclosure',
+    disclosedDate: '2026-07-06',
+    disclosedDateDisplay: 'July 6, 2026',
+    summary:
+      'An authenticated administrator could read sensitive configuration data through the Universal Login Manager remote user interface. NT-ware rates the severity medium and the likelihood low. No exploitation has been reported.',
+    cves: [
+      {
+        id: 'CVE-2026-1433',
+        cvss: null,
+        rating: 'Medium (NT-ware assessment)',
+        cwe: null,
+        description:
+          'The ULM remote user interface can disclose configuration data tied to SMTP and LDAP integrations to an already-authenticated administrator.',
+      },
+    ],
+    affected:
+      'uniFLOW Universal Login Manager Standalone 5.10 and earlier. Fixed in 5.11 and later.',
+    notAffected: [
+      'Deployments connected to uniFLOW Server',
+      'Deployments connected to uniFLOW Online',
+    ],
+    patches: [
+      {
+        label: 'uniFLOW Universal Login Manager 5.11',
+        date: '2026-07-06',
+        dateDisplay: 'July 6, 2026',
+        branches: ['ULM Standalone'],
+        note: 'Upgrade path for any standalone ULM install on 5.10 or earlier.',
+        current: true,
+      },
+    ],
+    mitigations: [
+      'Confirm whether your ULM is standalone or connected to uniFLOW Server or uniFLOW Online. Connected deployments are not affected.',
+      'Upgrade standalone ULM installations to 5.11 or later.',
+    ],
+    indicators: [],
+    kev: { listed: false },
+    bulletinUrl:
+      'https://www.usa.canon.com/about-us/to-our-customers/cpa2026-054-vulnerability-remediation-for-uniflow-universal-login-manager-standalone',
+    bulletinLabel: 'Open the Canon advisory CPA2026-054',
+    sources: [
+      {
+        label: 'Canon USA advisory CPA2026-054',
+        url: 'https://www.usa.canon.com/about-us/to-our-customers/cpa2026-054-vulnerability-remediation-for-uniflow-universal-login-manager-standalone',
+      },
+      {
+        label: 'NT-ware security advisory: ULM potential information disclosure',
+        url: 'https://ntware.atlassian.net/wiki/spaces/SA/pages/13659504652/2026+Security+Advisory+ULM+Potential+Information+Disclosure',
+      },
+    ],
+  },
+]
+
 export const products = { papercut, uniflow, vasion }
 
 /** Every vendor source across all products, for citation blocks. */
@@ -282,5 +495,22 @@ export const getFeature = (productId, featureId) =>
 /** Features for one uniFLOW Online release, e.g. getUniflowFeatures('2026.2'). */
 export const getUniflowFeatures = (version) =>
   uniflow.features.filter((f) => f.version === version)
+
+/** Advisories for one product, newest disclosure first. */
+export const getAdvisories = (productId) =>
+  securityAdvisories
+    .filter((a) => a.productId === productId)
+    .sort((a, b) => b.disclosedDate.localeCompare(a.disclosedDate))
+
+/** Look up a single advisory by id. */
+export const getAdvisory = (id) => securityAdvisories.find((a) => a.id === id)
+
+/** Advisories with confirmed in-the-wild exploitation. Drives the site banner. */
+export const getActiveExploitAdvisories = () =>
+  securityAdvisories.filter((a) => a.status === 'active-exploitation')
+
+/** The patch customers must currently be on for a given advisory. */
+export const getCurrentPatch = (advisoryId) =>
+  getAdvisory(advisoryId)?.patches.find((p) => p.current) || null
 
 export default products

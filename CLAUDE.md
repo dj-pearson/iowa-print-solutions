@@ -51,18 +51,20 @@ rules exist because each was violated and caused real damage:
 
 ```
 src/
-├── components/     # 37 reusable UI components
+├── components/     # 39 reusable UI components
 │   ├── Navbar.jsx              # Multi-level megamenu navigation
 │   ├── Footer.jsx              # Site footer
 │   ├── SEO.jsx                 # Comprehensive meta tag management
 │   ├── VerifiedReleaseFacts.jsx # Vendor-cited release facts from products.js
+│   ├── SecurityAdvisoryDetail.jsx # Full CVE/patch/IOC block from products.js
+│   ├── SecurityAdvisoryBanner.jsx # Compact active-advisory alert for any page
 │   ├── Breadcrumbs.jsx         # Navigation breadcrumbs
 │   ├── ErrorBoundary.jsx       # Error handling wrapper
 │   ├── AnalyticsProvider.jsx   # GA4 context provider
 │   ├── *Schema.jsx             # Schema.org structured data (8 components)
 │   └── ...                     # Performance, lead scoring, FAQ components
 ├── pages/              # 94 page components
-│   ├── blog/           # 41 blog articles (SEO-focused)
+│   ├── blog/           # 45 blog articles (SEO-focused)
 │   ├── industries/     # 2 industry pages (Healthcare, Education)
 │   ├── locations/      # 12 components, 8 routed (see App.jsx comment)
 │   ├── resources/      # 18 product guides
@@ -138,13 +140,13 @@ The site targets Iowa businesses with content organized by:
 
 | Metric | Count |
 |--------|-------|
-| Page components | 94 |
-| Components | 37 |
-| Blog Posts | 41 |
+| Page components | 98 |
+| Components | 39 |
+| Blog Posts | 45 |
 | Location page components | 12 (8 routed; 4 thin duplicates retired) |
 | Resource Guides | 18 |
-| Routes | 90 |
-| URLs in sitemap | 87 (generated; 3 excluded) |
+| Routes | 94 |
+| URLs in sitemap | 91 (generated; 3 excluded) |
 
 ## Build & Deployment Notes
 
@@ -164,6 +166,12 @@ The site targets Iowa businesses with content organized by:
 6. **SEO**: Use the `SEO` component with proper canonical URLs and schema types
 7. **Product claims**: Import from `src/config/products.js`. Use
    `VerifiedReleaseFacts` to render release features so vendor citations appear
+8. **Security advisories**: CVEs, severities, patch levels, and indicators of
+   compromise also live in `src/config/products.js` (`securityAdvisories`), each
+   with vendor, researcher, or CISA sources. Render them with
+   `SecurityAdvisoryDetail` or `SecurityAdvisoryBanner`. Never hardcode a CVE or
+   a patch level into a page - an advisory moves fast, and Release 3 superseding
+   Release 2 in five days is why this is one file rather than several pages
 8. **Never hand-edit** `public/sitemap.xml` - run `npm run sitemap`
 
 ## Key Components Reference
@@ -178,6 +186,8 @@ The site targets Iowa businesses with content organized by:
 | `EnhancedLocationTemplate` | Reusable location page layout |
 | `PageLoadingFallback` | Loading state for lazy routes |
 | `VerifiedReleaseFacts` | Vendor-cited release features from `products.js` |
+| `SecurityAdvisoryDetail` | CVEs, patch history, IOCs, and vendor bulletin link for one advisory |
+| `SecurityAdvisoryBanner` | Compact active-advisory alert; drop on any affected product page |
 
 ## Contact Information (for content reference)
 
