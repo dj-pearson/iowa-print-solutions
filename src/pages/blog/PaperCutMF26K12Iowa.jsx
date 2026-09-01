@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Calendar, User, ArrowRight, CheckCircle, Zap, Shield, Users, GraduationCap, BookOpen, Lock } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
+import SecurityAdvisoryBanner from '../../components/SecurityAdvisoryBanner'
 import ContentRating from '../../components/ContentRating'
 import VerifiedReleaseFacts from '../../components/VerifiedReleaseFacts'
 
@@ -124,6 +125,8 @@ const PaperCutMF26K12Iowa = () => {
       <article className="min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Breadcrumbs items={breadcrumbItems} className="mb-6" />
+
+          <SecurityAdvisoryBanner advisoryId="papercut-aug-2026" />
 
           <motion.header
             initial={{ opacity: 0, y: 30 }}

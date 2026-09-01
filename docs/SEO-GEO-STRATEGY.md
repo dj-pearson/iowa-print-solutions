@@ -1,6 +1,6 @@
 # SEO / GEO Strategy
 
-**Last updated:** 2026-07-30
+**Last updated:** 2026-09-01
 
 This is the single strategy document for the site. It replaces five overlapping
 legacy files (`iowa-seo-optimization-report.md`,
@@ -179,6 +179,31 @@ existing rankings and many buyers still search the old name. Copy names both.
 4. `FACTS_VERIFIED` in that file records the last vendor check. Update it when
    you verify, not when you edit.
 5. uniFLOW Online and on-premise uniFLOW version independently. Do not conflate.
+
+### Security advisories
+
+Same discipline as product claims, added September 2026 when the PaperCut
+zero-day (CVE-2026-82078 / CVE-2026-81578) broke mid-cycle.
+
+1. Advisory facts live in `securityAdvisories` in `src/config/products.js`.
+   CVE ids, CVSS values, affected and unaffected products, patch levels,
+   indicators of compromise, KEV status. Nothing without a vendor, researcher,
+   or CISA source.
+2. Never hardcode a CVE or a patch level into a page. PaperCut shipped three
+   emergency builds in five days and superseded two of them. A hardcoded
+   "apply Release 2" would have been actively harmful within 72 hours.
+3. Severity and CVSS are the published figures, not our assessment. Say whose.
+4. Distinguish "the vendor says patch" from "we are telling you what it means
+   for an Iowa hospital." The second is the reason anyone reads this site
+   instead of the vendor bulletin.
+5. Link the vendor bulletin as an action, not just a citation. A reader who
+   arrives mid-incident needs the download, and the vendor page is the only
+   always-current source for build numbers.
+6. Compliance framing is described, never advised. Cite the regulation
+   (45 CFR 164.402, Iowa Code chapter 715C) and say plainly that the
+   determination belongs to counsel.
+7. When an advisory is resolved, update the one config entry. Every banner on
+   the site clears with it.
 
 ### Statistics
 

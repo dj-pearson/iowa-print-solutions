@@ -126,6 +126,12 @@ const PharmacyCompliancePrintIowa = lazy(() => import('./pages/blog/PharmacyComp
 const UniversalPrintV2Iowa2026 = lazy(() => import('./pages/blog/UniversalPrintV2Iowa2026'))
 const Vasion2026Iowa = lazy(() => import('./pages/blog/Vasion2026Iowa'))
 
+// Blog - August/September 2026 PaperCut security advisory cluster
+const PaperCutEmergencyPatchIowa = lazy(() => import('./pages/blog/PaperCutEmergencyPatchIowa'))
+const PaperCutPatchIowaSchools = lazy(() => import('./pages/blog/PaperCutPatchIowaSchools'))
+const PaperCutPatchIowaHealthcare = lazy(() => import('./pages/blog/PaperCutPatchIowaHealthcare'))
+const PrintServerAttackSurfaceIowa = lazy(() => import('./pages/blog/PrintServerAttackSurfaceIowa'))
+
 // Location Pages
 const DesMoinesPrintManagement = lazy(() => import('./pages/locations/DesMoinesPrintManagement'))
 const CedarRapidsPrintManagement = lazy(() => import('./pages/locations/CedarRapidsPrintManagement'))
@@ -293,6 +299,12 @@ const AppContent = () => {
             <Route path="/blog/uniflow-2026-clinics-hospitals-iowa" element={<Uniflow2026HealthcareIowa />} />
             <Route path="/blog/papercut-mf-26-medium-business-iowa" element={<PaperCutMF26MidMarketIowa />} />
             <Route path="/blog/uniflow-2026-medium-business-iowa" element={<Uniflow2026MidMarketIowa />} />
+
+            {/* Blog Pages - PaperCut August 2026 security advisory (CVE-2026-82078 / CVE-2026-81578) */}
+            <Route path="/blog/papercut-emergency-patch-cve-2026-82078-iowa" element={<PaperCutEmergencyPatchIowa />} />
+            <Route path="/blog/papercut-emergency-patch-iowa-schools" element={<PaperCutPatchIowaSchools />} />
+            <Route path="/blog/papercut-zero-day-hipaa-iowa-healthcare" element={<PaperCutPatchIowaHealthcare />} />
+            <Route path="/blog/print-server-attack-surface-iowa-2026" element={<PrintServerAttackSurfaceIowa />} />
 
             {/* Blog Pages - 2026 Industry Topics */}
             <Route path="/blog/k12-cybersecurity-print-iowa-2026" element={<K12CybersecurityPrintIowa2026 />} />

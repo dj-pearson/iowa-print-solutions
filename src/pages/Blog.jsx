@@ -20,6 +20,54 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      id: 'papercut-emergency-patch-cve-2026-82078-iowa',
+      title: 'PaperCut Emergency Patch (CVE-2026-82078): What Iowa Organizations Should Do Now',
+      excerpt: 'PaperCut NG and MF are under active attack. Emergency Patch Release 3 supersedes the two earlier builds. A triage checklist, indicators of compromise, and who in Iowa is most exposed.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-09-01',
+      readTime: '11 min read',
+      category: 'Security',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop',
+      slug: 'papercut-emergency-patch-cve-2026-82078-iowa',
+      featured: true
+    },
+    {
+      id: 'papercut-emergency-patch-iowa-schools',
+      title: 'PaperCut Emergency Patch for Iowa School Districts: A Week-Three Response Plan',
+      excerpt: 'A day-one checklist built around school-year change windows, shared services ownership, SSO validation after the patch, and the student data question districts have to raise with counsel.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-09-01',
+      readTime: '9 min read',
+      category: 'Education',
+      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=250&fit=crop',
+      slug: 'papercut-emergency-patch-iowa-schools',
+      featured: true
+    },
+    {
+      id: 'papercut-zero-day-hipaa-iowa-healthcare',
+      title: 'The PaperCut Zero-Day and HIPAA: What Iowa Health Systems Have to Decide',
+      excerpt: 'Patching is the easy half. The four-factor breach risk assessment applied to a print server, what to preserve before you upgrade, and where Iowa Code chapter 715C sits alongside HIPAA.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-09-01',
+      readTime: '10 min read',
+      category: 'Healthcare',
+      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=250&fit=crop',
+      slug: 'papercut-zero-day-hipaa-iowa-healthcare',
+      featured: true
+    },
+    {
+      id: 'print-server-attack-surface-iowa-2026',
+      title: 'Self-Hosted, SaaS, or Serverless: What the PaperCut Zero-Day Says About Iowa Print Architecture',
+      excerpt: 'A vendor-neutral comparison after the August 2026 advisory. Who patches what, what each model is wrong for, the uniFLOW Online 2026.2 device-update angle, and the two questions that decide it.',
+      author: 'Iowa Print Solutions Team',
+      date: '2026-09-01',
+      readTime: '12 min read',
+      category: 'Comparison',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop',
+      slug: 'print-server-attack-surface-iowa-2026',
+      featured: true
+    },
+    {
       id: 'k12-cybersecurity-print-iowa-2026',
       title: 'K-12 Cybersecurity & Print: 2026 Guidance for Iowa Districts',
       excerpt: 'Aging print servers, unprotected scan-to-email, shared MFP logins, and unpatched firmware. A practical 2026 print security playbook for Iowa K-12 IT directors.',
