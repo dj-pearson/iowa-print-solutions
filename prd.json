@@ -149,16 +149,15 @@
     },
     {
       "id": "RENDER-2",
-      "title": "Four routes never produce a heading",
-      "status": "todo",
-      "priority": "high",
+      "title": "Four pages crashed into the ErrorBoundary",
+      "status": "done",
       "estimate": "1 iteration",
       "problem": "/blog/papercut-hive-q4-2025-iowa, /industries/iowa-education-print-solutions, /industries/iowa-healthcare-print-solutions and /services/printerlogic-iowa time out waiting 20s for an h1 or h2 in <main>. Every other route renders in under a second. This is separate from SUSPENSE-1, which is fixed - these four still fail.",
-      "notes": [
-        "Load each in a browser and read the console before assuming a cause; the audit only records that no heading appeared.",
-        "Two of the four are the industry pages, which share EnhancedIndustryTemplate - check that first.",
-        "If a component throws, the ErrorBoundary swallows it into a fallback that contains no heading, which would look exactly like this."
-      ]
+      "iteration": 7,
+      "root_cause": "Three distinct bugs, all of the same class. PrinterLogicIowa used the lucide icon Cloud and PaperCutHiveQ42025Iowa used DollarSign without importing either. Both industry pages passed a JSX element to ServiceCard's icon prop, which destructures `icon: Icon` and renders <Icon />, so it needs a component reference. The healthcare page additionally used SmartLeadCTA without importing it, passing defaultCTA/urgentCTA/premiumCTA props that the component does not implement - it takes children, variant and size.",
+      "resolution": "Added the two missing icon imports. Changed the four ServiceCard icon props to component references, leaving the separate icon arrays as elements since those are consumed directly as {service.icon}. Rewrote the healthcare CTA section to use SmartLeadCTA as it is actually built, with real links and the real phone number from siteConfig.",
+      "verified": "All four routes now render a real h1 and 7-8 h2 sections with no pageerror, on the production build.",
+      "follow_up": "react/jsx-no-undef is already an error in eslint.config.js - it would have caught two of these. It was invisible among the ~795 existing errors. See LINT-1."
     },
     {
       "id": "CLS-1",
@@ -191,6 +190,18 @@
       "notes": [
         "Every instance found is h1 -> h3, which suggests a shared section component picking h3 for visual weight. Find it and fix once rather than page by page.",
         "Check the styling assumption: if h3 was chosen because h2 looked too large, change the class, not the tag."
+      ]
+    },
+    {
+      "id": "CTA-1",
+      "title": "SmartLeadCTA is called with a prop API it does not implement",
+      "status": "todo",
+      "estimate": "1 iteration",
+      "problem": "SmartLeadCTA accepts children, className, variant and size. EnhancedIndustryTemplate and EnhancedLocationTemplate call it with defaultCTA, urgentCTA and premiumCTA objects, which are silently discarded - the component renders the string 'Learn More'. The same call shape was on the healthcare page and is now fixed there.",
+      "notes": [
+        "EnhancedIndustryTemplate.jsx:7 imports from '../LeadScoringComponents', which from src/components/ resolves to src/LeadScoringComponents - a path that does not exist. EnhancedLocationTemplate.jsx:7 imports from '../../components/LeadScoringComponents', which resolves outside src entirely. Neither template is reachable from a route today, which is the only reason this is not four more crashed pages.",
+        "The discarded CTA copy contains the phone number (515) 123-4567. The real number is (515) 237-2352 - see siteConfig.business.phoneDisplay. Check for that fake number elsewhere before closing this.",
+        "Decide whether SmartLeadCTA should grow the variant API its callers assume, or whether the callers should be rewritten to the simple API. The component name promises behaviour it does not have either way."
       ]
     }
   ]

@@ -456,14 +456,14 @@ const IowaEducationPrintSolutions = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               <ServiceCard
-                icon={<GraduationCap className="h-8 w-8" />}
+                icon={GraduationCap}
                 title="K-12 Print Management"
                 description="Student quotas, teacher controls, and FERPA-compliant solutions designed specifically for Iowa school districts and educational environments."
                 link="/services/papercut-iowa"
                 iowaLink="/blog/papercut-education-iowa"
               />
               <ServiceCard
-                icon={<BookOpen className="h-8 w-8" />}
+                icon={BookOpen}
                 title="University Solutions"
                 description="Campus-wide print management with student ID integration, department billing, and research printing controls for Iowa colleges and universities."
                 link="/services/uniflow-iowa"

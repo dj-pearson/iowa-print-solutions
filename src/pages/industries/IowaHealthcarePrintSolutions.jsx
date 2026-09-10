@@ -7,6 +7,8 @@ import Breadcrumbs from '../../components/Breadcrumbs'
 import ServiceCard from '../../components/ServiceCard'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'
 import LocalBusinessSchema from '../../components/LocalBusinessSchema'
+import { SmartLeadCTA } from '../../components/LeadScoringComponents'
+import { siteConfig } from '../../config/site'
 
 const IowaHealthcarePrintSolutions = () => {
   const breadcrumbItems = [
@@ -171,29 +173,34 @@ const IowaHealthcarePrintSolutions = () => {
           </div>
         </section>
 
-        {/* Healthcare Smart Lead CTA */}
+        {/* Healthcare CTA
+            This section used to pass defaultCTA, urgentCTA and premiumCTA props
+            to a SmartLeadCTA that was never imported, so the page crashed into
+            the ErrorBoundary. SmartLeadCTA accepts children, variant and size -
+            it has no notion of those three CTA variants - so the props were
+            going nowhere even if the import had been there. It is used here as
+            it is actually built. */}
         <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SmartLeadCTA 
-              defaultCTA={{
-                primaryText: "Get HIPAA Compliance Assessment",
-                primaryLink: "/contact?industry=healthcare",
-                secondaryText: "Download Healthcare Guide",
-                secondaryLink: "/resources/hipaa-printing-guide"
-              }}
-              urgentCTA={{
-                primaryText: "Emergency HIPAA Audit Support",
-                primaryLink: "/contact?urgent=true&industry=healthcare",
-                secondaryText: "Call Healthcare Team: (515) 123-4567",
-                secondaryLink: "tel:(515)123-4567"
-              }}
-              premiumCTA={{
-                primaryText: "Enterprise Healthcare Consultation",
-                primaryLink: "/contact?enterprise=true&industry=healthcare",
-                secondaryText: "Priority Implementation",
-                secondaryLink: "/contact?priority=healthcare"
-              }}
-            />
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Find out where your print workflow stands against HIPAA
+            </h2>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+              We walk your fleet with your IT and compliance staff, document
+              where PHI is exposed at the device, and tell you what the
+              remediation actually involves.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to="/contact?industry=healthcare">
+                <SmartLeadCTA size="lg">Request a HIPAA print assessment</SmartLeadCTA>
+              </Link>
+              <Link to="/blog/hipaa-printing-iowa">
+                <SmartLeadCTA size="lg" variant="secondary">Read the Iowa HIPAA printing guide</SmartLeadCTA>
+              </Link>
+            </div>
+            <p className="text-sm text-gray-500 mt-6">
+              Or call {siteConfig.business.phoneDisplay} and ask for the healthcare team.
+            </p>
           </div>
         </section>
 
@@ -386,14 +393,14 @@ const IowaHealthcarePrintSolutions = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               <ServiceCard
-                icon={<Heart className="h-8 w-8" />}
+                icon={Heart}
                 title="PaperCut for Healthcare"
                 description="Secure print management with HIPAA compliance, patient record protection, and comprehensive audit trails for Iowa medical facilities."
                 link="/services/papercut-iowa"
                 iowaLink="/blog/papercut-healthcare-iowa"
               />
               <ServiceCard
-                icon={<FileText className="h-8 w-8" />}
+                icon={FileText}
                 title="uniFLOW Medical Workflows"
                 description="Advanced document workflows for patient records, prescriptions, and medical forms with EHR integration and encryption."
                 link="/services/uniflow-iowa"
