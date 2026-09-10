@@ -4,6 +4,38 @@
   "updated": "2026-09-10",
   "stories": [
     {
+      "id": "FONT-1",
+      "title": "Load Inter once, without blocking the first paint",
+      "status": "done",
+      "iteration": 4,
+      "problem": "Inter was requested twice from two different URLs: a <link rel=stylesheet> in index.html (weights 400-700) and an @import at the top of src/index.css (weights 300-700, and nothing on the site uses 300). The @import is the worse of the two - the browser cannot discover it until the CSS bundle has downloaded and parsed, so it serialises an extra round trip. The index.html link was render-blocking, and in a headless Chromium that could not reach Google Fonts the window load event never fired at all.",
+      "resolution": "Removed the @import. index.html now uses rel=preload as=style with an onload promotion to stylesheet, plus a noscript fallback. With display=swap the text was going to reflow regardless, so blocking first paint bought nothing.",
+      "verified": "Built CSS contains zero fonts.googleapis.com references (was 1). In headless Chromium the load event now fires; before this change page.goto with waitUntil load timed out at 30s on every route."
+    },
+    {
+      "id": "SUSPENSE-1",
+      "title": "Every route renders a permanent loading skeleton in headless Chromium",
+      "status": "todo",
+      "priority": "highest",
+      "estimate": "1-2 iterations",
+      "problem": "In a stock headless Chromium, every route on the site shows PageLoadingFallback forever. No h1 renders, document.title stays at the static index.html title, and <main> contains only the skeleton. The React.lazy promise resolves but the Suspense boundary never commits. Reproduces on the production build and the dev server alike.",
+      "evidence": [
+        "Eliminated: page components. Changing /services to a plain eager import renders it correctly, real h1 and real title, in the same browser.",
+        "Eliminated: chunk loading. Every same-origin request returns 200, including all page chunks. No 404s, no requestfailed on localhost.",
+        "Eliminated: module resolution. Evaluating import('/src/pages/Services.jsx') in the page console resolves with a function default export.",
+        "Eliminated: React being dead. Client-side navigation changes the URL, and toggling the mobile menu takes the link count from 18 to 47, so state updates commit normally.",
+        "Eliminated: StrictMode. Removing it changes nothing.",
+        "Eliminated: duplicate React copies. npm ls shows a single deduped react@18.3.1.",
+        "No pageerror and no console error is raised. The ErrorBoundary never fires, so nothing is being thrown and swallowed."
+      ],
+      "notes": [
+        "Not yet established whether this affects real users' browsers. The live site could not be loaded from this sandbox to compare - the agent proxy resets browser connections to iowaprintsolutions.com, though curl reaches it. Settling that is the first step: if production renders for real visitors, this is a headless-only artifact and matters mainly because it blocks RENDER-1 prerendering and any automated audit. If production does not render, it is the most severe bug on the site.",
+        "Reproduce with: node scripts serving dist/ on a local port, then Playwright with executablePath /opt/pw-browsers/chromium-1194/chrome-linux/chrome, goto a route, wait 8s, assert document.querySelectorAll('h1').length > 0.",
+        "Next suspects, in order: react-helmet 6 (unmaintained, uses the legacy react-side-effect and is known to misbehave under React 18 concurrent rendering - swapping to react-helmet-async is the usual fix); the AnalyticsProvider context; and Vite's define block rewriting process.env.NODE_ENV.",
+        "This blocks RENDER-1: a prerenderer snapshots what the browser paints, and right now that is a loading spinner on all 91 URLs."
+      ]
+    },
+    {
       "id": "PWA-1",
       "title": "Repair PWA install and offline support",
       "status": "done",
@@ -74,6 +106,17 @@
         "Check each image's Unsplash licence attribution requirement before self-hosting it.",
         "Self-host as WebP/AVIF at the sizes actually rendered, with width/height set so layout does not shift.",
         "Doing this properly is also the moment to add loading=\"lazy\" and fetchpriority=\"high\" on the one above-the-fold image per page."
+      ]
+    },
+    {
+      "id": "REPO-1",
+      "title": "Stop tracking dist/ in git",
+      "status": "todo",
+      "estimate": "1 iteration",
+      "problem": "dist/ is committed. Every build rewrites ~80 content-hashed chunk filenames, so an unrelated one-line source change produces a 160-file diff of deletions and additions that buries the real change in review.",
+      "notes": [
+        "Cloudflare Pages builds from source, so the committed output is not what gets deployed - confirm that in CLOUDFLARE-DEPLOYMENT.md before removing it.",
+        "git rm -r --cached dist, add to .gitignore. History keeps the old blobs; that is fine and not worth a rewrite."
       ]
     }
   ]

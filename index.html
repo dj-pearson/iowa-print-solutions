@@ -21,9 +21,21 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-    <!-- Critical Font Preloading - Load Inter font early for faster text rendering -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <!-- Inter, loaded without blocking the first paint.
+         The preload starts the request at the same priority a stylesheet link
+         would, then the onload handler promotes it to an applied stylesheet.
+         A plain <link rel="stylesheet"> here held up rendering until Google
+         Fonts answered; with display=swap the text was going to reflow anyway,
+         so blocking bought nothing. noscript covers scripting-off. -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    </noscript>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE67JBGBKL"></script>
