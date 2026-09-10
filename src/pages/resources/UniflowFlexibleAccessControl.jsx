@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Users, Shield, Key, Settings, CheckCircle, ArrowRight, Lock, UserCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const UniflowFlexibleAccessControl = () => {
   const accessControlFeatures = [
@@ -283,6 +284,12 @@ const UniflowFlexibleAccessControl = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="uniFLOW Access Control"
+        description="Access control in Canon uniFLOW for Iowa organizations: role-based device permissions, card and PIN authentication at the panel, per-function restrictions."
+        canonicalUrl="/resources/uniflow-flexible-access-control"
+        schemaType="TechArticle"
+      />
       <section className="bg-gradient-to-br from-violet-600 to-violet-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

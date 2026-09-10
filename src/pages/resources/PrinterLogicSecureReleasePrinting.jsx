@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Shield, Lock, CreditCard, Eye, CheckCircle, ArrowRight, FileText, Users, AlertTriangle, Key } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const PrinterLogicSecureReleasePrinting = () => {
   const benefits = [
@@ -228,6 +229,12 @@ const PrinterLogicSecureReleasePrinting = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Vasion Print Secure Release"
+        description="Secure release printing with Vasion Print, formerly PrinterLogic: jobs held until the user authenticates at the device, with a full audit trail."
+        canonicalUrl="/resources/printerlogic-secure-release-printing"
+        schemaType="TechArticle"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-red-600 to-red-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

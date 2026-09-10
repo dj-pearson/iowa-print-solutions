@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { BarChart3, DollarSign, Target, TrendingDown, CheckCircle, ArrowRight, Calculator, PieChart } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const UniflowCostTracking = () => {
   const costTrackingFeatures = [
@@ -233,6 +234,12 @@ const UniflowCostTracking = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="uniFLOW Cost Tracking"
+        description="Tracking print and scan cost by user, department, and cost center in Canon uniFLOW, and how Iowa organizations use the reporting for budgets and chargeback."
+        canonicalUrl="/resources/uniflow-cost-tracking"
+        schemaType="TechArticle"
+      />
       <section className="bg-gradient-to-br from-amber-600 to-amber-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

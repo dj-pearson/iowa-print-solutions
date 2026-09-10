@@ -123,29 +123,15 @@
     {
       "id": "SEO-2",
       "title": "Twelve resource guides render no SEO tags at all",
-      "status": "todo",
-      "priority": "high",
+      "status": "done",
       "estimate": "1 iteration",
       "problem": "12 of the 18 pages under /resources import no SEO component. They have no title, no meta description and no canonical, so they all share the shell title and go to search engines with nothing describing them. These are keyword-targeted guides - it is the one page type where this matters most.",
-      "routes": [
-        "/resources/papercut-cost-reduction",
-        "/resources/papercut-implementation-guide",
-        "/resources/papercut-mobility-print",
-        "/resources/papercut-security-practices",
-        "/resources/printerlogic-secure-release-printing",
-        "/resources/printerlogic-self-service-installation",
-        "/resources/printerlogic-serverless-printing",
-        "/resources/uniflow-cost-tracking",
-        "/resources/uniflow-flexible-access-control",
-        "/resources/uniflow-mobile-cloud-printing",
-        "/resources/uniflow-print-from-anywhere",
-        "/resources/uniflow-secure-print-release"
-      ],
       "notes": [
-        "The other six resource pages already use <SEO>; copy their shape rather than inventing one.",
-        "Write a real description per page from that page's own content. Do not template them - 12 near-identical descriptions is the problem this is meant to fix.",
-        "Titles must stay under 60 characters or they truncate; see TITLE-1."
-      ]
+        "No keywords prop was passed. SEO.jsx falls back to the site defaults, and meta keywords are slated for removal anyway (backlog item 9 in docs/SEO-GEO-STRATEGY.md)."
+      ],
+      "iteration": 8,
+      "resolution": "Added an SEO component to each of the 12, with a title, a description written from that page's own content, a canonical, and schemaType TechArticle. Titles are sized against the 23-character ' | Iowa Print Solutions' suffix that getPageTitle appends, so all 12 land at 44-56 characters rendered. Descriptions are 144-156 characters and all distinct. The PrinterLogic pages name Vasion Print first with the old name after, per the naming rule in CLAUDE.md; the URLs are unchanged.",
+      "verified": "All 12 routes on the production build: exactly one canonical and one description each, canonical matches the route, title under 60 characters, description 100-160 characters, 12 unique descriptions out of 12."
     },
     {
       "id": "RENDER-2",
@@ -178,7 +164,8 @@
       "problem": "86 of 87 page titles exceed 60 characters and 65 descriptions exceed 160, so Google truncates them mid-phrase. The call to action ends up cut off.",
       "notes": [
         "SEO.jsx appends a site-name suffix to every title - measure the final rendered length, not the string passed in.",
-        "This is worth doing after SEO-2 so the 12 new pages are written to the limit rather than fixed twice."
+        "This is worth doing after SEO-2 so the 12 new pages are written to the limit rather than fixed twice.",
+        "The 12 resource guides from SEO-2 are already within limits and can be skipped."
       ]
     },
     {
