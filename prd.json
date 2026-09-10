@@ -13,6 +13,16 @@
       "verified": "npm run build succeeds; every path in STATIC_ASSETS resolves to a file in dist/."
     },
     {
+      "id": "SEC-1",
+      "title": "Baseline security response headers",
+      "status": "done",
+      "iteration": 3,
+      "problem": "public/_headers carried only X-Frame-Options, X-Content-Type-Options and Referrer-Policy. No HSTS, no Permissions-Policy, no CSP of any kind. Separately, hashed assets were cached for a year without 'immutable' so browsers still revalidated on reload, and unhashed files served from the site root (/icons/*, /IPSLogo.png) had no Cache-Control at all.",
+      "resolution": "Added Strict-Transport-Security (one year, apex only - includeSubDomains and preload are the domain owner's call once every subdomain is known HTTPS-only), Content-Security-Policy: frame-ancestors 'none', a deny-everything Permissions-Policy, and Cross-Origin-Opener-Policy: same-origin. Hashed /assets/* now immutable; unhashed statics get a revalidatable week; crawler files and the SPA shell stay short-lived.",
+      "verified": "_headers is syntactically a Cloudflare Pages rules file; every path pattern corresponds to a real file or directory in dist/.",
+      "open": "Add includeSubDomains, then preload, once the subdomain inventory is confirmed HTTPS-only."
+    },
+    {
       "id": "RENDER-1",
       "title": "Pre-render routes to static HTML",
       "status": "todo",
@@ -37,6 +47,33 @@
         "Unused React imports are mechanical under the automatic JSX runtime and can go in one pass.",
         "react/prop-types on 39 components plus 98 pages is the bulk. Decide whether to fix or disable the rule - a site this size with no TypeScript may not earn prop-types - and record the decision rather than half-applying it.",
         "Finish by making lint clean so it can be added to the build."
+      ]
+    },
+    {
+      "id": "CSP-1",
+      "title": "Ship a real Content-Security-Policy",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "SEC-1 added only frame-ancestors, which cannot break rendering. A policy covering script-src, style-src, img-src and connect-src is the actual protection, and it is the one header on this site that will break pages if it is wrong.",
+      "notes": [
+        "index.html has an inline gtag bootstrap, so script-src needs a nonce or a hash. Cloudflare Pages serves static files and cannot inject a per-request nonce - a build-time hash of the inline block is the workable route.",
+        "Origins to allow, taken from an audit of index.html and src/: googletagmanager.com and google-analytics.com (script, connect), fonts.googleapis.com (style) and fonts.gstatic.com (font), images.unsplash.com (img), calendly.com (frame, if the widget is embedded rather than linked).",
+        "framer-motion writes inline styles, so style-src almost certainly needs 'unsafe-inline'. Confirm before assuming it can be tightened.",
+        "Ship it as Content-Security-Policy-Report-Only first and watch for violations before enforcing. Do not enforce and verify in the same iteration.",
+        "Verify by loading the built site under a headless browser and asserting zero CSP violations in the console, not by reading the policy."
+      ]
+    },
+    {
+      "id": "IMG-1",
+      "title": "Stop hotlinking hero images from Unsplash",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "45 references to images.unsplash.com across src/. Page-critical imagery is served by a third party the site does not control: it is an extra DNS and TLS handshake in the LCP path, the URLs can change or 404, and it hands a third party a request log of every visitor.",
+      "notes": [
+        "Inventory first: grep images.unsplash.com in src/ and record which are decorative and which are LCP candidates.",
+        "Check each image's Unsplash licence attribution requirement before self-hosting it.",
+        "Self-host as WebP/AVIF at the sizes actually rendered, with width/height set so layout does not shift.",
+        "Doing this properly is also the moment to add loading=\"lazy\" and fetchpriority=\"high\" on the one above-the-fold image per page."
       ]
     }
   ]
