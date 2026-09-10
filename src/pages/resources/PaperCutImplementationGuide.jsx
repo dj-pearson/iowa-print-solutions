@@ -105,6 +105,12 @@ const PaperCutImplementationGuide = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="PaperCut Implementation Guide"
+        description="A step-by-step PaperCut MF rollout for Iowa organizations, from server sizing and print queue planning through device enrollment, pilot group, and go-live."
+        canonicalUrl="/resources/papercut-implementation-guide"
+        schemaType="TechArticle"
+      />
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

@@ -152,7 +152,7 @@ const Uniflow2026HealthcareIowa = () => {
             <div className="flex items-start">
               <Heart className="h-6 w-6 text-red-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-red-900 mb-2">Why this matters for Iowa healthcare</h3>
+                <h2 className="text-lg font-semibold text-red-900 mb-2">Why this matters for Iowa healthcare</h2>
                 <p className="text-red-800">
                   Embedded software on MFPs is easy to leave unpatched because updating it means touching each device. That shows up in risk assessments and, increasingly, in cyber-insurance questionnaires. Automating those updates is the practical contribution of the 2026 releases.
                 </p>
@@ -250,7 +250,7 @@ const Uniflow2026HealthcareIowa = () => {
                       <span className="text-red-600 font-semibold text-sm">{index + 1}</span>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Smartphone, Cloud, Tablet, Laptop, CheckCircle, ArrowRight, Wifi, Download } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const UniflowMobileCloudPrinting = () => {
   const mobileCloudFeatures = [
@@ -256,6 +257,12 @@ const UniflowMobileCloudPrinting = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="uniFLOW Mobile and Cloud Printing"
+        description="Mobile and cloud printing with Canon uniFLOW for Iowa organizations, including uniFLOW Online, submission by email or web upload, and personal devices."
+        canonicalUrl="/resources/uniflow-mobile-cloud-printing"
+        schemaType="TechArticle"
+      />
       <section className="bg-gradient-to-br from-cyan-600 to-cyan-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

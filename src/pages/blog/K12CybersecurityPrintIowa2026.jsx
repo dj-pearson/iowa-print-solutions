@@ -138,7 +138,7 @@ const K12CybersecurityPrintIowa2026 = () => {
             <div className="flex items-start">
               <AlertTriangle className="h-6 w-6 text-yellow-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-yellow-900 mb-2">Why the print attack surface keeps showing up in incidents</h3>
+                <h2 className="text-lg font-semibold text-yellow-900 mb-2">Why the print attack surface keeps showing up in incidents</h2>
                 <p className="text-yellow-800">
                   Printers and MFPs are full network endpoints with credentials, scan-to-email relays, and admin web interfaces. They are also the device class most likely to miss firmware updates and run on legacy authentication.
                 </p>
@@ -202,7 +202,7 @@ const K12CybersecurityPrintIowa2026 = () => {
                       <span className="text-blue-600 font-semibold text-sm">{index + 1}</span>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

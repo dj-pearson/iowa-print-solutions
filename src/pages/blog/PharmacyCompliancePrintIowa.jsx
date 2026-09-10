@@ -138,7 +138,7 @@ const PharmacyCompliancePrintIowa = () => {
             <div className="flex items-start">
               <AlertTriangle className="h-6 w-6 text-yellow-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-yellow-900 mb-2">Why pharmacies are an audit hot spot</h3>
+                <h2 className="text-lg font-semibold text-yellow-900 mb-2">Why pharmacies are an audit hot spot</h2>
                 <p className="text-yellow-800">
                   Iowa Board of Pharmacy inspections, HRSA 340B audits, and DEA reviews all converge on the same evidence: who did what, when, and is the record provably untampered? Print and scan audit trails are quietly some of the most useful evidence you have.
                 </p>
@@ -194,7 +194,7 @@ const PharmacyCompliancePrintIowa = () => {
                   <div key={index} className="flex items-start">
                     <div className="bg-yellow-100 rounded-full p-2 mr-4 mt-1"><span className="text-yellow-600 font-semibold text-sm">{index + 1}</span></div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

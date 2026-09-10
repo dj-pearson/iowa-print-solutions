@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, useCallback } from 'react'
+import React, { createContext, useContext, useEffect, useRef, useState, useCallback } from 'react'
 import { useLocation } from 'react-router-dom'
 import { trackPageView, trackScrollDepth, trackTimeOnPage } from '../utils/analytics'
 
@@ -75,6 +75,22 @@ export const AnalyticsProvider = ({ children }) => {
   const [pageStartTime, setPageStartTime] = useState(Date.now())
   const [timeMilestones, setTimeMilestones] = useState({})
 
+  // The current score, readable without being a dependency.
+  //
+  // addInteraction used to close over `score` and list it in its dependency
+  // array, while the page-view effect below both calls addInteraction and
+  // depends on it. That is a cycle: the effect scores a page view, the score
+  // changes, addInteraction gets a new identity, the effect re-runs, and it
+  // scores the same page view again. It never settles - the score passed
+  // 45,000 within a second of load, writing localStorage and firing a GA4
+  // lead_scoring event on every pass, and the render loop starved React so
+  // thoroughly that lazy routes never finished suspending and every page on
+  // the site showed nothing but the loading skeleton.
+  //
+  // A ref breaks the cycle: the value stays current without participating in
+  // memoisation.
+  const scoreRef = useRef(score)
+
   // Add an interaction and update score
   const addInteraction = useCallback((type, metadata = {}) => {
     const value = LEAD_VALUES[type] || 1
@@ -94,13 +110,12 @@ export const AnalyticsProvider = ({ children }) => {
       return updated
     })
 
-    setScore(prev => {
-      const updated = prev + value
-      try {
-        localStorage.setItem('ips_lead_score', String(updated))
-      } catch {}
-      return updated
-    })
+    const updatedScore = scoreRef.current + value
+    scoreRef.current = updatedScore
+    setScore(updatedScore)
+    try {
+      localStorage.setItem('ips_lead_score', String(updatedScore))
+    } catch {}
 
     // Also track in GA4
     if (typeof window.gtag !== 'undefined') {
@@ -109,13 +124,13 @@ export const AnalyticsProvider = ({ children }) => {
         event_label: type,
         value: value,
         custom_parameters: {
-          total_score: score + value,
+          total_score: updatedScore,
           interaction_type: type,
           ...metadata
         }
       })
     }
-  }, [location.pathname, score])
+  }, [location.pathname])
 
   // Get lead grade based on score
   const getLeadGrade = useCallback(() => {

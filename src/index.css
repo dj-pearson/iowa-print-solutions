@@ -1,5 +1,11 @@
-/* Performance-optimized font loading */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Inter is loaded once, from index.html.
+ *
+ * There used to be an @import here as well, fetching the same family at a
+ * second URL (with an extra 300 weight that nothing on the site uses). Beyond
+ * downloading Inter twice, a CSS @import is the worst place to request a font:
+ * the browser cannot see it until this bundle has downloaded and parsed, so it
+ * serialises a round trip that a <link> in the document head starts
+ * immediately. */
 
 @tailwind base;
 @tailwind components;

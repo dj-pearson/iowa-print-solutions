@@ -155,7 +155,7 @@ const UniversalPrintV2Iowa2026 = () => {
             <div className="flex items-start">
               <Cloud className="h-6 w-6 text-blue-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">Why this question matters in 2026</h3>
+                <h2 className="text-lg font-semibold text-blue-900 mb-2">Why this question matters in 2026</h2>
                 <p className="text-blue-800">
                   Microsoft has made real strides on Universal Print, and Iowa firms that already pay for M365 want to know whether they can stop buying separate print software. The answer is sometimes yes, sometimes no - and getting it wrong is expensive in either direction.
                 </p>

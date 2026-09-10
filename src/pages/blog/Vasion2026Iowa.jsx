@@ -145,7 +145,7 @@ const Vasion2026Iowa = () => {
             <div className="flex items-start">
               <Server className="h-6 w-6 text-blue-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">Why this release matters for Iowa</h3>
+                <h2 className="text-lg font-semibold text-blue-900 mb-2">Why this release matters for Iowa</h2>
                 <p className="text-blue-800">
                   Iowa businesses are accelerating data center reductions, leaning on hybrid work, and tightening identity controls. PrinterLogic has always been a strong print-server-elimination story; the 2026 Vasion release adds the workflow surface that mid-market firms have been asking for.
                 </p>
@@ -201,7 +201,7 @@ const Vasion2026Iowa = () => {
                   <div key={index} className="flex items-start">
                     <div className="bg-blue-100 rounded-full p-2 mr-4 mt-1"><span className="text-blue-600 font-semibold text-sm">{index + 1}</span></div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

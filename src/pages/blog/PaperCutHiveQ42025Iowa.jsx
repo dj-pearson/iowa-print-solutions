@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Zap, Database, Calendar, Globe, Monitor, CheckCircle, ArrowRight, Phone, Mail, TrendingUp, Users, Shield, Clock } from 'lucide-react'
+import { ArrowRight, Calendar, CheckCircle, Clock, Database, DollarSign, Globe, Mail, Monitor, Phone, Shield, TrendingUp, Users, Zap } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import ContentRating from '../../components/ContentRating'

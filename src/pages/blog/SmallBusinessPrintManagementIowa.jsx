@@ -49,7 +49,7 @@ const SmallBusinessPrintManagementIowa = () => {
           </header>
 
           <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
-            <h3 className="text-lg font-semibold text-blue-900 mb-2">Key Takeaways for Iowa SMBs</h3>
+            <h2 className="text-lg font-semibold text-blue-900 mb-2">Key Takeaways for Iowa SMBs</h2>
             <ul className="text-blue-800 space-y-1">
               <li>• Average 35% cost reduction in first year of implementation</li>
               <li>• ROI typically achieved within 6-8 months for Iowa businesses</li>

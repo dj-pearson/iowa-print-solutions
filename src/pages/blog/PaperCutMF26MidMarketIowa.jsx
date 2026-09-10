@@ -146,7 +146,7 @@ const PaperCutMF26MidMarketIowa = () => {
             <div className="flex items-start">
               <Briefcase className="h-6 w-6 text-blue-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">Why mid-sized Iowa firms should pay attention</h3>
+                <h2 className="text-lg font-semibold text-blue-900 mb-2">Why mid-sized Iowa firms should pay attention</h2>
                 <p className="text-blue-800">
                   Iowa businesses with 50-500 employees are caught between enterprise expectations from cyber-insurance carriers and SMB-sized IT teams. The SAML 2.0 support in MF 26.0 closes a specific gap: print was often the one system left outside the company single sign-on, and carriers have started asking about exactly that.
                 </p>
@@ -252,7 +252,7 @@ const PaperCutMF26MidMarketIowa = () => {
                       <span className="text-blue-600 font-semibold text-sm">{index + 1}</span>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

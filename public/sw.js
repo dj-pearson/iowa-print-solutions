@@ -3,24 +3,42 @@
  * Provides offline support and caching for better performance
  */
 
-const CACHE_NAME = 'iowa-print-solutions-v1'
+const CACHE_NAME = 'iowa-print-solutions-v2'
 const OFFLINE_URL = '/offline.html'
 
-// Assets to cache on install
+// Assets to cache on install.
+//
+// Every path here must exist in /public. cache.addAll() is atomic: one 404
+// rejects the whole batch, install() fails, and the worker never activates.
+// v1 listed /favicon.ico and /IPS-blue.webp, neither of which ships, so the
+// worker never installed and the site had no offline support at all. The
+// install handler below now caches entries individually so a single bad path
+// degrades one asset instead of the entire PWA.
 const STATIC_ASSETS = [
   '/',
   '/offline.html',
   '/manifest.json',
-  '/favicon.ico',
-  '/IPS-blue.webp'
+  '/IPSLogo-Icon.ico',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png'
 ]
 
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS)
-    })
+    caches.open(CACHE_NAME).then((cache) =>
+      Promise.allSettled(
+        STATIC_ASSETS.map((url) =>
+          cache.add(new Request(url, { cache: 'reload' }))
+        )
+      ).then((results) => {
+        results.forEach((result, i) => {
+          if (result.status === 'rejected') {
+            console.warn('SW: failed to precache', STATIC_ASSETS[i], result.reason)
+          }
+        })
+      })
+    )
   )
   // Activate immediately
   self.skipWaiting()
@@ -58,8 +76,8 @@ self.addEventListener('fetch', (event) => {
         // Clone the response before caching
         const responseClone = response.clone()
 
-        // Cache successful responses
-        if (response.status === 200) {
+        // Cache successful, non-opaque responses
+        if (response.status === 200 && response.type === 'basic') {
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, responseClone)
           })
@@ -74,9 +92,10 @@ self.addEventListener('fetch', (event) => {
             return cachedResponse
           }
 
-          // For navigation requests, show offline page
+          // For navigation requests, serve the cached app shell so client-side
+          // routing still works offline; fall back to the offline page.
           if (event.request.mode === 'navigate') {
-            return caches.match(OFFLINE_URL)
+            return caches.match('/').then((shell) => shell || caches.match(OFFLINE_URL))
           }
 
           // Return a basic offline response for other requests

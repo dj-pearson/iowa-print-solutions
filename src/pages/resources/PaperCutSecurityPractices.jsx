@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Shield, Lock, Eye, UserCheck, FileText, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const PaperCutSecurityPractices = () => {
   const securityFeatures = [
@@ -129,6 +130,12 @@ const PaperCutSecurityPractices = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="PaperCut Print Security Practices"
+        description="Print security settings that matter in PaperCut MF for Iowa organizations: authentication at the device, held jobs, encryption in transit, and audit trails."
+        canonicalUrl="/resources/papercut-security-practices"
+        schemaType="TechArticle"
+      />
       <section className="bg-gradient-to-br from-red-600 to-red-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

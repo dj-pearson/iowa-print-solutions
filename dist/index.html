@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/IPSLogo.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/IPSLogo.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/IPSLogo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180.png" />
 
     <!-- Mobile Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
@@ -21,9 +21,21 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-    <!-- Critical Font Preloading - Load Inter font early for faster text rendering -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <!-- Inter, loaded without blocking the first paint.
+         The preload starts the request at the same priority a stylesheet link
+         would, then the onload handler promotes it to an applied stylesheet.
+         A plain <link rel="stylesheet"> here held up rendering until Google
+         Fonts answered; with display=swap the text was going to reflow anyway,
+         so blocking bought nothing. noscript covers scripting-off. -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    </noscript>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE67JBGBKL"></script>
@@ -35,26 +47,23 @@
       gtag('config', 'G-VE67JBGBKL');
     </script>
 
-    <!-- SEO Meta Tags -->
-    <title>Secure Iowa Copier Software | PaperCut, uniFLOW & PrinterLogic Security Solutions</title>
-    <meta name="description" content="Protect your Iowa business from copier security breaches. Expert PaperCut, uniFLOW & PrinterLogic implementation. Prevent printer data leaks, ensure HIPAA compliance for Des Moines, Cedar Rapids, Iowa City businesses." />
-    <meta name="keywords" content="Iowa copier software, copier security Iowa, secure MFP software, printer security Iowa, PaperCut Iowa, uniFLOW Iowa, PrinterLogic Iowa, prevent printer data breach, HIPAA printing Iowa" />
+    <!-- Shell title only.
+         Every other SEO tag is owned by src/components/SEO.jsx and rendered
+         per page through react-helmet.
 
-    <!-- SEO Crawler Hints - Help search engines understand the SPA -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <link rel="canonical" href="https://iowaprintsolutions.com" />
+         There used to be a full set here - description, keywords, robots,
+         canonical, the Open Graph block and the Twitter block. Helmet does not
+         remove tags it did not create, so it appended its own alongside them
+         and every page shipped two of each. The canonical was the damaging
+         one: all 91 pages declared both their own URL and the site root as
+         canonical, and Google's documented response to conflicting rel=canonical
+         is to disregard all of them. A crawler that instead takes the first
+         would fold the entire site onto the home page.
 
-    <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Iowa Print Solutions" />
-    <meta property="og:title" content="Secure Iowa Copier Software | PaperCut, uniFLOW & PrinterLogic" />
-    <meta property="og:description" content="Protect your Iowa business from copier security breaches. Expert print management solutions." />
-    <meta property="og:url" content="https://iowaprintsolutions.com" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Iowa Print Solutions - Secure Print Management" />
-    <meta name="twitter:description" content="Expert PaperCut, uniFLOW & PrinterLogic solutions for Iowa businesses." />
+         <title> is the exception and stays: there is only ever one title
+         element, so Helmet replaces it cleanly, and it gives the pre-JS
+         document something sensible. Do not add page-level meta tags here. -->
+    <title>Iowa Print Solutions | PaperCut, uniFLOW &amp; Vasion Print for Iowa Organizations</title>
 
     <!--
       A SoftwareApplication block was removed from here.
@@ -128,11 +137,11 @@
         to { transform: rotate(360deg); }
       }
     </style>
-    <script type="module" crossorigin src="/assets/app-AcgcJCXB.js"></script>
+    <script type="module" crossorigin src="/assets/app-sfEd0-dz.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-CFY1INPE.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-FBFcUbcz.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-seo-DbcgXDpi.js">
-    <link rel="stylesheet" crossorigin href="/assets/styles/index-Cnpxpmkz.css">
+    <link rel="stylesheet" crossorigin href="/assets/styles/index-4kZsAYsM.css">
   </head>
   <body>
     <div id="root">

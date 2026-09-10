@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Download, Users, Clock, Wrench, CheckCircle, ArrowRight, Monitor, Smartphone, Laptop, Shield } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const PrinterLogicSelfServiceInstallation = () => {
   const benefits = [
@@ -224,6 +225,12 @@ const PrinterLogicSelfServiceInstallation = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Vasion Print Self-Service Install"
+        description="Let staff install their own printers with Vasion Print, formerly PrinterLogic. How the self-service portal works and what it takes off the IT queue."
+        canonicalUrl="/resources/printerlogic-self-service-installation"
+        schemaType="TechArticle"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

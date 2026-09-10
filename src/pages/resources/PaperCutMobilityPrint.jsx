@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Smartphone, Wifi, Download, Users, CheckCircle, ArrowRight, Tablet, Cloud } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const PaperCutMobilityPrint = () => {
   const mobilityFeatures = [
@@ -309,6 +310,12 @@ const PaperCutMobilityPrint = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="PaperCut Mobility Print in Iowa"
+        description="Set up PaperCut Mobility Print for Iowa workplaces: driverless printing from Chromebooks, iOS, Android, and BYOD laptops with no per-device configuration."
+        canonicalUrl="/resources/papercut-mobility-print"
+        schemaType="TechArticle"
+      />
       <section className="bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

@@ -1,0 +1,196 @@
+{
+  "product": "Iowa Print Solutions",
+  "description": "Improvement backlog worked one item per iteration. Items too large for a single iteration are recorded here as stories with the notes needed to resume them. The SEO/GEO backlog in docs/SEO-GEO-STRATEGY.md is the companion document; this file tracks platform and engineering work.",
+  "updated": "2026-09-10",
+  "stories": [
+    {
+      "id": "META-1",
+      "title": "Remove duplicate SEO meta tags from the shell",
+      "status": "done",
+      "iteration": 6,
+      "problem": "index.html carried description, keywords, robots, canonical, Open Graph and Twitter tags, and SEO.jsx emits all of them through react-helmet. Helmet cannot remove tags it did not create, so every page shipped two of each. All 91 pages declared both their own URL and the site root as canonical; Google disregards conflicting rel=canonical entirely, and a crawler taking the first would fold the site onto the home page.",
+      "resolution": "All page-level tags removed from the shell; SEO.jsx owns them. <title> stays as the pre-JS fallback since Helmet replaces the single title element cleanly.",
+      "verified": "Three sample routes each carry exactly one description, canonical and og:title, with the canonical matching the page's own URL. Full audit: canonical mismatches fell from 86/87 to 12/87, and the 12 remaining are the pages tracked in SEO-2."
+    },
+    {
+      "id": "FONT-1",
+      "title": "Load Inter once, without blocking the first paint",
+      "status": "done",
+      "iteration": 4,
+      "problem": "Inter was requested twice from two different URLs: a <link rel=stylesheet> in index.html (weights 400-700) and an @import at the top of src/index.css (weights 300-700, and nothing on the site uses 300). The @import is the worse of the two - the browser cannot discover it until the CSS bundle has downloaded and parsed, so it serialises an extra round trip. The index.html link was render-blocking, and in a headless Chromium that could not reach Google Fonts the window load event never fired at all.",
+      "resolution": "Removed the @import. index.html now uses rel=preload as=style with an onload promotion to stylesheet, plus a noscript fallback. With display=swap the text was going to reflow regardless, so blocking first paint bought nothing.",
+      "verified": "Built CSS contains zero fonts.googleapis.com references (was 1). In headless Chromium the load event now fires; before this change page.goto with waitUntil load timed out at 30s on every route."
+    },
+    {
+      "id": "SUSPENSE-1",
+      "title": "Infinite render loop in AnalyticsProvider blanked every page",
+      "status": "done",
+      "estimate": "1-2 iterations",
+      "problem": "In a stock headless Chromium, every route on the site shows PageLoadingFallback forever. No h1 renders, document.title stays at the static index.html title, and <main> contains only the skeleton. The React.lazy promise resolves but the Suspense boundary never commits. Reproduces on the production build and the dev server alike.",
+      "evidence": [
+        "Bisected by adding shell layers one at a time to a two-line dependency-free lazy component: bare React lazy rendered, +ErrorBoundary rendered, +Router rendered, +AnalyticsProvider hung."
+      ],
+      "iteration": 5,
+      "root_cause": "addInteraction was memoised with `score` in its dependency array, while the page-view effect both called addInteraction and listed it as a dependency. Scoring a page view changed the score, which gave addInteraction a new identity, which re-ran the effect, which scored the page view again. The loop never settled.",
+      "impact": "Three separate failures from one cycle. The lead score passed 45,000 within a second of page load and climbed about 3,500 a second, writing localStorage every pass. A GA4 lead_scoring event fired on every pass, so the analytics this code exists to collect were being flooded with garbage. And the render loop starved React badly enough that lazy routes never finished suspending, so every page on the site showed the loading skeleton and nothing else - no heading, no content, and the static shell title instead of the page's own.",
+      "resolution": "Hold the running score in a ref so addInteraction can read it without depending on it. addInteraction now depends only on location.pathname.",
+      "verified": "Before: score 45,709 at t=1s, 59,878 at t=6s, main containing only PageLoadingFallback. After, on both the dev server and the production build: score stable at 2 (the dev figure - StrictMode double-invokes the effect), real h1, the page's own title, aria-busy gone, stable through t=8s."
+    },
+    {
+      "id": "PWA-1",
+      "title": "Repair PWA install and offline support",
+      "status": "done",
+      "iteration": 1,
+      "problem": "public/sw.js precached /favicon.ico and /IPS-blue.webp, neither of which ships. cache.addAll() is atomic, so install() rejected on every visit and the service worker never activated - the site had no offline support at all. manifest.json separately declared one 256x256 PNG as both 192x192 and 512x512, which fails Chrome's installability check, and marked it 'any maskable' with no safe-zone padding.",
+      "resolution": "Generated real 192/512 icons plus a padded maskable 512 and a 180 apple-touch icon into public/icons/. Rewrote manifest icons with matching sizes and split any/maskable purposes. sw.js now precaches individually via Promise.allSettled so one bad path degrades one asset instead of the whole worker, cache bumped to v2, navigation fallback serves the cached shell before the offline page. Registration gated to import.meta.env.PROD so the dev server stops serving stale bundles.",
+      "verified": "npm run build succeeds; every path in STATIC_ASSETS resolves to a file in dist/."
+    },
+    {
+      "id": "SEC-1",
+      "title": "Baseline security response headers",
+      "status": "done",
+      "iteration": 3,
+      "problem": "public/_headers carried only X-Frame-Options, X-Content-Type-Options and Referrer-Policy. No HSTS, no Permissions-Policy, no CSP of any kind. Separately, hashed assets were cached for a year without 'immutable' so browsers still revalidated on reload, and unhashed files served from the site root (/icons/*, /IPSLogo.png) had no Cache-Control at all.",
+      "resolution": "Added Strict-Transport-Security (one year, apex only - includeSubDomains and preload are the domain owner's call once every subdomain is known HTTPS-only), Content-Security-Policy: frame-ancestors 'none', a deny-everything Permissions-Policy, and Cross-Origin-Opener-Policy: same-origin. Hashed /assets/* now immutable; unhashed statics get a revalidatable week; crawler files and the SPA shell stay short-lived.",
+      "verified": "_headers is syntactically a Cloudflare Pages rules file; every path pattern corresponds to a real file or directory in dist/.",
+      "open": "Add includeSubDomains, then preload, once the subdomain inventory is confirmed HTTPS-only."
+    },
+    {
+      "id": "RENDER-1",
+      "title": "Pre-render routes to static HTML",
+      "status": "todo",
+      "estimate": "3+ iterations",
+      "problem": "The site is a client-rendered SPA - dist/index.html ships an empty <div id=\"root\">. Google renders JS on a delay and a budget; several AI answer crawlers do not execute JS at all and see nothing. This is item 1 on the SEO/GEO backlog and the single largest remaining technical win.",
+      "notes": [
+        "94 routes in src/App.jsx, all React.lazy. scripts/generate-sitemap.mjs already parses that route table - reuse its extraction rather than writing a second parser.",
+        "react-helmet (not helmet-async) is in use. It has no server-side collection story that works cleanly with concurrent React 18; a headless-browser snapshot avoids the problem entirely because Helmet has already written the real <head>.",
+        "Cloudflare Pages runs the build, so the prerender step has to work in that container. Playwright/Puppeteer downloading Chromium at build time is the risk to settle first: measure install time and size, and have a fallback of prerendering only high-value routes.",
+        "This environment has Chromium at /opt/pw-browsers with PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1, so local prototyping is free - do not mistake that for it working on Pages.",
+        "Split the work: (1) prototype a postbuild snapshot script locally and confirm rendered HTML contains real headings, meta and schema; (2) settle the Cloudflare build story; (3) wire it into the build and verify hydration does not warn."
+      ]
+    },
+    {
+      "id": "LINT-1",
+      "title": "Clear the ESLint backlog",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "Roughly 795 pre-existing ESLint errors, dominated by missing react/prop-types and unused React imports. The noise means npm run lint is not usable as a gate, so new errors land unnoticed.",
+      "notes": [
+        "Confirm the current count before starting; it predates several merges.",
+        "Unused React imports are mechanical under the automatic JSX runtime and can go in one pass.",
+        "react/prop-types on 39 components plus 98 pages is the bulk. Decide whether to fix or disable the rule - a site this size with no TypeScript may not earn prop-types - and record the decision rather than half-applying it.",
+        "Finish by making lint clean so it can be added to the build."
+      ]
+    },
+    {
+      "id": "CSP-1",
+      "title": "Ship a real Content-Security-Policy",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "SEC-1 added only frame-ancestors, which cannot break rendering. A policy covering script-src, style-src, img-src and connect-src is the actual protection, and it is the one header on this site that will break pages if it is wrong.",
+      "notes": [
+        "index.html has an inline gtag bootstrap, so script-src needs a nonce or a hash. Cloudflare Pages serves static files and cannot inject a per-request nonce - a build-time hash of the inline block is the workable route.",
+        "Origins to allow, taken from an audit of index.html and src/: googletagmanager.com and google-analytics.com (script, connect), fonts.googleapis.com (style) and fonts.gstatic.com (font), images.unsplash.com (img), calendly.com (frame, if the widget is embedded rather than linked).",
+        "framer-motion writes inline styles, so style-src almost certainly needs 'unsafe-inline'. Confirm before assuming it can be tightened.",
+        "Ship it as Content-Security-Policy-Report-Only first and watch for violations before enforcing. Do not enforce and verify in the same iteration.",
+        "Verify by loading the built site under a headless browser and asserting zero CSP violations in the console, not by reading the policy."
+      ]
+    },
+    {
+      "id": "IMG-1",
+      "title": "Stop hotlinking hero images from Unsplash",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "45 references to images.unsplash.com across src/. Page-critical imagery is served by a third party the site does not control: it is an extra DNS and TLS handshake in the LCP path, the URLs can change or 404, and it hands a third party a request log of every visitor.",
+      "notes": [
+        "Inventory first: grep images.unsplash.com in src/ and record which are decorative and which are LCP candidates.",
+        "Check each image's Unsplash licence attribution requirement before self-hosting it.",
+        "Self-host as WebP/AVIF at the sizes actually rendered, with width/height set so layout does not shift.",
+        "Doing this properly is also the moment to add loading=\"lazy\" and fetchpriority=\"high\" on the one above-the-fold image per page."
+      ]
+    },
+    {
+      "id": "REPO-1",
+      "title": "Stop tracking dist/ in git",
+      "status": "todo",
+      "estimate": "1 iteration",
+      "problem": "dist/ is committed. Every build rewrites ~80 content-hashed chunk filenames, so an unrelated one-line source change produces a 160-file diff of deletions and additions that buries the real change in review.",
+      "notes": [
+        "Cloudflare Pages builds from source, so the committed output is not what gets deployed - confirm that in CLOUDFLARE-DEPLOYMENT.md before removing it.",
+        "git rm -r --cached dist, add to .gitignore. History keeps the old blobs; that is fine and not worth a rewrite."
+      ]
+    },
+    {
+      "id": "SEO-2",
+      "title": "Twelve resource guides render no SEO tags at all",
+      "status": "done",
+      "estimate": "1 iteration",
+      "problem": "12 of the 18 pages under /resources import no SEO component. They have no title, no meta description and no canonical, so they all share the shell title and go to search engines with nothing describing them. These are keyword-targeted guides - it is the one page type where this matters most.",
+      "notes": [
+        "No keywords prop was passed. SEO.jsx falls back to the site defaults, and meta keywords are slated for removal anyway (backlog item 9 in docs/SEO-GEO-STRATEGY.md)."
+      ],
+      "iteration": 8,
+      "resolution": "Added an SEO component to each of the 12, with a title, a description written from that page's own content, a canonical, and schemaType TechArticle. Titles are sized against the 23-character ' | Iowa Print Solutions' suffix that getPageTitle appends, so all 12 land at 44-56 characters rendered. Descriptions are 144-156 characters and all distinct. The PrinterLogic pages name Vasion Print first with the old name after, per the naming rule in CLAUDE.md; the URLs are unchanged.",
+      "verified": "All 12 routes on the production build: exactly one canonical and one description each, canonical matches the route, title under 60 characters, description 100-160 characters, 12 unique descriptions out of 12."
+    },
+    {
+      "id": "RENDER-2",
+      "title": "Four pages crashed into the ErrorBoundary",
+      "status": "done",
+      "estimate": "1 iteration",
+      "problem": "/blog/papercut-hive-q4-2025-iowa, /industries/iowa-education-print-solutions, /industries/iowa-healthcare-print-solutions and /services/printerlogic-iowa time out waiting 20s for an h1 or h2 in <main>. Every other route renders in under a second. This is separate from SUSPENSE-1, which is fixed - these four still fail.",
+      "iteration": 7,
+      "root_cause": "Three distinct bugs, all of the same class. PrinterLogicIowa used the lucide icon Cloud and PaperCutHiveQ42025Iowa used DollarSign without importing either. Both industry pages passed a JSX element to ServiceCard's icon prop, which destructures `icon: Icon` and renders <Icon />, so it needs a component reference. The healthcare page additionally used SmartLeadCTA without importing it, passing defaultCTA/urgentCTA/premiumCTA props that the component does not implement - it takes children, variant and size.",
+      "resolution": "Added the two missing icon imports. Changed the four ServiceCard icon props to component references, leaving the separate icon arrays as elements since those are consumed directly as {service.icon}. Rewrote the healthcare CTA section to use SmartLeadCTA as it is actually built, with real links and the real phone number from siteConfig.",
+      "verified": "All four routes now render a real h1 and 7-8 h2 sections with no pageerror, on the production build.",
+      "follow_up": "react/jsx-no-undef is already an error in eslint.config.js - it would have caught two of these. It was invisible among the ~795 existing errors. See LINT-1."
+    },
+    {
+      "id": "CLS-1",
+      "title": "89 of 134 images have no width or height",
+      "status": "todo",
+      "estimate": "1-2 iterations",
+      "problem": "Two thirds of the images on the site declare no intrinsic size, so the browser cannot reserve space before they load and the layout shifts. Cumulative Layout Shift is a Core Web Vital.",
+      "notes": [
+        "Overlaps IMG-1 - the hotlinked Unsplash images are among the worst offenders and self-hosting them is the moment to set dimensions.",
+        "Prefer width/height attributes over CSS aspect-ratio so the reservation works before CSS parses."
+      ]
+    },
+    {
+      "id": "TITLE-1",
+      "title": "Titles and descriptions overflow their SERP limits",
+      "status": "todo",
+      "estimate": "1-2 iterations",
+      "problem": "86 of 87 page titles exceed 60 characters and 65 descriptions exceed 160, so Google truncates them mid-phrase. The call to action ends up cut off.",
+      "notes": [
+        "SEO.jsx appends a site-name suffix to every title - measure the final rendered length, not the string passed in.",
+        "This is worth doing after SEO-2 so the 12 new pages are written to the limit rather than fixed twice.",
+        "The 12 resource guides from SEO-2 are already within limits and can be skipped."
+      ]
+    },
+    {
+      "id": "HEAD-1",
+      "title": "Heading levels skipped on 21 routes",
+      "status": "done",
+      "estimate": "1 iteration",
+      "problem": "21 routes jump straight from h1 to h3. Screen reader users navigate by heading level, and a skipped level reads as a missing section.",
+      "notes": [
+        "Not one shared component, which was the initial guess - the jumps came from three unrelated patterns.",
+        "The h4s nested under a real h3 in the same files were deliberately left alone; a blanket h4-to-h3 pass would have broken them."
+      ],
+      "iteration": 10,
+      "resolution": "Two layers. The visible one was a lead-in callout - 'Why this matters', 'Key Takeaways', 'Executive Summary' - marked h3 directly under the h1 on 19 pages; those became h2. Fixing them exposed a second layer the scanner had been hiding, because it only reports the first jump per page: 12 blog posts put an h4 checklist directly under an h2 section, skipping h3. Those became h3. Two h2->h4 cases were the same shape.\nOne case was not a level problem at all. The hero card on the home page labelled a decorative product panel with an h3. Promoting it to h2 would have claimed a page section that does not exist, so it is a <p> with the same type scale.",
+      "verified": "Browser scan of all 91 routes: 0 heading jumps, down from 21. Every change rewrites the tag only; class names are untouched, so nothing moves visually."
+    },
+    {
+      "id": "CTA-1",
+      "title": "SmartLeadCTA discarded its callers' copy; templates imported from paths that did not exist",
+      "status": "done",
+      "estimate": "1 iteration",
+      "problem": "SmartLeadCTA accepts children, className, variant and size. EnhancedIndustryTemplate and EnhancedLocationTemplate call it with defaultCTA, urgentCTA and premiumCTA objects, which are silently discarded - the component renders the string 'Learn More'. The same call shape was on the healthcare page and is now fixed there.",
+      "iteration": 9,
+      "resolution": "Implemented the defaultCTA/urgentCTA/premiumCTA API in SmartLeadCTA rather than stripping it from the callers - three call sites agreed on that shape, so the callers were right about what the component is for. Which tier renders is chosen from the visitor's lead grade via the real useLeadScoring in AnalyticsProvider; missing tiers fall back to defaultCTA. The children call shape still works. Removed the duplicate stub useLeadScoring that shadowed the real hook by name. Fixed every relative import in both page templates and replaced the invented (515) 123-4567 with siteConfig.business.phoneDisplay and phone.",
+      "verified": "/blog rendered a blue box reading 'Learn More' where its CTA copy should have been; it now renders the real CTA with the correct phone number. No occurrence of 123-4567 remains in src/. Every relative import in both templates resolves to a file on disk."
+    }
+  ]
+}

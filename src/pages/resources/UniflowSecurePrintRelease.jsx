@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Shield, Lock, UserCheck, Smartphone, CheckCircle, ArrowRight, Eye, AlertTriangle } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const UniflowSecurePrintRelease = () => {
   const securityFeatures = [
@@ -177,6 +178,12 @@ const UniflowSecurePrintRelease = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="uniFLOW Secure Print Release"
+        description="Secure print release in Canon uniFLOW: jobs held server-side until the user authenticates at the device, with logging Iowa compliance reviews can use."
+        canonicalUrl="/resources/uniflow-secure-print-release"
+        schemaType="TechArticle"
+      />
       <section className="bg-gradient-to-br from-emerald-600 to-emerald-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

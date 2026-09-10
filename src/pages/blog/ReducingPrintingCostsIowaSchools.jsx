@@ -49,7 +49,7 @@ const ReducingPrintingCostsIowaSchools = () => {
           </header>
 
           <div className="bg-green-50 border-l-4 border-green-400 p-6 mb-8">
-            <h3 className="text-lg font-semibold text-green-900 mb-2">Quick Wins for Iowa Schools</h3>
+            <h2 className="text-lg font-semibold text-green-900 mb-2">Quick Wins for Iowa Schools</h2>
             <div className="grid md:grid-cols-2 gap-4 text-green-800">
               <ul className="space-y-1">
                 <li>• Average 45% cost reduction in first year</li>

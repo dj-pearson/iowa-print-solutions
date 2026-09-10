@@ -11,8 +11,10 @@ initGA4(GA_CONFIG.MEASUREMENT_ID)
 // Ensure React is available globally for compatibility
 window.React = React
 
-// Register Service Worker for PWA support
-if ('serviceWorker' in navigator) {
+// Register Service Worker for PWA support.
+// Production only - in dev the worker's network-first cache serves stale
+// bundles after an HMR reload, which looks like edits silently not applying.
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
       .register('/sw.js')

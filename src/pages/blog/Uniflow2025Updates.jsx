@@ -268,7 +268,7 @@ const Uniflow2025Updates = () => {
                   <div className="flex items-start space-x-3">
                     <Smartphone className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Windows 11 Compatibility</h4>
+                      <h3 className="font-semibold text-gray-900">Windows 11 Compatibility</h3>
                       <p className="text-gray-600">Seamless integration with modern Windows and Office applications</p>
                     </div>
                   </div>

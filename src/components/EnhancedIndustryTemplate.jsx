@@ -2,12 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight, Shield, Users, BarChart3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import SEO from '../SEO'
-import Breadcrumbs from '../Breadcrumbs'
-import { SmartLeadCTA, BehaviorTrigger } from '../LeadScoringComponents'
-import { PhoneTracker, DownloadTracker } from '../AnalyticsComponents'
-// import { useLeadScoring } from '../LeadScoringComponents'
-import { trackIndustryPageView } from '../../utils/analytics'
+import SEO from './SEO'
+import Breadcrumbs from './Breadcrumbs'
+import { SmartLeadCTA, BehaviorTrigger } from './LeadScoringComponents'
+import { PhoneTracker, DownloadTracker } from './AnalyticsComponents'
+// import { useLeadScoring } from './LeadScoringComponents'
+import { trackIndustryPageView } from '../utils/analytics'
+import { siteConfig } from '../config/site'
 
 const EnhancedIndustryTemplate = ({ 
   industryName,
@@ -77,7 +78,7 @@ const EnhancedIndustryTemplate = ({
                     Get {industryName} Assessment
                   </Link>
                   <PhoneTracker 
-                    phoneNumber="(515) 123-4567"
+                    phoneNumber={siteConfig.business.phoneDisplay}
                     location={`${industryName} Page - Hero CTA`}
                     className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
                   >
@@ -195,8 +196,8 @@ const EnhancedIndustryTemplate = ({
             urgentCTA={{
               primaryText: `Emergency ${industryName} Support`,
               primaryLink: `/contact?urgent=true&industry=${industryName.toLowerCase()}`,
-              secondaryText: `Call ${industryName} Team: (515) 123-4567`,
-              secondaryLink: "tel:(515)123-4567"
+              secondaryText: `Call the ${industryName} team: ${siteConfig.business.phoneDisplay}`,
+              secondaryLink: `tel:${siteConfig.business.phone}`
             }}
             premiumCTA={{
               primaryText: `Enterprise ${industryName} Consultation`,
@@ -324,11 +325,11 @@ const EnhancedIndustryTemplate = ({
               {industrySpecificCTA.primaryCTA}
             </Link>
             <PhoneTracker 
-              phoneNumber="(515) 123-4567"
+              phoneNumber={siteConfig.business.phoneDisplay}
               location={`${industryName} Page - Final CTA`}
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition-colors"
             >
-              Call (515) 123-4567
+              Call {siteConfig.business.phoneDisplay}
             </PhoneTracker>
           </div>
         </div>

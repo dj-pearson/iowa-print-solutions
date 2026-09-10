@@ -150,7 +150,7 @@ const Uniflow2026HigherEdIowa = () => {
             <div className="flex items-start">
               <Cloud className="h-6 w-6 text-blue-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">Why this release matters for Iowa universities</h3>
+                <h2 className="text-lg font-semibold text-blue-900 mb-2">Why this release matters for Iowa universities</h2>
                 <p className="text-blue-800">
                   Campus print fleets are large, distributed, and hard to patch by hand, so embedded device software tends to drift out of date. That drift is exactly what the 2026 releases automate away, and it is the kind of finding that shows up in a security review.
                 </p>
@@ -225,7 +225,7 @@ const Uniflow2026HigherEdIowa = () => {
                       <span className="text-blue-600 font-semibold text-sm">{index + 1}</span>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

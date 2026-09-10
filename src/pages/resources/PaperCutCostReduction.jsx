@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { DollarSign, TrendingDown, BarChart3, PieChart, Calculator, Target, CheckCircle, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const PaperCutCostReduction = () => {
   const costSavingStrategies = [
@@ -115,6 +116,12 @@ const PaperCutCostReduction = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="PaperCut Cost Reduction in Iowa"
+        description="How PaperCut MF cuts print spend for Iowa organizations: quota rules, color restrictions, department chargeback, and reporting that shows where money goes."
+        canonicalUrl="/resources/papercut-cost-reduction"
+        schemaType="TechArticle"
+      />
       <section className="bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

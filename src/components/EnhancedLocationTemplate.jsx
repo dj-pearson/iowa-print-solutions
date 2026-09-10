@@ -2,12 +2,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Users, CheckCircle, Star, ArrowRight, Shield, BarChart3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import SEO from '../../components/SEO'
-import Breadcrumbs from '../../components/Breadcrumbs'
-import { SmartLeadCTA, BehaviorTrigger } from '../../components/LeadScoringComponents'
-import { PhoneTracker, EmailTracker, DownloadTracker } from '../../components/AnalyticsComponents'
-// import { useLeadScoring } from '../../components/LeadScoringComponents'
-import { trackLocationPageView } from '../../utils/analytics'
+import SEO from './SEO'
+import Breadcrumbs from './Breadcrumbs'
+import { SmartLeadCTA, BehaviorTrigger } from './LeadScoringComponents'
+import { PhoneTracker, EmailTracker, DownloadTracker } from './AnalyticsComponents'
+// import { useLeadScoring } from './LeadScoringComponents'
+import { trackLocationPageView } from '../utils/analytics'
 
 const EnhancedLocationTemplate = ({ 
   cityName, 

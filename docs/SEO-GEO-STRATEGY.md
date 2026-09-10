@@ -205,6 +205,19 @@ zero-day (CVE-2026-82078 / CVE-2026-81578) broke mid-cycle.
 7. When an advisory is resolved, update the one config entry. Every banner on
    the site clears with it.
 
+### Freshness signals
+
+`SEO.jsx` omits dates unless real ones are passed. The sitemap follows the same
+rule: `lastmod` for each URL is the last commit date of the page module that
+renders it, resolved by `scripts/generate-sitemap.mjs` from the `lazy(import)`
+map in `App.jsx`. It stamped every URL with the build date until 2026-09-10,
+which asserted all 91 pages changed on every deploy.
+
+If the build runs without git history (a shallow clone or a source tarball),
+the script omits `lastmod` rather than substituting the clock. Missing is
+correct; wrong gets the whole signal discounted, including on pages that really
+did change. The build log names any URL it could not date.
+
 ### Statistics
 
 Any number implying measurement needs a citable source or stated scope.

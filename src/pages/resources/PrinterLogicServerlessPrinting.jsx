@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Cloud, Zap, Shield, DollarSign, CheckCircle, ArrowRight, Server, Users, Monitor, Wrench } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const PrinterLogicServerlessPrinting = () => {
   const benefits = [
@@ -155,6 +156,12 @@ const PrinterLogicServerlessPrinting = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Vasion Print Serverless Printing"
+        description="Removing print servers with Vasion Print, formerly PrinterLogic. What serverless printing changes for an Iowa fleet's failover and branch sites."
+        canonicalUrl="/resources/printerlogic-serverless-printing"
+        schemaType="TechArticle"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-purple-600 to-purple-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
