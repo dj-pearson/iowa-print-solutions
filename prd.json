@@ -4,6 +4,15 @@
   "updated": "2026-09-10",
   "stories": [
     {
+      "id": "META-1",
+      "title": "Remove duplicate SEO meta tags from the shell",
+      "status": "done",
+      "iteration": 6,
+      "problem": "index.html carried description, keywords, robots, canonical, Open Graph and Twitter tags, and SEO.jsx emits all of them through react-helmet. Helmet cannot remove tags it did not create, so every page shipped two of each. All 91 pages declared both their own URL and the site root as canonical; Google disregards conflicting rel=canonical entirely, and a crawler taking the first would fold the site onto the home page.",
+      "resolution": "All page-level tags removed from the shell; SEO.jsx owns them. <title> stays as the pre-JS fallback since Helmet replaces the single title element cleanly.",
+      "verified": "Three sample routes each carry exactly one description, canonical and og:title, with the canonical matching the page's own URL. Full audit: canonical mismatches fell from 86/87 to 12/87, and the 12 remaining are the pages tracked in SEO-2."
+    },
+    {
       "id": "FONT-1",
       "title": "Load Inter once, without blocking the first paint",
       "status": "done",
@@ -109,6 +118,79 @@
       "notes": [
         "Cloudflare Pages builds from source, so the committed output is not what gets deployed - confirm that in CLOUDFLARE-DEPLOYMENT.md before removing it.",
         "git rm -r --cached dist, add to .gitignore. History keeps the old blobs; that is fine and not worth a rewrite."
+      ]
+    },
+    {
+      "id": "SEO-2",
+      "title": "Twelve resource guides render no SEO tags at all",
+      "status": "todo",
+      "priority": "high",
+      "estimate": "1 iteration",
+      "problem": "12 of the 18 pages under /resources import no SEO component. They have no title, no meta description and no canonical, so they all share the shell title and go to search engines with nothing describing them. These are keyword-targeted guides - it is the one page type where this matters most.",
+      "routes": [
+        "/resources/papercut-cost-reduction",
+        "/resources/papercut-implementation-guide",
+        "/resources/papercut-mobility-print",
+        "/resources/papercut-security-practices",
+        "/resources/printerlogic-secure-release-printing",
+        "/resources/printerlogic-self-service-installation",
+        "/resources/printerlogic-serverless-printing",
+        "/resources/uniflow-cost-tracking",
+        "/resources/uniflow-flexible-access-control",
+        "/resources/uniflow-mobile-cloud-printing",
+        "/resources/uniflow-print-from-anywhere",
+        "/resources/uniflow-secure-print-release"
+      ],
+      "notes": [
+        "The other six resource pages already use <SEO>; copy their shape rather than inventing one.",
+        "Write a real description per page from that page's own content. Do not template them - 12 near-identical descriptions is the problem this is meant to fix.",
+        "Titles must stay under 60 characters or they truncate; see TITLE-1."
+      ]
+    },
+    {
+      "id": "RENDER-2",
+      "title": "Four routes never produce a heading",
+      "status": "todo",
+      "priority": "high",
+      "estimate": "1 iteration",
+      "problem": "/blog/papercut-hive-q4-2025-iowa, /industries/iowa-education-print-solutions, /industries/iowa-healthcare-print-solutions and /services/printerlogic-iowa time out waiting 20s for an h1 or h2 in <main>. Every other route renders in under a second. This is separate from SUSPENSE-1, which is fixed - these four still fail.",
+      "notes": [
+        "Load each in a browser and read the console before assuming a cause; the audit only records that no heading appeared.",
+        "Two of the four are the industry pages, which share EnhancedIndustryTemplate - check that first.",
+        "If a component throws, the ErrorBoundary swallows it into a fallback that contains no heading, which would look exactly like this."
+      ]
+    },
+    {
+      "id": "CLS-1",
+      "title": "89 of 134 images have no width or height",
+      "status": "todo",
+      "estimate": "1-2 iterations",
+      "problem": "Two thirds of the images on the site declare no intrinsic size, so the browser cannot reserve space before they load and the layout shifts. Cumulative Layout Shift is a Core Web Vital.",
+      "notes": [
+        "Overlaps IMG-1 - the hotlinked Unsplash images are among the worst offenders and self-hosting them is the moment to set dimensions.",
+        "Prefer width/height attributes over CSS aspect-ratio so the reservation works before CSS parses."
+      ]
+    },
+    {
+      "id": "TITLE-1",
+      "title": "Titles and descriptions overflow their SERP limits",
+      "status": "todo",
+      "estimate": "1-2 iterations",
+      "problem": "86 of 87 page titles exceed 60 characters and 65 descriptions exceed 160, so Google truncates them mid-phrase. The call to action ends up cut off.",
+      "notes": [
+        "SEO.jsx appends a site-name suffix to every title - measure the final rendered length, not the string passed in.",
+        "This is worth doing after SEO-2 so the 12 new pages are written to the limit rather than fixed twice."
+      ]
+    },
+    {
+      "id": "HEAD-1",
+      "title": "21 routes skip a heading level",
+      "status": "todo",
+      "estimate": "1 iteration",
+      "problem": "21 routes jump straight from h1 to h3. Screen reader users navigate by heading level, and a skipped level reads as a missing section.",
+      "notes": [
+        "Every instance found is h1 -> h3, which suggests a shared section component picking h3 for visual weight. Find it and fix once rather than page by page.",
+        "Check the styling assumption: if h3 was chosen because h2 looked too large, change the class, not the tag."
       ]
     }
   ]
