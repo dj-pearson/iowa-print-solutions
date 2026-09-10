@@ -83,7 +83,7 @@ scripts/
 public/                 # Static files (manifest.json, robots.txt, llms.txt, sitemap.xml)
 docs/
 └── SEO-GEO-STRATEGY.md  # Strategy, standing rules, prioritised backlog
-dist/                   # Build output (~1.9MB)
+dist/                   # Build output - generated, not tracked in git
 ```
 
 ## Key Architectural Patterns

@@ -6,8 +6,22 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Build outputs (commented out to allow dist for Cloudflare Worker)
-# dist
+# Build outputs
+#
+# dist/ was tracked until 2026-09-10. Cloudflare Pages builds from source -
+# the dashboard runs `npm run build` with output directory `dist` - so the
+# committed copy was never what got deployed. What it did do was rewrite about
+# 80 content-hashed chunk filenames on every build, so a one-line source change
+# arrived as a 160-file diff of deletions and additions with the real change
+# buried in it. PR #23 touched 184 files for ten small fixes.
+#
+# The gitignore entry used to be commented out "to allow dist for Cloudflare
+# Worker". That worker is disabled (worker.js.disabled, wrangler.toml.disabled)
+# and there are no GitHub workflows that consume dist/ either.
+#
+# `wrangler pages deploy` still works: it uploads the local dist/, which a
+# local `npm run build` produces.
+dist
 dist-ssr
 build
 preview-dist

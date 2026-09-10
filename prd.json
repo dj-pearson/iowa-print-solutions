@@ -112,13 +112,12 @@
     {
       "id": "REPO-1",
       "title": "Stop tracking dist/ in git",
-      "status": "todo",
+      "status": "done",
       "estimate": "1 iteration",
       "problem": "dist/ is committed. Every build rewrites ~80 content-hashed chunk filenames, so an unrelated one-line source change produces a 160-file diff of deletions and additions that buries the real change in review.",
-      "notes": [
-        "Cloudflare Pages builds from source, so the committed output is not what gets deployed - confirm that in CLOUDFLARE-DEPLOYMENT.md before removing it.",
-        "git rm -r --cached dist, add to .gitignore. History keeps the old blobs; that is fine and not worth a rewrite."
-      ]
+      "iteration": 11,
+      "resolution": "git rm -r --cached dist, and .gitignore now ignores it with a comment explaining why the entry had been commented out and why that reason no longer holds.",
+      "verified": "Confirmed Cloudflare Pages builds from source before removing anything: CLOUDFLARE-DEPLOYMENT.md records build command `npm run build` and output directory `dist`, there are no GitHub workflows in the repo at all, and the Cloudflare Worker the gitignore comment cited is disabled (worker.js.disabled, wrangler.toml.disabled). Deleted dist/ entirely and rebuilt from clean: 0 files tracked, git check-ignore confirms it is ignored, `wrangler pages deploy` still has a local dist to upload."
     },
     {
       "id": "SEO-2",
