@@ -1,0 +1,43 @@
+{
+  "product": "Iowa Print Solutions",
+  "description": "Improvement backlog worked one item per iteration. Items too large for a single iteration are recorded here as stories with the notes needed to resume them. The SEO/GEO backlog in docs/SEO-GEO-STRATEGY.md is the companion document; this file tracks platform and engineering work.",
+  "updated": "2026-09-10",
+  "stories": [
+    {
+      "id": "PWA-1",
+      "title": "Repair PWA install and offline support",
+      "status": "done",
+      "iteration": 1,
+      "problem": "public/sw.js precached /favicon.ico and /IPS-blue.webp, neither of which ships. cache.addAll() is atomic, so install() rejected on every visit and the service worker never activated - the site had no offline support at all. manifest.json separately declared one 256x256 PNG as both 192x192 and 512x512, which fails Chrome's installability check, and marked it 'any maskable' with no safe-zone padding.",
+      "resolution": "Generated real 192/512 icons plus a padded maskable 512 and a 180 apple-touch icon into public/icons/. Rewrote manifest icons with matching sizes and split any/maskable purposes. sw.js now precaches individually via Promise.allSettled so one bad path degrades one asset instead of the whole worker, cache bumped to v2, navigation fallback serves the cached shell before the offline page. Registration gated to import.meta.env.PROD so the dev server stops serving stale bundles.",
+      "verified": "npm run build succeeds; every path in STATIC_ASSETS resolves to a file in dist/."
+    },
+    {
+      "id": "RENDER-1",
+      "title": "Pre-render routes to static HTML",
+      "status": "todo",
+      "estimate": "3+ iterations",
+      "problem": "The site is a client-rendered SPA - dist/index.html ships an empty <div id=\"root\">. Google renders JS on a delay and a budget; several AI answer crawlers do not execute JS at all and see nothing. This is item 1 on the SEO/GEO backlog and the single largest remaining technical win.",
+      "notes": [
+        "94 routes in src/App.jsx, all React.lazy. scripts/generate-sitemap.mjs already parses that route table - reuse its extraction rather than writing a second parser.",
+        "react-helmet (not helmet-async) is in use. It has no server-side collection story that works cleanly with concurrent React 18; a headless-browser snapshot avoids the problem entirely because Helmet has already written the real <head>.",
+        "Cloudflare Pages runs the build, so the prerender step has to work in that container. Playwright/Puppeteer downloading Chromium at build time is the risk to settle first: measure install time and size, and have a fallback of prerendering only high-value routes.",
+        "This environment has Chromium at /opt/pw-browsers with PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1, so local prototyping is free - do not mistake that for it working on Pages.",
+        "Split the work: (1) prototype a postbuild snapshot script locally and confirm rendered HTML contains real headings, meta and schema; (2) settle the Cloudflare build story; (3) wire it into the build and verify hydration does not warn."
+      ]
+    },
+    {
+      "id": "LINT-1",
+      "title": "Clear the ESLint backlog",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "Roughly 795 pre-existing ESLint errors, dominated by missing react/prop-types and unused React imports. The noise means npm run lint is not usable as a gate, so new errors land unnoticed.",
+      "notes": [
+        "Confirm the current count before starting; it predates several merges.",
+        "Unused React imports are mechanical under the automatic JSX runtime and can go in one pass.",
+        "react/prop-types on 39 components plus 98 pages is the bulk. Decide whether to fix or disable the rule - a site this size with no TypeScript may not earn prop-types - and record the decision rather than half-applying it.",
+        "Finish by making lint clean so it can be added to the build."
+      ]
+    }
+  ]
+}
