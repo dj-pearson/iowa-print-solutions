@@ -14,26 +14,18 @@
     },
     {
       "id": "SUSPENSE-1",
-      "title": "Every route renders a permanent loading skeleton in headless Chromium",
-      "status": "todo",
-      "priority": "highest",
+      "title": "Infinite render loop in AnalyticsProvider blanked every page",
+      "status": "done",
       "estimate": "1-2 iterations",
       "problem": "In a stock headless Chromium, every route on the site shows PageLoadingFallback forever. No h1 renders, document.title stays at the static index.html title, and <main> contains only the skeleton. The React.lazy promise resolves but the Suspense boundary never commits. Reproduces on the production build and the dev server alike.",
       "evidence": [
-        "Eliminated: page components. Changing /services to a plain eager import renders it correctly, real h1 and real title, in the same browser.",
-        "Eliminated: chunk loading. Every same-origin request returns 200, including all page chunks. No 404s, no requestfailed on localhost.",
-        "Eliminated: module resolution. Evaluating import('/src/pages/Services.jsx') in the page console resolves with a function default export.",
-        "Eliminated: React being dead. Client-side navigation changes the URL, and toggling the mobile menu takes the link count from 18 to 47, so state updates commit normally.",
-        "Eliminated: StrictMode. Removing it changes nothing.",
-        "Eliminated: duplicate React copies. npm ls shows a single deduped react@18.3.1.",
-        "No pageerror and no console error is raised. The ErrorBoundary never fires, so nothing is being thrown and swallowed."
+        "Bisected by adding shell layers one at a time to a two-line dependency-free lazy component: bare React lazy rendered, +ErrorBoundary rendered, +Router rendered, +AnalyticsProvider hung."
       ],
-      "notes": [
-        "Not yet established whether this affects real users' browsers. The live site could not be loaded from this sandbox to compare - the agent proxy resets browser connections to iowaprintsolutions.com, though curl reaches it. Settling that is the first step: if production renders for real visitors, this is a headless-only artifact and matters mainly because it blocks RENDER-1 prerendering and any automated audit. If production does not render, it is the most severe bug on the site.",
-        "Reproduce with: node scripts serving dist/ on a local port, then Playwright with executablePath /opt/pw-browsers/chromium-1194/chrome-linux/chrome, goto a route, wait 8s, assert document.querySelectorAll('h1').length > 0.",
-        "Next suspects, in order: react-helmet 6 (unmaintained, uses the legacy react-side-effect and is known to misbehave under React 18 concurrent rendering - swapping to react-helmet-async is the usual fix); the AnalyticsProvider context; and Vite's define block rewriting process.env.NODE_ENV.",
-        "This blocks RENDER-1: a prerenderer snapshots what the browser paints, and right now that is a loading spinner on all 91 URLs."
-      ]
+      "iteration": 5,
+      "root_cause": "addInteraction was memoised with `score` in its dependency array, while the page-view effect both called addInteraction and listed it as a dependency. Scoring a page view changed the score, which gave addInteraction a new identity, which re-ran the effect, which scored the page view again. The loop never settled.",
+      "impact": "Three separate failures from one cycle. The lead score passed 45,000 within a second of page load and climbed about 3,500 a second, writing localStorage every pass. A GA4 lead_scoring event fired on every pass, so the analytics this code exists to collect were being flooded with garbage. And the render loop starved React badly enough that lazy routes never finished suspending, so every page on the site showed the loading skeleton and nothing else - no heading, no content, and the static shell title instead of the page's own.",
+      "resolution": "Hold the running score in a ref so addInteraction can read it without depending on it. addInteraction now depends only on location.pathname.",
+      "verified": "Before: score 45,709 at t=1s, 59,878 at t=6s, main containing only PageLoadingFallback. After, on both the dev server and the production build: score stable at 2 (the dev figure - StrictMode double-invokes the effect), real h1, the page's own title, aria-busy gone, stable through t=8s."
     },
     {
       "id": "PWA-1",
