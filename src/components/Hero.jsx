@@ -80,9 +80,14 @@ const Hero = () => {
                   />
                 </div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-center mb-4">
+              {/* A label on a decorative hero card, not a section of the page.
+                  It was an h3 sitting directly under the h1, which both created
+                  a heading-level jump and advertised a landmark that does not
+                  exist - the page's real sections start below the hero. Same
+                  type scale, no longer a heading. */}
+              <p className="text-xl sm:text-2xl font-bold text-center mb-4">
                 Complete Print Management Solutions
-              </h3>
+              </p>
               <div className="space-y-3 text-center">
                 <div className="bg-white/10 rounded-md p-3">
                   <span className="font-medium">PaperCut MF Implementation</span>

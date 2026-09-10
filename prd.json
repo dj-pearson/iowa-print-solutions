@@ -170,14 +170,17 @@
     },
     {
       "id": "HEAD-1",
-      "title": "21 routes skip a heading level",
-      "status": "todo",
+      "title": "Heading levels skipped on 21 routes",
+      "status": "done",
       "estimate": "1 iteration",
       "problem": "21 routes jump straight from h1 to h3. Screen reader users navigate by heading level, and a skipped level reads as a missing section.",
       "notes": [
-        "Every instance found is h1 -> h3, which suggests a shared section component picking h3 for visual weight. Find it and fix once rather than page by page.",
-        "Check the styling assumption: if h3 was chosen because h2 looked too large, change the class, not the tag."
-      ]
+        "Not one shared component, which was the initial guess - the jumps came from three unrelated patterns.",
+        "The h4s nested under a real h3 in the same files were deliberately left alone; a blanket h4-to-h3 pass would have broken them."
+      ],
+      "iteration": 10,
+      "resolution": "Two layers. The visible one was a lead-in callout - 'Why this matters', 'Key Takeaways', 'Executive Summary' - marked h3 directly under the h1 on 19 pages; those became h2. Fixing them exposed a second layer the scanner had been hiding, because it only reports the first jump per page: 12 blog posts put an h4 checklist directly under an h2 section, skipping h3. Those became h3. Two h2->h4 cases were the same shape.\nOne case was not a level problem at all. The hero card on the home page labelled a decorative product panel with an h3. Promoting it to h2 would have claimed a page section that does not exist, so it is a <p> with the same type scale.",
+      "verified": "Browser scan of all 91 routes: 0 heading jumps, down from 21. Every change rewrites the tag only; class names are untouched, so nothing moves visually."
     },
     {
       "id": "CTA-1",

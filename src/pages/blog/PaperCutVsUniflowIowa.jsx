@@ -49,7 +49,7 @@ const PaperCutVsUniflowIowa = () => {
           </header>
 
           <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
-            <h3 className="text-lg font-semibold text-blue-900 mb-2">Executive Summary</h3>
+            <h2 className="text-lg font-semibold text-blue-900 mb-2">Executive Summary</h2>
             <div className="text-blue-800 space-y-2">
               <p><strong>PaperCut MF:</strong> Best for mixed device environments, cost-conscious organizations, and rapid deployment needs</p>
               <p><strong>Canon uniFLOW:</strong> Superior for document workflows, Canon-centric environments, and advanced business process automation</p>

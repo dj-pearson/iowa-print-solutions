@@ -166,7 +166,7 @@ const Uniflow2026MidMarketIowa = () => {
             <div className="flex items-start">
               <Briefcase className="h-6 w-6 text-blue-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">Why mid-market Iowa firms should look now</h3>
+                <h2 className="text-lg font-semibold text-blue-900 mb-2">Why mid-market Iowa firms should look now</h2>
                 <p className="text-blue-800">
                   The 2026 releases target the part of print management that quietly consumes IT time at a mid-sized company: keeping embedded device software patched across sites, and deciding who can do what at which device. Neither is a headline feature, and both are where the hours actually go.
                 </p>
@@ -278,7 +278,7 @@ const Uniflow2026MidMarketIowa = () => {
                       <span className="text-blue-600 font-semibold text-sm">{index + 1}</span>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

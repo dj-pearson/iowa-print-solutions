@@ -138,7 +138,7 @@ const DentalSpecialtyHIPAAPrintIowa = () => {
             <div className="flex items-start">
               <Stethoscope className="h-6 w-6 text-red-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-red-900 mb-2">Why this matters for Iowa specialty clinics</h3>
+                <h2 className="text-lg font-semibold text-red-900 mb-2">Why this matters for Iowa specialty clinics</h2>
                 <p className="text-red-800">
                   HHS does not grade on a curve based on practice size. A 6-person Iowa dental office is held to the same Privacy Rule and Security Rule as a 600-bed hospital. The good news: 2026 cloud-managed print products let small clinics meet that bar without enterprise infrastructure.
                 </p>
@@ -194,7 +194,7 @@ const DentalSpecialtyHIPAAPrintIowa = () => {
                   <div key={index} className="flex items-start">
                     <div className="bg-red-100 rounded-full p-2 mr-4 mt-1"><span className="text-red-600 font-semibold text-sm">{index + 1}</span></div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

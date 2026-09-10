@@ -138,7 +138,7 @@ const HigherEdSustainabilityPrintIowa2026 = () => {
             <div className="flex items-start">
               <Leaf className="h-6 w-6 text-green-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-green-900 mb-2">Why print sustainability matters in 2026</h3>
+                <h2 className="text-lg font-semibold text-green-900 mb-2">Why print sustainability matters in 2026</h2>
                 <p className="text-green-800">
                   ESG reporting is no longer optional for Iowa institutions courting federal grants, sustainability-minded donors, and prospective students. Print is one of the few categories where you can move the needle in a single semester and prove it with data.
                 </p>
@@ -194,7 +194,7 @@ const HigherEdSustainabilityPrintIowa2026 = () => {
                   <div key={index} className="flex items-start">
                     <div className="bg-green-100 rounded-full p-2 mr-4 mt-1"><span className="text-green-600 font-semibold text-sm">{index + 1}</span></div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

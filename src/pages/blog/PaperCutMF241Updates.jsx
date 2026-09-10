@@ -251,7 +251,7 @@ const PaperCutMF241Updates = () => {
                   <div className="flex items-start space-x-3">
                     <Shield className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Enhanced Security</h4>
+                      <h3 className="font-semibold text-gray-900">Enhanced Security</h3>
                       <p className="text-gray-600">Keep sensitive documents on-premises with complete data control</p>
                     </div>
                   </div>

@@ -268,7 +268,7 @@ const Resources = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filters */}
           <div className="mb-6">
-            <h3 className="text-sm font-medium text-gray-500 mb-3">Filter by Topic</h3>
+            <h2 className="text-sm font-medium text-gray-500 mb-3">Filter by Topic</h2>
             <div className="flex flex-wrap gap-3">
               {categories.map((category) => (
                 <button

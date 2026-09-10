@@ -172,7 +172,7 @@ const PaperCutMF26HealthcareIowa = () => {
             <div className="flex items-start">
               <Heart className="h-6 w-6 text-red-500 mt-1 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold text-red-900 mb-2">Why Iowa healthcare leaders should care</h3>
+                <h2 className="text-lg font-semibold text-red-900 mb-2">Why Iowa healthcare leaders should care</h2>
                 <p className="text-red-800">
                   Cyber-insurance carriers have tightened identity requirements, and print has often been the system left outside single sign-on. The SAML 2.0 support in MF 26.0 is what closes that specific gap. The rest of a HIPAA print program - secure release, badge authentication, purge of unclaimed jobs, per-user logging - is long-standing PaperCut functionality, covered further down.
                 </p>
@@ -247,7 +247,7 @@ const PaperCutMF26HealthcareIowa = () => {
                       <span className="text-red-600 font-semibold text-sm">{index + 1}</span>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-1">{step.phase}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">{step.phase}</h3>
                       <p className="text-gray-600">{step.action}</p>
                     </div>
                   </div>

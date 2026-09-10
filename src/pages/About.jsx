@@ -170,7 +170,7 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="bg-white rounded-lg shadow-lg p-8"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">By the Numbers</h3>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">By the Numbers</h2>
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
                     <div className="bg-blue-100 p-3 rounded-lg">
