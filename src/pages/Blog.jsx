@@ -6,6 +6,7 @@ import SEO from '../components/SEO'
 import Breadcrumbs from '../components/Breadcrumbs'
 import { SmartLeadCTA, BehaviorTrigger } from '../components/LeadScoringComponents'
 import { PhoneTracker, DownloadTracker } from '../components/AnalyticsComponents'
+import { siteConfig } from '../config/site'
 // import { useLeadScoring } from '../components/LeadScoringComponents'
 
 const Blog = () => {
@@ -699,8 +700,8 @@ const Blog = () => {
             urgentCTA={{
               primaryText: "Get Immediate Assessment",
               primaryLink: "/contact",
-              secondaryText: "Call Now: (515) 123-4567",
-              secondaryLink: "tel:(515)123-4567"
+              secondaryText: `Call ${siteConfig.business.phoneDisplay}`,
+              secondaryLink: `tel:${siteConfig.business.phone}`
             }}
             premiumCTA={{
               primaryText: "Schedule Executive Consultation",
