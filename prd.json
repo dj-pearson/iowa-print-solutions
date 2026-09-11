@@ -221,6 +221,15 @@
         "The other 8 errors are unused function parameters (index, contentId, title, location). Prefix with _ and set argsIgnorePattern, or use them.",
         "Once this is closed, lint is clean and can be added to the build."
       ]
+    },
+    {
+      "id": "GEO-1",
+      "title": "Generate llms.txt from config instead of maintaining it by hand",
+      "status": "done",
+      "iteration": 14,
+      "problem": "llms.txt is what answer engines read to decide what this site is and whether to cite it, and being that citation is the site's stated goal. The hand-maintained file was dated 2026-07-30 while FACTS_VERIFIED in products.js read 2026-09-01, and it listed no security advisory at all - while four articles about the PaperCut zero-day were live on the site. Nothing in the build would ever have caught the drift.",
+      "resolution": "scripts/generate-llms.mjs builds it from src/config/products.js and src/config/site.js, wired into prebuild next to the sitemap generator. Prose lives in the script; every fact - product versions, release dates, feature lists, CVE ids, CVSS scores, KEV status, patch levels, mitigations, business details, the last-updated date - is read from config. No CVE or patch level is typed into the file, per the standing rule in docs/SEO-GEO-STRATEGY.md, so resolving an advisory in products.js clears it here on the next build.",
+      "verified": "128 hand-written lines to 218 generated. Both active advisories now appear with both CVEs, their published CVSS scores and ratings, CISA KEV listing and federal deadline, all three superseding emergency patch releases, three mitigations and the vendor bulletin URL. PaperCut 26.0's six verified changes are listed where the previous file had them only in prose. Output is pure ASCII. npm run build regenerates it."
     }
   ]
 }

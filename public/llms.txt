@@ -10,59 +10,194 @@ kind of organization, and what implementation involves in an Iowa context
 (healthcare, K-12 and higher education, manufacturing, financial services,
 government, legal).
 
+GENERATED FILE - do not edit by hand. Regenerate with: npm run llms
+Facts come from src/config/products.js and src/config/site.js.
+
 ## Editorial standard
 
 Every product version number and feature claim on this site is traceable to
 vendor release documentation. Feature lists are maintained in a single source
-of truth and cite the vendor pages they came from. If a claim is not verifiable
-against a vendor source, it is not published.
+of truth and cite the vendor pages they came from. If a claim is not
+verifiable against a vendor source, it is not published.
 
 Where a capability is new in a specific release, the site says so. Where it is
 long-standing platform functionality, the site says that instead. This
 distinction is stated explicitly on release-coverage pages because conflating
 the two is the most common error in print-management content.
 
-## Product facts as of 2026-07-30
+## Product facts as of 2026-09-01
 
 ### PaperCut MF
-- Current version: 26.0, released 2026-07-08
+- Current version: 26.0, released July 8, 2026
 - Vendor: PaperCut Software
-- Verified 26.0 changes: native SAML 2.0 single sign-on (PaperCut MF acts as a
-  SAML 2.0 Service Provider; Okta, Microsoft Entra ID, PingFederate and
-  JumpCloud named as supported IdPs); unified user sessions via centralized
-  authentication across the User Client, Print Deploy and web interfaces;
-  ARM64-aware Print Deploy that detects endpoint CPU architecture and delivers
-  the matching driver; Ricoh embedded application rebuilt on Ricoh
-  SmartSDK-V2; Embedded UI visual refresh including a dark mode option on
-  select platforms; automatic disabling of end-of-life device types on upgrade.
+- Verified 26.0 changes:
+- Native SAML 2.0 single sign-on: PaperCut MF now acts as a SAML 2.0 Service
+  Provider, authenticating users directly against an existing corporate
+  identity provider. Validated IdPs include Okta, Microsoft Entra ID,
+  PingFederate, and JumpCloud.
+- Unified user sessions (centralized authentication): Users authenticate once
+  and carry that session across the User Client, Print Deploy, and the web
+  interfaces, instead of signing in to each separately.
+- ARM64-aware Print Deploy: Print Deploy is now architecture-aware: it detects
+  the endpoint CPU and delivers the matching driver, so x64 and ARM64 Windows
+  laptops are provisioned from the same queue definitions.
+- Rebuilt Ricoh embedded application: The Ricoh embedded application has been
+  rebuilt on Ricoh SmartSDK-V2, replacing the previous generation of the
+  embedded client on supported Ricoh devices.
+- Automatic end-of-life device protection: On upgrade, MF 26.0 automatically
+  disables device types that have reached end of life, so unmaintainable
+  legacy hardware cannot remain an unpatched entry point into the print
+  environment.
+- Embedded UI refresh with dark mode: A visual refresh of the Embedded UI adds
+  a dark mode option on select platforms. It is a design-only change: existing
+  workflows and button placement are unchanged, so no end-user retraining is
+  required.
 - Source: https://www.papercut.com/blog/releases/new-in-papercut-mf-26-0/
+- Source: https://www.papercut.com/products/mf/latest-features/26-0/
+- Source: https://www.papercut.com/products/mf/release-history/
 
 ### Canon uniFLOW
-- uniFLOW ships as two distinct products that version independently:
-  uniFLOW Online (cloud) and uniFLOW on-premise. These are frequently
-  conflated; they should not be.
-- uniFLOW Online current version: 2026.2, released May 2026. Prior release
-  2026.1, March 2026. Cadence is roughly two releases per year.
-- Verified 2026.2 changes: automated MEAP applet updates across compatible
-  devices; flexible update strategies controlling rollout pace for
-  change-control requirements; automatic administrator notification on update
-  completion.
-- Verified 2026.1 changes: Device Application Policy extension (documented as
-  experimental) bringing centralized bulk MEAP application updates to
-  MEAP-compatible imageRUNNER ADVANCE DX and imageFORCE devices; enhanced
-  device access control including policy sets assigned to device groups.
+- uniFLOW ships as two products that version independently: uniFLOW Online
+  (cloud) and uniFLOW on-premise. These are frequently conflated; they should
+  not be.
+- uniFLOW Online (Cloud (SaaS)) - current version 2026.2, released May 2026.
+  Two releases per year (YYYY.1 in spring, YYYY.2 mid-year)
+- uniFLOW (on-premise) (On-premise server). The on-premise uniFLOW server
+  product versions independently of uniFLOW Online. Confirm the exact
+  on-premise version with Canon or NT-ware before quoting it in
+  customer-facing material.
+- Automated MEAP applet updates: MEAP applet updates deploy automatically
+  across compatible devices, keeping a fleet current on software and security
+  fixes without per-device administrative work.
+- Flexible update strategies: Organizations control how quickly new applet
+  versions roll out, so change-control and compliance requirements can gate
+  deployment rather than being bypassed by it.
+- Automatic completion notifications: uniFLOW Online notifies administrators
+  when updates finish, giving fleet-wide visibility without manual
+  verification passes.
+- Device Application Policy extension: Introduced as an experimental extension
+  in 2026.1, Device Application Policy brings centralized bulk MEAP
+  application updates to MEAP-compatible imageRUNNER ADVANCE DX and imageFORCE
+  devices.
+- Enhanced device access control: Device access policies give administrators
+  finer control over how users interact with connected devices, including
+  assigning policy sets to device groups.
 - Vendor: Canon / NT-ware
-- Source: https://nt-ware.online/uniflow-online-2026-2-strengthens-device-fleet-management-with-automated-meap-applet-updates/
+- Source:
+  https://nt-ware.online/uniflow-online-2026-2-strengthens-device-fleet-management-with-automated-meap-applet-updates/
+- Source:
+  https://industryanalysts.com/uniflow-online-2026-1-delivering-scalable-device-application-management-and-enhanced-access-control/
+- Source: https://www.uniflowonline.com/en/news/
 
 ### Vasion Print
-- Formerly PrinterLogic. Vasion renamed the product to Vasion Print in
-  September 2024. Both names refer to the same product.
+- Vasion renamed the PrinterLogic product to Vasion Print in September 2024.
+  Many buyers still search the former name, so pages should mention both.
 - Vendor: Vasion
-- Capabilities: serverless centrally managed direct IP printing that removes
-  print servers from the path; self-service printer installation portal;
-  support for Zero Trust security models; secure release printing from the
-  device panel, an ID badge, or the mobile release app.
-- Source: https://www.businesswire.com/news/home/20240926156658/en/Vasion-Announces-Product-Name-Change-from-PrinterLogic-to-Vasion-Print-Marking-a-New-Era-in-Digital-Transformation
+- Serverless direct IP printing: Centrally managed direct IP printing removes
+  print servers from the path, so a server outage no longer takes printing
+  down for a site.
+- Self-service installation portal: Users install their own printers from a
+  self-service portal, which measurably reduces print-related help desk
+  tickets.
+- Zero Trust security model support: Every user is authenticated and print
+  data is protected in transit, supporting Zero Trust architectures and
+  compliance requirements.
+- Secure release printing: Jobs are held until the user releases them at the
+  device via the control panel, an ID badge, or the mobile release app for iOS
+  and Android.
+- Source:
+  https://www.businesswire.com/news/home/20240926156658/en/Vasion-Announces-Product-Name-Change-from-PrinterLogic-to-Vasion-Print-Marking-a-New-Era-in-Digital-Transformation
+- Source:
+  https://vasion.com/blog/printerlogic-rebrands-as-vasion-affirms-commitment-to-expanding-and-transforming-its-cloud-offerings/
+
+## Active security advisories
+
+Listed because currency matters more than completeness on an active advisory.
+Severity and CVSS are the published figures, attributed to their source; the
+vendor bulletin is the only always-current record of build numbers.
+
+### PaperCut NG/MF pre-authentication remote code execution
+
+- Severity: critical (active exploitation)
+- Disclosed: August 27, 2026
+- First observed exploitation: August 26, 2026
+- CVE-2026-81578 - CVSS 8.8 (High). Improper access control in the PaperCut
+  NG/MF web management interface lets an unauthenticated remote attacker reach
+  configuration endpoints and change server settings.
+- CVE-2026-82078 - CVSS 9.4 (Critical). The database connection utilities
+  instantiate driver classes by name without validating them against an
+  allowlist. An attacker who can change configuration can execute arbitrary
+  Java bytecode as the PaperCut server process.
+- CISA KEV: listed August 31, 2026, federal remediation deadline September 14,
+  2026
+- Two vulnerabilities in PaperCut NG and PaperCut MF can be chained by an
+  unauthenticated attacker to run arbitrary code on the Application Server.
+  Exploitation was observed in the wild before a patch existed.
+- Affected: All versions of PaperCut NG and PaperCut MF released before the
+  August 2026 emergency patches. Emergency patches exist for the v24, v25, and
+  v26 branches. Installations on v23 or earlier must upgrade to a patched
+  branch - no patch is being issued for them.
+- Not affected: PaperCut Hive; PaperCut Pocket; PaperCut Multiverse; Print
+  Deploy; Mobility Print; Print Logger
+- Mitigation: Apply Emergency Patch Release 3. It supersedes both earlier
+  emergency patches, and an install that stopped at Release 1 or 2 is not
+  fully protected.
+- Mitigation: Restrict the Application Server web interface (default ports
+  9191 and 9192) to trusted internal ranges at the firewall. An
+  internet-facing PaperCut admin interface has no legitimate reason to exist.
+- Mitigation: Treat any internet-exposed server that was unpatched between
+  August 26 and the date you patched as potentially compromised, and run an
+  incident response check rather than assuming the patch closed it.
+- Emergency Patch (Release 3) (September 1, 2026) - branches v24, v25, v26.
+  Cumulative - it includes Releases 1 and 2, so it can be applied directly.
+  Adds further hardening and fixes two regressions introduced by the earlier
+  emergency builds: broken SAML login flows and lost support for legacy
+  Microsoft SQL Server drivers used for external card lookup.
+- Emergency Patch (Release 2) (August 28, 2026) - branches v24, v25, v26.
+  Issued after Huntress and watchTowr researchers found multiple bypasses of
+  the first patch, plus a further authentication bypass. Superseded by Release
+  3.
+- Emergency Patch (Release 1) (August 28, 2026) - branches v24, v25, v26. The
+  original out-of-cycle build for Windows, Linux, and macOS. Bypassable -
+  superseded.
+- Vendor bulletin:
+  https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/
+- Source: PaperCut urgent security advisory (27 Aug 2026) -
+  https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/
+- Source: Huntress: PaperCut zero-day active exploitation and pre-auth RCE -
+  https://www.huntress.com/blog/papercut-actively-exploited
+- Source: Rapid7: PaperCut NG/MF critical zero-day exploited in the wild -
+  https://www.rapid7.com/blog/post/etr-papercut-ng-mf-critical-zero-day-exploited-in-the-wild/
+- Source: CISA Known Exploited Vulnerabilities catalog -
+  https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+- Source: BleepingComputer: PaperCut releases second emergency patch -
+  https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/
+
+### uniFLOW Universal Login Manager information disclosure
+
+- Severity: medium (patched)
+- Disclosed: July 6, 2026
+- CVE-2026-1433 - CVSS null (Medium (NT-ware assessment)). The ULM remote user
+  interface can disclose configuration data tied to SMTP and LDAP integrations
+  to an already-authenticated administrator.
+- An authenticated administrator could read sensitive configuration data
+  through the Universal Login Manager remote user interface. NT-ware rates the
+  severity medium and the likelihood low. No exploitation has been reported.
+- Affected: uniFLOW Universal Login Manager Standalone 5.10 and earlier. Fixed
+  in 5.11 and later.
+- Not affected: Deployments connected to uniFLOW Server; Deployments connected
+  to uniFLOW Online
+- Mitigation: Confirm whether your ULM is standalone or connected to uniFLOW
+  Server or uniFLOW Online. Connected deployments are not affected.
+- Mitigation: Upgrade standalone ULM installations to 5.11 or later.
+- uniFLOW Universal Login Manager 5.11 (July 6, 2026) - branches ULM
+  Standalone. Upgrade path for any standalone ULM install on 5.10 or earlier.
+- Vendor bulletin:
+  https://www.usa.canon.com/about-us/to-our-customers/cpa2026-054-vulnerability-remediation-for-uniflow-universal-login-manager-standalone
+- Source: Canon USA advisory CPA2026-054 -
+  https://www.usa.canon.com/about-us/to-our-customers/cpa2026-054-vulnerability-remediation-for-uniflow-universal-login-manager-standalone
+- Source: NT-ware security advisory: ULM potential information disclosure -
+  https://ntware.atlassian.net/wiki/spaces/SA/pages/13659504652/2026+Security+Advisory+ULM+Potential+Information+Disclosure
 
 ## Topics covered
 
@@ -86,7 +221,7 @@ the two is the most common error in print-management content.
 
 - Publisher: Infomax Office Systems (operating as Iowa Print Solutions)
 - Founded: 1958
-- Address: 5619 NE 14th St, Des Moines, IA 50313
+- Address: 5619 NE 14th St, Des Moines, IA undefined
 - Phone: (515) 237-2352
 - Email: DPearson@InfomaxOffice.com
 - Website: https://iowaprintsolutions.com
@@ -125,4 +260,4 @@ required to read page content, and /assets/ must be fetchable.
 
 ## Last updated
 
-2026-07-30
+2026-09-01
