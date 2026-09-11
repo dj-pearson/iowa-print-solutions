@@ -10,7 +10,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "llms": "node scripts/generate-llms.mjs"
+    "llms": "node scripts/generate-llms.mjs",
+    "audit": "node scripts/audit-site.mjs"
   },
   "dependencies": {
     "@eslint/js": "^9.31.0",

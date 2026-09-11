@@ -1,7 +1,7 @@
 {
   "product": "Iowa Print Solutions",
   "description": "Improvement backlog worked one item per iteration. Items too large for a single iteration are recorded here as stories with the notes needed to resume them. The SEO/GEO backlog in docs/SEO-GEO-STRATEGY.md is the companion document; this file tracks platform and engineering work.",
-  "updated": "2026-09-10",
+  "updated": "2026-09-11",
   "stories": [
     {
       "id": "META-1",
@@ -159,12 +159,15 @@
       "title": "Titles and descriptions overflow their SERP limits",
       "status": "todo",
       "estimate": "1-2 iterations",
-      "problem": "86 of 87 page titles exceed 60 characters and 65 descriptions exceed 160, so Google truncates them mid-phrase. The call to action ends up cut off.",
+      "problem": "Measured in a browser across all 91 routes: 78 titles exceed 60 characters and 69 descriptions fall outside 70-160, some far outside - /contact's description is 328 characters and its title 117. Google truncates both, so the end of every one of those is not what a searcher sees. This is now the only class of finding the audit reports; everything else on the site is clean.",
       "notes": [
-        "SEO.jsx appends a site-name suffix to every title - measure the final rendered length, not the string passed in.",
-        "This is worth doing after SEO-2 so the 12 new pages are written to the limit rather than fixed twice.",
-        "The 12 resource guides from SEO-2 are already within limits and can be skipped."
-      ]
+        "Dropping the ' | Iowa Print Solutions' suffix will not fix this: 68 of the 76 over-length titles are already past 60 before the suffix is appended. They are keyword-stuffed, typically with a second pipe-delimited clause.",
+        "Many also carry a '2025' that now reads as stale. Do not bulk-replace it with 2026 - whether a page is about that year is a per-page judgement.",
+        "This is per-page content work with ranking intent attached, which is why it was not done mechanically. Budget a few pages per sitting and check each against what the page actually says.",
+        "The 12 resource guides from SEO-2 are already within limits and can be skipped.",
+        "`npm run audit` reports exactly which routes fail and by how much."
+      ],
+      "priority": "high"
     },
     {
       "id": "HEAD-1",
@@ -230,6 +233,16 @@
       "problem": "llms.txt is what answer engines read to decide what this site is and whether to cite it, and being that citation is the site's stated goal. The hand-maintained file was dated 2026-07-30 while FACTS_VERIFIED in products.js read 2026-09-01, and it listed no security advisory at all - while four articles about the PaperCut zero-day were live on the site. Nothing in the build would ever have caught the drift.",
       "resolution": "scripts/generate-llms.mjs builds it from src/config/products.js and src/config/site.js, wired into prebuild next to the sitemap generator. Prose lives in the script; every fact - product versions, release dates, feature lists, CVE ids, CVSS scores, KEV status, patch levels, mitigations, business details, the last-updated date - is read from config. No CVE or patch level is typed into the file, per the standing rule in docs/SEO-GEO-STRATEGY.md, so resolving an advisory in products.js clears it here on the next build.",
       "verified": "128 hand-written lines to 218 generated. Both active advisories now appear with both CVEs, their published CVSS scores and ratings, CISA KEV listing and federal deadline, all three superseding emergency patch releases, three mitigations and the vendor bulletin URL. PaperCut 26.0's six verified changes are listed where the previous file had them only in prose. Output is pure ASCII. npm run build regenerates it."
+    },
+    {
+      "id": "AUDIT-1",
+      "title": "Put the browser audit in the repo",
+      "status": "done",
+      "iteration": 15,
+      "problem": "Every serious bug found in this backlog - the render loop that blanked all 91 pages, four pages crashing into the ErrorBoundary, 86 conflicting canonicals, 21 skipped heading levels - was invisible to the build, which stayed green throughout. They were found by loading the site in a browser using a throwaway script that would have disappeared with the session.",
+      "resolution": "scripts/audit-site.mjs, run as `npm run audit`. Serves dist with the same SPA fallback Cloudflare uses, loads every route in the sitemap in headless Chromium, and fails on: ErrorBoundary crash, a page stuck in the loading skeleton, wrong count of h1 / canonical / meta description, a canonical that does not match its route, title over 60, description outside 70-160, a skipped heading level, or any uncaught page error. Exits non-zero, so it can gate a release. Supports --sample N and a CHROMIUM_PATH override.\nPlaywright is deliberately not a dependency: Cloudflare Pages runs npm install on every deploy and a Chromium download there would cost minutes per build for a local-only tool. The script says so and prints the install command if it is missing.",
+      "verified": "Full run over all 91 routes: 147 findings across 78 routes, every one of them title length (78) or description length (69). No crashes, no unresolved Suspense, no canonical problems, no heading jumps, no page errors - which independently confirms the fixes from the previous fourteen iterations hold across the whole site, and leaves TITLE-1 as the only open class."
     }
-  ]
+  ],
+  "how_to_use": "Run `npm run audit` first - it loads every route in a real browser and is the only check that catches the failure modes this backlog was built from. Stories are worked one per iteration, newest findings appended. Anything needing more than one sitting stays here with what has already been ruled out, so the next pass starts from evidence rather than from scratch."
 }

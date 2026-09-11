@@ -22,10 +22,30 @@ This is the marketing website for **Iowa Print Solutions** (powered by Infomax O
 
 ```bash
 npm run dev      # Start development server
-npm run build    # Production build (outputs to /dist; regenerates sitemap first)
+npm run build    # Production build (outputs to /dist; regenerates sitemap + llms.txt first)
 npm run sitemap  # Regenerate public/sitemap.xml from App.jsx routes
+npm run llms     # Regenerate public/llms.txt from src/config/*
 npm run lint     # Run ESLint
+npm run audit    # Load every route in a real browser and check what renders
 npm run preview  # Preview production build
+```
+
+`npm run audit` is the check the build cannot do. It loads all 91 routes in
+headless Chromium and fails on: a page that crashes into the ErrorBoundary, a
+page stuck in the loading skeleton, more or fewer than one h1 / canonical /
+meta description, a canonical that does not match its route, a title over 60
+characters, a description outside 70-160, a skipped heading level, or any
+uncaught page error. Every one of those has been a live bug on this site while
+the build was green.
+
+It needs Playwright, which is deliberately **not** a dependency - Cloudflare
+Pages runs `npm install` on every deploy and a Chromium download there would
+cost minutes per build for a local-only tool:
+
+```bash
+npm i -D playwright && npx playwright install chromium
+npm run build && npm run audit
+npm run audit -- --sample 12   # quick pass
 ```
 
 ## Non-Negotiables
@@ -172,7 +192,13 @@ The site targets Iowa businesses with content organized by:
    `SecurityAdvisoryDetail` or `SecurityAdvisoryBanner`. Never hardcode a CVE or
    a patch level into a page - an advisory moves fast, and Release 3 superseding
    Release 2 in five days is why this is one file rather than several pages
-8. **Never hand-edit** `public/sitemap.xml` - run `npm run sitemap`
+9. **Never hand-edit** `public/sitemap.xml` or `public/llms.txt` - both are
+   generated. Run `npm run sitemap` / `npm run llms`, or just build. llms.txt
+   takes every product and advisory fact from `src/config/products.js`, so an
+   advisory resolved there clears from it on the next build
+10. **Run `npm run audit`** before shipping anything that touches rendering,
+   routing or the SEO component. The build passes on a site that renders
+   nothing; the audit does not
 
 ## Key Components Reference
 
