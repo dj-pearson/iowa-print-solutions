@@ -1,5 +1,3 @@
-import React from 'react'
-
 const BreadcrumbSchema = ({ breadcrumbs }) => {
   // Defensive programming: ensure breadcrumbs is an array
   if (!breadcrumbs || !Array.isArray(breadcrumbs) || breadcrumbs.length === 0) {

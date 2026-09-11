@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle, ArrowRight, Shield, Users, BarChart3 } from 'lucide-react'
+import { CheckCircle, ArrowRight, Shield } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from './SEO'
 import Breadcrumbs from './Breadcrumbs'

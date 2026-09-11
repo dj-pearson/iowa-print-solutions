@@ -1,7 +1,5 @@
-import React from 'react'
-
 import { motion } from 'framer-motion'
-import { Shield, Layers, Lock, FileText, CheckCircle, ArrowRight, Heart, Settings } from 'lucide-react'
+import { Shield, Lock, FileText, CheckCircle, ArrowRight, Heart, Settings } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'

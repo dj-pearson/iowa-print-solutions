@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { ThumbsUp, ThumbsDown, Star } from 'lucide-react'
 
 const ContentRating = ({ contentId, title }) => {

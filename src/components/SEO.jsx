@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { Helmet } from 'react-helmet'
 import { siteConfig, getCanonicalUrl, getPageTitle, getKeywords } from '../config/site'
 

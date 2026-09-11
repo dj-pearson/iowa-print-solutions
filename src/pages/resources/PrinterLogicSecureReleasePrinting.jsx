@@ -1,7 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Lock, CreditCard, Eye, CheckCircle, ArrowRight, FileText, Users, AlertTriangle, Key } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Shield, Lock, CreditCard, Eye, CheckCircle, FileText, Users, AlertTriangle, Key } from 'lucide-react'
 import SEO from '../../components/SEO'
 
 const PrinterLogicSecureReleasePrinting = () => {

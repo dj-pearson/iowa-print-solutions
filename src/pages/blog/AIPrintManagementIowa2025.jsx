@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Brain, Bot, TrendingUp, Shield, Lightbulb, BarChart3, CheckCircle, Phone, Mail, Zap } from 'lucide-react'
 import SEO from '../../components/SEO'

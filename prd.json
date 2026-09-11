@@ -71,16 +71,16 @@
     },
     {
       "id": "LINT-1",
-      "title": "Clear the ESLint backlog",
-      "status": "todo",
+      "title": "Make npm run lint usable as a gate",
+      "status": "done",
       "estimate": "2+ iterations",
-      "problem": "Roughly 795 pre-existing ESLint errors, dominated by missing react/prop-types and unused React imports. The noise means npm run lint is not usable as a gate, so new errors land unnoticed.",
       "notes": [
-        "Confirm the current count before starting; it predates several merges.",
-        "Unused React imports are mechanical under the automatic JSX runtime and can go in one pass.",
-        "react/prop-types on 39 components plus 98 pages is the bulk. Decide whether to fix or disable the rule - a site this size with no TypeScript may not earn prop-types - and record the decision rather than half-applying it.",
-        "Finish by making lint clean so it can be added to the build."
-      ]
+        "The 24 remaining are left as genuine signal, not silenced - see CONTENT-1. Adding lint to the build should wait until they are resolved.",
+        "Both exhaustive-deps fixes matter given SUSPENSE-1: Breadcrumbs rebuilt a static label map on every render, so it could never be a useMemo dependency without defeating the memo (hoisted to module scope); Navbar read megaMenuRef.current in an effect cleanup, so the keydown listener could be added to one node and removed from another (node captured in effect scope, and the focus timer is now cleared)."
+      ],
+      "iteration": 13,
+      "resolution": "794 errors down to 24, with the build passing at every step.\nRemoved 142 unused import specifiers across 127 files, driven by ESLint's own report rather than by guessing - 121 of them were React default imports left over from before the automatic JSX runtime.\nTurned off react/prop-types (302 of the 794): a JavaScript-only marketing site with no TypeScript and no shared component library gets little from it, and the volume was hiding real findings. Narrowed react/no-unescaped-entities to forbid only > and } rather than disabling it; essentially all 192 reports were apostrophes in ordinary prose.\nFixed every genuinely real error: a duplicate break in PrintCostCalculator, process.env in browser code (now import.meta.env.DEV - it only worked because vite.config.js happens to define that one key), fetchpriority miscased for React, four no-op regex escapes in the phone validator, two unexplained empty catch blocks, and both react-hooks/exhaustive-deps warnings.",
+      "verified": "npm run eslint reports 24 errors and 4 warnings, from 794 errors and 6 warnings. npm run build succeeds."
     },
     {
       "id": "CSP-1",
@@ -198,6 +198,29 @@
       "problem": "tailwind.config.js had plugins: []. Five pages - the privacy policy, the accessibility statement and three blog posts - use prose, prose-lg and prose-blue. None of those classes generated any CSS: the built stylesheet contained zero .prose rules, so those pages rendered as unstyled walls of text with no paragraph spacing, list markers or heading rhythm. @tailwindcss/typography was in package.json and named in CLAUDE.md's tech stack the whole time.\nThe repo also carried tailwind.config.cjs and postcss.config.cjs alongside the .js versions. The .cjs Tailwind config defines a different primary colour (#1A237E against the .js file's #2563eb blue ramp), so which file wins silently decides the site's palette.",
       "resolution": "Registered the plugin as an ESM import, matching the config's export default. Deleted both .cjs duplicates after confirming neither postcss-import nor tailwindcss/nesting is used - src/index.css has no @import and no nesting.",
       "verified": "Built stylesheet went from 0 .prose rules at 63,512 bytes to 151 rules at 82,103 bytes, with existing utilities intact. In a browser, a ul inside .prose now computes list-style-type disc with 28px padding, where Tailwind preflight resets lists to none and 0 - so the plugin is demonstrably applying."
+    },
+    {
+      "id": "CONTENT-1",
+      "title": "Written content on eight resource guides is never rendered",
+      "status": "todo",
+      "estimate": "1-2 iterations",
+      "problem": "16 of the 24 remaining lint errors are large content arrays that are defined and never used: implementationSteps, troubleshooting, securityBenefits, complianceFeatures, implementationPhases, businessBenefits, technologyComponents. PaperCutMobilityPrint's implementationSteps alone is an 89-line four-phase plan with durations and per-phase activities. Someone wrote this material and it reaches no visitor.",
+      "affected": [
+        "src/pages/resources/PaperCutFollowMePrint.jsx",
+        "src/pages/resources/PaperCutMobilityPrint.jsx",
+        "src/pages/resources/PaperCutSecurePrintRelease.jsx",
+        "src/pages/resources/UniflowCostTracking.jsx",
+        "src/pages/resources/UniflowFlexibleAccessControl.jsx",
+        "src/pages/resources/UniflowMobileCloudPrinting.jsx",
+        "src/pages/resources/UniflowPrintFromAnywhere.jsx",
+        "src/pages/resources/UniflowSecurePrintRelease.jsx"
+      ],
+      "notes": [
+        "Read each array before deciding. Some of it may be the unverified product claims docs/SEO-GEO-STRATEGY.md warns about, in which case it should go rather than ship.",
+        "Anything with a duration, a percentage or a version number needs a source before it is rendered - the standing rules in the strategy doc apply.",
+        "The other 8 errors are unused function parameters (index, contentId, title, location). Prefix with _ and set argsIgnorePattern, or use them.",
+        "Once this is closed, lint is clean and can be added to the build."
+      ]
     }
   ]
 }

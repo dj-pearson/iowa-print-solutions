@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ChevronRight, Home } from 'lucide-react'
 import { Helmet } from 'react-helmet'
-import { siteConfig, getCanonicalUrl } from '../config/site'
+import { getCanonicalUrl } from '../config/site'
 
 /**
  * Unified Breadcrumbs component with Schema.org BreadcrumbList markup
@@ -12,41 +12,44 @@ import { siteConfig, getCanonicalUrl } from '../config/site'
  * @param {Array} props.items - Custom breadcrumb items [{name, path}]
  * @param {string} props.customPath - Custom path string to parse
  */
+// Readable label mappings for common path segments.
+// Module scope on purpose: built inside the component it was a new object on
+// every render, so the useMemo below could not list it as a dependency
+// without re-running on every render and defeating itself.
+const labelMappings = {
+  'blog': 'Blog',
+  'resources': 'Resources',
+  'services': 'Services',
+  'locations': 'Locations',
+  'industries': 'Industries',
+  'tools': 'Tools',
+  'about': 'About',
+  'contact': 'Contact',
+  'search': 'Search Results',
+  'print-cost-calculator': 'Print Cost Calculator',
+  'print-management-comparison': 'Solution Comparison',
+  'resource-library': 'Resource Library',
+  'privacy-policy': 'Privacy Policy',
+  'papercut': 'PaperCut',
+  'uniflow': 'uniFLOW',
+  'printerlogic': 'PrinterLogic',
+  'papercut-iowa': 'PaperCut Iowa',
+  'uniflow-iowa': 'uniFLOW Iowa',
+  'printerlogic-iowa': 'PrinterLogic Iowa',
+  'des-moines': 'Des Moines',
+  'cedar-rapids': 'Cedar Rapids',
+  'iowa-city': 'Iowa City',
+  'davenport': 'Davenport',
+  'waterloo-cedar-falls-print-management': 'Waterloo-Cedar Falls',
+  'sioux-city-print-management': 'Sioux City',
+  'dubuque-print-management': 'Dubuque',
+  'council-bluffs-print-management': 'Council Bluffs',
+  'iowa-healthcare-print-solutions': 'Healthcare Solutions',
+  'iowa-education-print-solutions': 'Education Solutions',
+}
+
 const Breadcrumbs = ({ items = null, customPath = null }) => {
   const location = useLocation()
-
-  // Readable label mappings for common path segments
-  const labelMappings = {
-    'blog': 'Blog',
-    'resources': 'Resources',
-    'services': 'Services',
-    'locations': 'Locations',
-    'industries': 'Industries',
-    'tools': 'Tools',
-    'about': 'About',
-    'contact': 'Contact',
-    'search': 'Search Results',
-    'print-cost-calculator': 'Print Cost Calculator',
-    'print-management-comparison': 'Solution Comparison',
-    'resource-library': 'Resource Library',
-    'privacy-policy': 'Privacy Policy',
-    'papercut': 'PaperCut',
-    'uniflow': 'uniFLOW',
-    'printerlogic': 'PrinterLogic',
-    'papercut-iowa': 'PaperCut Iowa',
-    'uniflow-iowa': 'uniFLOW Iowa',
-    'printerlogic-iowa': 'PrinterLogic Iowa',
-    'des-moines': 'Des Moines',
-    'cedar-rapids': 'Cedar Rapids',
-    'iowa-city': 'Iowa City',
-    'davenport': 'Davenport',
-    'waterloo-cedar-falls-print-management': 'Waterloo-Cedar Falls',
-    'sioux-city-print-management': 'Sioux City',
-    'dubuque-print-management': 'Dubuque',
-    'council-bluffs-print-management': 'Council Bluffs',
-    'iowa-healthcare-print-solutions': 'Healthcare Solutions',
-    'iowa-education-print-solutions': 'Education Solutions',
-  }
 
   // Generate breadcrumb items from path
   const breadcrumbItems = useMemo(() => {

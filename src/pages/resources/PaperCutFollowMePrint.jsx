@@ -1,6 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Users, MapPin, ArrowRight, Zap, CheckCircle, Building, Wifi, Smartphone } from 'lucide-react'
+import { Users, MapPin, Zap, CheckCircle, Building } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'

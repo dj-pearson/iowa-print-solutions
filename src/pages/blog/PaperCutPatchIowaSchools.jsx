@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, User, ArrowRight, AlertTriangle, ClipboardCheck, GraduationCap, Network, Printer, Users, Scale, ExternalLink } from 'lucide-react'
 import SEO from '../../components/SEO'

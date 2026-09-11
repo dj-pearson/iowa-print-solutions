@@ -1,9 +1,7 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import ServiceCard from '../components/ServiceCard'
 import SEO from '../components/SEO'
 import AIOptimizedFAQ from '../components/AIOptimizedFAQ'
-import { PhoneTracker, DownloadTracker } from '../components/AnalyticsComponents'
 import { Printer, Settings, BarChart3, Shield, Wrench, HeadphonesIcon } from 'lucide-react'
 
 const Services = () => {

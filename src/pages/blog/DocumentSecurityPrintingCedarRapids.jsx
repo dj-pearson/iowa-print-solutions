@@ -1,7 +1,6 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
-import { FileText, Lock, Eye, CheckCircle, Building, Users, Shield, AlertTriangle } from 'lucide-react'
+import { FileText, Lock, Eye, CheckCircle, Building, Users, Shield } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 

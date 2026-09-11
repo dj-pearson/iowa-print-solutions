@@ -1,7 +1,6 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { GraduationCap, Shield, Users, DollarSign, CheckCircle, Star, ArrowRight, Phone, Mail, Building, BookOpen, Calculator } from 'lucide-react'
+import { GraduationCap, CheckCircle, Star, ArrowRight, Phone, Mail, BookOpen, Calculator } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import ContentRating from '../../components/ContentRating'

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
 import { AnalyticsProvider } from './components/AnalyticsProvider'

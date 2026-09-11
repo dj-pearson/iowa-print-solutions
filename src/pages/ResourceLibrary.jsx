@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Download, FileText, CheckCircle, Mail, Phone, BookOpen, Calculator, Shield, Users } from 'lucide-react'
+import { Download, CheckCircle, Mail, Phone, BookOpen, Calculator, Shield, Users } from 'lucide-react'
 import SEO from '../components/SEO'
 import Breadcrumbs from '../components/Breadcrumbs'
 

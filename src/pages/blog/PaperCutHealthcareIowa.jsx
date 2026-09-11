@@ -1,12 +1,9 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Heart, Shield, Users, FileText, CheckCircle, ArrowRight, Lock, BarChart3 } from 'lucide-react'
+import { Heart, Shield, Users, CheckCircle, Lock, BarChart3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
-import ArticleSchema from '../../components/ArticleSchema'
-
 const PaperCutHealthcareIowa = () => {
   const healthcareFeatures = [
     {

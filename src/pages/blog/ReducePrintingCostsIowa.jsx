@@ -1,7 +1,6 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
-import { DollarSign, TrendingDown, BarChart3, Target, CheckCircle, ArrowRight, Calculator, PieChart } from 'lucide-react'
+import { DollarSign, TrendingDown, BarChart3, Target, CheckCircle, Calculator, PieChart } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'

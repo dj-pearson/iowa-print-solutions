@@ -4,7 +4,11 @@ export const GA_CONFIG = {
   MEASUREMENT_ID: 'G-VE67JBGBKL',
   
   // Enable debug mode for development
-  DEBUG_MODE: process.env.NODE_ENV === 'development',
+  // import.meta.env is Vite's own, statically replaced at build time. `process`
+  // does not exist in a browser; this only worked because vite.config.js
+  // happens to define process.env.NODE_ENV, and any other process.env read
+  // would have thrown at runtime.
+  DEBUG_MODE: import.meta.env.DEV,
   
   // Custom events configuration
   EVENTS: {

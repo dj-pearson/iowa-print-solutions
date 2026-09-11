@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FileText, Clock, ArrowRight, BookOpen, Shield, DollarSign, Smartphone, Settings, Layers, MapPin, Cloud, UserCheck, Lock, Users } from 'lucide-react'
+import { Clock, ArrowRight, BookOpen, Shield, DollarSign, Smartphone, Settings, Layers, MapPin, Cloud, UserCheck, Lock, Users } from 'lucide-react'
 import SEO from '../components/SEO'
 
 const Resources = () => {

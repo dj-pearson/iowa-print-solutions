@@ -1,6 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Calculator, TrendingUp, DollarSign, Clock, BarChart3, CheckCircle, Phone, Mail } from 'lucide-react'
+import { DollarSign, BarChart3, CheckCircle, Phone, Mail } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import { BehaviorTrigger, SmartLeadCTA } from '../../components/LeadScoringComponents'

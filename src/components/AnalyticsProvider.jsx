@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useRef, useState, useCallback } from 'react'
+import { createContext, useContext, useEffect, useRef, useState, useCallback } from 'react'
 import { useLocation } from 'react-router-dom'
 import { trackPageView, trackScrollDepth, trackTimeOnPage } from '../utils/analytics'
 
@@ -106,7 +106,7 @@ export const AnalyticsProvider = ({ children }) => {
       const updated = [...prev, interaction].slice(-100) // Keep last 100
       try {
         localStorage.setItem('ips_interactions', JSON.stringify(updated))
-      } catch {}
+      } catch { /* localStorage unavailable (private mode, quota); scoring is best-effort */ }
       return updated
     })
 
@@ -115,7 +115,7 @@ export const AnalyticsProvider = ({ children }) => {
     setScore(updatedScore)
     try {
       localStorage.setItem('ips_lead_score', String(updatedScore))
-    } catch {}
+    } catch { /* localStorage unavailable (private mode, quota); scoring is best-effort */ }
 
     // Also track in GA4
     if (typeof window.gtag !== 'undefined') {

@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Printer, CheckCircle, ArrowRight, Users, BarChart3, Shield, Settings } from 'lucide-react'
 import { Link } from 'react-router-dom'

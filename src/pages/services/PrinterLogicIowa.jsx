@@ -1,6 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, BarChart3, CheckCircle, Clock, Cloud, Mail, Phone, Server, Shield, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Clock, Cloud, Mail, Phone, Server, Shield, Zap } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import AIOptimizedFAQ from '../../components/AIOptimizedFAQ'

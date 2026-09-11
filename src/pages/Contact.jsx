@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import SEO from '../components/SEO'
 import AIOptimizedFAQ from '../components/AIOptimizedFAQ'
 import { SmartCTA } from '../components/PerformanceComponents'
-import { PhoneTracker, EmailTracker, FormTracker } from '../components/AnalyticsComponents'
+import { FormTracker } from '../components/AnalyticsComponents'
 import { trackFormSubmission } from '../utils/analytics'
 import { useFormValidation, FormField } from '../hooks/useFormValidation.jsx'
 

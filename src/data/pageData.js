@@ -3,8 +3,6 @@
  * Enables scalable page generation with dynamic metadata
  */
 
-import { siteConfig, getCanonicalUrl } from '../config/site'
-
 // Location page configurations
 export const locationPages = [
   {

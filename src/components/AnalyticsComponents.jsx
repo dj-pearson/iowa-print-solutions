@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { trackScrollDepth, trackTimeOnPage } from '../utils/analytics'
-import { getPageType } from '../utils/analyticsConfig'
-
 // Hook for tracking user engagement metrics
 export const useEngagementTracking = () => {
   const [scrollDepth, setScrollDepth] = useState(0)

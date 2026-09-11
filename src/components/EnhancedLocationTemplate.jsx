@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Users, CheckCircle, Star, ArrowRight, Shield, BarChart3 } from 'lucide-react'
+import { MapPin, Phone, Mail, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from './SEO'
 import Breadcrumbs from './Breadcrumbs'

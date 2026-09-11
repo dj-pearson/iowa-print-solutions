@@ -1,4 +1,3 @@
-import React from 'react'
 import { CheckCircle, ExternalLink, ShieldCheck } from 'lucide-react'
 import { getProduct, FACTS_VERIFIED } from '../config/products'
 

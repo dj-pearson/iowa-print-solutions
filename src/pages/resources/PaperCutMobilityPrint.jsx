@@ -1,6 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Smartphone, Wifi, Download, Users, CheckCircle, ArrowRight, Tablet, Cloud } from 'lucide-react'
+import { Smartphone, Wifi, Users, CheckCircle, Cloud } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 

@@ -1,8 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle } from 'lucide-react'
-import { Link } from 'react-router-dom'
-
 const Hero = () => {
   return (
     <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-12 md:py-20">

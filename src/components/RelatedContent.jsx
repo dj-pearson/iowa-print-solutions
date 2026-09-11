@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight, FileText, BookOpen, MapPin, Briefcase, Wrench, Settings } from 'lucide-react'

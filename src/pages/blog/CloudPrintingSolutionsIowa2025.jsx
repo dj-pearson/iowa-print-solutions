@@ -1,6 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Cloud, Shield, Smartphone, Users, CheckCircle, AlertCircle, Phone, Mail, TrendingUp } from 'lucide-react'
+import { Cloud, Shield, Smartphone, CheckCircle, Phone, Mail, TrendingUp } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import { BehaviorTrigger, SmartLeadCTA } from '../../components/LeadScoringComponents'

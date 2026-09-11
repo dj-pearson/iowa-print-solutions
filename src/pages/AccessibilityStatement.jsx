@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle, Mail, Phone, ExternalLink } from 'lucide-react'
 import SEO from '../components/SEO'

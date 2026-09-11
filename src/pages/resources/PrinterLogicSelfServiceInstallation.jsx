@@ -1,7 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Download, Users, Clock, Wrench, CheckCircle, ArrowRight, Monitor, Smartphone, Laptop, Shield } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Download, Users, Clock, Wrench, CheckCircle, Monitor, Smartphone, Laptop, Shield } from 'lucide-react'
 import SEO from '../../components/SEO'
 
 const PrinterLogicSelfServiceInstallation = () => {

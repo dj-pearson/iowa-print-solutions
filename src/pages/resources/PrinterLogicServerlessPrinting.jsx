@@ -1,7 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Cloud, Zap, Shield, DollarSign, CheckCircle, ArrowRight, Server, Users, Monitor, Wrench } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Cloud, Zap, Shield, DollarSign, CheckCircle, Monitor } from 'lucide-react'
 import SEO from '../../components/SEO'
 
 const PrinterLogicServerlessPrinting = () => {

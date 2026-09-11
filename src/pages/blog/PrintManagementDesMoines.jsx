@@ -1,7 +1,6 @@
 
-import React from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Building2, Shield, DollarSign, Users, CheckCircle, Phone, Mail } from 'lucide-react'
+import { MapPin, Building2, Shield, DollarSign, Users, Phone, Mail } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 

@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { Helmet } from 'react-helmet'
-import { siteConfig, getCanonicalUrl } from '../../config/site'
+import { siteConfig } from '../../config/site'
 
 /**
  * Unified Schema.org structured data generator

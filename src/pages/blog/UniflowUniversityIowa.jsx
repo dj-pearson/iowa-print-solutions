@@ -1,7 +1,5 @@
-import React from 'react'
-
 import { motion } from 'framer-motion'
-import { Building2, Users, FileText, Workflow, CheckCircle, ArrowRight, BarChart3, Shield } from 'lucide-react'
+import { Building2, Users, FileText, Workflow, CheckCircle, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'

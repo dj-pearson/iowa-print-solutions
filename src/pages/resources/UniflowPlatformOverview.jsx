@@ -1,6 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Layers, Printer, QrCode, Settings, CheckCircle, ArrowRight, Zap, Shield, BarChart3 } from 'lucide-react'
+import { Layers, Printer, QrCode, Settings, CheckCircle, Shield } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'

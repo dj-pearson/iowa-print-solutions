@@ -1,6 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Lock, UserCheck, Smartphone, CheckCircle, ArrowRight, Eye, AlertTriangle } from 'lucide-react'
+import { Shield, Lock, Smartphone, CheckCircle, Eye } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 

@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Calculator, DollarSign, Clock, BarChart3, Printer, Settings, Target, TrendingDown, HelpCircle, CheckCircle, ArrowRight } from 'lucide-react'
+import { Calculator, DollarSign, BarChart3, Printer, TrendingDown, HelpCircle, CheckCircle, ArrowRight } from 'lucide-react'
 import SEO from '../components/SEO'
 import Breadcrumbs from '../components/Breadcrumbs'
 import ContentRating from '../components/ContentRating'

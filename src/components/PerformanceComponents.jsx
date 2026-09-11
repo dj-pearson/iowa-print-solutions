@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Phone, Mail, Download, Calculator } from 'lucide-react'
+import { X, Phone, Download, Calculator } from 'lucide-react'
 
 const LoadingSpinner = ({ size = 'md' }) => {
   const sizeClasses = {

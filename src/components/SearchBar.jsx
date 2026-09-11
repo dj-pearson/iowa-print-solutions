@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Search, X, FileText, MapPin, Briefcase, BookOpen, Wrench, ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'

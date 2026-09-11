@@ -1,5 +1,3 @@
-import React from 'react'
-
 /**
  * SkipLink component for keyboard accessibility
  * Allows users to skip navigation and jump directly to main content

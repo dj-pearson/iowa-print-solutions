@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Smartphone, Tablet, Laptop, Wifi, Shield, Users, CheckCircle, AlertTriangle, Phone, Mail } from 'lucide-react'
 import SEO from '../../components/SEO'

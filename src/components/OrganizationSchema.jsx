@@ -1,5 +1,3 @@
-import React from 'react'
-
 const OrganizationSchema = () => {
   const schemaData = {
     "@context": "https://schema.org",

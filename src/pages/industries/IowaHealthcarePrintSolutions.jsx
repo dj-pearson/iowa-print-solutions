@@ -1,7 +1,6 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Heart, Shield, Users, FileText, CheckCircle, ArrowRight, Lock, BarChart3, Award, Phone, Mail } from 'lucide-react'
+import { Heart, Shield, FileText, CheckCircle, ArrowRight, Lock, Award, Phone, Mail } from 'lucide-react'
 import SEO from '../../components/SEO'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import ServiceCard from '../../components/ServiceCard'

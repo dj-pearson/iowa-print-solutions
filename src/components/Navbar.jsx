@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback, memo } from 'react'
+import { useState, useEffect, useRef, useCallback, memo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, ChevronDown, MapPin, Users, Calculator, Download, ArrowRight, Search } from 'lucide-react'
+import { Menu, X, ChevronDown, Calculator, Download, ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SearchBar from './SearchBar'
 
@@ -58,17 +58,21 @@ const Navbar = () => {
 
   // Add focus trap event listener when mega menu is open
   useEffect(() => {
-    if (activeDropdown && megaMenuRef.current) {
-      megaMenuRef.current.addEventListener('keydown', handleMegaMenuKeyDown)
+    // Capture the node now. Reading megaMenuRef.current in the cleanup reads it
+    // at teardown, by which point the ref may already point at a different
+    // element or null - so the listener would be added to one node and removed
+    // from another, leaking it.
+    const megaMenu = megaMenuRef.current
+    if (activeDropdown && megaMenu) {
+      megaMenu.addEventListener('keydown', handleMegaMenuKeyDown)
       // Focus first focusable element in mega menu
-      const firstFocusable = megaMenuRef.current.querySelector(
+      const firstFocusable = megaMenu.querySelector(
         'a[href], button:not([disabled])'
       )
-      setTimeout(() => firstFocusable?.focus(), 50)
-    }
-    return () => {
-      if (megaMenuRef.current) {
-        megaMenuRef.current.removeEventListener('keydown', handleMegaMenuKeyDown)
+      const focusTimer = setTimeout(() => firstFocusable?.focus(), 50)
+      return () => {
+        clearTimeout(focusTimer)
+        megaMenu.removeEventListener('keydown', handleMegaMenuKeyDown)
       }
     }
   }, [activeDropdown, handleMegaMenuKeyDown])

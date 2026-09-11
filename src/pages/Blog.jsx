@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, User, Clock, ArrowRight, Search, Tag } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import Breadcrumbs from '../components/Breadcrumbs'
 import { SmartLeadCTA, BehaviorTrigger } from '../components/LeadScoringComponents'
-import { PhoneTracker, DownloadTracker } from '../components/AnalyticsComponents'
+import { DownloadTracker } from '../components/AnalyticsComponents'
 import { siteConfig } from '../config/site'
 // import { useLeadScoring } from '../components/LeadScoringComponents'
 

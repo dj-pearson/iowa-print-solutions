@@ -16,7 +16,7 @@ const validators = {
   phone: (value) => {
     if (!value) return true // Only validate if there's a value
     // Allow various phone formats: (515) 555-0123, 515-555-0123, 5155550123, +1-515-555-0123
-    const phoneRegex = /^[\+]?[(]?[0-9]{1,3}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,4}[-\s\.]?[0-9]{1,9}$/
+    const phoneRegex = /^\+?[(]?[0-9]{1,3}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{1,9}$/
     return phoneRegex.test(value.replace(/\s/g, ''))
   },
 

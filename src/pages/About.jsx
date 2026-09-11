@@ -1,7 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Users, Award, MapPin, Phone, Mail, CheckCircle, Target, Heart, Zap } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import AIOptimizedFAQ from '../components/AIOptimizedFAQ'
 

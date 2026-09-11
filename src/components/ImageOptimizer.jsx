@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 /**
  * Optimized Image component with lazy loading, placeholder, and performance enhancements
@@ -112,7 +112,7 @@ const ImageOptimizer = ({
           alt={alt}
           loading={priority ? 'eager' : loading}
           decoding={priority ? 'sync' : 'async'}
-          fetchpriority={priority ? 'high' : 'auto'}
+          fetchPriority={priority ? 'high' : 'auto'}
           sizes={sizes}
           className={`w-full h-full object-cover transition-opacity duration-300 ${
             isLoaded ? 'opacity-100' : 'opacity-0'

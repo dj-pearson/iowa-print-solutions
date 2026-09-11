@@ -1,6 +1,5 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Smartphone, Server, CheckCircle, ArrowRight, Lock, Users, Globe, FileText } from 'lucide-react'
+import { Shield, Smartphone, Server, CheckCircle, ArrowRight, Users, Globe, FileText } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 

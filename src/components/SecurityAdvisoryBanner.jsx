@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { AlertTriangle, ArrowRight, ExternalLink } from 'lucide-react'
 import { getAdvisory, getCurrentPatch } from '../config/products'
