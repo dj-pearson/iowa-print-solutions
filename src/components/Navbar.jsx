@@ -205,6 +205,8 @@ const Navbar = () => {
                 src="/IPSLogo.png" 
                 alt="Iowa Print Solutions Logo" 
                 className="h-8 w-8 object-contain"
+                width="32"
+                height="32"
               />
               <span className="font-bold text-xl text-gray-900">Iowa Print Solutions</span>
             </Link>

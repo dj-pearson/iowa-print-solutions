@@ -18,6 +18,8 @@ const Hero = () => {
                 src="/IPSLogo.png"
                 alt="Iowa Print Solutions Logo"
                 className="h-12 w-12 sm:h-16 sm:w-16 mr-3 sm:mr-4 object-contain"
+                width="64"
+                height="64"
               />
               <div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
@@ -77,6 +79,8 @@ const Hero = () => {
                     src="/IPSLogo.png" 
                     alt="Iowa Print Solutions Logo" 
                     className="h-20 w-20 object-contain"
+                    width="80"
+                    height="80"
                   />
                 </div>
               </div>

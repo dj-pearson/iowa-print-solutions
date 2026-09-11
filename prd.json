@@ -103,11 +103,11 @@
       "estimate": "2+ iterations",
       "problem": "45 references to images.unsplash.com across src/. Page-critical imagery is served by a third party the site does not control: it is an extra DNS and TLS handshake in the LCP path, the URLs can change or 404, and it hands a third party a request log of every visitor.",
       "notes": [
-        "Inventory first: grep images.unsplash.com in src/ and record which are decorative and which are LCP candidates.",
-        "Check each image's Unsplash licence attribution requirement before self-hosting it.",
-        "Self-host as WebP/AVIF at the sizes actually rendered, with width/height set so layout does not shift.",
-        "Doing this properly is also the moment to add loading=\"lazy\" and fetchpriority=\"high\" on the one above-the-fold image per page."
-      ]
+        "Check each image's Unsplash licence attribution requirement before self-hosting.",
+        "src/components/ImageOptimizer.jsx is 130 lines with zero importers. It handles lazy loading, fetchpriority and sizes - exactly this job - and is dead code. Decide whether to wire it into Blog.jsx or delete it; leaving it implies images are optimised when nothing uses it."
+      ],
+      "priority": "low",
+      "correction": "Also overstated. All 45 images.unsplash.com references are in one file, src/pages/Blog.jsx, as the blog index card images. They already have width=400 height=250 and loading=lazy, and they sit below the fold on a single route - not 'in the LCP path' across the site as originally written. Still worth self-hosting for the third-party dependency and the visitor request log, but it is not urgent."
     },
     {
       "id": "REPO-1",
@@ -146,14 +146,13 @@
     },
     {
       "id": "CLS-1",
-      "title": "89 of 134 images have no width or height",
-      "status": "todo",
+      "title": "Logo images had no intrinsic size (and the CLS framing was overstated)",
+      "status": "done",
       "estimate": "1-2 iterations",
       "problem": "Two thirds of the images on the site declare no intrinsic size, so the browser cannot reserve space before they load and the layout shifts. Cumulative Layout Shift is a Core Web Vital.",
-      "notes": [
-        "Overlaps IMG-1 - the hotlinked Unsplash images are among the worst offenders and self-hosting them is the moment to set dimensions.",
-        "Prefer width/height attributes over CSS aspect-ratio so the reservation works before CSS parses."
-      ]
+      "iteration": 12,
+      "correction": "The original story read '89 of 134 images have no width or height' as if the site were full of shifting imagery. Source has five <img> tags in total. The 134 count is one shared Navbar logo rendered on 87 pages plus a handful of others, and the 89 undimensioned ones are that Navbar logo plus two in Hero. All three set both dimensions in CSS (h-8 w-8, h-20 w-20), so the browser reserves the box as soon as the stylesheet applies and real-world shift is close to zero. The blog card images already carried width, height and loading=lazy.",
+      "resolution": "Added matching width/height attributes to the three logo tags. Correct and cheap, but it buys a fraction of a layout shift before CSS parses, not a Core Web Vitals win."
     },
     {
       "id": "TITLE-1",
@@ -190,6 +189,15 @@
       "iteration": 9,
       "resolution": "Implemented the defaultCTA/urgentCTA/premiumCTA API in SmartLeadCTA rather than stripping it from the callers - three call sites agreed on that shape, so the callers were right about what the component is for. Which tier renders is chosen from the visitor's lead grade via the real useLeadScoring in AnalyticsProvider; missing tiers fall back to defaultCTA. The children call shape still works. Removed the duplicate stub useLeadScoring that shadowed the real hook by name. Fixed every relative import in both page templates and replaced the invented (515) 123-4567 with siteConfig.business.phoneDisplay and phone.",
       "verified": "/blog rendered a blue box reading 'Learn More' where its CTA copy should have been; it now renders the real CTA with the correct phone number. No occurrence of 123-4567 remains in src/. Every relative import in both templates resolves to a file on disk."
+    },
+    {
+      "id": "CONFIG-1",
+      "title": "Tailwind Typography plugin was installed but never registered",
+      "status": "done",
+      "iteration": 12,
+      "problem": "tailwind.config.js had plugins: []. Five pages - the privacy policy, the accessibility statement and three blog posts - use prose, prose-lg and prose-blue. None of those classes generated any CSS: the built stylesheet contained zero .prose rules, so those pages rendered as unstyled walls of text with no paragraph spacing, list markers or heading rhythm. @tailwindcss/typography was in package.json and named in CLAUDE.md's tech stack the whole time.\nThe repo also carried tailwind.config.cjs and postcss.config.cjs alongside the .js versions. The .cjs Tailwind config defines a different primary colour (#1A237E against the .js file's #2563eb blue ramp), so which file wins silently decides the site's palette.",
+      "resolution": "Registered the plugin as an ESM import, matching the config's export default. Deleted both .cjs duplicates after confirming neither postcss-import nor tailwindcss/nesting is used - src/index.css has no @import and no nesting.",
+      "verified": "Built stylesheet went from 0 .prose rules at 63,512 bytes to 151 rules at 82,103 bytes, with existing utilities intact. In a browser, a ul inside .prose now computes list-style-type disc with 28px padding, where Tailwind preflight resets lists to none and 0 - so the plugin is demonstrably applying."
     }
   ]
 }

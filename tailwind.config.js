@@ -1,3 +1,5 @@
+import typography from '@tailwindcss/typography'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -37,5 +39,14 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // The site uses prose/prose-lg/prose-blue on the privacy policy, the
+    // accessibility statement and three blog posts. With plugins empty, none
+    // of those classes generated any CSS - the built stylesheet contained zero
+    // .prose rules - so those pages rendered as unstyled walls of text with no
+    // paragraph spacing, list markers or heading rhythm. The package was
+    // installed and listed in CLAUDE.md's tech stack the whole time; it was
+    // just never registered.
+    typography,
+  ],
 }
