@@ -191,6 +191,345 @@
       "iteration": 9,
       "resolution": "Implemented the defaultCTA/urgentCTA/premiumCTA API in SmartLeadCTA rather than stripping it from the callers - three call sites agreed on that shape, so the callers were right about what the component is for. Which tier renders is chosen from the visitor's lead grade via the real useLeadScoring in AnalyticsProvider; missing tiers fall back to defaultCTA. The children call shape still works. Removed the duplicate stub useLeadScoring that shadowed the real hook by name. Fixed every relative import in both page templates and replaced the invented (515) 123-4567 with siteConfig.business.phoneDisplay and phone.",
       "verified": "/blog rendered a blue box reading 'Learn More' where its CTA copy should have been; it now renders the real CTA with the correct phone number. No occurrence of 123-4567 remains in src/. Every relative import in both templates resolves to a file on disk."
+    },
+    {
+      "id": "LEAP-001",
+      "title": "Lead pipeline: one Pages Function that receives, stores and routes every lead",
+      "status": "todo",
+      "estimate": "2-3 iterations",
+      "problem": "Iowa Print Solutions exists to produce leads for Infomax Office Systems, yet two of its three capture forms throw the lead away: PrintCostCalculator.jsx:111 and ResourceLibrary.jsx:122 show an alert() promising follow-up that never happens. Only Contact.jsx:56 posts anywhere (Formspree). The four calculators in Tools.jsx capture nothing. The rest of the site routes intent to 48 hard-coded mailto:DPearson@InfomaxOffice.com links, about 112 tel: links in three formats, and 10 bare calendly.com/pearsondan/30min links, none of which is recorded. Four 2025 posts (AIPrintManagementIowa2025, CloudPrintingSolutionsIowa2025, MobilePrintingSolutionsIowa2025, PrintManagementSoftwareROIIowa) still carry a placeholder phone number, tel:515-555-0123, and an unconfirmed info@iowaprintsolutions.com address. The outcome is one lead endpoint that every capture surface uses, a durable lead record, and an instant notification to Infomax sales carrying source page, tool inputs and the ips_lead_score AnalyticsProvider.jsx already computes. Every later LEAP story ends in this pipeline.",
+      "notes": [
+        "AC1: functions/api/lead.js exists as a Cloudflare Pages Function. public/_routes.json already includes /* and excludes only static extensions, so /api/lead reaches the function without a routing change; confirm that in the built dist/_routes.json. It accepts POST JSON {type, name, email, company, phone, source, payload, leadScore, pagesViewed, consent}, validates server-side, and returns 400 with the failing field names.",
+        "AC2: Each accepted lead is written to a Cloudflare D1 table leads(id, created_at, type, source, contact fields, payload_json, lead_score, consent_basis, utm_json). The binding is declared in wrangler.toml (which today holds only name, compatibility_date and pages_build_output_dir). A write failure returns 5xx and the UI shows an error; it never shows success.",
+        "AC3: PrintCostCalculator.jsx submitLeadForm, ResourceLibrary.jsx handleDownload and Contact.jsx all submit through one src/utils/submitLead.js helper. No alert() remains in src/pages on a lead path (grep -n \"alert(\" src/pages returns none).",
+        "AC4: The payload includes ips_lead_score and ips_interactions read from localStorage inside try/catch, so sales sees the score that today never leaves the browser.",
+        "AC5: Infomax receives a notification per lead (transactional email or webhook) whose subject names lead type and source page. The credential is a Pages secret, never in the repo.",
+        "AC6: Turnstile token verified in the function plus a honeypot field; a submission without a valid token is rejected with 403 and no row.",
+        "AC7: The four placeholder tel:515-555-0123 links are replaced with siteConfig.business.phone, and info@iowaprintsolutions.com is replaced with the confirmed address unless Infomax confirms that mailbox exists (grep for 515-555-0123 in src/pages returns none).",
+        "AC8: A shared src/components/IntakeCTA.jsx replaces SmartCTA's mailto primaryAction in PerformanceComponents.jsx, Navbar.jsx gains a 'Free assessment' entry on desktop and mobile, and tel: links go through one helper that records a type='call_click' event with the page.",
+        "AC9: package.json gains a test script using node --test (no new dependency). tests/lead.test.mjs calls the function's onRequestPost with a stub D1 and asserts: a valid lead writes one row, a missing email returns 400 naming email, a failed write returns 5xx.",
+        "Competitive rationale: the Iowa dealers checked (Marco, Access Systems, Gordon Flesch, EO Johnson) end at a contact form or 'schedule a consultation'; a lead that arrives with tool inputs and an engagement score lets Infomax answer first and better scoped. https://www.marconet.com/ https://www.gflesch.com/cedar-falls-ia-copiers",
+        "Success metric: 0 alert-only or unrecorded lead paths; weekly leads by type and source measurable for the first time; target 3x the current Formspree-only weekly count within 60 days, measured against a baseline taken from Formspree before launch."
+      ]
+    },
+    {
+      "id": "LEAP-002",
+      "title": "Instant self-serve quote builder at /quote",
+      "status": "todo",
+      "estimate": "3+ iterations",
+      "problem": "No Iowa dealer checked publishes a price or an instant estimate; each ends in 'schedule a consultation'. National aggregators such as 1-800 Office Solutions publish lease and click-rate bands and capture cost-intent searches instead. Iowa Print Solutions has calculator parts, but they rest on unsourced constants: PrintCostCalculator.jsx:75-76 uses employees*15 implementation and employees*4*12 licensing in a misspelled licenseCoser, lines 56 and 65 hard-code a 0.25 efficiency gain, and Tools.jsx:41 applies a flat 25% savings that line 443 presents to visitors as an average. That breaks the repo's standing rule that every number carries a source. The outcome is a /quote flow (seats, device count and makes, mono and color monthly volume, product interest, on-prem or cloud, current lease payment) that returns a ballpark range built from Infomax-confirmed bands, with the national benchmark cited, and books an assessment in the same step.",
+      "notes": [
+        "AC1: src/pages/Quote.jsx is routed at /quote in src/App.jsx and appears in the sitemap produced by scripts/generate-sitemap.mjs (which reads the App.jsx route table).",
+        "AC2: All price inputs come from a new src/config/pricing.js; each entry carries {low, high, unit, source, confirmedBy, asOf}. A pure function priceRange(inputs, pricing) in src/utils/quote.js returns null for any entry missing source or asOf, and the page then shows 'ask for a quote' instead of a number. tests/quote.test.mjs covers both branches.",
+        "AC3: The national benchmark is shown as a cited comparison labelled national, not Iowa.",
+        "AC4: The output lists the inputs and assumptions used and is labelled an estimate. No percentage savings appears without a stated mechanism.",
+        "AC5: 'Email me this estimate' and 'Book my assessment' submit through LEAP-001 with type='quote' and the full input payload. Booking opens Calendly prefilled with name and email.",
+        "AC6: The 0.25 constants and the employees*15 / employees*4*12 multipliers are removed from PrintCostCalculator.jsx and Tools.jsx or moved into pricing.js with sources; both pages link to /quote.",
+        "AC7: Business gate: Infomax signs off every pricing.js band before launch, recorded as confirmedBy and a date in the file.",
+        "Competitive rationale: Marco, Access Systems, Gordon Flesch and EO Johnson publish no prices on the pages checked; aggregators win cost queries with bands. https://1800officesolutions.com/copier-lease-rates/ https://www.eojohnson.com/locations/des-moines-iowa",
+        "Success metric: quote completions per week, and the share that leave contact details (target 25%); organic entrances on cost-intent queries."
+      ]
+    },
+    {
+      "id": "LEAP-003",
+      "title": "Free fleet and print-server assessment with a shareable report URL",
+      "status": "todo",
+      "estimate": "2-3 iterations",
+      "problem": "Dealers lead with a no-obligation assessment that produces a written report and a review meeting, but none of the Iowa dealers checked offers it self-serve. Iowa Print Solutions has the inputs (the Tools.jsx device calculator, the print-server risk posts EliminatePrintServersIowa.jsx and PrintServerAttackSurfaceIowa.jsx, and securityAdvisories in src/config/products.js) but no assessment offer. The B2B buyer also has to sell internally: an IT director needs something to forward to a CFO or a school board. The outcome is an intake (fleet size, device makes, print servers, identity provider, current PaperCut/uniFLOW/Vasion version, pain points) that renders a vendor-neutral, source-cited report on screen and at a stable URL. The report link carries the Iowa Print Solutions name to the economic buyer.",
+      "notes": [
+        "AC1: src/pages/Assessment.jsx is routed at /assessment, with a multi-step intake whose step state survives a refresh (sessionStorage inside try/catch).",
+        "AC2: Submitting creates a LEAP-001 lead (type='assessment') and returns a report id; the report is served at /assessment/report/:id by a Pages Function reading D1, with an unguessable id (128-bit random).",
+        "AC3: Report sections (print-server exposure, version and patch status from securityAdvisories, consolidation opportunity, next steps) each cite their source the way VerifiedReleaseFacts.jsx does.",
+        "AC4: The report page has a print stylesheet and a copy-link control, carries noindex, and shows no contact details.",
+        "AC5: The Navbar entry from LEAP-001 and the CTA blocks at the end of the two print-server posts link to /assessment.",
+        "AC6: The report body is built by a pure function buildReport(intake, products) in src/utils/assessment.js; tests/assessment.test.mjs asserts every section of a fixture report carries a source URL and that an unknown version yields 'cannot determine', not 'patched'.",
+        "Competitive rationale: assessments are the category's standard entry offer, but on the pages checked they are booked, not self-serve or forwardable. https://www.marconet.com/blog/why-do-a-print-assessment-for-managed-print https://www.standleys.com/managed-print-services-assessment",
+        "Success metric: assessments started vs completed, reports opened from a second device or IP (forward rate), and assessments that become a booked review meeting."
+      ]
+    },
+    {
+      "id": "LEAP-004",
+      "title": "Lead-to-deal attribution and a lead-volume dashboard for Infomax",
+      "status": "todo",
+      "estimate": "2-3 iterations",
+      "problem": "Lead value is declared twice and disagrees: LEAD_VALUES in src/utils/analyticsConfig.js:47 (CONTACT_FORM 50, QUOTE_REQUEST 100 and so on) and a second LEAD_VALUES in src/components/AnalyticsProvider.jsx:9 that trackLead actually uses. Neither joins a visitor to an inquiry or an inquiry to a deal, so lead volume, the stated big move, is unmeasured. The outcome is a lead id that runs from GA4 event to D1 row to outcome. A token-protected endpoint lets Infomax sales mark each lead qualified, quoted, won or lost with a deal value, and an internal page shows leads by source and tool, stage conversion and won value. Each LEAP tool can then be judged on deals, not clicks.",
+      "notes": [
+        "AC1: One LEAD_VALUES declaration remains, imported by AnalyticsProvider.jsx; grep finds a single definition.",
+        "AC2: functions/api/lead-outcome.js accepts {leadId, stage, value?} only with a valid bearer token from a Pages secret; a request without it gets 401 and writes nothing.",
+        "AC3: A lead_outcomes D1 table is append-only: stage history is kept and never overwritten.",
+        "AC4: /internal/leads (noindex, behind Cloudflare Access) shows weekly leads by type and source, stage conversion and won value. A source with no leads renders 0; a failed D1 read renders 'unavailable', never 0.",
+        "AC5: UTM parameters, gclid and the landing page are captured on first visit (sessionStorage in try/catch) and attached to every LEAP-001 lead; each GA4 lead event carries lead_id.",
+        "AC6: tests/outcomes.test.mjs posts fixture leads and outcomes against a stub D1 and asserts the dashboard aggregation, including the 0 vs unavailable distinction.",
+        "Competitive rationale: none on the competitor side is claimed; this is the instrument that tells Infomax which of the other stories produce revenue.",
+        "Success metric: share of leads with a recorded outcome (target over 70%) and won value attributed to each tool."
+      ]
+    },
+    {
+      "id": "LEAP-005",
+      "title": "Copier lease trap checker that turns renewal dates into timed leads",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "The recurring complaints about copier leases are auto-renewal clauses with short notice windows, annual payment escalators, return-shipping fees and overage click rates. None of the Iowa dealer sites checked addresses them. The outcome is a free tool at /tools/lease-checker: the visitor enters lease start, term, notice window, monthly payment, escalator and mono/color click rates, and gets the cancel-by deadline, the projected cost of missing it, and red flags against cited benchmarks. Every renewal date entered is a lead with a known buying window, and the tool positions Iowa Print Solutions on the buyer's side.",
+      "notes": [
+        "AC1: src/pages/tools/LeaseChecker.jsx is routed at /tools/lease-checker and linked from /tools.",
+        "AC2: The cancel-by calculation is a pure function in src/utils/lease.js; tests/lease.test.mjs covers month-end starts, leap years and 30/60/90/180-day notice windows.",
+        "AC3: Every red-flag threshold lives in src/config/leaseBenchmarks.js with a source URL and asOf, and is displayed with that source; a threshold without a source does not render.",
+        "AC4: The cost of missing the window uses the visitor's own payment and escalator, with the formula shown.",
+        "AC5: 'Remind me before my deadline' submits through LEAP-001 with type='lease' and the computed deadline, with explicit consent copy. Until LEAP-012 sending exists the copy says Infomax will contact them, not that an automatic reminder will arrive.",
+        "AC6: A .ics file for the deadline downloads client-side with no lead required.",
+        "Competitive rationale: the clause patterns are documented by third parties; no Iowa dealer page checked publishes a checker. https://www.ecopiersolutions.com/blog/how-to-get-out-of-a-bad-copier-lease-10-step-strategic-exit-guide https://1800officesolutions.com/copier-lease-rates/",
+        "Success metric: checker completions, reminder opt-ins, and leads whose cancel-by date falls within 180 days."
+      ]
+    },
+    {
+      "id": "LEAP-006",
+      "title": "Fixed-scope service packages buyers can order from the site, starting with PaperCut v23-and-earlier upgrades",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "Everything Iowa Print Solutions offers ends in an open-ended 'free consultation', and so does every competitor. The site already documents three jobs with a defined scope and a deadline: the August 2026 PaperCut advisory in src/config/products.js states that installations on v23 or earlier get no patch and must upgrade; EliminatePrintServersIowa.jsx and PrintServerAttackSurfaceIowa.jsx make the case for retiring Windows print servers; and the emergency-patch posts describe applying a cumulative patch. The outcome is a /packages page with three fixed-scope offers (unsupported-version upgrade, emergency patch, print-server retirement), each with what is included, what is not, prerequisites, typical duration and an Infomax-confirmed price or price band, ordered through a short request flow. A buyer facing an unpatchable server can commit in one visit instead of waiting for a discovery call.",
+      "notes": [
+        "AC1: src/pages/Packages.jsx is routed at /packages with one section per package, in the sitemap, using ServiceSchema.jsx.",
+        "AC2: Package definitions live in src/config/packages.js with {id, scope, excludes, prerequisites, duration, price, confirmedBy, asOf}; a package without confirmedBy renders 'price on request' instead of a number. tests/packages.test.mjs asserts that.",
+        "AC3: SecurityAdvisoryBanner.jsx and SecurityAdvisoryDetail.jsx link the upgrade package whenever the advisory's affected text names an unpatched branch, so the link appears and disappears with the config entry.",
+        "AC4: 'Request this package' submits through LEAP-001 with type='package', the package id and the visitor's product version.",
+        "AC5: Business gate: Infomax confirms scope and price for each package before it shows a number.",
+        "Competitive rationale: on the dealer pages checked, every offer is consultative and unpriced; a defined, priced package is the shortest path from an advisory search to a signed job. https://www.marconet.com/ https://www.gflesch.com/cedar-falls-ia-copiers",
+        "Success metric: package requests per month by package, and request-to-signed rate."
+      ]
+    },
+    {
+      "id": "LEAP-007",
+      "title": "Print-server retirement planner, with Universal Print fit stated honestly",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "Retiring Windows print servers is the strongest recurring theme on Iowa Print Solutions (EliminatePrintServersIowa, PrintServerAttackSurfaceIowa, UniversalPrintV2Iowa2026, the PaperCut Print Deploy facts in products.js), but every one of those pages ends in a mailto. A district or hospital IT lead needs a plan, not another article. The outcome is a planner at /tools/print-server-retirement: the visitor enters server count, queue count, client OS mix (including ARM64, which products.js says Print Deploy now handles), identity provider, M365 licence tier and whether they need secure release or cost recovery. It returns a phased plan naming which options fit (Universal Print, PaperCut Print Deploy, Vasion Print, uniFLOW) with disqualifiers, and says plainly when Universal Print alone is enough. The plan ends in the LEAP-006 retirement package.",
+      "notes": [
+        "AC1: src/pages/tools/PrintServerRetirement.jsx is routed and linked from the two print-server posts, UniversalPrintV2Iowa2026.jsx, /tools and both industry pages.",
+        "AC2: Option rules live in src/config/retirementRules.js and reference feature ids in products.js; tests/retirement.test.mjs fails if a rule points at a feature id that does not exist.",
+        "AC3: Universal Print quota and preview-stage features are added to products.js with Microsoft Learn sources and an asOf date before the planner uses them.",
+        "AC4: A 'Universal Print covers this' result renders with no upsell block in that branch (asserted in the test on the plan object).",
+        "AC5: 'Send me this plan' and 'Price the retirement' submit through LEAP-001 with type='retirement_plan' and the answers.",
+        "Competitive rationale: Microsoft and Vasion each market only their own product, and the Iowa dealer pages checked do not address print-server retirement as a self-serve plan. https://learn.microsoft.com/universal-print/whats-new https://vasion.com/launches/spring-launch-2026/",
+        "Success metric: plans completed, plan-to-lead rate, and retirement package requests sourced from the planner."
+      ]
+    },
+    {
+      "id": "LEAP-008",
+      "title": "Patch-status checker: am I exposed?",
+      "status": "todo",
+      "estimate": "1-2 iterations",
+      "problem": "When a PaperCut CVE lands, admins search for whether their version is affected. Iowa Print Solutions holds that data in securityAdvisories in src/config/products.js, but the affected versions are prose (the August 2026 entry's affected field is one sentence naming v24, v25 and v26 branches), so visitors have to read and interpret it. The outcome is a tool at /tools/patch-check: pick a product, enter a version, see which tracked advisories apply, the fixed patch and the vendor source, then request patch help or the LEAP-006 upgrade package. It is the fastest route from an emergency search to a conversation.",
+      "notes": [
+        "AC1: src/pages/tools/PatchCheck.jsx is routed at /tools/patch-check and linked from SecurityAdvisoryBanner.jsx and every advisory post.",
+        "AC2: Each securityAdvisories entry gains machine-readable affectedRanges and fixedIn fields beside the existing prose; tests/advisories.test.mjs fails if any entry lacks them, so the checker cannot silently skip one.",
+        "AC3: Version comparison is a pure function in src/utils/version.js; tests cover PaperCut dotted versions, branch-only input ('v23') and unknown formats. An unparseable version returns 'cannot determine', never 'not affected'.",
+        "AC4: A clean result reads 'not affected by advisories we track as of <FACTS_VERIFIED>', never 'secure'.",
+        "AC5: 'Get patch help' submits through LEAP-001 with type='patch_help', product and version.",
+        "Competitive rationale: the advisory corpus with patch branches is already on the site and no Iowa dealer page checked publishes one; the checker turns it into capture.",
+        "Success metric: checks run per advisory event, share returning an exposed result, and patch_help leads."
+      ]
+    },
+    {
+      "id": "LEAP-009",
+      "title": "Managed print and MFP hardware line, with service levels Infomax actually commits to",
+      "status": "todo",
+      "estimate": "2-3 iterations",
+      "problem": "Infomax is an MFP dealer, but Iowa Print Solutions sells only software: imageRUNNER appears nowhere in src/pages, there is no copier leasing or managed print offer page, and managed print appears as one blog post (ManagedPrintServicesIowa.jsx). Competitors sell device-plus-service bundles. Meanwhile Contact.jsx states service commitments with no stated basis: '24/7 emergency support', '2-4 hours' response and 'on-site service ... within 24-48 hours' (lines 100, 116, 120, 147, 223, 488), while siteConfig.hours says 08:00-17:00 weekdays, closed weekends. The outcome is an offer line (/managed-print-services, /copier-leasing) built on Infomax-confirmed hardware lines and service levels, so a software lead can expand into a fleet contract and every service promise on the site is one Infomax will stand behind.",
+      "notes": [
+        "AC1: src/pages/services/ManagedPrintServices.jsx and src/pages/services/CopierLeasing.jsx are routed, in the sitemap, and use ServiceSchema.jsx.",
+        "AC2: Brand and model claims come from src/config/hardware.js listing only lines Infomax confirms it sells, each with a vendor source URL; an entry without confirmedBy does not render.",
+        "AC3: Service levels live in src/config/serviceLevels.js with confirmedBy and asOf; the Contact.jsx FAQ and the new pages render from it, and any promise Infomax does not confirm is removed. A test asserts no '24/7' or 'hour' response promise remains in Contact.jsx outside serviceLevels-driven text.",
+        "AC4: Lease terms reuse LEAP-005's benchmark config and link to the lease checker.",
+        "AC5: Results in the Tools.jsx device calculator, /quote and the assessment report show a fleet-consolidation next step linking to these pages; both pages end in IntakeCTA with type='mps'.",
+        "AC6: Services.jsx and the Navbar Services menu list the new line.",
+        "Competitive rationale: Access Systems holds Iowa State procurement copier contracts and Gordon Flesch leads with copier hardware on its Iowa pages; device-plus-service is how incumbents win. https://www.procurement.iastate.edu/node/12?id=70 https://www.gflesch.com/cedar-falls-ia-copiers",
+        "Success metric: MPS and hardware leads per month, and the share of software leads that add a fleet scope."
+      ]
+    },
+    {
+      "id": "LEAP-010",
+      "title": "Paid search to the self-serve tools, with offline conversions fed back to Google Ads",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "Organic search is slow and RENDER-1 (pre-rendering) is still todo, so the self-serve tools will take months to rank. Cost and lease queries are exactly the ones aggregators buy. Iowa Print Solutions runs no paid acquisition, and even if it did, Google Ads would optimise for form fills because nothing reports which leads became deals. The outcome is a small, measured paid search program: Iowa-geo campaigns pointed at /quote, /tools/lease-checker, /tools/patch-check and /assessment, gclid stored on each lead, and won deals from LEAP-004 uploaded as offline conversions so bidding learns from revenue rather than clicks.",
+      "notes": [
+        "AC1: gclid and gbraid/wbraid are captured on landing (LEAP-004 AC5) and stored on the lead row; tests assert they survive to D1.",
+        "AC2: functions/api/ads-export.js (bearer-token protected, same pattern as lead-outcome) returns won and qualified outcomes in Google Ads offline conversion CSV format; a lead without a click id is excluded and counted in a separate field rather than dropped silently.",
+        "AC3: Landing variants for paid traffic carry noindex and reuse the tool pages; no duplicate indexable content is created.",
+        "AC4: docs/paid-search.md records campaign structure, negative keywords, the Iowa geo target, and the monthly budget Infomax approves. Business gate: no campaign launches without that budget recorded.",
+        "AC5: /internal/leads splits leads and won value by paid vs organic.",
+        "Competitive rationale: aggregators buy cost-intent queries and resell leads; a local dealer bidding on its own tools with revenue feedback competes on cost per deal, not cost per click. https://1800officesolutions.com/copier-lease-rates/",
+        "Success metric: cost per qualified lead and cost per won deal by campaign, against a ceiling Infomax sets."
+      ]
+    },
+    {
+      "id": "LEAP-011",
+      "title": "Security and release alert list for Iowa print admins",
+      "status": "todo",
+      "estimate": "2-3 iterations",
+      "problem": "securityAdvisories in src/config/products.js, rendered by SecurityAdvisoryDetail.jsx and SecurityAdvisoryBanner.jsx, plus posts like PaperCutEmergencyPatchIowa.jsx, PaperCutPatchIowaSchools.jsx and PaperCutPatchIowaHealthcare.jsx, make Iowa Print Solutions a fast, cited, Iowa-specific advisory source. It is the one content type with urgency and a reason to come back, and it captures nobody: no signup, no feed. The outcome is a consented subscription ('PaperCut, uniFLOW and Vasion security and release notices for Iowa admins') plus a public feed, so each new advisory reaches the admins who run those fleets, including existing Infomax customers who need patches and renewals.",
+      "notes": [
+        "AC1: A subscribe component (product checkboxes, email, explicit consent text) appears on SecurityAdvisoryBanner.jsx surfaces and on every advisory post; it submits through LEAP-001 with type='advisory_subscribe'.",
+        "AC2: Double opt-in: the subscription is inactive until a confirmation link is clicked; the record stores consent basis, source page and timestamp.",
+        "AC3: scripts/generate-advisory-feed.mjs runs in prebuild beside generate-sitemap.mjs and writes public/advisories.xml and public/advisories.json from securityAdvisories; tests assert every advisory appears in both.",
+        "AC4: Every email carries a one-click unsubscribe that works without login and is honoured before the next send.",
+        "AC5: The sending identity is a separate verified subdomain, not DPearson@InfomaxOffice.com, documented in docs/; until it is configured the UI says 'feed only' and promises no email.",
+        "AC6: public/llms.txt links the feed.",
+        "Competitive rationale: vendors announce releases globally and the Iowa dealer pages checked run generic blogs; none offers a product-specific advisory list. https://www.papercut.com/blog/releases/new-in-papercut-hive-and-pocket-march-2026/",
+        "Success metric: confirmed subscribers by product, and advisory emails that produce a patch_help or package lead."
+      ]
+    },
+    {
+      "id": "LEAP-012",
+      "title": "Consented lifecycle email for quotes, assessments, lease deadlines and advisories",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "The self-serve tools create leads with different buying windows: a lease deadline nine months out, a quote this week, an advisory subscriber who is not buying. Without timed follow-up those leads cool, and one personal inbox cannot track timing. The outcome is a scheduled sender (a Cloudflare Cron Trigger on a Worker sharing the LEAP-001 D1 database) that sends only what the visitor consented to: the quote or report copy, lease reminders at 90/60/30 days before cancel-by, and advisory notices. Every send is recorded against the lead. The lease reminder lands when the buyer can actually switch.",
+      "notes": [
+        "AC1: The cron job reads due sends from a D1 sends table and records each attempt with status; a failed send stays retryable and is never marked sent.",
+        "AC2: Each send type requires a matching consent record from LEAP-001; a lead without consent for that type is skipped and the skip is logged with its reason.",
+        "AC3: Lease reminder dates are computed by a pure function reusing src/utils/lease.js from LEAP-005; tests cover 90/60/30-day offsets across month ends.",
+        "AC4: One-click unsubscribe per type, honoured before the next cron run (asserted in a test that unsubscribes then runs the scheduler against a stub).",
+        "AC5: The sender identity is the LEAP-011 subdomain, documented in docs/.",
+        "AC6: Email copy follows the repo's editorial standard: no unsourced numbers.",
+        "Competitive rationale: auto-renewal clauses depend on the buyer missing the window; a reminder is the counter. https://www.aopinc.com/blog/questions-before-signing-copier-lease",
+        "Success metric: reminder-to-meeting rate, unsubscribe rate under 2% per send, and won deals sourced from reminders."
+      ]
+    },
+    {
+      "id": "LEAP-013",
+      "title": "Make the resource library real: six gated guides generated from the verified corpus",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "/resource-library advertises six downloads in ResourceLibrary.jsx (Buyer's Guide at line 26, HIPAA checklist at 40, K-12 toolkit at 54, cost reduction guide at 68, security best practices at 82, and at 96-97 an 'Advanced Excel spreadsheet' ROI calculator), and no backing file exists in public/. The visitors who ask for a buyer's guide are among the highest-intent on the site, and today they get an alert() and nothing. The outcome is real assets, generated where possible from products.js so they stay current, delivered after a LEAP-001 capture. Any title that cannot be produced is removed rather than promised.",
+      "notes": [
+        "AC1: Each resource listed in ResourceLibrary.jsx maps to a real file or generated route; tests/resources.test.mjs fails if a listed resource has no backing asset.",
+        "AC2: The Buyer's Guide and HIPAA checklist are generated at build time by scripts/build-resources.mjs from products.js and carry FACTS_VERIFIED.",
+        "AC3: The 'Advanced Excel spreadsheet' is either a real .xlsx whose formulas use the LEAP-002 pricing.js bands, or the entry is removed.",
+        "AC4: A type='resource' lead returns a signed, expiring download link, shown on screen and emailed once LEAP-011's sender exists.",
+        "AC5: The download path is excluded from the sitemap and disallowed in public/robots.txt.",
+        "AC6: Each asset ends with the assessment CTA.",
+        "Competitive rationale: Marco gates ebooks and case studies behind forms; Iowa Print Solutions currently gates nothing real. https://www.marconet.com/ebooks/managed-print-services-case-study-collection/des-moines-public-schools",
+        "Success metric: resource downloads per week, and resource leads that later book an assessment."
+      ]
+    },
+    {
+      "id": "LEAP-014",
+      "title": "Product-fit wizard: PaperCut, uniFLOW, Vasion or Universal Print",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "PrintManagementComparison.jsx assigns a fixed 'Recommended:' product to three static use cases (lines 56-70), and the comparison content is spread across PaperCutVsUniflowComparison, PrintManagementSoftwareComparison and three '-vs-' blog posts. Backlog item 6 in docs/SEO-GEO-STRATEGY.md plans the comparison as flagship content; nothing answers the visitor's own situation. The outcome is a deterministic questionnaire at /which-print-management (fleet makes, M365 licensing, cloud vs on-prem, badge release, cost recovery, HIPAA/FERPA, size) that answers from products.js with stated disqualifiers and ends in the assessment. It is the interactive layer over item 6, not a second article.",
+      "notes": [
+        "AC1: src/pages/tools/ProductFit.jsx is routed at /which-print-management and linked from /print-management-comparison, /tools and the three comparison posts.",
+        "AC2: Rules live in src/config/productFit.js; each references a feature id in products.js, and tests/productfit.test.mjs fails on a rule pointing at a missing feature.",
+        "AC3: Every recommendation lists why and why not, each with a source link; Universal Print is an option, using the quota facts LEAP-007 adds to products.js.",
+        "AC4: A tie returns 'two fit, here is the deciding question' rather than a forced pick (covered in the test).",
+        "AC5: The static 'Recommended:' cards in PrintManagementComparison.jsx link into the wizard with their use case preselected.",
+        "AC6: The result offers 'send me this' and 'book an assessment' through LEAP-001 with type='product_fit' and the answers.",
+        "Competitive rationale: Gordon Flesch's PaperCut vs uniFLOW post is a two-way 2022 article; Vasion and Microsoft market only themselves. https://gflesch.com/blog/comparing-papercut-vs.-uniflow-print-management-software",
+        "Success metric: wizard completions, result-to-lead rate, and rankings for 'PaperCut vs uniFLOW' class queries."
+      ]
+    },
+    {
+      "id": "LEAP-015",
+      "title": "Iowa public-procurement hub: buying through contract vehicles a buyer already has",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "Iowa schools and agencies buy through AEA Purchasing, the Iowa DAS cooperative purchasing program and university procurement contracts; Access Systems appears on Iowa State's procurement contract list. 'How an Iowa district buys print management through a contract it already has' is high-intent, and no competitor page checked explains it. The K-12 posts (PaperCutMF26K12Iowa, SchoolDistrictIowa, PaperCutPatchIowaSchools) end in a mailto. The outcome is /iowa-procurement explaining each vehicle, what it covers and how Infomax fits, gated on which vehicles Infomax actually holds, ending in a procurement-ready quote request.",
+      "notes": [
+        "AC1: src/pages/IowaProcurement.jsx is routed and linked from IowaEducationPrintSolutions.jsx and the three K-12 posts.",
+        "AC2: Vehicles live in src/config/procurement.js with {name, scope, source, infomaxHolds: true|false|null, confirmedAsOf}; null renders 'contact us to confirm', never a claim. A test asserts no vehicle renders as held without confirmedAsOf.",
+        "AC3: Each vehicle links its official source page.",
+        "AC4: A procurement quote request captures organization, vehicle and timeline through LEAP-001 with type='procurement'.",
+        "AC5: FAQ schema is added through FAQSchema.jsx.",
+        "AC6: Business gate: Infomax confirms every infomaxHolds value before launch.",
+        "Competitive rationale: public-sector contracts are an incumbent's lock-in; explaining the vehicles is the way in. https://www.ghaea.org/administrators/aea-purchasing/ https://das.iowa.gov/state-employees/procurement/cooperative-purchasing-program https://www.procurement.iastate.edu/node/12?id=70",
+        "Success metric: procurement leads from public-sector email domains, and entrances on contract-vehicle queries."
+      ]
+    },
+    {
+      "id": "LEAP-016",
+      "title": "Segment x product x Iowa-fact pages for the verticals llms.txt claims",
+      "status": "todo",
+      "estimate": "3+ iterations",
+      "problem": "public/llms.txt (lines 10-11) claims healthcare, K-12 and higher education, manufacturing, financial services, government and legal, but src/pages/industries holds only IowaEducationPrintSolutions.jsx and IowaHealthcarePrintSolutions.jsx. The strategy doc's page-architecture rules forbid find-and-replace pages, so the defensible axis is segment x product x one substantive Iowa fact a national reseller cannot write (for example uniFLOW for Board of Regents institutions, secure print for Iowa law firms). This is separate from backlog item 8 (Central Iowa city pages). The outcome is a data-driven set rendered by EnhancedIndustryTemplate.jsx that captures long-tail intent and makes llms.txt true.",
+      "notes": [
+        "AC1: src/data/segments.js defines each page as {segment, product, iowaFact, factSource, compliance, ctaType}, and EnhancedIndustryTemplate.jsx renders from it.",
+        "AC2: tests/segments.test.mjs fails if an entry lacks iowaFact or factSource.",
+        "AC3: At least four new pages ship (manufacturing, financial services, government, legal); any segment without a sourced Iowa fact is dropped from llms.txt instead of shipped thin.",
+        "AC4: Each page links to the product-fit wizard (LEAP-014) and the assessment (LEAP-003).",
+        "AC5: The industry list in llms.txt matches the routed industry pages exactly (a test compares them).",
+        "AC6: The test rejects any two segment pages sharing more than 40% of body text by shingle overlap.",
+        "Competitive rationale: the Iowa dealer pages checked carry generic industry copy without a product-plus-Iowa-fact angle. https://www.gflesch.com/cedar-falls-ia-copiers",
+        "Success metric: organic entrances and leads per segment page within 90 days."
+      ]
+    },
+    {
+      "id": "LEAP-017",
+      "title": "Referral program for Iowa MSPs and IT consultants who do not sell print",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "Most Iowa managed IT providers and independent consultants support the networks and identity systems print management depends on, but do not sell PaperCut, uniFLOW or MFP fleets, and they field the print-server and patch questions anyway. Iowa Print Solutions has no channel for them, so their referrals go to whichever dealer they happen to know. The outcome is a /partners page with a referral agreement, per-partner referral links that tag every LEAP-001 lead with a partner code, a partner-facing status view for their referrals, and co-branded copies of the assessment report and patch checker the partner can send their clients. A channel that brings pre-qualified leads is one the big dealers do not court, because those MSPs often compete with them on managed IT.",
+      "notes": [
+        "AC1: src/pages/Partners.jsx is routed at /partners with the program terms rendered from src/config/partners.js; terms without confirmedBy do not render, and the page then offers only 'talk to us about referring'.",
+        "AC2: A ?ref=<code> parameter is persisted for the session and stored on the lead; tests assert it reaches the D1 row and that an unknown code is stored as unknown rather than dropped.",
+        "AC3: /partners/status (token link per partner, noindex) lists that partner's referrals with stage from LEAP-004 and no other partner's data; a test asserts isolation.",
+        "AC4: The assessment report (LEAP-003) and patch checker (LEAP-008) accept the ref code and show 'shared by <partner>' on the shared view.",
+        "AC5: Business gate: Infomax approves the referral fee or credit and the agreement text before launch.",
+        "Competitive rationale: Marco sells managed IT itself and so competes with the MSPs that would refer; that conflict is the opening for a print-only partner. https://www.marconet.com/",
+        "Success metric: active referring partners, referred leads per month, and referred won value."
+      ]
+    },
+    {
+      "id": "LEAP-018",
+      "title": "Fleet usage analyzer: drop in a PaperCut or uniFLOW export, get a waste report in the browser",
+      "status": "todo",
+      "estimate": "2-3 iterations",
+      "problem": "Usage analytics (anomaly reporting, predictive supplies and service) is where the category is heading per Quocirca's 2026 vendor landscape, and none of the Iowa dealer sites checked offers it self-serve. Existing PaperCut and uniFLOW customers already hold the data in their usage exports. The outcome is a client-side analyzer: the visitor drops in a usage CSV and the browser computes color share, simplex share, top printers by cost, idle devices, after-hours volume and outliers. The data never leaves the device, and the report ends in a consolidation or managed print conversation grounded in the customer's own numbers.",
+      "notes": [
+        "AC1: src/pages/tools/UsageAnalyzer.jsx is routed at /tools/usage-analyzer; parsing runs in a Web Worker and no request carries file contents.",
+        "AC2: Parsers in src/utils/usageParsers.js handle the documented PaperCut print log and uniFLOW export column sets, with fixture CSVs in tests/fixtures; tests/usage.test.mjs asserts the metrics on each fixture, and an unrecognised file reports which columns were expected.",
+        "AC3: Every metric shows its formula; nothing is projected to annual savings without the visitor's own cost-per-page input.",
+        "AC4: Outliers use a stated rule (over 3x the per-device median), named on screen.",
+        "AC5: 'Email me the full report' sends only the computed summary, never raw rows, through LEAP-001 with type='usage_report'; a test asserts the payload holds no row-level fields.",
+        "AC6: A privacy note states the file stays in the browser, and PrivacyPolicy.jsx is updated to match.",
+        "Competitive rationale: https://quocirca.com/content/quocirca-ai-vendor-landscape-2026/",
+        "Success metric: files analysed, summary-report lead rate, and MPS leads sourced from the analyzer."
+      ]
+    },
+    {
+      "id": "LEAP-019",
+      "title": "Iowa Print Cost Index: a quarterly benchmark built from the site's own anonymised tool data",
+      "status": "todo",
+      "estimate": "2+ iterations",
+      "problem": "Every cost figure on Iowa Print Solutions today is a national benchmark or an unsourced constant, and the strategy doc says AI answer engines reward specific, attributed claims. Once LEAP-002, LEAP-003 and LEAP-005 are live, the site will hold something no Iowa dealer publishes: real Iowa monthly volumes, color shares, lease payments and click rates entered by Iowa organizations. The outcome is a quarterly /iowa-print-cost-index page that publishes aggregate medians and ranges by segment and size band, with sample size and method stated, suppressing any cell below a minimum count. It becomes the citable local number that journalists, AI answers and other sites link to, and every chart ends in 'compare yours' (the quote builder).",
+      "notes": [
+        "AC1: scripts/build-cost-index.mjs (run manually or by cron, never in the public build) reads D1, drops contact fields, and writes src/data/costIndex.json with n per cell; any cell with n below 20 is written as suppressed, not as a number.",
+        "AC2: tests/costindex.test.mjs asserts suppression below the threshold, that no contact field or lead id appears in the output, and that a cell with n=0 is absent rather than 0.",
+        "AC3: src/pages/IowaPrintCostIndex.jsx renders the index with method, sample size, period and asOf, using ArticleSchema.jsx with dateModified per edition.",
+        "AC4: The first edition is not published until at least one cell clears the threshold; until then the route does not exist.",
+        "AC5: Each LEAP-001 consent text states that anonymised, aggregated inputs may be published.",
+        "AC6: public/llms.txt lists the index.",
+        "Competitive rationale: competitors cite national figures or none; an original local dataset is the asset that earns links and AI citations rather than chasing them.",
+        "Success metric: referring domains and AI-answer citations to the index page, and quote starts from its 'compare yours' link."
+      ]
+    },
+    {
+      "id": "LEAP-020",
+      "title": "Grounded print-management answer assistant",
+      "status": "todo",
+      "estimate": "2-3 iterations",
+      "problem": "Buyers increasingly ask an assistant instead of reading 45 blog posts and 18 resource guides. Iowa Print Solutions' advantage is that its product facts are dated and sourced in src/config/products.js; a general assistant cannot tell which PaperCut feature is new in 26.0 and which is long-standing, and the site can. The outcome is an 'Ask about PaperCut, uniFLOW or Vasion' assistant: a Pages Function calls a model with retrieval over products.js and the site's posts, cites the pages it used, refuses pricing beyond LEAP-002's confirmed bands and anything outside the corpus, and hands off to the intake. It ranks last because it depends on the corpus, the pricing gate and the pipeline being in place, and it carries a running cost.",
+      "notes": [
+        "AC1: functions/api/ask.js accepts a question, retrieves passages from a build-time index (scripts/build-ask-index.mjs over products.js, src/pages/blog and src/pages/resources) and returns {answer, citations[]}.",
+        "AC2: An answer with zero citations is replaced by 'I don't have a verified answer; here is how to ask Infomax'.",
+        "AC3: The system prompt forbids price figures outside pricing.js and certification claims not in src/config/site.js; tests/ask.test.mjs runs adversarial prompts against a stubbed model response path and asserts the citation and price guards fire.",
+        "AC4: Per-IP rate limiting and Turnstile protect the endpoint; the model key is a Pages secret.",
+        "AC5: 'Talk to a person' creates a LEAP-001 lead carrying the transcript, only with consent.",
+        "AC6: Cost per answer is logged, with a weekly total on /internal/leads.",
+        "Competitive rationale: vendors' AI messaging is ahead of dealers'; no Iowa dealer page checked answers questions from a verified corpus. https://quocirca.com/content/quocirca-ai-vendor-landscape-2026/ https://vasion.com/whats-new/",
+        "Success metric: questions answered with citations, share escalated to a lead, and refusal rate on out-of-corpus questions."
+      ]
     }
   ]
 }
